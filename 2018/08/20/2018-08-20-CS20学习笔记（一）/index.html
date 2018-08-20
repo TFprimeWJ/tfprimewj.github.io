@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Python," />
+  <meta name="keywords" content="Stanford,Tensorflow," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="废话不多说，直接上代码 1234567891011121314151617181920212223242526&amp;gt;&amp;gt;&amp;gt; import copy# 创建初始变量&amp;gt;&amp;gt;&amp;gt; origin = [1, 2, [3, 4]]&amp;gt;&amp;gt;&amp;gt; origin[1, 2, [3, 4]]# 浅copy&amp;gt;&amp;gt;&amp;gt; shallow_copy = copy.copy">
-<meta name="keywords" content="Python">
+<meta name="description" content="Talk less, code more  1. 写在前面&amp;emsp;&amp;emsp;之前看了一些Tensorflow的教学博客，也看了Tensorflow官方Tutorial，也看了Keras的Tutorial，总感觉学了一些Tensorflow但又学的不系统，前几天在网上看到了CS20的课程，虽然没有Video，但是有Slide。所以，就看着slides敲一边代码，作为学习主要方式了。一步一步，">
+<meta name="keywords" content="Stanford,Tensorflow">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python学习-深浅copy">
-<meta property="og:url" content="http://www.jinwang.world/2018/08/19/2018-08-19-Python学习-深浅copy/index.html">
+<meta property="og:title" content="CS20学习笔记（一）">
+<meta property="og:url" content="http://www.jinwang.world/2018/08/20/2018-08-20-CS20学习笔记（一）/index.html">
 <meta property="og:site_name" content="Jin Wang">
-<meta property="og:description" content="废话不多说，直接上代码 1234567891011121314151617181920212223242526&amp;gt;&amp;gt;&amp;gt; import copy# 创建初始变量&amp;gt;&amp;gt;&amp;gt; origin = [1, 2, [3, 4]]&amp;gt;&amp;gt;&amp;gt; origin[1, 2, [3, 4]]# 浅copy&amp;gt;&amp;gt;&amp;gt; shallow_copy = copy.copy">
+<meta property="og:description" content="Talk less, code more  1. 写在前面&amp;emsp;&amp;emsp;之前看了一些Tensorflow的教学博客，也看了Tensorflow官方Tutorial，也看了Keras的Tutorial，总感觉学了一些Tensorflow但又学的不系统，前几天在网上看到了CS20的课程，虽然没有Video，但是有Slide。所以，就看着slides敲一边代码，作为学习主要方式了。一步一步，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-18T17:20:29.267Z">
+<meta property="og:updated_time" content="2018-08-20T01:15:42.056Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python学习-深浅copy">
-<meta name="twitter:description" content="废话不多说，直接上代码 1234567891011121314151617181920212223242526&amp;gt;&amp;gt;&amp;gt; import copy# 创建初始变量&amp;gt;&amp;gt;&amp;gt; origin = [1, 2, [3, 4]]&amp;gt;&amp;gt;&amp;gt; origin[1, 2, [3, 4]]# 浅copy&amp;gt;&amp;gt;&amp;gt; shallow_copy = copy.copy">
+<meta name="twitter:title" content="CS20学习笔记（一）">
+<meta name="twitter:description" content="Talk less, code more  1. 写在前面&amp;emsp;&amp;emsp;之前看了一些Tensorflow的教学博客，也看了Tensorflow官方Tutorial，也看了Keras的Tutorial，总感觉学了一些Tensorflow但又学的不系统，前几天在网上看到了CS20的课程，虽然没有Video，但是有Slide。所以，就看着slides敲一边代码，作为学习主要方式了。一步一步，">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://www.jinwang.world/2018/08/19/2018-08-19-Python学习-深浅copy/"/>
+  <link rel="canonical" href="http://www.jinwang.world/2018/08/20/2018-08-20-CS20学习笔记（一）/"/>
 
 
 
 
 
-  <title>Python学习-深浅copy | Jin Wang</title>
+  <title>CS20学习笔记（一） | Jin Wang</title>
   
 
 
@@ -327,7 +327,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.jinwang.world/2018/08/19/2018-08-19-Python学习-深浅copy/">
+    <link itemprop="mainEntityOfPage" href="http://www.jinwang.world/2018/08/20/2018-08-20-CS20学习笔记（一）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jin Wang">
@@ -344,7 +344,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python学习-深浅copy</h1>
+          <h1 class="post-title" itemprop="name headline">CS20学习笔记（一）</h1>
         
 
         <div class="post-meta">
@@ -356,8 +356,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-19T00:00:00+08:00">
-                2018-08-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-20T00:00:00+08:00">
+                2018-08-20
               </time>
             
 
@@ -379,8 +379,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/Tensorflow/" itemprop="url" rel="index">
+                    <span itemprop="name">Tensorflow</span>
                   </a>
                 </span>
 
@@ -410,7 +410,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  129
+                  750
                 </span>
               
 
@@ -426,7 +426,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  4
                 </span>
               
             </div>
@@ -447,9 +447,34 @@
       
 
       
-        <p>废话不多说，直接上代码</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> copy</span><br><span class="line"><span class="comment"># 创建初始变量</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>origin = [<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>origin</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 浅copy</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>shallow_copy = copy.copy(origin)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>shallow_copy</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 深copy</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>deep_copy = copy.deepcopy(origin)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>deep_copy</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改原始变量</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>origin[<span class="number">2</span>][<span class="number">1</span>] = <span class="number">99</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>origin</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">99</span>]]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 浅copy跟着变了，但深copy没有跟着变</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>shallow_copy</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">99</span>]]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>deep_copy</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]]</span><br></pre></td></tr></table></figure>
-<p><strong>浅copy跟着变了，但深copy没有跟着变</strong></p>
+        <blockquote>
+<p>Talk less, code more</p>
+</blockquote>
+<h2 id="1-写在前面"><a href="#1-写在前面" class="headerlink" title="1. 写在前面"></a>1. 写在前面</h2><p>&emsp;&emsp;之前看了一些Tensorflow的教学博客，也看了Tensorflow官方Tutorial，也看了Keras的Tutorial，总感觉学了一些Tensorflow但又学的不系统，前几天在网上看到了CS20的课程，虽然没有Video，但是有Slide。所以，就看着slides敲一边代码，作为学习主要方式了。一步一步，踏踏实实，学好Tensorflow，将会是一个新的层次。那么下面就开始吧！</p>
+<h2 id="2-学习资料"><a href="#2-学习资料" class="headerlink" title="2. 学习资料"></a>2. 学习资料</h2><ul>
+<li>CS20 Lecture 1 Slides</li>
+<li>Tensorflow Official Docs</li>
+<li>pycharm</li>
+</ul>
+<h2 id="3-Lecture1-Welcome-to-Tensorflow"><a href="#3-Lecture1-Welcome-to-Tensorflow" class="headerlink" title="3. Lecture1: Welcome to Tensorflow!"></a>3. Lecture1: Welcome to Tensorflow!</h2><h3 id="3-1-Agenda"><a href="#3-1-Agenda" class="headerlink" title="3.1 Agenda"></a>3.1 Agenda</h3><ul>
+<li>Welcome</li>
+<li>Overview of Tensorflow</li>
+<li>Graphs and Sessions</li>
+</ul>
+<h3 id="3-2-Create-a-tensor"><a href="#3-2-Create-a-tensor" class="headerlink" title="3.2 Create a tensor"></a>3.2 Create a tensor</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">a = tf.add(<span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+<p>Output:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Tensor(<span class="string">"Add:0"</span>, shape=(), dtype=int32)</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-3-Create-a-tensor-than-run-a-Session"><a href="#3-3-Create-a-tensor-than-run-a-Session" class="headerlink" title="3.3 Create a tensor, than run a Session"></a>3.3 Create a tensor, than run a Session</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">a = tf.add(<span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">sess = tf.Session()</span><br><span class="line">print(sess.run(a))</span><br><span class="line">sess.close()</span><br></pre></td></tr></table></figure>
+<p>Output:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2018</span><span class="number">-08</span><span class="number">-20</span> <span class="number">08</span>:<span class="number">39</span>:<span class="number">46.730902</span>: I tensorflow/core/platform/cpu_feature_guard.cc:<span class="number">140</span>] Your CPU supports instructions that this TensorFlow binary was <span class="keyword">not</span> compiled to use: AVX2 FMA</span><br><span class="line"><span class="number">8</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="3-4-with-tf-Session-as-sess"><a href="#3-4-with-tf-Session-as-sess" class="headerlink" title="3.4 with tf.Session() as sess:"></a>3.4 with tf.Session() as sess:</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">a = tf.add(<span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    print(sess.run(a))</span><br></pre></td></tr></table></figure>
+<p>Output:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2018</span><span class="number">-08</span><span class="number">-20</span> <span class="number">08</span>:<span class="number">41</span>:<span class="number">55.387805</span>: I tensorflow/core/platform/cpu_feature_guard.cc:<span class="number">140</span>] Your CPU supports instructions that this TensorFlow binary was <span class="keyword">not</span> compiled to use: AVX2 FMA</span><br><span class="line"><span class="number">8</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="3-5-More-Graphs"><a href="#3-5-More-Graphs" class="headerlink" title="3.5 More Graphs"></a>3.5 More Graphs</h3><h4 id="3-5-1"><a href="#3-5-1" class="headerlink" title="3.5.1"></a>3.5.1</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">x = <span class="number">2</span></span><br><span class="line">y = <span class="number">3</span></span><br><span class="line"></span><br><span class="line">op1 = tf.add(x, y)</span><br><span class="line">op2 = tf.multiply(x, y)</span><br><span class="line">op3 = tf.pow(op2, op1)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    print(sess.run(op3))</span><br></pre></td></tr></table></figure>
+<p>Output:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">7776</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="3-5-2"><a href="#3-5-2" class="headerlink" title="3.5.2"></a>3.5.2</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">x = <span class="number">2</span></span><br><span class="line">y = <span class="number">3</span></span><br><span class="line"></span><br><span class="line">add_op = tf.add(x, y)</span><br><span class="line">mul_op = tf.multiply(x, y)</span><br><span class="line">useless = tf.multiply(add_op, mul_op)</span><br><span class="line">pow_op = tf.pow(add_op, mul_op)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    z = sess.run(pow_op)</span><br></pre></td></tr></table></figure>
+<h4 id="3-5-3"><a href="#3-5-3" class="headerlink" title="3.5.3"></a>3.5.3</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">x = <span class="number">2</span></span><br><span class="line">y = <span class="number">3</span></span><br><span class="line"></span><br><span class="line">add_op = tf.add(x, y)</span><br><span class="line">mul_op = tf.multiply(x, y)</span><br><span class="line">useless = tf.multiply(add_op, mul_op)</span><br><span class="line">pow_op = tf.pow(add_op, mul_op)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    z, not_useless = sess.run([pow_op, useless])</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tf.Session.run(fetches,</span><br><span class="line">			   feed_dict=<span class="keyword">None</span>,</span><br><span class="line">			   options=<span class="keyword">None</span>,</span><br><span class="line">			   run_metadata=<span class="keyword">None</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># fetches is a list of tensors whose values you want</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-6-Distributed-Computation"><a href="#3-6-Distributed-Computation" class="headerlink" title="3.6 Distributed Computation"></a>3.6 Distributed Computation</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># To put part of the computation on a specific CPU or GPU</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create a graph</span></span><br><span class="line"><span class="keyword">with</span> tf.device(<span class="string">'/gpu:2'</span>):</span><br><span class="line">    a = tf.constant([<span class="number">1.0</span>, <span class="number">2.0</span>, <span class="number">3.0</span>, <span class="number">4.0</span>, <span class="number">5.0</span>, <span class="number">6.0</span>], name=<span class="string">'a'</span>)</span><br><span class="line">    b = tf.constant([<span class="number">1.0</span>, <span class="number">2.0</span>, <span class="number">3.0</span>, <span class="number">4.0</span>, <span class="number">5.0</span>, <span class="number">6.0</span>], name=<span class="string">'b'</span>)</span><br><span class="line">    c = tf.multiply(a, b)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create a session with log_device_placement to True</span></span><br><span class="line">sess = tf.Session(config=tf.ConfigProto(log_device_placement=<span class="keyword">True</span>))</span><br><span class="line">sess.run(c)</span><br><span class="line">sess.close()</span><br></pre></td></tr></table></figure>
+<h3 id="3-7-More-than-one-Graphs"><a href="#3-7-More-than-one-Graphs" class="headerlink" title="3.7 More than one Graphs?"></a>3.7 More than one Graphs?</h3><p>不建议这样的做法，一个程序里面最好只有一个graph<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">g = tf.Graph()</span><br><span class="line"></span><br><span class="line"><span class="comment"># add ops to the default graph</span></span><br><span class="line">a = tf.constant(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># add ops to user created graph</span></span><br><span class="line"><span class="keyword">with</span> g.as_default():</span><br><span class="line">    b = tf.constant(<span class="number">3</span>)</span><br></pre></td></tr></table></figure></p>
+<p>下面这样做虽然更合理一点，但是还是不建议！<br>因为一张图里最好只有一个Graph！<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Do not mix the default graph and user created graph</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">g1 = tf.get_default_graph()</span><br><span class="line">g2 = tf.Graph()</span><br><span class="line"></span><br><span class="line"><span class="comment"># add ops to the default graph</span></span><br><span class="line"><span class="keyword">with</span> g1.as_default():</span><br><span class="line">    a = tf.constant(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># add ops to the user created graph</span></span><br><span class="line"><span class="keyword">with</span> g2.as_default():</span><br><span class="line">    b = tf.constant(<span class="number">3</span>)</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -467,7 +492,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+            <a href="/tags/Stanford/" rel="tag"><i class="fa fa-tag"></i> Stanford</a>
+          
+            <a href="/tags/Tensorflow/" rel="tag"><i class="fa fa-tag"></i> Tensorflow</a>
           
         </div>
       
@@ -480,8 +507,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/19/2018-08-19-Python学习—assert/" rel="next" title="Python学习-assert的作用">
-                <i class="fa fa-chevron-left"></i> Python学习-assert的作用
+              <a href="/2018/08/19/2018-08-19-Python学习-深浅copy/" rel="next" title="Python学习-深浅copy">
+                <i class="fa fa-chevron-left"></i> Python学习-深浅copy
               </a>
             
           </div>
@@ -489,10 +516,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/20/2018-08-20-CS20学习笔记（一）/" rel="prev" title="CS20学习笔记（一）">
-                CS20学习笔记（一） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -544,8 +567,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -625,6 +657,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-写在前面"><span class="nav-number">1.</span> <span class="nav-text">1. 写在前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-学习资料"><span class="nav-number">2.</span> <span class="nav-text">2. 学习资料</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Lecture1-Welcome-to-Tensorflow"><span class="nav-number">3.</span> <span class="nav-text">3. Lecture1: Welcome to Tensorflow!</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-Agenda"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 Agenda</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-Create-a-tensor"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 Create a tensor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-Create-a-tensor-than-run-a-Session"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 Create a tensor, than run a Session</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-with-tf-Session-as-sess"><span class="nav-number">3.4.</span> <span class="nav-text">3.4 with tf.Session() as sess:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-More-Graphs"><span class="nav-number">3.5.</span> <span class="nav-text">3.5 More Graphs</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-5-1"><span class="nav-number">3.5.1.</span> <span class="nav-text">3.5.1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-5-2"><span class="nav-number">3.5.2.</span> <span class="nav-text">3.5.2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-5-3"><span class="nav-number">3.5.3.</span> <span class="nav-text">3.5.3</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-6-Distributed-Computation"><span class="nav-number">3.6.</span> <span class="nav-text">3.6 Distributed Computation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-7-More-than-one-Graphs"><span class="nav-number">3.7.</span> <span class="nav-text">3.7 More than one Graphs?</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
