@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Stanford,Tensorflow," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Talk less, code more  Tensorflow Operations1. 学习资料 CS 20 Slide2 Tensorflow Operations Tensorflow Official Docs  2. Agenda Basic Operations Tensor Types Importing Data Lazy loading  3. TensorBoard3.1">
+<meta name="keywords" content="Stanford,Tensorflow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CS20学习笔记（二）">
+<meta property="og:url" content="http://www.jinwang.world/2018/08/19/2018-08-20-CS20学习笔记（二）/index.html">
+<meta property="og:site_name" content="Jin Wang">
+<meta property="og:description" content="Talk less, code more  Tensorflow Operations1. 学习资料 CS 20 Slide2 Tensorflow Operations Tensorflow Official Docs  2. Agenda Basic Operations Tensor Types Importing Data Lazy loading  3. TensorBoard3.1">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://pd57dw586.bkt.clouddn.com/CS20/CS20_tensorflow_operation.jpg">
+<meta property="og:image" content="http://pd57dw586.bkt.clouddn.com/CS20/CS20_arithmetic_poerations.jpg">
+<meta property="og:image" content="http://pd57dw586.bkt.clouddn.com/CS20/CS20_tensorflow_data_types.jpg">
+<meta property="og:image" content="http://pd57dw586.bkt.clouddn.com/CS20/CS20_placeholders_are_valid_ops.jpg">
+<meta property="og:updated_time" content="2018-09-09T12:17:16.394Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CS20学习笔记（二）">
+<meta name="twitter:description" content="Talk less, code more  Tensorflow Operations1. 学习资料 CS 20 Slide2 Tensorflow Operations Tensorflow Official Docs  2. Agenda Basic Operations Tensor Types Importing Data Lazy loading  3. TensorBoard3.1">
+<meta name="twitter:image" content="http://pd57dw586.bkt.clouddn.com/CS20/CS20_tensorflow_operation.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.jinwang.world/2018/08/19/2018-08-20-CS20学习笔记（二）/"/>
+
+
+
+
+
+  <title>CS20学习笔记（二） | Jin Wang</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?26e805ea620ee206153bac956aeccd78";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Jin Wang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Stay Hungry, Stay Foolish</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.jinwang.world/2018/08/19/2018-08-20-CS20学习笔记（二）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jin Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jin Wang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CS20学习笔记（二）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-19T00:00:00+08:00">
+                2018-08-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tensorflow/" itemprop="url" rel="index">
+                    <span itemprop="name">Tensorflow</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,684
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  15
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>Talk less, code more</p>
+</blockquote>
+<h2 id="Tensorflow-Operations"><a href="#Tensorflow-Operations" class="headerlink" title="Tensorflow Operations"></a>Tensorflow Operations</h2><h2 id="1-学习资料"><a href="#1-学习资料" class="headerlink" title="1. 学习资料"></a>1. 学习资料</h2><ul>
+<li>CS 20 Slide2 Tensorflow Operations</li>
+<li>Tensorflow Official Docs</li>
+</ul>
+<h2 id="2-Agenda"><a href="#2-Agenda" class="headerlink" title="2. Agenda"></a>2. Agenda</h2><ul>
+<li>Basic Operations</li>
+<li>Tensor Types</li>
+<li>Importing Data</li>
+<li>Lazy loading</li>
+</ul>
+<h2 id="3-TensorBoard"><a href="#3-TensorBoard" class="headerlink" title="3. TensorBoard"></a>3. TensorBoard</h2><h3 id="3-1-Your-first-tensorflow-program"><a href="#3-1-Your-first-tensorflow-program" class="headerlink" title="3.1 Your first tensorflow program"></a>3.1 Your first tensorflow program</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">a = tf.constant(<span class="number">2</span>)</span><br><span class="line">b = tf.constant(<span class="number">3</span>)</span><br><span class="line">c = tf.add(a, b)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    print(sess.run(c))</span><br></pre></td></tr></table></figure>
+<p>Output:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2018</span><span class="number">-08</span><span class="number">-20</span> <span class="number">13</span>:<span class="number">42</span>:<span class="number">00.773870</span>: I tensorflow/core/platform/cpu_feature_guard.cc:<span class="number">140</span>] Your CPU supports instructions that this TensorFlow binary was <span class="keyword">not</span> compiled to use: AVX2 FMA</span><br><span class="line"><span class="number">5</span></span><br></pre></td></tr></table></figure></p>
+<p>实际上，上面除了5是我们想要的结果，5上面的是一个warning，简单解释一下这个warning。上面的意思是说我的CPU支持AVX2和FMA，但是tensorflow使用不了。AVX2和FMA实际上是CPU内部为了加速矩阵运算所设计出来的东西，说白了就是会让运算变得更快（虽然与GPU相比相去甚远），但是我们的tensorflow默认用不了这些高级玩应儿，所以就会出现这种warning。参考：<a href="https://blog.csdn.net/hq86937375/article/details/79696023" target="_blank" rel="noopener">CSDN</a><br>我们通过以下代码可以解决这个问题<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 用下面这两行代码解决了这个问题，虽然我也不知道这两行到底干了啥</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.environ[<span class="string">'TF_CPP_MIN_LOG_LEVEL'</span>]=<span class="string">'2'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">a = tf.constant(<span class="number">2</span>)</span><br><span class="line">b = tf.constant(<span class="number">3</span>)</span><br><span class="line">c = tf.add(a, b)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    print(sess.run(c))</span><br></pre></td></tr></table></figure></p>
+<p>Output:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="3-2-Visualize-it-with-TensorfBoard"><a href="#3-2-Visualize-it-with-TensorfBoard" class="headerlink" title="3.2 Visualize it with TensorfBoard"></a>3.2 Visualize it with TensorfBoard</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">a = tf.constant(<span class="number">2</span>)</span><br><span class="line">b = tf.constant(<span class="number">3</span>)</span><br><span class="line">c = tf.add(a, b)</span><br><span class="line"></span><br><span class="line">writer = tf.summary.FileWriter(<span class="string">'./graph1'</span>, tf.get_default_graph())</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    print(sess.run(c))</span><br><span class="line">writer.close()</span><br></pre></td></tr></table></figure>
+<p>与此同时，我们的当前目录下面多了一个叫做“graph1”的文件夹<br>接着，我们学习如何使用tensorboard导入graph1<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Go to terminal, run:</span></span><br><span class="line">$ python3 [yourprogram].py</span><br><span class="line">$ tensorboard --logdir=<span class="string">"./graphs"</span> --port 6006</span><br><span class="line"><span class="comment">#Then open your browser and go to: http://localhost:6006/</span></span><br></pre></td></tr></table></figure></p>
+<p>添加name属性<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">a = tf.constant(<span class="number">2</span>, name=<span class="string">'a'</span>)</span><br><span class="line">b = tf.constant(<span class="number">3</span>, name=<span class="string">'b'</span>)</span><br><span class="line">c = tf.add(a, b, name=<span class="string">'add'</span>)</span><br><span class="line"></span><br><span class="line">writer = tf.summary.FileWriter(<span class="string">'./graph1'</span>, tf.get_default_graph())</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    print(sess.run(c))</span><br><span class="line">writer.close()</span><br></pre></td></tr></table></figure></p>
+<p><strong>CS20 Note: TensorBoard can do more than just visualizing your graphs. Learn to use TensorBoard well and often!</strong></p>
+<h2 id="4-Constants-Sequences-Variables-Ops"><a href="#4-Constants-Sequences-Variables-Ops" class="headerlink" title="4. Constants, Sequences, Variables, Ops"></a>4. Constants, Sequences, Variables, Ops</h2><h3 id="4-1-Constants"><a href="#4-1-Constants" class="headerlink" title="4.1 Constants"></a>4.1 Constants</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># API definition</span></span><br><span class="line">tf.constant(</span><br><span class="line">    value,</span><br><span class="line">    dtype=<span class="keyword">None</span>,</span><br><span class="line">    shape=<span class="keyword">None</span>,</span><br><span class="line">    name=<span class="string">'Const'</span>,</span><br><span class="line">    verify_shape=<span class="keyword">False</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>For example,<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">a = tf.constant([<span class="number">2</span>, <span class="number">2</span>], name=<span class="string">'a'</span>)</span><br><span class="line">b = tf.constant([[<span class="number">0</span>, <span class="number">1</span>], [<span class="number">2</span>, <span class="number">3</span>]], name=<span class="string">'b'</span>)</span><br><span class="line">x = tf.multiply(a, b, name=<span class="string">'mul'</span>)   <span class="comment"># tf.multiply is an element-wise operation</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    print(sess.run(x))</span><br></pre></td></tr></table></figure></p>
+<p>Output: 这里使用到了broadcasting<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[[<span class="number">0</span> <span class="number">2</span>]</span><br><span class="line"> [<span class="number">4</span> <span class="number">6</span>]]</span><br></pre></td></tr></table></figure></p>
+<h3 id="4-2-Tensors-filled-with-a-specific-value"><a href="#4-2-Tensors-filled-with-a-specific-value" class="headerlink" title="4.2 Tensors filled with a specific value"></a>4.2 Tensors filled with a specific value</h3><p><code>tf.zeros()</code><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># API</span></span><br><span class="line">tf.zeros(shape, dtype=tf.float32, name=<span class="keyword">None</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># For example:</span></span><br><span class="line">tf.zeros([<span class="number">2</span>, <span class="number">3</span>], dtype=tf.int32)</span><br><span class="line"><span class="comment"># 我就随意改了一下，竟然也是同样的结果，其实有时候我也搞不懂应该用"[]"还是"()"</span></span><br><span class="line">tf.zeros((<span class="number">2</span>, <span class="number">3</span>), dtype=tf.int32)    <span class="comment"># 输出和上面是一样的</span></span><br><span class="line"></span><br><span class="line">==&gt;</span><br><span class="line">[[<span class="number">0</span> <span class="number">0</span> <span class="number">0</span>]</span><br><span class="line"> [<span class="number">0</span> <span class="number">0</span> <span class="number">0</span>]]</span><br></pre></td></tr></table></figure></p>
+<p><code>tf.zeros_like()</code><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># API</span></span><br><span class="line">tf.zeros_like(input_tensor, dtype=<span class="keyword">None</span>, name=<span class="keyword">None</span>, optimize=<span class="keyword">True</span>)</span><br><span class="line"><span class="comment"># creates a tensor of shape and type (unless type is specified) as the input_tensor but all elements are zeros.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># For example</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line"><span class="comment"># input_tensor is [[0, 1], [2, 3], [4, 5]]</span></span><br><span class="line">a = tf.constant([[<span class="number">0</span>, <span class="number">1</span>], [<span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>]], name=<span class="string">'a'</span>)</span><br><span class="line">b = tf.zeros_like(a)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    print(sess.run(b))</span><br><span class="line"></span><br><span class="line">==&gt;</span><br><span class="line">[[<span class="number">0</span> <span class="number">0</span>]</span><br><span class="line"> [<span class="number">0</span> <span class="number">0</span>]</span><br><span class="line"> [<span class="number">0</span> <span class="number">0</span>]]</span><br></pre></td></tr></table></figure></p>
+<p><code>tf.onse()</code>和<code>tf.ones_like()</code>同上</p>
+<p><code>tf.fill()</code><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># API</span></span><br><span class="line">tf.fill(dims, value, name=<span class="keyword">None</span>)</span><br><span class="line"><span class="comment"># create a tensor filled with a scalar value</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># For example</span></span><br><span class="line">tf.fill([<span class="number">2</span>, <span class="number">3</span>], <span class="number">8</span>)</span><br><span class="line"></span><br><span class="line">==&gt;</span><br><span class="line">[[<span class="number">8</span> <span class="number">8</span> <span class="number">8</span>]</span><br><span class="line"> [<span class="number">8</span> <span class="number">8</span> <span class="number">8</span>]]</span><br></pre></td></tr></table></figure></p>
+<h3 id="4-3-Constants-as-sequences"><a href="#4-3-Constants-as-sequences" class="headerlink" title="4.3 Constants as sequences"></a>4.3 Constants as sequences</h3><p><code>tf.lin_space()</code><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># API</span></span><br><span class="line">tf.lin_space(start, stop, num, name=<span class="keyword">None</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># For example</span></span><br><span class="line">tf.lin_space(<span class="number">10.0</span>, <span class="number">13.0</span>, <span class="number">4</span>)</span><br><span class="line"></span><br><span class="line">==&gt;</span><br><span class="line">[ <span class="number">10.</span>  <span class="number">11.</span>  <span class="number">12.</span>  <span class="number">13.</span>]</span><br></pre></td></tr></table></figure></p>
+<p><code>tf.range()</code><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># API</span></span><br><span class="line">tf.range(start, limit=<span class="keyword">None</span>, delta=<span class="number">1</span>, dtype=<span class="keyword">None</span>, name=<span class="string">'range'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># For example</span></span><br><span class="line">tf.range(<span class="number">3</span>, <span class="number">18</span>, <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">==&gt;</span><br><span class="line">[ <span class="number">3</span>  <span class="number">6</span>  <span class="number">9</span> <span class="number">12</span> <span class="number">15</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># For another example</span></span><br><span class="line">tf.range(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">==&gt;</span><br><span class="line">[<span class="number">0</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span>]</span><br><span class="line"></span><br><span class="line">NOTE</span><br><span class="line">NOT THE SAME AS NUMPY SEQUENCES</span><br><span class="line">Tensor objects are <span class="keyword">not</span> iterable</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> tf.range(<span class="number">4</span>): <span class="comment"># TypeError</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="4-4-Randomly-Generated-Constants"><a href="#4-4-Randomly-Generated-Constants" class="headerlink" title="4.4 Randomly Generated Constants"></a>4.4 Randomly Generated Constants</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">tf.random_normal</span><br><span class="line">tf.truncated_normal</span><br><span class="line">tf.random_uniform</span><br><span class="line">tf.random_shuffle</span><br><span class="line">tf.random_crop</span><br><span class="line">tf.multinomial</span><br><span class="line">tf.random_gamma</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置随机种子</span></span><br><span class="line">tf.set_random_seed(seed)</span><br></pre></td></tr></table></figure>
+<h3 id="4-5-Operations"><a href="#4-5-Operations" class="headerlink" title="4.5 Operations"></a>4.5 Operations</h3><p><img src="http://pd57dw586.bkt.clouddn.com/CS20/CS20_tensorflow_operation.jpg" alt="avatar"></p>
+<h3 id="4-6-Arithmetic-Operations"><a href="#4-6-Arithmetic-Operations" class="headerlink" title="4.6 Arithmetic Operations"></a>4.6 Arithmetic Operations</h3><p>Pretty standard, quite similar to numpy.<br><img src="http://pd57dw586.bkt.clouddn.com/CS20/CS20_arithmetic_poerations.jpg" alt="avatar"></p>
+<h3 id="4-7-Wizard-of-Div"><a href="#4-7-Wizard-of-Div" class="headerlink" title="4.7 Wizard of Div"></a>4.7 Wizard of Div</h3><p>矩阵除法，就很乱<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">a = tf.constant([<span class="number">2</span>, <span class="number">2</span>], name=<span class="string">'a'</span>)</span><br><span class="line">b = tf.constant([[<span class="number">0</span>, <span class="number">1</span>], [<span class="number">2</span>, <span class="number">3</span>]], name=<span class="string">'b'</span>)</span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">	print(sess.run(tf.div(b, a)))             ⇒ [[<span class="number">0</span> <span class="number">0</span>] [<span class="number">1</span> <span class="number">1</span>]]</span><br><span class="line">	print(sess.run(tf.divide(b, a)))          ⇒ [[<span class="number">0.</span> <span class="number">0.5</span>] [<span class="number">1.</span> <span class="number">1.5</span>]]</span><br><span class="line">	print(sess.run(tf.truediv(b, a)))         ⇒ [[<span class="number">0.</span> <span class="number">0.5</span>] [<span class="number">1.</span> <span class="number">1.5</span>]]</span><br><span class="line">	print(sess.run(tf.floordiv(b, a)))        ⇒ [[<span class="number">0</span> <span class="number">0</span>] [<span class="number">1</span> <span class="number">1</span>]]</span><br><span class="line">	print(sess.run(tf.realdiv(b, a)))         ⇒ <span class="comment"># Error: only works for real values</span></span><br><span class="line">	print(sess.run(tf.truncatediv(b, a)))     ⇒ [[<span class="number">0</span> <span class="number">0</span>] [<span class="number">1</span> <span class="number">1</span>]]</span><br><span class="line">	print(sess.run(tf.floor_div(b, a)))       ⇒ [[<span class="number">0</span> <span class="number">0</span>] [<span class="number">1</span> <span class="number">1</span>]]</span><br></pre></td></tr></table></figure></p>
+<h2 id="5-Tensorflow-Data-Types"><a href="#5-Tensorflow-Data-Types" class="headerlink" title="5. Tensorflow Data Types"></a>5. Tensorflow Data Types</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># TensorFlow takes Python natives types: boolean, numeric (int, float), strings</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># scalars are treated like 0-d tensors</span></span><br><span class="line">t_0 = <span class="number">19</span> 			         			</span><br><span class="line">tf.zeros_like(t_0)                  			</span><br><span class="line">==&gt; 0</span><br><span class="line">tf.ones_like(t_0)                    			</span><br><span class="line">==&gt; 1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 1-d arrays are treated like 1-d tensors</span></span><br><span class="line">t_1 = [<span class="string">b"apple"</span>, <span class="string">b"peach"</span>, <span class="string">b"grape"</span>] 	</span><br><span class="line">tf.zeros_like(t_1)                   			</span><br><span class="line">==&gt; [b'' b'' b'']</span><br><span class="line">tf.ones_like(t_1)                    			</span><br><span class="line">==&gt; TypeError: Expected string, got 1 of type 'int' instead.</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2-d arrays are treated like 2-d tensors</span></span><br><span class="line">t_2 = [[<span class="keyword">True</span>, <span class="keyword">False</span>, <span class="keyword">False</span>],</span><br><span class="line">  [<span class="keyword">False</span>, <span class="keyword">False</span>, <span class="keyword">True</span>],</span><br><span class="line">  [<span class="keyword">False</span>, <span class="keyword">True</span>, <span class="keyword">False</span>]]         		</span><br><span class="line"></span><br><span class="line">tf.zeros_like(t_2)                   			</span><br><span class="line">==&gt; 3x3 tensor, all elements are False</span><br><span class="line">tf.ones_like(t_2)                    			</span><br><span class="line">==&gt; 3x3 tensor, all elements are True</span><br></pre></td></tr></table></figure>
+<p><img src="http://pd57dw586.bkt.clouddn.com/CS20/CS20_tensorflow_data_types.jpg" alt="avatar"></p>
+<h3 id="5-1-TF-vs-NP-Data-Types"><a href="#5-1-TF-vs-NP-Data-Types" class="headerlink" title="5.1 TF vs NP Data Types"></a>5.1 TF vs NP Data Types</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#TensorFlow integrates seamlessly with NumPy</span></span><br><span class="line">tf.int32 == np.int32 			</span><br><span class="line">⇒ <span class="keyword">True</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Can pass numpy types to TensorFlow ops</span></span><br><span class="line">tf.ones([<span class="number">2</span>, <span class="number">2</span>], np.float32) 	</span><br><span class="line">⇒ [[<span class="number">1.0</span> <span class="number">1.0</span>], [<span class="number">1.0</span> <span class="number">1.0</span>]]</span><br><span class="line"></span><br><span class="line"><span class="comment">#For tf.Session.run(fetches): if the requested fetch is a Tensor , output will be a NumPy ndarray.</span></span><br><span class="line"></span><br><span class="line">sess = tf.Session()</span><br><span class="line"></span><br><span class="line">a = tf.zeros([<span class="number">2</span>, <span class="number">3</span>], np.int32)</span><br><span class="line"></span><br><span class="line">print(type(a))  			</span><br><span class="line">⇒ &lt;<span class="class"><span class="keyword">class</span> '<span class="title">tensorflow</span>.<span class="title">python</span>.<span class="title">framework</span>.<span class="title">ops</span>.<span class="title">Tensor</span>'&gt;</span></span><br><span class="line"><span class="class"></span></span><br><span class="line">a = sess.run(a)</span><br><span class="line"></span><br><span class="line">print(type(a))  			</span><br><span class="line">⇒ &lt;<span class="class"><span class="keyword">class</span> '<span class="title">numpy</span>.<span class="title">ndarray</span>'&gt;</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"><span class="title">sess</span>.<span class="title">close</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>Use TF DType when possible</strong></p>
+<ul>
+<li>Python native types: TensorFlow has to infer Python type</li>
+<li>NumPy arrays: NumPy is not GPU compatible</li>
+</ul>
+<h2 id="6-What’s-wrong-with-constants"><a href="#6-What’s-wrong-with-constants" class="headerlink" title="6. What’s wrong with constants?"></a>6. What’s wrong with constants?</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">my_const = tf.constant([<span class="number">1.0</span>, <span class="number">2.0</span>], name=<span class="string">'my_const'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    print(sess.graph.as_graph_def())</span><br><span class="line"></span><br><span class="line">================&gt;</span><br><span class="line">node &#123;</span><br><span class="line">  name: <span class="string">"my_const"</span></span><br><span class="line">  op: <span class="string">"Const"</span></span><br><span class="line">  attr &#123;</span><br><span class="line">    key: <span class="string">"dtype"</span></span><br><span class="line">    value &#123;</span><br><span class="line">      type: DT_FLOAT</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  attr &#123;</span><br><span class="line">    key: <span class="string">"value"</span></span><br><span class="line">    value &#123;</span><br><span class="line">      tensor &#123;</span><br><span class="line">        dtype: DT_FLOAT</span><br><span class="line">        tensor_shape &#123;</span><br><span class="line">          dim &#123;</span><br><span class="line">            size: <span class="number">2</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        tensor_content: <span class="string">"\000\000\200?\000\000\000@"</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">versions &#123;</span><br><span class="line">  producer: <span class="number">26</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Constants are stored in the graph definition<br>This makes loading graphs <strong>expensive</strong> when constants are big</p>
+<h2 id="7-Variables"><a href="#7-Variables" class="headerlink" title="7. Variables"></a>7. Variables</h2><p><code>tf.Variable()</code><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line"><span class="comment"># create variabels with tf.Variable()</span></span><br><span class="line">s = tf.Variable(<span class="number">2</span>, name=<span class="string">'scalar'</span>)</span><br><span class="line">m = tf.Variable([[<span class="number">0</span>, <span class="number">1</span>], [<span class="number">2</span>, <span class="number">3</span>]], name=<span class="string">'matrix'</span>)</span><br><span class="line"><span class="comment"># 这里用的是tf.zeros()来创建Variable，但是tf.zeros()是一个Constant，所以我觉得，tf.Variable()就好像有可以把Constant转换成Variable的功能</span></span><br><span class="line">W = tf.Variable(tf.zeros([<span class="number">784</span>, <span class="number">10</span>]))</span><br></pre></td></tr></table></figure></p>
+<p><code>tf.get_variable()</code><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">s = tf.get_variable(<span class="string">'scalar'</span>, initializer=tf.constant(<span class="number">2</span>))</span><br><span class="line">m = tf.get_variable(<span class="string">'matrix'</span>, initializer=tf.constant([<span class="number">1</span>, <span class="number">2</span>]))</span><br><span class="line">W = tf.get_variable(<span class="string">'big_matrix'</span>, shape=(<span class="number">784</span>, <span class="number">10</span>), initializer=tf.zeros_initializer())</span><br></pre></td></tr></table></figure></p>
+<p>Q: Why tf.constant but tf.Variable?<br>A: tf.constant is an op<br>    tf.Variable is a class with many ops</p>
+<h3 id="7-1-tf-Variable-class"><a href="#7-1-tf-Variable-class" class="headerlink" title="7.1 tf.Variable() class"></a>7.1 tf.Variable() class</h3><p>tf.Variable holds several ops:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x = tf.Variable(...) </span><br><span class="line"></span><br><span class="line">x.initializer     <span class="comment"># init op</span></span><br><span class="line">x.value()         <span class="comment"># read op</span></span><br><span class="line">x.assign(...) 	  <span class="comment"># write op</span></span><br><span class="line">x.assign_add(...) <span class="comment"># and more</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="7-2-We-must-initialize-our-variables"><a href="#7-2-We-must-initialize-our-variables" class="headerlink" title="7.2 We must initialize our variables!!!"></a>7.2 We must <u>initialize</u> our variables!!!</h3><p>what if we don’t?<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">W = tf.get_variable(<span class="string">"big_matrix"</span>, shape=(<span class="number">784</span>, <span class="number">10</span>), initializer=tf.zeros_initializer())</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">	print(sess.run(W))   </span><br><span class="line"></span><br><span class="line">=========&gt;&gt;</span><br><span class="line">FailedPreconditionError: Attempting to use uninitialized value Variable</span><br></pre></td></tr></table></figure></p>
+<p>so, how to initialize variables?<br>Note: Initializer is an op. You need to execute it within the context of a session<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1 The easiest way is initializing all variables at once:</span></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    sess.run(tf.global_variables_initializer())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2 Initialize only a subset of variables:</span></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    sess.run(tf.variables_initializer([a, b]))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3 Initialize a single variable</span></span><br><span class="line">W = tf.Variable(tf.zeros([<span class="number">784</span>, <span class="number">10</span>]))</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    sess.run(W.initializer)</span><br></pre></td></tr></table></figure></p>
+<h3 id="7-3-Eval-a-variable"><a href="#7-3-Eval-a-variable" class="headerlink" title="7.3 Eval() a variable"></a>7.3 Eval() a variable</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">W = tf.Variable(tf.truncated_normal([<span class="number">2</span>, <span class="number">3</span>]))</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    sess.run(W.initializer)</span><br><span class="line">    print(W)</span><br><span class="line"></span><br><span class="line">=====&gt;</span><br><span class="line">&lt;tf.Variable <span class="string">'Variable:0'</span> shape=(<span class="number">2</span>, <span class="number">3</span>) dtype=float32_ref&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">W = tf.Variable(tf.truncated_normal([<span class="number">2</span>, <span class="number">3</span>]))</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    sess.run(W.initializer)</span><br><span class="line">    print(W.eval())</span><br><span class="line"></span><br><span class="line">====&gt;</span><br><span class="line"><span class="comment"># 这个结果是随机的，我试了几次，结果都不一样，只有指定random seed才会每次都一样</span></span><br><span class="line">[[<span class="number">-1.11789441</span> <span class="number">-0.48606175</span> <span class="number">-1.32297659</span>]</span><br><span class="line"> [<span class="number">-1.96772468</span>  <span class="number">0.62769943</span> <span class="number">-1.23245573</span>]]</span><br></pre></td></tr></table></figure>
+<h3 id="7-4-tf-Variable-assign"><a href="#7-4-tf-Variable-assign" class="headerlink" title="7.4 tf.Variable.assign()"></a>7.4 tf.Variable.assign()</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">W = tf.Variable(<span class="number">10</span>)</span><br><span class="line">W.assign(<span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    sess.run(W.initializer)</span><br><span class="line">    print(W.eval())</span><br><span class="line"></span><br><span class="line">====&gt;</span><br><span class="line"><span class="number">10</span></span><br></pre></td></tr></table></figure>
+<p>咦？怎么是10呢，不是用assign重新对W进行赋值操作了嘛，不应该是100才对嘛。<br>为什么？因为<code>W.assign(100)</code>是一个<code>op</code>，所有的<code>op</code>必须在<code>Session</code>里面执行才会奏效，否则不会。<br>记住：所有的<code>op</code>操作，必须在<code>Session</code>里执行才会有效。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">W = tf.Variable(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    sess.run(W.initializer)</span><br><span class="line">    sess.run(W.assign(<span class="number">100</span>))</span><br><span class="line">    print(W.eval())</span><br><span class="line"></span><br><span class="line">====&gt;</span><br><span class="line"><span class="number">100</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># create a variable whose original value is 2</span></span><br><span class="line">my_var = tf.Variable(<span class="number">2</span>, name=<span class="string">"my_var"</span>) </span><br><span class="line"></span><br><span class="line"><span class="comment"># assign a * 2 to a and call that op a_times_two</span></span><br><span class="line">my_var_times_two = my_var.assign(<span class="number">2</span> * my_var)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">	sess.run(my_var.initializer)</span><br><span class="line">	sess.run(my_var_times_two) 				<span class="comment"># &gt;&gt; the value of my_var now is 4</span></span><br><span class="line">	sess.run(my_var_times_two) 				<span class="comment"># &gt;&gt; the value of my_var now is 8</span></span><br><span class="line">	sess.run(my_var_times_two) 				<span class="comment"># &gt;&gt; the value of my_var now is 16</span></span><br></pre></td></tr></table></figure>
+<h3 id="7-5-assign-add-and-assign-sub"><a href="#7-5-assign-add-and-assign-sub" class="headerlink" title="7.5 assign_add() and assign_sub()"></a>7.5 assign_add() and assign_sub()</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">a = tf.Variable(<span class="number">10</span>, dtype=tf.int32)</span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">    sess.run(a.initializer)</span><br><span class="line">    print(a.eval())</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># +10</span></span><br><span class="line">    sess.run(a.assign_add(<span class="number">10</span>))</span><br><span class="line">    print(a.eval())</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># -2</span></span><br><span class="line">    sess.run(a.assign_sub(<span class="number">2</span>))</span><br><span class="line">    print(a.eval())</span><br><span class="line"></span><br><span class="line">====&gt;</span><br><span class="line">&lt;tf.Variable <span class="string">'Variable:0'</span> shape=() dtype=int32_ref&gt;</span><br><span class="line"><span class="number">10</span></span><br><span class="line"><span class="number">20</span></span><br><span class="line"><span class="number">18</span></span><br></pre></td></tr></table></figure>
+<h3 id="7-6-Two-Sessions"><a href="#7-6-Two-Sessions" class="headerlink" title="7.6 Two Sessions?"></a>7.6 Two Sessions?</h3><p><strong>Each session maintains its own copy of variables</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">W = tf.Variable(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">sess1 = tf.Session()</span><br><span class="line">sess2 = tf.Session()</span><br><span class="line"></span><br><span class="line">sess1.run(W.initializer)</span><br><span class="line">sess2.run(W.initializer)</span><br><span class="line"></span><br><span class="line">print(sess1.run(W.assign_add(<span class="number">10</span>)))</span><br><span class="line">print(sess2.run(W.assign_sub(<span class="number">2</span>)))</span><br><span class="line"></span><br><span class="line">sess1.close()</span><br><span class="line">sess2.close()</span><br><span class="line"></span><br><span class="line">====&gt;</span><br><span class="line"><span class="number">20</span></span><br><span class="line"><span class="number">8</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="8-Placeholder"><a href="#8-Placeholder" class="headerlink" title="8. Placeholder"></a>8. Placeholder</h2><p>A TF program often has 2 phases: </p>
+<ol>
+<li>Assemble a graph </li>
+<li>Use a session to execute operations in the graph.</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># API</span></span><br><span class="line">tf.placeholder(dtype. shape=<span class="keyword">None</span>, name=<span class="keyword">None</span>)</span><br></pre></td></tr></table></figure>
+<p>Let’s create a placeholder!<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">a = tf.placeholder(tf.float32, shape=[<span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">b = tf.constant([<span class="number">5</span>, <span class="number">5</span>, <span class="number">5</span>], tf.float32)</span><br><span class="line"></span><br><span class="line">c = a + b</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">	print(sess.run(c))</span><br><span class="line"></span><br><span class="line">====&gt;</span><br><span class="line">InvalidArgumentError (see above <span class="keyword">for</span> traceback): You must feed a value <span class="keyword">for</span> placeholder tensor <span class="string">'Placeholder'</span> <span class="keyword">with</span> dtype float <span class="keyword">and</span> shape [<span class="number">3</span>]</span><br><span class="line">	 [[Node: Placeholder = Placeholder[dtype=DT_FLOAT, shape=[<span class="number">3</span>], _device=<span class="string">"/job:localhost/replica:0/task:0/device:CPU:0"</span>]()]]</span><br></pre></td></tr></table></figure></p>
+<p><code>feed_dict</code><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">a = tf.placeholder(tf.float32, shape=[<span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">b = tf.constant([<span class="number">5</span>, <span class="number">5</span>, <span class="number">5</span>], tf.float32)</span><br><span class="line"></span><br><span class="line">c = a + b</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">	print(sess.run(c, feed_dict=&#123;a: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]&#125;))</span><br><span class="line"></span><br><span class="line">====&gt;</span><br><span class="line">[ <span class="number">6.</span>  <span class="number">7.</span>  <span class="number">8.</span>]</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://pd57dw586.bkt.clouddn.com/CS20/CS20_placeholders_are_valid_ops.jpg" alt="avatar"><br><strong>Placeholders are valid ops!</strong><br>从上面这张我们可以看出，Const和Placeholder、add的形状是不一样的，Placeholder的形状和add一样，这表达的意思是两者都是ops！而Const是一个小圈，可能代表的意思是“我不是个ops”，凡是打圈圈，都是ops，都要经过Session才能有效执行，而constant这种在定义就已经执行了。要通过仔细观察这个图发现这个事。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tf.Graph.is_feedable(tensor) </span><br><span class="line"><span class="comment"># True if and only if tensor is feedable.</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># create operations, tensors, etc (using the default graph)</span></span><br><span class="line">a = tf.add(<span class="number">2</span>, <span class="number">5</span>)</span><br><span class="line">b = tf.multiply(a, <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> tf.Session() <span class="keyword">as</span> sess:</span><br><span class="line">	<span class="comment"># compute the value of b given a is 15</span></span><br><span class="line">	sess.run(b, feed_dict=&#123;a: <span class="number">15</span>&#125;) 				</span><br><span class="line"></span><br><span class="line">====&gt;</span><br><span class="line"><span class="number">45</span></span><br></pre></td></tr></table></figure>
+<h2 id="9-End"><a href="#9-End" class="headerlink" title="9. End"></a>9. End</h2><p>&emsp;&emsp;Let’s construct a model next time!</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Stanford/" rel="tag"><i class="fa fa-tag"></i> Stanford</a>
+          
+            <a href="/tags/Tensorflow/" rel="tag"><i class="fa fa-tag"></i> Tensorflow</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/19/2018-08-19-Python学习-深浅copy/" rel="next" title="Python学习-深浅copy">
+                <i class="fa fa-chevron-left"></i> Python学习-深浅copy
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/20/2018-08-21-CS20学习笔记（三）/" rel="prev" title="CS20学习笔记（三）">
+                CS20学习笔记（三） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.jpg"
+                alt="Jin Wang" />
+            
+              <p class="site-author-name" itemprop="name">Jin Wang</p>
+              <p class="site-description motion-element" itemprop="description">Stay Hungry, Stay Foolish</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/TFprimeWJ" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/tfprime" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-zhihu"></i>知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Tensorflow-Operations"><span class="nav-number">1.</span> <span class="nav-text">Tensorflow Operations</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-学习资料"><span class="nav-number">2.</span> <span class="nav-text">1. 学习资料</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Agenda"><span class="nav-number">3.</span> <span class="nav-text">2. Agenda</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-TensorBoard"><span class="nav-number">4.</span> <span class="nav-text">3. TensorBoard</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-Your-first-tensorflow-program"><span class="nav-number">4.1.</span> <span class="nav-text">3.1 Your first tensorflow program</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-Visualize-it-with-TensorfBoard"><span class="nav-number">4.2.</span> <span class="nav-text">3.2 Visualize it with TensorfBoard</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Constants-Sequences-Variables-Ops"><span class="nav-number">5.</span> <span class="nav-text">4. Constants, Sequences, Variables, Ops</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-Constants"><span class="nav-number">5.1.</span> <span class="nav-text">4.1 Constants</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-Tensors-filled-with-a-specific-value"><span class="nav-number">5.2.</span> <span class="nav-text">4.2 Tensors filled with a specific value</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-Constants-as-sequences"><span class="nav-number">5.3.</span> <span class="nav-text">4.3 Constants as sequences</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-Randomly-Generated-Constants"><span class="nav-number">5.4.</span> <span class="nav-text">4.4 Randomly Generated Constants</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-Operations"><span class="nav-number">5.5.</span> <span class="nav-text">4.5 Operations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-6-Arithmetic-Operations"><span class="nav-number">5.6.</span> <span class="nav-text">4.6 Arithmetic Operations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-7-Wizard-of-Div"><span class="nav-number">5.7.</span> <span class="nav-text">4.7 Wizard of Div</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Tensorflow-Data-Types"><span class="nav-number">6.</span> <span class="nav-text">5. Tensorflow Data Types</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-TF-vs-NP-Data-Types"><span class="nav-number">6.1.</span> <span class="nav-text">5.1 TF vs NP Data Types</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-What’s-wrong-with-constants"><span class="nav-number">7.</span> <span class="nav-text">6. What’s wrong with constants?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-Variables"><span class="nav-number">8.</span> <span class="nav-text">7. Variables</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-tf-Variable-class"><span class="nav-number">8.1.</span> <span class="nav-text">7.1 tf.Variable() class</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-We-must-initialize-our-variables"><span class="nav-number">8.2.</span> <span class="nav-text">7.2 We must initialize our variables!!!</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-3-Eval-a-variable"><span class="nav-number">8.3.</span> <span class="nav-text">7.3 Eval() a variable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-4-tf-Variable-assign"><span class="nav-number">8.4.</span> <span class="nav-text">7.4 tf.Variable.assign()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-5-assign-add-and-assign-sub"><span class="nav-number">8.5.</span> <span class="nav-text">7.5 assign_add() and assign_sub()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-6-Two-Sessions"><span class="nav-number">8.6.</span> <span class="nav-text">7.6 Two Sessions?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-Placeholder"><span class="nav-number">9.</span> <span class="nav-text">8. Placeholder</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-End"><span class="nav-number">10.</span> <span class="nav-text">9. End</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<br>
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+
+  <span class="author" itemprop="copyrightHolder">Jin Wang</span>
+
+  
+</div>
+
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div> 
+
+-->
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
