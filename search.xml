@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Communication System Random Process: A cos wave with random phase]]></title>
+    <url>%2F2018%2F09%2F13%2F2018-09-13-Communication_System-Random_Process%2F</url>
+    <content type="text"><![CDATA[Communication System - Random Process@(Communication System) Cos wave with random phaseThe program below shows a cos wave with a random phase: $$X(t) = Acos(\omega t + \theta)$$ A: amplitude of the cos wave $\omega$: radian frequency of the cos wave $\theta$: a random variable of uniform distribution between $[0, 2\pi]$ Then we generate the autocorrelation function. Code1234567891011121314151617181920212223242526272829303132333435363738394041424344454647clear;clc;% This program creates a cos wave with a random phase.% x = A * cos(w * t + theta)%% A: Amplitude of the cos wave% w: frequency% theta: phase, which is a random variable of % uniform distribution between [0, 2*pi] % Configurationfs = 200; % Sample frequencyf = 5; % Cos wave frequencyA = 1; % Amplitudet = 0: 1/fs: 1; % Sampling timetheta_range = 2 * pi;theta = theta_range * rand(1, length(t));% Create a cos_wave_with_random_phasex = A * cos(2*pi * f * t + theta);mean_value = mean(x);varience_value = var(x);[autocorrelation_value, lags] = xcorr(x);% Theoretical Autocorrelationtheory_autocor = power(A, 2) ./ 2 .* cos(2*pi * f * t + theta_range / 2);[theory_autocor, lags2] = xcorr(theory_autocor);% Plotsubplot(3,1,1);plot(t, x);title(&#123;'$$x(t) = Acos(2\pi ft + \theta)$$', ... '$$\theta :\: a\: random\: variable\: of\: uniform\: distribution\: between\: [0,2\pi ]$$'&#125;, ... 'Interpreter', 'latex');xlabel('$$t / s$$', 'Interpreter', 'latex');ylabel('$$x(t)$$', 'Interpreter', 'latex');subplot(3,1,2);plot(lags/fs, autocorrelation_value);title('$$ Autocorrelation: R_&#123;X&#125;(\tau)$$', 'Interpreter', 'latex');xlabel('$$\tau / s$$', 'Interpreter', 'latex');ylabel('$$R_&#123;X&#125;(\tau)$$', 'Interpreter', 'latex');subplot(3,1,3);plot(lags2/fs, theory_autocor);title('$$ Theoretical Autocorrelation: R_&#123;X&#125;(\tau)$$', 'Interpreter', 'latex');xlabel('$$\tau / s$$', 'Interpreter', 'latex');ylabel('$$R_&#123;X&#125;(\tau)$$', 'Interpreter', 'latex'); Result When $\theta$ is a uniform distribution random variable between $[0, 2\pi]$: When $\theta$ is a uniform distribution random variable between $[0, 1.5\pi]$: When $\theta$ is a uniform distribution random variable between $[0, \pi]$: When $\theta$ is a uniform distribution random variable between $[0, 0.5\pi]$: When $\theta$ is a uniform distribution random variable between $[0, 0]$:]]></content>
+      <categories>
+        <category>Communication System</category>
+        <category>Matlab</category>
+      </categories>
+      <tags>
+        <tag>Communication System</tag>
+        <tag>Matlab</tag>
+        <tag>Random Process</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Digital Signal Processing Using Matlab Problem 2.1 Solutions & Results]]></title>
     <url>%2F2018%2F09%2F09%2F2018-09-09-Digital_Signal_Processing_Using_Matlab_Problem_2_1%2F</url>
     <content type="text"><![CDATA[Talk less, code more 2.1-11234567891011121314151617clear;clc;% Solutions%% 2.1-1duration_start = -5;duration_end = 15;n = duration_start: duration_end;x = 3 * impseq(-2, duration_start, duration_end) ... + 2 * impseq(0, duration_start,duration_end) ... - impseq(3, duration_start, duration_end) ... + 5 * impseq(7, duration_start, duration_end)% Plotsubplot(4,2,1);stem(n, x);title('Sequence for 2.1-1');xlabel('n');ylabel('x1(n)'); 2.1-2123456789101112131415%% 2.1-2duration_start = -10;duration_end = 10;n = duration_start: duration_end;x = zeros(1, length(n));for k = -5: 5 xk = exp(-abs(k)) * impseq(2 * k, duration_start, duration_end); x = sigadd(x, n, xk, n)end% Plotsubplot(4,2,2);stem(n, x);title('Sequence for 2.1-2');xlabel('n');ylabel('x2(n)'); 2.1-31234567891011121314%% 2.1-3duration_start = 0;duration_end = 15;n = duration_start: duration_end;x = 10 * stepseq(0, duration_start, duration_end) ... -5 * stepseq(5, duration_start, duration_end) ... -10 * stepseq(10, duration_start, duration_end) ... + 5 * stepseq(15, duration_start, duration_end);% Plotsubplot(4,2,3);stem(n, x);title('Sequence for 2.1-3');xlabel('n');ylabel('x2(n)'); 2.1-412345678910%% 2.1-4duration_start = -20;duration_end = 10;n = duration_start: duration_end;x = exp(0.1 * n) .* (stepseq(-20, duration_start, duration_end) - stepseq(10, duration_start, duration_end));subplot(4,2,4);stem(n, x);title('Sequence for 2.1-4');xlabel('n');ylabel('x4(n)'); 2.1-51234567891011%% 2.1-5duration_start = -200;duration_end = 200;n = duration_start: duration_end;x = 5 * (cos(0.49 * pi * n) + cos(0.51 * pi * n));% Plotsubplot(4,2,5);stem(n, x);title('Sequence for 2.1-5');xlabel('n');ylabel('x5(n)'); 2.1-61234567891011%% 2.1-6duration_start = -200;duration_end = 200;n = duration_start: duration_end;x = 2 * sin(0.01 * pi * n) .* cos(0.5 * pi * n);% Plotsubplot(4,2,6);stem(n, x);title('Sequence for 2.1-6');xlabel('n');ylabel('x6(n)'); 2.1-71234567891011%% 2.1-7duration_start = 0;duration_end = 100;n = duration_start: duration_end;x = exp(-0.05 * n) .* sin(0.1*pi*n + pi/3);% Plotsubplot(4,2,7);stem(n, x);title('Sequence for 2.1-7');xlabel('n');ylabel('x7(n)'); 2.1-81234567891011%% 2.1-8duration_start = 0;duration_end = 100;n = duration_start: duration_end;x = exp(0.01 * n) .* sin(0.1*pi*n);% Plotsubplot(4,2,8);stem(n, x);title('Sequence for 2.1-8');xlabel('n');ylabel('x8(n)'); Plot Results]]></content>
@@ -9,8 +23,8 @@
         <category>Matlab</category>
       </categories>
       <tags>
-        <tag>DSP</tag>
         <tag>Matlab</tag>
+        <tag>DSP</tag>
       </tags>
   </entry>
   <entry>
@@ -63,9 +77,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Python学习-深浅copy]]></title>
-    <url>%2F2018%2F08%2F19%2F2018-08-19-Python%E5%AD%A6%E4%B9%A0-%E6%B7%B1%E6%B5%85copy%2F</url>
-    <content type="text"><![CDATA[废话不多说，直接上代码 1234567891011121314151617181920212223242526&gt;&gt;&gt; import copy# 创建初始变量&gt;&gt;&gt; origin = [1, 2, [3, 4]]&gt;&gt;&gt; origin[1, 2, [3, 4]]# 浅copy&gt;&gt;&gt; shallow_copy = copy.copy(origin)&gt;&gt;&gt; shallow_copy[1, 2, [3, 4]]# 深copy&gt;&gt;&gt; deep_copy = copy.deepcopy(origin)&gt;&gt;&gt; deep_copy[1, 2, [3, 4]]# 修改原始变量&gt;&gt;&gt; origin[2][1] = 99&gt;&gt;&gt; origin[1, 2, [3, 99]]# 浅copy跟着变了，但深copy没有跟着变&gt;&gt;&gt; shallow_copy[1, 2, [3, 99]]&gt;&gt;&gt; deep_copy[1, 2, [3, 4]] 浅copy跟着变了，但深copy没有跟着变]]></content>
+    <title><![CDATA[Python学习-assert的作用]]></title>
+    <url>%2F2018%2F08%2F19%2F2018-08-19-Python%E5%AD%A6%E4%B9%A0%E2%80%94assert%2F</url>
+    <content type="text"><![CDATA[简单来说，assert就是为程序提供一个判断，如果assert里面的内容成立，为真，那么程序就向下执行，如果发现assert里面的东西是假的，就抛出AssertionError的错误。 下面是几个语句，很清楚的看到了assert的作用12345678910111213141516171819202122# 数值判断&gt;&gt;&gt; a = 3&gt;&gt;&gt; assert(a==3)&gt;&gt;&gt; assert(a &lt; 4)&gt;&gt;&gt; assert(a &gt; 4)Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AssertionError# True/Flase判断&gt;&gt;&gt; assert(True)&gt;&gt;&gt; assert(False)Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AssertionError# 1/0判断&gt;&gt;&gt; assert(1)&gt;&gt;&gt; assert(0)Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AssertionError]]></content>
       <categories>
         <category>Python</category>
       </categories>
@@ -74,9 +88,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Python学习-assert的作用]]></title>
-    <url>%2F2018%2F08%2F19%2F2018-08-19-Python%E5%AD%A6%E4%B9%A0%E2%80%94assert%2F</url>
-    <content type="text"><![CDATA[简单来说，assert就是为程序提供一个判断，如果assert里面的内容成立，为真，那么程序就向下执行，如果发现assert里面的东西是假的，就抛出AssertionError的错误。 下面是几个语句，很清楚的看到了assert的作用12345678910111213141516171819202122# 数值判断&gt;&gt;&gt; a = 3&gt;&gt;&gt; assert(a==3)&gt;&gt;&gt; assert(a &lt; 4)&gt;&gt;&gt; assert(a &gt; 4)Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AssertionError# True/Flase判断&gt;&gt;&gt; assert(True)&gt;&gt;&gt; assert(False)Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AssertionError# 1/0判断&gt;&gt;&gt; assert(1)&gt;&gt;&gt; assert(0)Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AssertionError]]></content>
+    <title><![CDATA[Python学习-深浅copy]]></title>
+    <url>%2F2018%2F08%2F19%2F2018-08-19-Python%E5%AD%A6%E4%B9%A0-%E6%B7%B1%E6%B5%85copy%2F</url>
+    <content type="text"><![CDATA[废话不多说，直接上代码 1234567891011121314151617181920212223242526&gt;&gt;&gt; import copy# 创建初始变量&gt;&gt;&gt; origin = [1, 2, [3, 4]]&gt;&gt;&gt; origin[1, 2, [3, 4]]# 浅copy&gt;&gt;&gt; shallow_copy = copy.copy(origin)&gt;&gt;&gt; shallow_copy[1, 2, [3, 4]]# 深copy&gt;&gt;&gt; deep_copy = copy.deepcopy(origin)&gt;&gt;&gt; deep_copy[1, 2, [3, 4]]# 修改原始变量&gt;&gt;&gt; origin[2][1] = 99&gt;&gt;&gt; origin[1, 2, [3, 99]]# 浅copy跟着变了，但深copy没有跟着变&gt;&gt;&gt; shallow_copy[1, 2, [3, 99]]&gt;&gt;&gt; deep_copy[1, 2, [3, 4]] 浅copy跟着变了，但深copy没有跟着变]]></content>
       <categories>
         <category>Python</category>
       </categories>
