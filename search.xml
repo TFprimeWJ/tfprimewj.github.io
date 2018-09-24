@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[DTFT Implementation Using Matlab]]></title>
+    <url>%2F2018%2F09%2F24%2F2018-09-24-DTFT_Implementation_Using_Matlab%2F</url>
+    <content type="text"><![CDATA[Definition of DTFTDTFT(Discrete Time Fourier Transform) is the Fourier Transform of a sequence x(n).The definition is:$$X(e^{j\omega}) = DTFT[x(n)] = \sum_{n = -\infty}^{\infty} x(n) e^{-j \omega n}$$ Implementation using matlab123456789101112131415function [amplitude, phase, frequency_domain] = dtft(x, n, M)% This function compute the DTFT(Discrete Time Fourier Transform) of an% input signal x(n). frequency_domain = linspace(0, 2*pi, M); X = zeros(1, M); count = 1; j = sqrt(-1); for omega = frequency_domain exponent_term = exp(- j * omega .* n); X(count) = sum(x .* exponent_term); count = count + 1; end amplitude = abs(X); phase = angle(X);end Code ExampleCode1234567891011121314151617181920212223242526272829303132333435363738394041clear;clc;% Create a input signal x(n) with some frequencies.Fs = 100;T = 5;t = 0: 1/Fs: T;n = 1: length(t);x = cos(2 * pi * 1 * t) ... + cos(2 * pi * 4 * t) ... + cos(2 * pi * 8 * t) ... + cos(2 * pi * 16 * t) ... + cos(2 * pi * 32 * t);% Plot the input signal x(n)subplot(311)plot(n, x);title('Input Signal x(n)');xlabel('n');ylabel('x(n)');% DTFTM = 100;[amplitude, phase, frequency] = dtft(x, n, M);% Plot the amplitude spectrum and phase spectrumsubplot(312)plot(frequency, amplitude);xlim([0, 2*pi]);set(gca,'XTick',0: pi: 2*pi)set(gca,'XTickLabel',&#123;'0','\pi','2\pi'&#125;)title('Amplitude Spectrum'); xlabel('$\omega$', 'Interpreter', 'latex');ylabel('Amplitude');subplot(313)plot(frequency, phase);xlim([0, 2*pi]);set(gca,'XTick',0: pi: 2*pi)set(gca,'XTickLabel',&#123;'0','\pi','2\pi'&#125;)title('Phase Spectrum');xlabel('$\omega$', 'Interpreter', 'latex');ylabel('Phase'); Output]]></content>
+      <categories>
+        <category>Digital Signal Processing</category>
+      </categories>
+      <tags>
+        <tag>Matlab</tag>
+        <tag>Digital Signal Processing</tag>
+        <tag>DTFT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Communication System Random Process: A cos wave with random phase]]></title>
     <url>%2F2018%2F09%2F13%2F2018-09-13-Communication_System-Random_Process%2F</url>
     <content type="text"><![CDATA[Cos wave with random phaseThe program below shows a cos wave with a random phase: $$X(t) = Acos(\omega t + \theta)$$ A: amplitude of the cos wave $\omega$: radian frequency of the cos wave $\theta$: a random variable of uniform distribution between $[0, 2\pi]$ Then we generate the autocorrelation function. Code1234567891011121314151617181920212223242526272829303132333435363738394041424344454647clear;clc;% This program creates a cos wave with a random phase.% x = A * cos(w * t + theta)%% A: Amplitude of the cos wave% w: frequency% theta: phase, which is a random variable of % uniform distribution between [0, 2*pi] % Configurationfs = 200; % Sample frequencyf = 5; % Cos wave frequencyA = 1; % Amplitudet = 0: 1/fs: 1; % Sampling timetheta_range = 2 * pi;theta = theta_range * rand(1, length(t));% Create a cos_wave_with_random_phasex = A * cos(2*pi * f * t + theta);mean_value = mean(x);varience_value = var(x);[autocorrelation_value, lags] = xcorr(x);% Theoretical Autocorrelationtheory_autocor = power(A, 2) ./ 2 .* cos(2*pi * f * t + theta_range / 2);[theory_autocor, lags2] = xcorr(theory_autocor);% Plotsubplot(3,1,1);plot(t, x);title(&#123;'$$x(t) = Acos(2\pi ft + \theta)$$', ... '$$\theta :\: a\: random\: variable\: of\: uniform\: distribution\: between\: [0,2\pi ]$$'&#125;, ... 'Interpreter', 'latex');xlabel('$$t / s$$', 'Interpreter', 'latex');ylabel('$$x(t)$$', 'Interpreter', 'latex');subplot(3,1,2);plot(lags/fs, autocorrelation_value);title('$$ Autocorrelation: R_&#123;X&#125;(\tau)$$', 'Interpreter', 'latex');xlabel('$$\tau / s$$', 'Interpreter', 'latex');ylabel('$$R_&#123;X&#125;(\tau)$$', 'Interpreter', 'latex');subplot(3,1,3);plot(lags2/fs, theory_autocor);title('$$ Theoretical Autocorrelation: R_&#123;X&#125;(\tau)$$', 'Interpreter', 'latex');xlabel('$$\tau / s$$', 'Interpreter', 'latex');ylabel('$$R_&#123;X&#125;(\tau)$$', 'Interpreter', 'latex'); Result When $\theta$ is a uniform distribution random variable between $[0, 2\pi]$: When $\theta$ is a uniform distribution random variable between $[0, 1.5\pi]$: When $\theta$ is a uniform distribution random variable between $[0, \pi]$: When $\theta$ is a uniform distribution random variable between $[0, 0.5\pi]$: When $\theta$ is a uniform distribution random variable between $[0, 0]$:]]></content>
@@ -9,8 +22,8 @@
         <category>Matlab</category>
       </categories>
       <tags>
-        <tag>Matlab</tag>
         <tag>Communication System</tag>
+        <tag>Matlab</tag>
         <tag>Random Process</tag>
       </tags>
   </entry>
@@ -23,8 +36,8 @@
         <category>Matlab</category>
       </categories>
       <tags>
-        <tag>DSP</tag>
         <tag>Matlab</tag>
+        <tag>DSP</tag>
       </tags>
   </entry>
   <entry>
