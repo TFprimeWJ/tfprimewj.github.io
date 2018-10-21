@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python学习-将逗号分隔的字符串转化为列表]]></title>
+    <url>%2F2018%2F10%2F21%2F2018-10-21-Python%E5%AD%A6%E4%B9%A0-%E5%B0%86%E9%80%97%E5%8F%B7%E5%88%86%E9%9A%94%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E5%8C%96%E4%B8%BA%E5%88%97%E8%A1%A8%2F</url>
+    <content type="text"><![CDATA[Python学习-将逗号分隔的字符串转化为列表@(python) Talk less, code more 用split()函数可以将用逗号分隔的str转化为list12345678columns = 'app_name, app_kind, app_type, md5, sender, receiver, timestamp, ip, nation, gps, size'print('type = ', type(columns))print(columns)# 使用split尽心分割columns = columns.split(',')print('type = ', type(columns))print(columns) 123456# 输出type = &lt;class 'str'&gt;app_name, app_kind, app_type, md5, sender, receiver, timestamp, ip, nation, gps, size# 转化后输出type = &lt;class 'list'&gt;['app_name', ' app_kind', ' app_type', ' md5', ' sender', ' receiver', ' timestamp', ' ip', ' nation', ' gps', ' size']]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Digital Image Processing - Ch3 Spatial Domain Image Enhancement]]></title>
     <url>%2F2018%2F09%2F27%2F2018-09-27-Digital_Image_Processing_Ch3_Spatial_Domain_Image_Enhancement%2F</url>
     <content type="text"><![CDATA[Image Negative123im_input = im2double(imread('./Pics/Ch03/rose.jpg'));im_output = 1-im_input;figure, imshow([im_input im_output]), title('Gray-level Invert'); Log Transformations（对数变换）1234im_input = imread('./Pics/Ch03/spectrum.tif');im_output = 3*log(double(im_input)+1);figure, imshow(im_input); title('input image');figure, imshow(abs(im_output),[]); title('image Log transform'); Gamma correction（伽马校正）12345im_input = im2double(imread('./Pics/Ch03/MRI.jpg'));im_output1 = imadjust(im_input,[0;1], [0;1], 1.2);im_output2 = imadjust(im_input,[0;1], [0;1], 0.8);figure, imshow(im_input); title('input image');figure, imshow([im_output1 im_output2]); title('Gamma correction'); Contrast stretching（对比度拉伸）1234im_input = im2double(imread('.\Pics\Ch03\pollen.tif'));im_output = imadjust(im_input,[min(im_input(:)) max(im_input(:))], [0 1]);figure, imshow(im_input); title('input image');figure, imshow(im_output); title('Contrast stretch'); Histogram （直方图）12345678im_input = im2double(imread('.\Pics\Ch03\pollen.tif'));im_output = imadjust(im_input,[min(im_input(:)) max(im_input(:))], [0 1]);figure, imshow(im_input); title('input image'); figure, imshow(im_output); title('Contrast stretch');histogram(im_input,64,'EdgeColor','r','FaceAlpha',1,'FaceColor','r');hold on;histogram(im_output,64,'EdgeColor','k','FaceAlpha',0.2,'FaceColor','y');hold off; Histogram equalization（直方图均衡）123456789im_input = im2double(imread('.\Pics\Ch03\pollen.tif'));im_output = imadjust(im_input,[min(im_input(:)) max(im_input(:))], [0 1]);im_histeq = histeq(im_input);figure, imshow(im_input); title('input image'); figure, imshow(im_output); title('Contrast stretch');figure, imshow(im_histeq); title('Histgram equalization');histogram(im_input,64,'EdgeColor','r','FaceAlpha',0.5,'FaceColor','r');histogram(im_output,64,'EdgeColor','g','FaceAlpha',0.5,'FaceColor','g');histogram(im_histeq,64,'EdgeColor','b','FaceAlpha',0.5,'FaceColor','b'); Histogram specification（直方图规定化）123456789im_input = im2double(imread('.\Pics\Ch03\pollen.tif'));im_ref = im2double(imread('.\Pics\Ch01\gray.jpg'));im_output = imhistmatch(im_input,im_ref,64);figure, imshow(im_input); title('input image'); histogram(im_input,64,'EdgeColor','r','FaceAlpha',0.5,'FaceColor','r');figure, imshow(im_ref); title('Contrast stretch');histogram(im_ref,64,'EdgeColor','g','FaceAlpha',0.5,'FaceColor','g');figure, imshow(im_output); title('Histgram equalization');histogram(im_output,64,'EdgeColor','b','FaceAlpha',0.5,'FaceColor','b'); Adaptive histogram equalization（自适应直方图均衡）12345678910111213im_input = im2double(imread('.\Pics\Ch03\planet.png'));figure, imshow(im_input); title('input image'); histogram(im_input,64,'EdgeColor','r','FaceAlpha',0.5,'FaceColor','r');im_output1 = histeq(im_input);figure, imshow(im_output1); title('Histogram equalization result'); histogram(im_output1,64,'EdgeColor','r','FaceAlpha',0.5,'FaceColor','r');imwrite(im_output1,'result1.jpg');im_output2 = adapthisteq(im_input,'NumTiles',[25 25], 'ClipLimit', 0.05);figure, imshow(im_output2); title('Adaptive histogram equalization result');histogram(im_output2,64,'EdgeColor','g','FaceAlpha',0.5,'FaceColor','g');imwrite(im_output2,'result2.jpg'); 空域滤波基础11234567891011im_input = im2double(imread('.\Pics\Ch03\test.tif'));figure, imshow(im_input); title('input image'); H1=[1 1 1;1 1 1;1 1 1]/9;im_output1 = filter2(H1,im_input,'same');figure, imshow(im_output1); title('average filter1');H2 = fspecial('average',35);im_output2 = imfilter(im_input,H2,'symmetric','same','conv');figure, imshow(im_output2); title('average filter2'); 空域滤波基础21234567891011121314im_input = im2double(imread('.\Pics\Ch03\test.tif'));figure, imshow(im_input); title('input image'); H1 = fspecial('average',3);im_output1 = imfilter(im_input,H1);figure, imshow(im_output1); title('average filter');H2 = fspecial('gaussian',[3 3],0.5);im_output2 = imfilter(im_input,H2);figure, imshow(im_output2); title('Gaussian filter');H3 = fspecial('log',[5 5], 0.5);im_output3 = imfilter(im_input,H3);figure, imshow(im_output3); title('LoG filter'); 空域滤波基础312345678910im_input = im2double(imread('.\Pics\Ch03\test.tif'));figure, imshow(im_input); title('input image'); H1 = fspecial('average',3);im_output1 = imfilter(im_input,H1);figure, imshow(im_output1); title('average filter1');H2 = [1 2 1;2 4 2;1 2 1]/16;im_output2 = imfilter(im_input,H2);figure, imshow(im_output2); title('average filter2'); Smoothing Filtering (平滑滤波)12345678910111213141516im_input = im2double(imread('.\Pics\Ch03\test.tif')); %H1 = fspecial('average',3);H1 = [1 2 1;2 4 2;1 2 1]/16;im_output1 = imfilter(im_input,H1);H2 = fspecial('average',5);im_output2 = imfilter(im_input,H2);H3 = fspecial('average',9);im_output3 = imfilter(im_input,H3);H4 = fspecial('average',15);im_output4 = imfilter(im_input,H4);H5 = fspecial('average',35);im_output5 = imfilter(im_input,H5);figure, imshow([im_input im_output1;im_output2 im_output3;im_output4 im_output5]); title('smooting filter with different size of mask'); Median filter V.S Average Filter(平滑滤波)123456789im_input = im2double(imread('.\Pics\Ch03\noisy1.tif')); figure, imshow(im_input); title('input image'); H1 = fspecial('average',3);im_output1 = imfilter(im_input,H1);im_output2 = medfilt2(im_input);figure, imshow([im_output1 im_output2]); title('smooting filter v.s median filter'); Median filter V.S Average Filter(平滑滤波)2123456789im_input = im2double(imread('.\Pics\Ch03\noisy2.tif')); figure, imshow(im_input); title('input image'); H1 = fspecial('average',3);im_output1 = imfilter(im_input,H1);im_output2 = medfilt2(im_input,[5 5]);figure, imshow([im_output1 im_output2]); title('smooting filter v.s median filter'); Laplacian Operator1234567891011im_input = im2double(imread('.\Pics\Ch03\moon.tif')); figure, imshow(im_input); title('input image'); H1 = [0 1 0; 1 -4 1; 0 1 0];H2 = [1 1 1; 1 -8 1; 1 1 1];im_output1 = imfilter(im_input,H1);im_output2 = imfilter(im_input,H2);im_output3 = im_input-im_output2;%figure, imshow(im_output1,[]); title('Laplacian operator1');%figure, imshow(im_output2,[]); title('Laplacian operator2');figure, imshow([im_input im_output3]); title('sharpen using Laplacian operator'); Unsharpen Operator and highboosting filtering1234567891011im_input = im2double(imread('.\Pics\Ch03\moon.tif')); figure, imshow(im_input); title('input image'); filter_mask = fspecial('gaussian');im_output1 = im_input+1*(im_input - imfilter(im_input,filter_mask));im_output2 = im_input+10*(im_input - imfilter(im_input,filter_mask));figure, imshow(im_output1); title('Unsharpen operator');figure, imshow([im_output1 im_output2]); title('highboosting filter'); Gradient operator123456789101112im_input = im2double(imread('.\Pics\Ch03\machine.png')); figure, imshow(im_input); title('input image'); H1 = [1,1,1;0,0,0;-1,-1,-1];H2 = [1,2,1;0,0,0;-1,-2,-1];im_output1 = imfilter(im_input,H1);im_output2 = imfilter(im_input,H2);figure, imshow(im_output1); title('Prewitt operator');figure, imshow(im_output2); title('Sobel filter');]]></content>
@@ -58,8 +69,8 @@
         <category>Matlab</category>
       </categories>
       <tags>
-        <tag>Communication System</tag>
         <tag>Matlab</tag>
+        <tag>Communication System</tag>
         <tag>Random Process</tag>
       </tags>
   </entry>
@@ -72,8 +83,8 @@
         <category>Matlab</category>
       </categories>
       <tags>
-        <tag>Matlab</tag>
         <tag>DSP</tag>
+        <tag>Matlab</tag>
       </tags>
   </entry>
   <entry>
@@ -114,9 +125,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Python学习-assert的作用]]></title>
-    <url>%2F2018%2F08%2F19%2F2018-08-19-Python%E5%AD%A6%E4%B9%A0%E2%80%94assert%2F</url>
-    <content type="text"><![CDATA[简单来说，assert就是为程序提供一个判断，如果assert里面的内容成立，为真，那么程序就向下执行，如果发现assert里面的东西是假的，就抛出AssertionError的错误。 下面是几个语句，很清楚的看到了assert的作用12345678910111213141516171819202122# 数值判断&gt;&gt;&gt; a = 3&gt;&gt;&gt; assert(a==3)&gt;&gt;&gt; assert(a &lt; 4)&gt;&gt;&gt; assert(a &gt; 4)Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AssertionError# True/Flase判断&gt;&gt;&gt; assert(True)&gt;&gt;&gt; assert(False)Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AssertionError# 1/0判断&gt;&gt;&gt; assert(1)&gt;&gt;&gt; assert(0)Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AssertionError]]></content>
+    <title><![CDATA[Python学习-深浅copy]]></title>
+    <url>%2F2018%2F08%2F19%2F2018-08-19-Python%E5%AD%A6%E4%B9%A0-%E6%B7%B1%E6%B5%85copy%2F</url>
+    <content type="text"><![CDATA[废话不多说，直接上代码 1234567891011121314151617181920212223242526&gt;&gt;&gt; import copy# 创建初始变量&gt;&gt;&gt; origin = [1, 2, [3, 4]]&gt;&gt;&gt; origin[1, 2, [3, 4]]# 浅copy&gt;&gt;&gt; shallow_copy = copy.copy(origin)&gt;&gt;&gt; shallow_copy[1, 2, [3, 4]]# 深copy&gt;&gt;&gt; deep_copy = copy.deepcopy(origin)&gt;&gt;&gt; deep_copy[1, 2, [3, 4]]# 修改原始变量&gt;&gt;&gt; origin[2][1] = 99&gt;&gt;&gt; origin[1, 2, [3, 99]]# 浅copy跟着变了，但深copy没有跟着变&gt;&gt;&gt; shallow_copy[1, 2, [3, 99]]&gt;&gt;&gt; deep_copy[1, 2, [3, 4]] 浅copy跟着变了，但深copy没有跟着变]]></content>
       <categories>
         <category>Python</category>
       </categories>
@@ -125,9 +136,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Python学习-深浅copy]]></title>
-    <url>%2F2018%2F08%2F19%2F2018-08-19-Python%E5%AD%A6%E4%B9%A0-%E6%B7%B1%E6%B5%85copy%2F</url>
-    <content type="text"><![CDATA[废话不多说，直接上代码 1234567891011121314151617181920212223242526&gt;&gt;&gt; import copy# 创建初始变量&gt;&gt;&gt; origin = [1, 2, [3, 4]]&gt;&gt;&gt; origin[1, 2, [3, 4]]# 浅copy&gt;&gt;&gt; shallow_copy = copy.copy(origin)&gt;&gt;&gt; shallow_copy[1, 2, [3, 4]]# 深copy&gt;&gt;&gt; deep_copy = copy.deepcopy(origin)&gt;&gt;&gt; deep_copy[1, 2, [3, 4]]# 修改原始变量&gt;&gt;&gt; origin[2][1] = 99&gt;&gt;&gt; origin[1, 2, [3, 99]]# 浅copy跟着变了，但深copy没有跟着变&gt;&gt;&gt; shallow_copy[1, 2, [3, 99]]&gt;&gt;&gt; deep_copy[1, 2, [3, 4]] 浅copy跟着变了，但深copy没有跟着变]]></content>
+    <title><![CDATA[Python学习-assert的作用]]></title>
+    <url>%2F2018%2F08%2F19%2F2018-08-19-Python%E5%AD%A6%E4%B9%A0%E2%80%94assert%2F</url>
+    <content type="text"><![CDATA[简单来说，assert就是为程序提供一个判断，如果assert里面的内容成立，为真，那么程序就向下执行，如果发现assert里面的东西是假的，就抛出AssertionError的错误。 下面是几个语句，很清楚的看到了assert的作用12345678910111213141516171819202122# 数值判断&gt;&gt;&gt; a = 3&gt;&gt;&gt; assert(a==3)&gt;&gt;&gt; assert(a &lt; 4)&gt;&gt;&gt; assert(a &gt; 4)Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AssertionError# True/Flase判断&gt;&gt;&gt; assert(True)&gt;&gt;&gt; assert(False)Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AssertionError# 1/0判断&gt;&gt;&gt; assert(1)&gt;&gt;&gt; assert(0)Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AssertionError]]></content>
       <categories>
         <category>Python</category>
       </categories>
