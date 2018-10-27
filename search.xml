@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python学习 - 写json爬虫]]></title>
+    <url>%2F2018%2F10%2F28%2F2018-10-28-Python%E5%AD%A6%E4%B9%A0-%E5%86%99json%E7%88%AC%E8%99%AB%2F</url>
+    <content type="text"><![CDATA[Python学习 - 写json爬虫@(python) Talk less, code more 这个程序利用百度地图API发送HTTP Get Request请求，将我们的GPS数据转化成坐标对应的json文件，里面包含了这个gps的行政级别的地区，即“国家”，“省份”，“城市名”等，输出为字典形式。 下面是浏览器输出的结果。 我们请求首先构造一个url，这是一个json文件的url。但是有一点需要注意，我们程序将json文件转化为dict形式的时候，由于百度地图API会自动在数据周围添加上一个括号，所以我们先要去掉这个括号，用re来完成，具体代码如下。 1234567891011121314151617181920212223242526272829# 此函数构造一个HTTP request 请求，请求对象为一个json格式的文件，并将json格式的文件转化为dict形式import requestsimport jsonimport redef req_json_to_dict(url): # 输入为一个"xxx/xxx/xxx.json"这样的url地址 # 构造HTTP GET Request，返回的网页内容存储到r中 r = requests.get(url) json_response = r.content.decode() # 删掉原始json数据两边的括号 p1 = re.compile(r'[(](.*?)[)]', re.S) pure_info = re.findall(p1, json_response)[0] # 将json字符串转换成dic字典对象 dict_json = json.loads(pure_info) return dict_jsonif __name__ == "__main__": url = "http://api.map.baidu.com/geocoder/v2/?callback=renderReverse&amp;location=30.882428000000004,75.832577&amp;output=json&amp;pois=1&amp;ak=vtZ2V5pp9VcMfvvpMf55SaDoCzLLYvGA" dict_json = req_json_to_dict(url) 我们运行一下程序，并查看每一步的变量的类型和值。 12# 首先，我们发送一个HTTP GET请求r = requests.get(url) 下面显示print(type(r))和print(r)的结果，以下同上：12&lt;class 'requests.models.Response'&gt;&lt;Response [200]&gt; 可以看出，r是一个HTTP响应，里面已经包含了我们需要的json信息。1234567print(type(r.content))print(r.content)# 输出&lt;class 'bytes'&gt;b'renderReverse&amp;&amp;renderReverse(&#123;"status":0,"result":&#123;"location":&#123;"lng":75.83257699999999,"lat":30.882427846565635&#125;,"formatted_address":"Ludhiana Bypass Road, Ludhiana, Punjab, India","business":"","addressComponent":&#123;"country":"India","country_code":31080,"country_code_iso":"IND","country_code_iso2":"IN","province":"Punjab","city":"Ludhiana","city_level":2,"district":"","town":"","adcode":"0","street":"Ludhiana Bypass Road","street_number":"","direction":"","distance":""&#125;,"pois":[],"roads":[],"poiRegions":[],"sematic_description":"","cityCode":32234&#125;&#125;)' 我们可以看到，这是一个二进制码，我们需要转成字符串，我们在一个bytes类型的数据后边使用deocde()函数，就可以将其转化为str类型12345678print(type(r.content.decode()))print(r.content.decode())# 输出&lt;class 'str'&gt;renderReverse&amp;&amp;renderReverse(&#123;"status":0,"result":&#123;"location":&#123;"lng":75.83257699999999,"lat":30.882427846565635&#125;,"formatted_address":"Ludhiana Bypass Road, Ludhiana, Punjab, India","business":"","addressComponent":&#123;"country":"India","country_code":31080,"country_code_iso":"IND","country_code_iso2":"IN","province":"Punjab","city":"Ludhiana","city_level":2,"district":"","town":"","adcode":"0","street":"Ludhiana Bypass Road","street_number":"","direction":"","distance":""&#125;,"pois":[],"roads":[],"poiRegions":[],"sematic_description":"","cityCode":32234&#125;&#125;) 可以看到，这就是一个str类型了。我们发现这个json文件里面有一个字符串把整个json信息包起来了，我们使用re将其去掉。 123 # 删掉原始json数据两边的括号p1 = re.compile(r'[(](.*?)[)]', re.S)pure_info = re.findall(p1, json_response)[0] 123456print(type(pure_info))print(pure_info)# 输出&lt;class 'str'&gt;&#123;"status":0,"result":&#123;"location":&#123;"lng":75.83257699999999,"lat":30.882427846565635&#125;,"formatted_address":"Ludhiana Bypass Road, Ludhiana, Punjab, India","business":"","addressComponent":&#123;"country":"India","country_code":31080,"country_code_iso":"IND","country_code_iso2":"IN","province":"Punjab","city":"Ludhiana","city_level":2,"district":"","town":"","adcode":"0","street":"Ludhiana Bypass Road","street_number":"","direction":"","distance":""&#125;,"pois":[],"roads":[],"poiRegions":[],"sematic_description":"","cityCode":32234&#125;&#125; 输出依然为字符串类型，但是删掉了两边的括号。然后我们将其转化为字典类型。 12# 将json字符串转换成dic字典对象dict_json = json.loads(pure_info) 123456789print(type(dict_json))print("###############################")print(dict_json)# 输出&lt;class 'dict'&gt;&#123;'status': 0, 'result': &#123;'location': &#123;'lng': 75.83257699999999, 'lat': 30.882427846565633&#125;, 'formatted_address': 'Ludhiana Bypass Road, Ludhiana, Punjab, India', 'business': '', 'addressComponent': &#123;'country': 'India', 'country_code': 31080, 'country_code_iso': 'IND', 'country_code_iso2': 'IN', 'province': 'Punjab', 'city': 'Ludhiana', 'city_level': 2, 'district': '', 'town': '', 'adcode': '0', 'street': 'Ludhiana Bypass Road', 'street_number': '', 'direction': '', 'distance': ''&#125;, 'pois': [], 'roads': [], 'poiRegions': [], 'sematic_description': '', 'cityCode': 32234&#125;&#125; 可以看出，我们已经将其转化为字典类型了，之后输出为字典类型的数据，便于后续对数据进行提取。]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>爬虫</tag>
+        <tag>API</tag>
+        <tag>Json</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Pandas学习-Series()转成str操作，读取gps]]></title>
+    <url>%2F2018%2F10%2F22%2F2018-10-22-Pandas%E5%AD%A6%E4%B9%A0-Series%E8%BD%AC%E6%88%90str%E6%93%8D%E4%BD%9C-%E8%AF%BB%E5%8F%96gps%2F</url>
+    <content type="text"><![CDATA[Pandas学习-Series()转成str操作，读取gps@(我的第一个笔记本) Talk less, code more 在DataFrame中取一列转化成Series类型，对Series类型进行字符串分割，便可以得到坐标信息。1234567891011import pandas as pddata_file = 'matchResult_10.txt'names = 'app_name,app_kind,app_type,ip,nation,gps,size'names = names.split(',')data = pd.read_csv(data_file, header=None, names=names)data['gps_xy'] = data['gps'].str.split('#')print(data['gps_xy']) 输出12345678910110 [30.882428, 75.832577]1 [22.9009009009009, 84.14595791325802]2 [20.81081081081081, 70.70283823391588]3 [26.27027027027027, 72.99908113768355]4 [26.7927864, 84.5345949]5 [24.4353437, 85.866535]6 [26.4265576, 76.6643728]7 [26.7927864, 84.5345949]8 [20.46846846846847, 75.00577673385992]9 [25.7397946, 77.4759334]Name: gps_xy, dtype: object]]></content>
+      <categories>
+        <category>Pandas</category>
+      </categories>
+      <tags>
+        <tag>Pandas</tag>
+        <tag>csv</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python学习-将逗号分隔的字符串转化为列表]]></title>
     <url>%2F2018%2F10%2F21%2F2018-10-21-Python%E5%AD%A6%E4%B9%A0-%E5%B0%86%E9%80%97%E5%8F%B7%E5%88%86%E9%9A%94%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E5%8C%96%E4%B8%BA%E5%88%97%E8%A1%A8%2F</url>
     <content type="text"><![CDATA[Python学习-将逗号分隔的字符串转化为列表@(python) Talk less, code more 用split()函数可以将用逗号分隔的str转化为list12345678columns = 'app_name, app_kind, app_type, md5, sender, receiver, timestamp, ip, nation, gps, size'print('type = ', type(columns))print(columns)# 使用split尽心分割columns = columns.split(',')print('type = ', type(columns))print(columns) 123456# 输出type = &lt;class 'str'&gt;app_name, app_kind, app_type, md5, sender, receiver, timestamp, ip, nation, gps, size# 转化后输出type = &lt;class 'list'&gt;['app_name', ' app_kind', ' app_type', ' md5', ' sender', ' receiver', ' timestamp', ' ip', ' nation', ' gps', ' size']]]></content>
@@ -9,6 +35,17 @@
       </categories>
       <tags>
         <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Pandas学习-DataFrame()按列索引]]></title>
+    <url>%2F2018%2F10%2F21%2F2018-10-21-Pandas%E5%AD%A6%E4%B9%A0-DataFrame()%E6%8C%89%E5%88%97%E7%B4%A2%E5%BC%95%2F</url>
+    <content type="text"><![CDATA[Pandas学习-DataFrame()按列索引@(python) Talk less, code more 12345678910import pandas as pddata_file = 'matchResult_10.txt'names = 'app_name, app_kind, app_type, ip, nation, gps, size'names = names.split(',')data = pd.read_csv(data_file, header=None, names=names)# 查找' gps'这一列的数据print(data[' gps']) 注意！！！：这里要注意一下空格的问题。因为定义数据头names的时候习惯性的在每个类型前面加了个空格（也就是习惯性的在逗号后面加了个空格），所以真正的索引值是&#39; gps&#39;而不是&#39;gps&#39;所以我们将前面的空格去掉。这也告诉我们，数据文件不要随便添加空格。 输出12345678910110 30.882428#75.8325771 22.9009009009009#84.145957913258022 20.81081081081081#70.702838233915883 26.27027027027027#72.999081137683554 26.7927864#84.53459495 24.4353437#85.8665356 26.4265576#76.66437287 26.7927864#84.53459498 20.46846846846847#75.005776733859929 25.7397946#77.4759334Name: gps, dtype: object 更改后的结果12345678910import pandas as pddata_file = 'matchResult_10.txt'names = 'app_name,app_kind,app_type,ip,nation,gps,size'names = names.split(',')data = pd.read_csv(data_file, header=None, names=names)# 查找' gps'这一列的数据print(data['gps']) 12345678910110 30.882428#75.8325771 22.9009009009009#84.145957913258022 20.81081081081081#70.702838233915883 26.27027027027027#72.999081137683554 26.7927864#84.53459495 24.4353437#85.8665356 26.4265576#76.66437287 26.7927864#84.53459498 20.46846846846847#75.005776733859929 25.7397946#77.4759334Name: gps, dtype: object 那这个data[&#39;gps&#39;]是什么类型的数据呢1234print(type(data['gps']))# 输出&lt;class 'pandas.core.series.Series'&gt;]]></content>
+      <categories>
+        <category>Pandas</category>
+      </categories>
+      <tags>
+        <tag>Pandas</tag>
       </tags>
   </entry>
   <entry>
@@ -81,8 +118,8 @@
         <category>Matlab</category>
       </categories>
       <tags>
-        <tag>Matlab</tag>
         <tag>Communication System</tag>
+        <tag>Matlab</tag>
         <tag>Random Process</tag>
       </tags>
   </entry>
@@ -95,8 +132,8 @@
         <category>Matlab</category>
       </categories>
       <tags>
-        <tag>DSP</tag>
         <tag>Matlab</tag>
+        <tag>DSP</tag>
       </tags>
   </entry>
   <entry>
@@ -137,9 +174,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Python学习-assert的作用]]></title>
-    <url>%2F2018%2F08%2F19%2F2018-08-19-Python%E5%AD%A6%E4%B9%A0%E2%80%94assert%2F</url>
-    <content type="text"><![CDATA[简单来说，assert就是为程序提供一个判断，如果assert里面的内容成立，为真，那么程序就向下执行，如果发现assert里面的东西是假的，就抛出AssertionError的错误。 下面是几个语句，很清楚的看到了assert的作用12345678910111213141516171819202122# 数值判断&gt;&gt;&gt; a = 3&gt;&gt;&gt; assert(a==3)&gt;&gt;&gt; assert(a &lt; 4)&gt;&gt;&gt; assert(a &gt; 4)Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AssertionError# True/Flase判断&gt;&gt;&gt; assert(True)&gt;&gt;&gt; assert(False)Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AssertionError# 1/0判断&gt;&gt;&gt; assert(1)&gt;&gt;&gt; assert(0)Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AssertionError]]></content>
+    <title><![CDATA[Python学习-深浅copy]]></title>
+    <url>%2F2018%2F08%2F19%2F2018-08-19-Python%E5%AD%A6%E4%B9%A0-%E6%B7%B1%E6%B5%85copy%2F</url>
+    <content type="text"><![CDATA[废话不多说，直接上代码 1234567891011121314151617181920212223242526&gt;&gt;&gt; import copy# 创建初始变量&gt;&gt;&gt; origin = [1, 2, [3, 4]]&gt;&gt;&gt; origin[1, 2, [3, 4]]# 浅copy&gt;&gt;&gt; shallow_copy = copy.copy(origin)&gt;&gt;&gt; shallow_copy[1, 2, [3, 4]]# 深copy&gt;&gt;&gt; deep_copy = copy.deepcopy(origin)&gt;&gt;&gt; deep_copy[1, 2, [3, 4]]# 修改原始变量&gt;&gt;&gt; origin[2][1] = 99&gt;&gt;&gt; origin[1, 2, [3, 99]]# 浅copy跟着变了，但深copy没有跟着变&gt;&gt;&gt; shallow_copy[1, 2, [3, 99]]&gt;&gt;&gt; deep_copy[1, 2, [3, 4]] 浅copy跟着变了，但深copy没有跟着变]]></content>
       <categories>
         <category>Python</category>
       </categories>
@@ -148,9 +185,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Python学习-深浅copy]]></title>
-    <url>%2F2018%2F08%2F19%2F2018-08-19-Python%E5%AD%A6%E4%B9%A0-%E6%B7%B1%E6%B5%85copy%2F</url>
-    <content type="text"><![CDATA[废话不多说，直接上代码 1234567891011121314151617181920212223242526&gt;&gt;&gt; import copy# 创建初始变量&gt;&gt;&gt; origin = [1, 2, [3, 4]]&gt;&gt;&gt; origin[1, 2, [3, 4]]# 浅copy&gt;&gt;&gt; shallow_copy = copy.copy(origin)&gt;&gt;&gt; shallow_copy[1, 2, [3, 4]]# 深copy&gt;&gt;&gt; deep_copy = copy.deepcopy(origin)&gt;&gt;&gt; deep_copy[1, 2, [3, 4]]# 修改原始变量&gt;&gt;&gt; origin[2][1] = 99&gt;&gt;&gt; origin[1, 2, [3, 99]]# 浅copy跟着变了，但深copy没有跟着变&gt;&gt;&gt; shallow_copy[1, 2, [3, 99]]&gt;&gt;&gt; deep_copy[1, 2, [3, 4]] 浅copy跟着变了，但深copy没有跟着变]]></content>
+    <title><![CDATA[Python学习-assert的作用]]></title>
+    <url>%2F2018%2F08%2F19%2F2018-08-19-Python%E5%AD%A6%E4%B9%A0%E2%80%94assert%2F</url>
+    <content type="text"><![CDATA[简单来说，assert就是为程序提供一个判断，如果assert里面的内容成立，为真，那么程序就向下执行，如果发现assert里面的东西是假的，就抛出AssertionError的错误。 下面是几个语句，很清楚的看到了assert的作用12345678910111213141516171819202122# 数值判断&gt;&gt;&gt; a = 3&gt;&gt;&gt; assert(a==3)&gt;&gt;&gt; assert(a &lt; 4)&gt;&gt;&gt; assert(a &gt; 4)Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AssertionError# True/Flase判断&gt;&gt;&gt; assert(True)&gt;&gt;&gt; assert(False)Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AssertionError# 1/0判断&gt;&gt;&gt; assert(1)&gt;&gt;&gt; assert(0)Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AssertionError]]></content>
       <categories>
         <category>Python</category>
       </categories>

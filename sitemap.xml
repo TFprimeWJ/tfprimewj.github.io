@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.jinwang.world/2018/10/22/2018-10-22-Pandas%E5%AD%A6%E4%B9%A0-Series%E8%BD%AC%E6%88%90str%E6%93%8D%E4%BD%9C-%E8%AF%BB%E5%8F%96gps/</loc>
+    
+    <lastmod>2018-10-27T17:45:16.370Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.jinwang.world/2018/10/28/2018-10-28-Python%E5%AD%A6%E4%B9%A0-%E5%86%99json%E7%88%AC%E8%99%AB/</loc>
+    
+    <lastmod>2018-10-27T17:43:13.733Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.jinwang.world/2018/10/21/2018-10-21-Pandas%E5%AD%A6%E4%B9%A0-DataFrame()%E6%8C%89%E5%88%97%E7%B4%A2%E5%BC%95/</loc>
+    
+    <lastmod>2018-10-21T13:39:44.515Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.jinwang.world/2018/10/21/2018-10-21-Pandas%E5%AD%A6%E4%B9%A0-pd.read_csv()%E6%B7%BB%E5%8A%A0header%E5%92%8Cnames/</loc>
     
     <lastmod>2018-10-21T12:53:23.458Z</lastmod>
