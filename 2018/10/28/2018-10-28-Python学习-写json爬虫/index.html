@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Python,爬虫,API,Json," />
+  <meta name="keywords" content="Python,Json,爬虫,API," />
 
 
 
@@ -80,7 +80,7 @@
 
 
 <meta name="description" content="Python学习 - 写json爬虫@(python)  Talk less, code more  这个程序利用百度地图API发送HTTP Get Request请求，将我们的GPS数据转化成坐标对应的json文件，里面包含了这个gps的行政级别的地区，即“国家”，“省份”，“城市名”等，输出为字典形式。 下面是浏览器输出的结果。 我们请求首先构造一个url，这是一个json文件的url。但是有">
-<meta name="keywords" content="Python,爬虫,API,Json">
+<meta name="keywords" content="Python,Json,爬虫,API">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python学习 - 写json爬虫">
 <meta property="og:url" content="http://www.jinwang.world/2018/10/28/2018-10-28-Python学习-写json爬虫/index.html">
@@ -88,7 +88,7 @@
 <meta property="og:description" content="Python学习 - 写json爬虫@(python)  Talk less, code more  这个程序利用百度地图API发送HTTP Get Request请求，将我们的GPS数据转化成坐标对应的json文件，里面包含了这个gps的行政级别的地区，即“国家”，“省份”，“城市名”等，输出为字典形式。 下面是浏览器输出的结果。 我们请求首先构造一个url，这是一个json文件的url。但是有">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://pd57dw586.bkt.clouddn.com/D2D/baidumap_api_json/Jietu20181028-012557@2x.jpg">
-<meta property="og:updated_time" content="2018-10-27T17:43:13.733Z">
+<meta property="og:updated_time" content="2018-10-27T17:48:19.492Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python学习 - 写json爬虫">
 <meta name="twitter:description" content="Python学习 - 写json爬虫@(python)  Talk less, code more  这个程序利用百度地图API发送HTTP Get Request请求，将我们的GPS数据转化成坐标对应的json文件，里面包含了这个gps的行政级别的地区，即“国家”，“省份”，“城市名”等，输出为字典形式。 下面是浏览器输出的结果。 我们请求首先构造一个url，这是一个json文件的url。但是有">
@@ -412,7 +412,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  948
+                  1,223
                 </span>
               
 
@@ -428,7 +428,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  6
                 </span>
               
             </div>
@@ -469,6 +469,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将json字符串转换成dic字典对象</span></span><br><span class="line">dict_json = json.loads(pure_info)</span><br></pre></td></tr></table></figure>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">print(type(dict_json))</span><br><span class="line">print(<span class="string">"###############################"</span>)</span><br><span class="line">print(dict_json)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出</span></span><br><span class="line"></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">dict</span>'&gt;</span></span><br><span class="line"><span class="class"></span></span><br><span class="line">&#123;'status': 0, 'result': &#123;'location': &#123;'lng': 75.83257699999999, 'lat': 30.882427846565633&#125;, 'formatted_address': 'Ludhiana Bypass Road, Ludhiana, Punjab, India', 'business': '', 'addressComponent': &#123;'country': 'India', 'country_code': 31080, 'country_code_iso': 'IND', 'country_code_iso2': 'IN', 'province': 'Punjab', 'city': 'Ludhiana', 'city_level': 2, 'district': '', 'town': '', 'adcode': '0', 'street': 'Ludhiana Bypass Road', 'street_number': '', 'direction': '', 'distance': ''&#125;, 'pois': [], 'roads': [], 'poiRegions': [], 'sematic_description': '', 'cityCode': 32234&#125;&#125;</span><br></pre></td></tr></table></figure>
 <p>可以看出，我们已经将其转化为字典类型了，之后输出为字典类型的数据，便于后续对数据进行提取。</p>
+<p>print版代码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 此函数构造一个HTTP request 请求，请求对象为一个json格式的文件，并将json格式的文件转化为dict形式</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">req_json_to_dict</span><span class="params">(url)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># url = "http://api.map.baidu.com/geocoder/v2/?callback=renderReverse&amp;location=30.882428000000004,75.832577&amp;output=json&amp;pois=1&amp;ak=vtZ2V5pp9VcMfvvpMf55SaDoCzLLYvGA"</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 构造HTTP GET Request，返回的网页内容存储到r中</span></span><br><span class="line">    r = requests.get(url)</span><br><span class="line">    print(<span class="string">"###############################"</span>)</span><br><span class="line">    print(type(r))</span><br><span class="line">    print(<span class="string">"###############################"</span>)</span><br><span class="line">    print(r)</span><br><span class="line">    json_response = r.content.decode()</span><br><span class="line">    print(<span class="string">"###############################"</span>)</span><br><span class="line">    print(type(r.content))</span><br><span class="line">    print(<span class="string">"###############################"</span>)</span><br><span class="line">    print(r.content)</span><br><span class="line">    print(<span class="string">"###############################"</span>)</span><br><span class="line">    print(type(r.content.decode()))</span><br><span class="line">    print(<span class="string">"###############################"</span>)</span><br><span class="line">    print(r.content.decode())</span><br><span class="line">    print(<span class="string">"###############################"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    print(type(json_response))</span><br><span class="line">    print(<span class="string">"###############################"</span>)</span><br><span class="line">    print(json_response)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 删掉原始json数据两边的括号</span></span><br><span class="line">    p1 = re.compile(<span class="string">r'[(](.*?)[)]'</span>, re.S)</span><br><span class="line">    pure_info = re.findall(p1, json_response)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    print(type(pure_info))</span><br><span class="line">    print(pure_info)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 将json字符串转换成dic字典对象</span></span><br><span class="line">    dict_json = json.loads(pure_info)</span><br><span class="line">    print(<span class="string">"###############################"</span>)</span><br><span class="line">    print(type(dict_json))</span><br><span class="line">    print(<span class="string">"###############################"</span>)</span><br><span class="line">    print(dict_json)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> dict_json</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line"></span><br><span class="line">    url = <span class="string">"http://api.map.baidu.com/geocoder/v2/?callback=renderReverse&amp;location=30.882428000000004,75.832577&amp;output=json&amp;pois=1&amp;ak=vtZ2V5pp9VcMfvvpMf55SaDoCzLLYvGA"</span></span><br><span class="line"></span><br><span class="line">    dict_json = req_json_to_dict(url)</span><br><span class="line"></span><br><span class="line">    print(type(dict_json))</span><br><span class="line">    print(dict_json)</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -488,11 +489,11 @@
           
             <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
           
+            <a href="/tags/Json/" rel="tag"><i class="fa fa-tag"></i> Json</a>
+          
             <a href="/tags/爬虫/" rel="tag"><i class="fa fa-tag"></i> 爬虫</a>
           
             <a href="/tags/API/" rel="tag"><i class="fa fa-tag"></i> API</a>
-          
-            <a href="/tags/Json/" rel="tag"><i class="fa fa-tag"></i> Json</a>
           
         </div>
       
@@ -514,6 +515,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/28/2018-10-28-Python学习-json.dumps和json.loads的用法/" rel="prev" title="Python学习-json.dumps和json.loads的用法">
+                Python学习-json.dumps和json.loads的用法 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -594,7 +599,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
