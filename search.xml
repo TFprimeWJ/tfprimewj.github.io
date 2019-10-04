@@ -197,9 +197,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Python学习-assert的作用]]></title>
-    <url>%2F2018%2F08%2F19%2F2018-08-19-Python%E5%AD%A6%E4%B9%A0%E2%80%94assert%2F</url>
-    <content type="text"><![CDATA[简单来说，assert就是为程序提供一个判断，如果assert里面的内容成立，为真，那么程序就向下执行，如果发现assert里面的东西是假的，就抛出AssertionError的错误。 下面是几个语句，很清楚的看到了assert的作用12345678910111213141516171819202122# 数值判断&gt;&gt;&gt; a = 3&gt;&gt;&gt; assert(a==3)&gt;&gt;&gt; assert(a &lt; 4)&gt;&gt;&gt; assert(a &gt; 4)Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AssertionError# True/Flase判断&gt;&gt;&gt; assert(True)&gt;&gt;&gt; assert(False)Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AssertionError# 1/0判断&gt;&gt;&gt; assert(1)&gt;&gt;&gt; assert(0)Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AssertionError]]></content>
+    <title><![CDATA[Python学习-深浅copy]]></title>
+    <url>%2F2018%2F08%2F19%2F2018-08-19-Python%E5%AD%A6%E4%B9%A0-%E6%B7%B1%E6%B5%85copy%2F</url>
+    <content type="text"><![CDATA[废话不多说，直接上代码 1234567891011121314151617181920212223242526&gt;&gt;&gt; import copy# 创建初始变量&gt;&gt;&gt; origin = [1, 2, [3, 4]]&gt;&gt;&gt; origin[1, 2, [3, 4]]# 浅copy&gt;&gt;&gt; shallow_copy = copy.copy(origin)&gt;&gt;&gt; shallow_copy[1, 2, [3, 4]]# 深copy&gt;&gt;&gt; deep_copy = copy.deepcopy(origin)&gt;&gt;&gt; deep_copy[1, 2, [3, 4]]# 修改原始变量&gt;&gt;&gt; origin[2][1] = 99&gt;&gt;&gt; origin[1, 2, [3, 99]]# 浅copy跟着变了，但深copy没有跟着变&gt;&gt;&gt; shallow_copy[1, 2, [3, 99]]&gt;&gt;&gt; deep_copy[1, 2, [3, 4]] 浅copy跟着变了，但深copy没有跟着变]]></content>
       <categories>
         <category>Python</category>
       </categories>
@@ -208,9 +208,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Python学习-深浅copy]]></title>
-    <url>%2F2018%2F08%2F19%2F2018-08-19-Python%E5%AD%A6%E4%B9%A0-%E6%B7%B1%E6%B5%85copy%2F</url>
-    <content type="text"><![CDATA[废话不多说，直接上代码 1234567891011121314151617181920212223242526&gt;&gt;&gt; import copy# 创建初始变量&gt;&gt;&gt; origin = [1, 2, [3, 4]]&gt;&gt;&gt; origin[1, 2, [3, 4]]# 浅copy&gt;&gt;&gt; shallow_copy = copy.copy(origin)&gt;&gt;&gt; shallow_copy[1, 2, [3, 4]]# 深copy&gt;&gt;&gt; deep_copy = copy.deepcopy(origin)&gt;&gt;&gt; deep_copy[1, 2, [3, 4]]# 修改原始变量&gt;&gt;&gt; origin[2][1] = 99&gt;&gt;&gt; origin[1, 2, [3, 99]]# 浅copy跟着变了，但深copy没有跟着变&gt;&gt;&gt; shallow_copy[1, 2, [3, 99]]&gt;&gt;&gt; deep_copy[1, 2, [3, 4]] 浅copy跟着变了，但深copy没有跟着变]]></content>
+    <title><![CDATA[Python学习-assert的作用]]></title>
+    <url>%2F2018%2F08%2F19%2F2018-08-19-Python%E5%AD%A6%E4%B9%A0%E2%80%94assert%2F</url>
+    <content type="text"><![CDATA[简单来说，assert就是为程序提供一个判断，如果assert里面的内容成立，为真，那么程序就向下执行，如果发现assert里面的东西是假的，就抛出AssertionError的错误。 下面是几个语句，很清楚的看到了assert的作用12345678910111213141516171819202122# 数值判断&gt;&gt;&gt; a = 3&gt;&gt;&gt; assert(a==3)&gt;&gt;&gt; assert(a &lt; 4)&gt;&gt;&gt; assert(a &gt; 4)Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AssertionError# True/Flase判断&gt;&gt;&gt; assert(True)&gt;&gt;&gt; assert(False)Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AssertionError# 1/0判断&gt;&gt;&gt; assert(1)&gt;&gt;&gt; assert(0)Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AssertionError]]></content>
       <categories>
         <category>Python</category>
       </categories>
