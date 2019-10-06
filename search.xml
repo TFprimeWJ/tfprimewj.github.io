@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Leetcode 53 Maximum Subarray]]></title>
+    <url>%2F2019%2F10%2F07%2F2019-10-07-LC53-Maximum-Subarray%2F</url>
+    <content type="text"><![CDATA[53. Maximum Subarray Dynamic Programming ProblemGiven an integer arraynums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum. Example: 12345678Input: [-2,1,-3,4,-1,2,1,-5,4],Output: 6Explanation: [4,-1,2,1] has the largest sum = 6. Follow up: If you have figured out the O(_n_) solution, try coding another solution using the divide and conquer approach, which is more subtle. Solution123456789101112131415class MaximumSubarray_SimpleJava &#123; public int maxSubArray (int[] A) &#123; int max = Integer.MIN_VALUE, sum = 0; for (int i = 0; i &lt; A.length; i++) &#123; if (sum &lt; 0) sum = A[i]; else sum += A[i]; if (max &lt; sum) max = sum; &#125; return max; &#125;&#125; Explanation max is used to track the max result so far sum is used to track the current sum result. Whenever sum is greater than max, we substitute max with sum. The main idea of this simple method is to notice the negative value. Whenever there appears negative value in sum, we stop adding new number to sum and start generate sum again. During this process, each result will be compared to the current maximum result to find the largest one. If the sum of a contiguous series of numbers is negative (&lt;0), than we can just ignore all the numbers before and start the same process again at the next number following the number series.]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>Dynamic Programming</tag>
+        <tag>Leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[What is Nodejs? - A beginner's View]]></title>
+    <url>%2F2019%2F10%2F06%2F2019-10-06-Node-Introduction%2F</url>
+    <content type="text"><![CDATA[问题：什么是Node.js?在学习nodejs的时候，老师直接教我们怎么安装nodejs，然后直接使用node命令便可以执行javascript代码。但是node究竟扮演了一个什么样的角色我一直不是很清楚，下面是我作为一个初学者对node初步的思考。 我的理解我们知道我们向服务器请求一个网页，服务器返回给我们一个html文件，然后这个html会渲染，这时就会加载里面的css、js等代码。在这个过程中，js只不过是一个渲染的工具，js完完全全使用在前端，也是用户的客户端，也就是我们的浏览器。 即，js完全是一个前端渲染工具，后端有后端自己的语言，与js无关。 但是我们在使用node的过程中发现，我们本身并没有自己去写后端，我们直接用node命令就可以造出一个服务器，在这个服务器上我们可以写自己的GET、POST页面。而且最重要的是，node的代码就是js。 所以，我们此时发现，我们已经在用js写后端了！ 也就是说，我们现在使用js既可以写前端，也可以写后端了！ 多么神奇！]]></content>
+      <categories>
+        <category>Web Development</category>
+      </categories>
+      <tags>
+        <tag>Web Development</tag>
+        <tag>Nodejs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[First Express App]]></title>
+    <url>%2F2019%2F09%2F29%2F2019-9-29-First-Express-App%2F</url>
+    <content type="text"><![CDATA[Frist Express AppUdemy Web Development: 265 Our First Express App Create folder &amp; fileCreate root folder and app.js mkdir FirstExpressApp cd FirstExpressApp touch app.js Install expressInstall node package: express npm install express terminal output when installing express: 123456789101112jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Udemy_Web_Development/NodeJS_Part/FirstExpressApp  npm install expressnpm WARN saveError ENOENT: no such file or directory, open '/Users/jinwang/Desktop/Udemy_Web_Development/NodeJS_Part/FirstExpressApp/package.json'npm notice created a lockfile as package-lock.json. You should commit this file.npm WARN enoent ENOENT: no such file or directory, open '/Users/jinwang/Desktop/Udemy_Web_Development/NodeJS_Part/FirstExpressApp/package.json'npm WARN FirstExpressApp No descriptionnpm WARN FirstExpressApp No repository field.npm WARN FirstExpressApp No README datanpm WARN FirstExpressApp No license field.+ express@4.17.1added 50 packages from 37 contributors and audited 126 packages in 24.191sfound 0 vulnerabilities Now, there are 3 file/folder in the root folder: app.js node_modules package-lock.json Open node_modules: cd node_modules, ls Here we see: 12345678910accepts destroy iconv-lite negotiator sendarray-flatten ee-first inherits on-finished serve-staticbody-parser encodeurl ipaddr.js parseurl setprototypeofbytes escape-html media-typer path-to-regexp statusescontent-disposition etag merge-descriptors proxy-addr toidentifiercontent-type express methods qs type-iscookie finalhandler mime range-parser unpipecookie-signature forwarded mime-db raw-body utils-mergedebug fresh mime-types safe-buffer varydepd http-errors ms safer-buffer Even though we only install express package, there are so many other folders generated along with the process. Import expressInside app.js 1234var express = require("express"); // Typo warning: require, not requiredvar app = express();app.xxx // xxx stands for its functions Start a serverInside app.js 123456var express = require(&quot;express&quot;);var app = express();app.listen(3000, function()&#123; console.log(&quot;Server has started!!!&quot;);&#125;); This code will start a server at local host port 3000. We can access the server by typing: http://localhost:3000 into our browser. Create GET response1234567891011121314151617181920212223var express = require("express");var app = express();// "/" =&gt; "Hi there!"app.get("/", function(req, res)&#123; res.send("Hi there!"); &#125;);// "/bye" =&gt; "Goodbye!"app.get("/bye", function(req, res)&#123; res.send("Goodbye");&#125;);// "/dog" =&gt; "MEOW!"app.get("/dogs", function(req, res)&#123; console.log("Someone has made a request to /dogs!!!"); res.send("MEOW!");&#125;);// Tell Express to listen for requests (start server)app.listen(3000, function()&#123; console.log("Server has started!!!");&#125;); NOTE: Everytime we change app.js. be sure to restart the server. Press ctrl + c to close the server and type node app.js to start the server again. Now, we can type 3 different url into the browser. localhost:3000/ localhost:3000/bye localhost:3000/dogs]]></content>
+      <categories>
+        <category>Web Development</category>
+      </categories>
+      <tags>
+        <tag>Web Development</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python学习-将dict写入txt文件]]></title>
     <url>%2F2018%2F10%2F28%2F2018-10-28-Python%E5%AD%A6%E4%B9%A0-%E5%B0%86dict%E5%86%99%E5%85%A5txt%E6%96%87%E4%BB%B6%2F</url>
     <content type="text"><![CDATA[Python学习-将dict写入txt文件1a = ['Jin Wang', 'Jiawei Xu', 'Peiyang Shi', 'Zheqi Zhang'] 12for line in a: print(line) Jin Wang Jiawei Xu Peiyang Shi Zheqi Zhang 1234i = 1for line in a: print(str(i) + ',' + line) i = i + 1 1,Jin Wang 2,Jiawei Xu 3,Peiyang Shi 4,Zheqi Zhang]]></content>
@@ -12,18 +47,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Python学习-json.dumps和json.loads的用法]]></title>
-    <url>%2F2018%2F10%2F28%2F2018-10-28-Python%E5%AD%A6%E4%B9%A0-json.dumps%E5%92%8Cjson.loads%E7%9A%84%E7%94%A8%E6%B3%95%2F</url>
-    <content type="text"><![CDATA[Python学习-json.dumps和json.loads的用法@(python) Talk less, code more 1import json 1a = &#123;'name': 'wang', 'age': 29&#125; 1print(type(a), '\n', a) &lt;class &apos;dict&apos;&gt; {&apos;name&apos;: &apos;wang&apos;, &apos;age&apos;: 29} json.dumps()将dict转化为str 1b = json.dumps(a) 1print(type(b), '\n', b) &lt;class &apos;str&apos;&gt; {&quot;name&quot;: &quot;wang&quot;, &quot;age&quot;: 29} json.loads()将str转化为dict 1c = json.loads(b) 1print(type(c), '\n', c) &lt;class &apos;dict&apos;&gt; {&apos;name&apos;: &apos;wang&apos;, &apos;age&apos;: 29}]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>Json</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Python学习 - 写json爬虫]]></title>
     <url>%2F2018%2F10%2F28%2F2018-10-28-Python%E5%AD%A6%E4%B9%A0-%E5%86%99json%E7%88%AC%E8%99%AB%2F</url>
     <content type="text"><![CDATA[Python学习 - 写json爬虫@(python) Talk less, code more 这个程序利用百度地图API发送HTTP Get Request请求，将我们的GPS数据转化成坐标对应的json文件，里面包含了这个gps的行政级别的地区，即“国家”，“省份”，“城市名”等，输出为字典形式。 下面是浏览器输出的结果。 我们请求首先构造一个url，这是一个json文件的url。但是有一点需要注意，我们程序将json文件转化为dict形式的时候，由于百度地图API会自动在数据周围添加上一个括号，所以我们先要去掉这个括号，用re来完成，具体代码如下。 1234567891011121314151617181920212223242526272829# 此函数构造一个HTTP request 请求，请求对象为一个json格式的文件，并将json格式的文件转化为dict形式import requestsimport jsonimport redef req_json_to_dict(url): # 输入为一个"xxx/xxx/xxx.json"这样的url地址 # 构造HTTP GET Request，返回的网页内容存储到r中 r = requests.get(url) json_response = r.content.decode() # 删掉原始json数据两边的括号 p1 = re.compile(r'[(](.*?)[)]', re.S) pure_info = re.findall(p1, json_response)[0] # 将json字符串转换成dic字典对象 dict_json = json.loads(pure_info) return dict_jsonif __name__ == "__main__": url = "http://api.map.baidu.com/geocoder/v2/?callback=renderReverse&amp;location=30.882428000000004,75.832577&amp;output=json&amp;pois=1&amp;ak=vtZ2V5pp9VcMfvvpMf55SaDoCzLLYvGA" dict_json = req_json_to_dict(url) 我们运行一下程序，并查看每一步的变量的类型和值。 12# 首先，我们发送一个HTTP GET请求r = requests.get(url) 下面显示print(type(r))和print(r)的结果，以下同上：12&lt;class 'requests.models.Response'&gt;&lt;Response [200]&gt; 可以看出，r是一个HTTP响应，里面已经包含了我们需要的json信息。1234567print(type(r.content))print(r.content)# 输出&lt;class 'bytes'&gt;b'renderReverse&amp;&amp;renderReverse(&#123;"status":0,"result":&#123;"location":&#123;"lng":75.83257699999999,"lat":30.882427846565635&#125;,"formatted_address":"Ludhiana Bypass Road, Ludhiana, Punjab, India","business":"","addressComponent":&#123;"country":"India","country_code":31080,"country_code_iso":"IND","country_code_iso2":"IN","province":"Punjab","city":"Ludhiana","city_level":2,"district":"","town":"","adcode":"0","street":"Ludhiana Bypass Road","street_number":"","direction":"","distance":""&#125;,"pois":[],"roads":[],"poiRegions":[],"sematic_description":"","cityCode":32234&#125;&#125;)' 我们可以看到，这是一个二进制码，我们需要转成字符串，我们在一个bytes类型的数据后边使用deocde()函数，就可以将其转化为str类型12345678print(type(r.content.decode()))print(r.content.decode())# 输出&lt;class 'str'&gt;renderReverse&amp;&amp;renderReverse(&#123;"status":0,"result":&#123;"location":&#123;"lng":75.83257699999999,"lat":30.882427846565635&#125;,"formatted_address":"Ludhiana Bypass Road, Ludhiana, Punjab, India","business":"","addressComponent":&#123;"country":"India","country_code":31080,"country_code_iso":"IND","country_code_iso2":"IN","province":"Punjab","city":"Ludhiana","city_level":2,"district":"","town":"","adcode":"0","street":"Ludhiana Bypass Road","street_number":"","direction":"","distance":""&#125;,"pois":[],"roads":[],"poiRegions":[],"sematic_description":"","cityCode":32234&#125;&#125;) 可以看到，这就是一个str类型了。我们发现这个json文件里面有一个字符串把整个json信息包起来了，我们使用re将其去掉。 123 # 删掉原始json数据两边的括号p1 = re.compile(r'[(](.*?)[)]', re.S)pure_info = re.findall(p1, json_response)[0] 123456print(type(pure_info))print(pure_info)# 输出&lt;class 'str'&gt;&#123;"status":0,"result":&#123;"location":&#123;"lng":75.83257699999999,"lat":30.882427846565635&#125;,"formatted_address":"Ludhiana Bypass Road, Ludhiana, Punjab, India","business":"","addressComponent":&#123;"country":"India","country_code":31080,"country_code_iso":"IND","country_code_iso2":"IN","province":"Punjab","city":"Ludhiana","city_level":2,"district":"","town":"","adcode":"0","street":"Ludhiana Bypass Road","street_number":"","direction":"","distance":""&#125;,"pois":[],"roads":[],"poiRegions":[],"sematic_description":"","cityCode":32234&#125;&#125; 输出依然为字符串类型，但是删掉了两边的括号。然后我们将其转化为字典类型。 12# 将json字符串转换成dic字典对象dict_json = json.loads(pure_info) 123456789print(type(dict_json))print("###############################")print(dict_json)# 输出&lt;class 'dict'&gt;&#123;'status': 0, 'result': &#123;'location': &#123;'lng': 75.83257699999999, 'lat': 30.882427846565633&#125;, 'formatted_address': 'Ludhiana Bypass Road, Ludhiana, Punjab, India', 'business': '', 'addressComponent': &#123;'country': 'India', 'country_code': 31080, 'country_code_iso': 'IND', 'country_code_iso2': 'IN', 'province': 'Punjab', 'city': 'Ludhiana', 'city_level': 2, 'district': '', 'town': '', 'adcode': '0', 'street': 'Ludhiana Bypass Road', 'street_number': '', 'direction': '', 'distance': ''&#125;, 'pois': [], 'roads': [], 'poiRegions': [], 'sematic_description': '', 'cityCode': 32234&#125;&#125; 可以看出，我们已经将其转化为字典类型了，之后输出为字典类型的数据，便于后续对数据进行提取。 print版代码：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859# 此函数构造一个HTTP request 请求，请求对象为一个json格式的文件，并将json格式的文件转化为dict形式import requestsimport jsonimport redef req_json_to_dict(url): # url = "http://api.map.baidu.com/geocoder/v2/?callback=renderReverse&amp;location=30.882428000000004,75.832577&amp;output=json&amp;pois=1&amp;ak=vtZ2V5pp9VcMfvvpMf55SaDoCzLLYvGA" # 构造HTTP GET Request，返回的网页内容存储到r中 r = requests.get(url) print("###############################") print(type(r)) print("###############################") print(r) json_response = r.content.decode() print("###############################") print(type(r.content)) print("###############################") print(r.content) print("###############################") print(type(r.content.decode())) print("###############################") print(r.content.decode()) print("###############################") print(type(json_response)) print("###############################") print(json_response) # 删掉原始json数据两边的括号 p1 = re.compile(r'[(](.*?)[)]', re.S) pure_info = re.findall(p1, json_response)[0] print(type(pure_info)) print(pure_info) # 将json字符串转换成dic字典对象 dict_json = json.loads(pure_info) print("###############################") print(type(dict_json)) print("###############################") print(dict_json) return dict_jsonif __name__ == "__main__": url = "http://api.map.baidu.com/geocoder/v2/?callback=renderReverse&amp;location=30.882428000000004,75.832577&amp;output=json&amp;pois=1&amp;ak=vtZ2V5pp9VcMfvvpMf55SaDoCzLLYvGA" dict_json = req_json_to_dict(url) print(type(dict_json)) print(dict_json)]]></content>
@@ -32,8 +55,20 @@
       </categories>
       <tags>
         <tag>Python</tag>
+        <tag>Json</tag>
         <tag>爬虫</tag>
         <tag>API</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Python学习-json.dumps和json.loads的用法]]></title>
+    <url>%2F2018%2F10%2F28%2F2018-10-28-Python%E5%AD%A6%E4%B9%A0-json.dumps%E5%92%8Cjson.loads%E7%9A%84%E7%94%A8%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[Python学习-json.dumps和json.loads的用法@(python) Talk less, code more 1import json 1a = &#123;'name': 'wang', 'age': 29&#125; 1print(type(a), '\n', a) &lt;class &apos;dict&apos;&gt; {&apos;name&apos;: &apos;wang&apos;, &apos;age&apos;: 29} json.dumps()将dict转化为str 1b = json.dumps(a) 1print(type(b), '\n', b) &lt;class &apos;str&apos;&gt; {&quot;name&quot;: &quot;wang&quot;, &quot;age&quot;: 29} json.loads()将str转化为dict 1c = json.loads(b) 1print(type(c), '\n', c) &lt;class &apos;dict&apos;&gt; {&apos;name&apos;: &apos;wang&apos;, &apos;age&apos;: 29}]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
         <tag>Json</tag>
       </tags>
   </entry>
@@ -127,8 +162,8 @@
         <category>Digital Signal Processing</category>
       </categories>
       <tags>
-        <tag>Digital Signal Processing</tag>
         <tag>Matlab</tag>
+        <tag>Digital Signal Processing</tag>
         <tag>DTFT</tag>
       </tags>
   </entry>
@@ -155,8 +190,8 @@
         <category>Matlab</category>
       </categories>
       <tags>
-        <tag>Matlab</tag>
         <tag>DSP</tag>
+        <tag>Matlab</tag>
       </tags>
   </entry>
   <entry>
@@ -238,8 +273,8 @@
         <category>Keras</category>
       </categories>
       <tags>
-        <tag>Machine Learning</tag>
         <tag>Keras</tag>
+        <tag>Machine Learning</tag>
       </tags>
   </entry>
   <entry>
