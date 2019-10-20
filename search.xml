@@ -181,10 +181,6 @@
       <categories>
         <category>Pandas</category>
       </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>Pandas</tag>
-      </tags>
   </entry>
   <entry>
     <title><![CDATA[Pandas学习-DataFrame()按列索引]]></title>
@@ -202,24 +198,16 @@
     <url>%2F2018%2F09%2F27%2F2018-09-27-Digital_Image_Processing_Ch3_Spatial_Domain_Image_Enhancement%2F</url>
     <content type="text"><![CDATA[Image Negative123im_input = im2double(imread('./Pics/Ch03/rose.jpg'));im_output = 1-im_input;figure, imshow([im_input im_output]), title('Gray-level Invert'); Log Transformations（对数变换）1234im_input = imread('./Pics/Ch03/spectrum.tif');im_output = 3*log(double(im_input)+1);figure, imshow(im_input); title('input image');figure, imshow(abs(im_output),[]); title('image Log transform'); Gamma correction（伽马校正）12345im_input = im2double(imread('./Pics/Ch03/MRI.jpg'));im_output1 = imadjust(im_input,[0;1], [0;1], 1.2);im_output2 = imadjust(im_input,[0;1], [0;1], 0.8);figure, imshow(im_input); title('input image');figure, imshow([im_output1 im_output2]); title('Gamma correction'); Contrast stretching（对比度拉伸）1234im_input = im2double(imread('.\Pics\Ch03\pollen.tif'));im_output = imadjust(im_input,[min(im_input(:)) max(im_input(:))], [0 1]);figure, imshow(im_input); title('input image');figure, imshow(im_output); title('Contrast stretch'); Histogram （直方图）12345678im_input = im2double(imread('.\Pics\Ch03\pollen.tif'));im_output = imadjust(im_input,[min(im_input(:)) max(im_input(:))], [0 1]);figure, imshow(im_input); title('input image'); figure, imshow(im_output); title('Contrast stretch');histogram(im_input,64,'EdgeColor','r','FaceAlpha',1,'FaceColor','r');hold on;histogram(im_output,64,'EdgeColor','k','FaceAlpha',0.2,'FaceColor','y');hold off; Histogram equalization（直方图均衡）123456789im_input = im2double(imread('.\Pics\Ch03\pollen.tif'));im_output = imadjust(im_input,[min(im_input(:)) max(im_input(:))], [0 1]);im_histeq = histeq(im_input);figure, imshow(im_input); title('input image'); figure, imshow(im_output); title('Contrast stretch');figure, imshow(im_histeq); title('Histgram equalization');histogram(im_input,64,'EdgeColor','r','FaceAlpha',0.5,'FaceColor','r');histogram(im_output,64,'EdgeColor','g','FaceAlpha',0.5,'FaceColor','g');histogram(im_histeq,64,'EdgeColor','b','FaceAlpha',0.5,'FaceColor','b'); Histogram specification（直方图规定化）123456789im_input = im2double(imread('.\Pics\Ch03\pollen.tif'));im_ref = im2double(imread('.\Pics\Ch01\gray.jpg'));im_output = imhistmatch(im_input,im_ref,64);figure, imshow(im_input); title('input image'); histogram(im_input,64,'EdgeColor','r','FaceAlpha',0.5,'FaceColor','r');figure, imshow(im_ref); title('Contrast stretch');histogram(im_ref,64,'EdgeColor','g','FaceAlpha',0.5,'FaceColor','g');figure, imshow(im_output); title('Histgram equalization');histogram(im_output,64,'EdgeColor','b','FaceAlpha',0.5,'FaceColor','b'); Adaptive histogram equalization（自适应直方图均衡）12345678910111213im_input = im2double(imread('.\Pics\Ch03\planet.png'));figure, imshow(im_input); title('input image'); histogram(im_input,64,'EdgeColor','r','FaceAlpha',0.5,'FaceColor','r');im_output1 = histeq(im_input);figure, imshow(im_output1); title('Histogram equalization result'); histogram(im_output1,64,'EdgeColor','r','FaceAlpha',0.5,'FaceColor','r');imwrite(im_output1,'result1.jpg');im_output2 = adapthisteq(im_input,'NumTiles',[25 25], 'ClipLimit', 0.05);figure, imshow(im_output2); title('Adaptive histogram equalization result');histogram(im_output2,64,'EdgeColor','g','FaceAlpha',0.5,'FaceColor','g');imwrite(im_output2,'result2.jpg'); 空域滤波基础11234567891011im_input = im2double(imread('.\Pics\Ch03\test.tif'));figure, imshow(im_input); title('input image'); H1=[1 1 1;1 1 1;1 1 1]/9;im_output1 = filter2(H1,im_input,'same');figure, imshow(im_output1); title('average filter1');H2 = fspecial('average',35);im_output2 = imfilter(im_input,H2,'symmetric','same','conv');figure, imshow(im_output2); title('average filter2'); 空域滤波基础21234567891011121314im_input = im2double(imread('.\Pics\Ch03\test.tif'));figure, imshow(im_input); title('input image'); H1 = fspecial('average',3);im_output1 = imfilter(im_input,H1);figure, imshow(im_output1); title('average filter');H2 = fspecial('gaussian',[3 3],0.5);im_output2 = imfilter(im_input,H2);figure, imshow(im_output2); title('Gaussian filter');H3 = fspecial('log',[5 5], 0.5);im_output3 = imfilter(im_input,H3);figure, imshow(im_output3); title('LoG filter'); 空域滤波基础312345678910im_input = im2double(imread('.\Pics\Ch03\test.tif'));figure, imshow(im_input); title('input image'); H1 = fspecial('average',3);im_output1 = imfilter(im_input,H1);figure, imshow(im_output1); title('average filter1');H2 = [1 2 1;2 4 2;1 2 1]/16;im_output2 = imfilter(im_input,H2);figure, imshow(im_output2); title('average filter2'); Smoothing Filtering (平滑滤波)12345678910111213141516im_input = im2double(imread('.\Pics\Ch03\test.tif')); %H1 = fspecial('average',3);H1 = [1 2 1;2 4 2;1 2 1]/16;im_output1 = imfilter(im_input,H1);H2 = fspecial('average',5);im_output2 = imfilter(im_input,H2);H3 = fspecial('average',9);im_output3 = imfilter(im_input,H3);H4 = fspecial('average',15);im_output4 = imfilter(im_input,H4);H5 = fspecial('average',35);im_output5 = imfilter(im_input,H5);figure, imshow([im_input im_output1;im_output2 im_output3;im_output4 im_output5]); title('smooting filter with different size of mask'); Median filter V.S Average Filter(平滑滤波)123456789im_input = im2double(imread('.\Pics\Ch03\noisy1.tif')); figure, imshow(im_input); title('input image'); H1 = fspecial('average',3);im_output1 = imfilter(im_input,H1);im_output2 = medfilt2(im_input);figure, imshow([im_output1 im_output2]); title('smooting filter v.s median filter'); Median filter V.S Average Filter(平滑滤波)2123456789im_input = im2double(imread('.\Pics\Ch03\noisy2.tif')); figure, imshow(im_input); title('input image'); H1 = fspecial('average',3);im_output1 = imfilter(im_input,H1);im_output2 = medfilt2(im_input,[5 5]);figure, imshow([im_output1 im_output2]); title('smooting filter v.s median filter'); Laplacian Operator1234567891011im_input = im2double(imread('.\Pics\Ch03\moon.tif')); figure, imshow(im_input); title('input image'); H1 = [0 1 0; 1 -4 1; 0 1 0];H2 = [1 1 1; 1 -8 1; 1 1 1];im_output1 = imfilter(im_input,H1);im_output2 = imfilter(im_input,H2);im_output3 = im_input-im_output2;%figure, imshow(im_output1,[]); title('Laplacian operator1');%figure, imshow(im_output2,[]); title('Laplacian operator2');figure, imshow([im_input im_output3]); title('sharpen using Laplacian operator'); Unsharpen Operator and highboosting filtering1234567891011im_input = im2double(imread('.\Pics\Ch03\moon.tif')); figure, imshow(im_input); title('input image'); filter_mask = fspecial('gaussian');im_output1 = im_input+1*(im_input - imfilter(im_input,filter_mask));im_output2 = im_input+10*(im_input - imfilter(im_input,filter_mask));figure, imshow(im_output1); title('Unsharpen operator');figure, imshow([im_output1 im_output2]); title('highboosting filter'); Gradient operator123456789101112im_input = im2double(imread('.\Pics\Ch03\machine.png')); figure, imshow(im_input); title('input image'); H1 = [1,1,1;0,0,0;-1,-1,-1];H2 = [1,2,1;0,0,0;-1,-2,-1];im_output1 = imfilter(im_input,H1);im_output2 = imfilter(im_input,H2);figure, imshow(im_output1); title('Prewitt operator');figure, imshow(im_output2); title('Sobel filter');]]></content>
       <categories>
-        <category>Digital Image Processing</category>
+        <category>DIP</category>
       </categories>
-      <tags>
-        <tag>Matlab</tag>
-        <tag>Digital Image Processing</tag>
-      </tags>
   </entry>
   <entry>
     <title><![CDATA[Digital Image Processing - Ch2 Fundamentals]]></title>
     <url>%2F2018%2F09%2F26%2F2018-09-26-Digital_Image_Processing_Ch2_Fundamentals%2F</url>
     <content type="text"><![CDATA[Ch2 Fundamentals Human Visual Perception Image sensing and acquisition Image sampling and quantization Basic relationship between pixelsCodeImage interpolationmethod： Nearest-neighbor interpolation Bilinear interpolation Bicubic interpolation123456789101112im_inut = imread('./Pics/Ch02/weixins.bmp');im_1 = imresize(im_inut, 4,'nearest');im_2 = imresize(im_inut, 4,'Bilinear');im_3 = imresize(im_inut, 4,'Bicubic');figure, imshow(im_inut); title('image negatives method');figure, imshow(im_1); title('Nearest-neighbor interpolation');figure, imshow(im_2); title('Bilinear interpolation');figure, imshow(im_3); title('Bicubic interpolation');%imwrite(im_1,'weixins_neigh.bmp');%imwrite(im_2,'weixins_Bilinear.bmp');%imwrite(im_3,'weixins_Bicubic.bmp'); Output]]></content>
       <categories>
-        <category>Digital Image Processing</category>
+        <category>DIP</category>
       </categories>
-      <tags>
-        <tag>Matlab</tag>
-        <tag>Digital Image Processing</tag>
-      </tags>
   </entry>
   <entry>
     <title><![CDATA[Digital Image Processing - Ch1 Introduction]]></title>
@@ -240,11 +228,6 @@
       <categories>
         <category>Digital Signal Processing</category>
       </categories>
-      <tags>
-        <tag>Matlab</tag>
-        <tag>Digital Signal Processing</tag>
-        <tag>DTFT</tag>
-      </tags>
   </entry>
   <entry>
     <title><![CDATA[Communication System Random Process: A cos wave with random phase]]></title>
@@ -252,13 +235,7 @@
     <content type="text"><![CDATA[Cos wave with random phaseThe program below shows a cos wave with a random phase: $$X(t) = Acos(\omega t + \theta)$$ A: amplitude of the cos wave $\omega$: radian frequency of the cos wave $\theta$: a random variable of uniform distribution between $[0, 2\pi]$ Then we generate the autocorrelation function. Code1234567891011121314151617181920212223242526272829303132333435363738394041424344454647clear;clc;% This program creates a cos wave with a random phase.% x = A * cos(w * t + theta)%% A: Amplitude of the cos wave% w: frequency% theta: phase, which is a random variable of % uniform distribution between [0, 2*pi] % Configurationfs = 200; % Sample frequencyf = 5; % Cos wave frequencyA = 1; % Amplitudet = 0: 1/fs: 1; % Sampling timetheta_range = 2 * pi;theta = theta_range * rand(1, length(t));% Create a cos_wave_with_random_phasex = A * cos(2*pi * f * t + theta);mean_value = mean(x);varience_value = var(x);[autocorrelation_value, lags] = xcorr(x);% Theoretical Autocorrelationtheory_autocor = power(A, 2) ./ 2 .* cos(2*pi * f * t + theta_range / 2);[theory_autocor, lags2] = xcorr(theory_autocor);% Plotsubplot(3,1,1);plot(t, x);title(&#123;'$$x(t) = Acos(2\pi ft + \theta)$$', ... '$$\theta :\: a\: random\: variable\: of\: uniform\: distribution\: between\: [0,2\pi ]$$'&#125;, ... 'Interpreter', 'latex');xlabel('$$t / s$$', 'Interpreter', 'latex');ylabel('$$x(t)$$', 'Interpreter', 'latex');subplot(3,1,2);plot(lags/fs, autocorrelation_value);title('$$ Autocorrelation: R_&#123;X&#125;(\tau)$$', 'Interpreter', 'latex');xlabel('$$\tau / s$$', 'Interpreter', 'latex');ylabel('$$R_&#123;X&#125;(\tau)$$', 'Interpreter', 'latex');subplot(3,1,3);plot(lags2/fs, theory_autocor);title('$$ Theoretical Autocorrelation: R_&#123;X&#125;(\tau)$$', 'Interpreter', 'latex');xlabel('$$\tau / s$$', 'Interpreter', 'latex');ylabel('$$R_&#123;X&#125;(\tau)$$', 'Interpreter', 'latex'); Result When $\theta$ is a uniform distribution random variable between $[0, 2\pi]$: When $\theta$ is a uniform distribution random variable between $[0, 1.5\pi]$: When $\theta$ is a uniform distribution random variable between $[0, \pi]$: When $\theta$ is a uniform distribution random variable between $[0, 0.5\pi]$: When $\theta$ is a uniform distribution random variable between $[0, 0]$:]]></content>
       <categories>
         <category>Communication System</category>
-        <category>Matlab</category>
       </categories>
-      <tags>
-        <tag>Matlab</tag>
-        <tag>Communication System</tag>
-        <tag>Random Process</tag>
-      </tags>
   </entry>
   <entry>
     <title><![CDATA[Digital Signal Processing Using Matlab Problem 2.1 Solutions & Results]]></title>
@@ -266,12 +243,7 @@
     <content type="text"><![CDATA[Talk less, code more 2.1-11234567891011121314151617clear;clc;% Solutions%% 2.1-1duration_start = -5;duration_end = 15;n = duration_start: duration_end;x = 3 * impseq(-2, duration_start, duration_end) ... + 2 * impseq(0, duration_start,duration_end) ... - impseq(3, duration_start, duration_end) ... + 5 * impseq(7, duration_start, duration_end)% Plotsubplot(4,2,1);stem(n, x);title('Sequence for 2.1-1');xlabel('n');ylabel('x1(n)'); 2.1-2123456789101112131415%% 2.1-2duration_start = -10;duration_end = 10;n = duration_start: duration_end;x = zeros(1, length(n));for k = -5: 5 xk = exp(-abs(k)) * impseq(2 * k, duration_start, duration_end); x = sigadd(x, n, xk, n)end% Plotsubplot(4,2,2);stem(n, x);title('Sequence for 2.1-2');xlabel('n');ylabel('x2(n)'); 2.1-31234567891011121314%% 2.1-3duration_start = 0;duration_end = 15;n = duration_start: duration_end;x = 10 * stepseq(0, duration_start, duration_end) ... -5 * stepseq(5, duration_start, duration_end) ... -10 * stepseq(10, duration_start, duration_end) ... + 5 * stepseq(15, duration_start, duration_end);% Plotsubplot(4,2,3);stem(n, x);title('Sequence for 2.1-3');xlabel('n');ylabel('x2(n)'); 2.1-412345678910%% 2.1-4duration_start = -20;duration_end = 10;n = duration_start: duration_end;x = exp(0.1 * n) .* (stepseq(-20, duration_start, duration_end) - stepseq(10, duration_start, duration_end));subplot(4,2,4);stem(n, x);title('Sequence for 2.1-4');xlabel('n');ylabel('x4(n)'); 2.1-51234567891011%% 2.1-5duration_start = -200;duration_end = 200;n = duration_start: duration_end;x = 5 * (cos(0.49 * pi * n) + cos(0.51 * pi * n));% Plotsubplot(4,2,5);stem(n, x);title('Sequence for 2.1-5');xlabel('n');ylabel('x5(n)'); 2.1-61234567891011%% 2.1-6duration_start = -200;duration_end = 200;n = duration_start: duration_end;x = 2 * sin(0.01 * pi * n) .* cos(0.5 * pi * n);% Plotsubplot(4,2,6);stem(n, x);title('Sequence for 2.1-6');xlabel('n');ylabel('x6(n)'); 2.1-71234567891011%% 2.1-7duration_start = 0;duration_end = 100;n = duration_start: duration_end;x = exp(-0.05 * n) .* sin(0.1*pi*n + pi/3);% Plotsubplot(4,2,7);stem(n, x);title('Sequence for 2.1-7');xlabel('n');ylabel('x7(n)'); 2.1-81234567891011%% 2.1-8duration_start = 0;duration_end = 100;n = duration_start: duration_end;x = exp(0.01 * n) .* sin(0.1*pi*n);% Plotsubplot(4,2,8);stem(n, x);title('Sequence for 2.1-8');xlabel('n');ylabel('x8(n)'); Plot Results]]></content>
       <categories>
         <category>DSP</category>
-        <category>Matlab</category>
       </categories>
-      <tags>
-        <tag>DSP</tag>
-        <tag>Matlab</tag>
-      </tags>
   </entry>
   <entry>
     <title><![CDATA[CS20学习笔记（五）]]></title>
@@ -280,10 +252,6 @@
       <categories>
         <category>Tensorflow</category>
       </categories>
-      <tags>
-        <tag>Stanford</tag>
-        <tag>Tensorflow</tag>
-      </tags>
   </entry>
   <entry>
     <title><![CDATA[CS20学习笔记（四）]]></title>
@@ -292,11 +260,6 @@
       <categories>
         <category>Tensorflow</category>
       </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>Stanford</tag>
-        <tag>Tensorflow</tag>
-      </tags>
   </entry>
   <entry>
     <title><![CDATA[CS20学习笔记（三）]]></title>
@@ -305,10 +268,6 @@
       <categories>
         <category>Tensorflow</category>
       </categories>
-      <tags>
-        <tag>Stanford</tag>
-        <tag>Tensorflow</tag>
-      </tags>
   </entry>
   <entry>
     <title><![CDATA[Python学习-深浅copy]]></title>
@@ -317,9 +276,6 @@
       <categories>
         <category>Python</category>
       </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
   </entry>
   <entry>
     <title><![CDATA[Python学习-assert的作用]]></title>
@@ -328,9 +284,6 @@
       <categories>
         <category>Python</category>
       </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
   </entry>
   <entry>
     <title><![CDATA[CS20学习笔记（二）]]></title>
@@ -339,10 +292,6 @@
       <categories>
         <category>Tensorflow</category>
       </categories>
-      <tags>
-        <tag>Stanford</tag>
-        <tag>Tensorflow</tag>
-      </tags>
   </entry>
   <entry>
     <title><![CDATA[Keras学习之路（一）]]></title>
