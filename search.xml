@@ -8,22 +8,8 @@
         <category>Leetcode</category>
       </categories>
       <tags>
-        <tag>BinaryTree</tag>
         <tag>Leetcode</tag>
-        <tag>Recursion</tag>
-        <tag>Iteration</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Leetcode 589 N-ary Tree Preorder Traversal]]></title>
-    <url>%2F2019%2F10%2F17%2F2019-10-17-LC589_N_ary_Tree_Preorder_Traversal%2F</url>
-    <content type="text"><![CDATA[589 N-ary Tree Preorder Traversaleasy Binary Tree ProblemGiven an n-ary tree, return thepreordertraversal of its nodes’ values. For example, given a3-arytree: Return its preorder traversal as:[1,3,5,6,2,4]. Note: Recursive solution is trivial, could you do it iteratively? SolutionRecursive: 123456789101112131415161718192021222324252627282930313233343536373839404142434445import java.util.ArrayList;import java.util.List;/*// Definition for a Node.class Node &#123; public int val; public List&lt;Node&gt; children; public Node() &#123;&#125; public Node(int _val,List&lt;Node&gt; _children) &#123; val = _val; children = _children; &#125;&#125;;*/class NaryTreePreorderTraversal &#123; // N-ary Node Defination class Node &#123; public int val; public List&lt;Node&gt; children; public Node (int _val, List&lt;Node&gt; _children) &#123; val = _val; children = _children; &#125; &#125; private void dfs (Node root, List&lt;Integer&gt; ret) &#123; if (root != null) &#123; ret.add(root.val); for (int i = 0; i &lt; root.children.size(); i++) &#123; dfs(root.children.get(i), ret); &#125; &#125; &#125; public List&lt;Integer&gt; preorder (Node root) &#123; List&lt;Integer&gt; ret = new ArrayList&lt;&gt;(); dfs(root, ret); return ret; &#125;&#125;]]></content>
-      <categories>
-        <category>Leetcode</category>
-      </categories>
-      <tags>
         <tag>BinaryTree</tag>
-        <tag>Leetcode</tag>
         <tag>Recursion</tag>
         <tag>Iteration</tag>
       </tags>
@@ -36,8 +22,22 @@
         <category>Leetcode</category>
       </categories>
       <tags>
-        <tag>BinaryTree</tag>
         <tag>Leetcode</tag>
+        <tag>BinaryTree</tag>
+        <tag>Recursion</tag>
+        <tag>Iteration</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Leetcode 589 N-ary Tree Preorder Traversal]]></title>
+    <url>%2F2019%2F10%2F17%2F2019-10-17-LC589_N_ary_Tree_Preorder_Traversal%2F</url>
+    <content type="text"><![CDATA[589 N-ary Tree Preorder Traversaleasy Binary Tree ProblemGiven an n-ary tree, return thepreordertraversal of its nodes’ values. For example, given a3-arytree: Return its preorder traversal as:[1,3,5,6,2,4]. Note: Recursive solution is trivial, could you do it iteratively? SolutionRecursive: 123456789101112131415161718192021222324252627282930313233343536373839404142434445import java.util.ArrayList;import java.util.List;/*// Definition for a Node.class Node &#123; public int val; public List&lt;Node&gt; children; public Node() &#123;&#125; public Node(int _val,List&lt;Node&gt; _children) &#123; val = _val; children = _children; &#125;&#125;;*/class NaryTreePreorderTraversal &#123; // N-ary Node Defination class Node &#123; public int val; public List&lt;Node&gt; children; public Node (int _val, List&lt;Node&gt; _children) &#123; val = _val; children = _children; &#125; &#125; private void dfs (Node root, List&lt;Integer&gt; ret) &#123; if (root != null) &#123; ret.add(root.val); for (int i = 0; i &lt; root.children.size(); i++) &#123; dfs(root.children.get(i), ret); &#125; &#125; &#125; public List&lt;Integer&gt; preorder (Node root) &#123; List&lt;Integer&gt; ret = new ArrayList&lt;&gt;(); dfs(root, ret); return ret; &#125;&#125;]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+        <tag>BinaryTree</tag>
         <tag>Recursion</tag>
         <tag>Iteration</tag>
       </tags>
@@ -61,8 +61,8 @@
         <category>Leetcode</category>
       </categories>
       <tags>
-        <tag>BinaryTree</tag>
         <tag>Leetcode</tag>
+        <tag>BinaryTree</tag>
         <tag>Recursion</tag>
         <tag>Iteration</tag>
       </tags>
@@ -87,8 +87,8 @@
         <category>Leetcode</category>
       </categories>
       <tags>
-        <tag>Leetcode</tag>
         <tag>Dynamic Programming</tag>
+        <tag>Leetcode</tag>
       </tags>
   </entry>
   <entry>
@@ -96,11 +96,11 @@
     <url>%2F2019%2F10%2F06%2F2019-10-06-Node-Introduction%2F</url>
     <content type="text"><![CDATA[问题：什么是Node.js?在学习nodejs的时候，老师直接教我们怎么安装nodejs，然后直接使用node命令便可以执行javascript代码。但是node究竟扮演了一个什么样的角色我一直不是很清楚，下面是我作为一个初学者对node初步的思考。 我的理解我们知道我们向服务器请求一个网页，服务器返回给我们一个html文件，然后这个html会渲染，这时就会加载里面的css、js等代码。在这个过程中，js只不过是一个渲染的工具，js完完全全使用在前端，也是用户的客户端，也就是我们的浏览器。 即，js完全是一个前端渲染工具，后端有后端自己的语言，与js无关。 但是我们在使用node的过程中发现，我们本身并没有自己去写后端，我们直接用node命令就可以造出一个服务器，在这个服务器上我们可以写自己的GET、POST页面。而且最重要的是，node的代码就是js。 所以，我们此时发现，我们已经在用js写后端了！ 也就是说，我们现在使用js既可以写前端，也可以写后端了！ 多么神奇！]]></content>
       <categories>
-        <category>Web Development</category>
+        <category>WebDevelopment</category>
       </categories>
       <tags>
         <tag>Nodejs</tag>
-        <tag>Web Development</tag>
+        <tag>WebDevelopment</tag>
       </tags>
   </entry>
   <entry>
@@ -108,21 +108,10 @@
     <url>%2F2019%2F09%2F29%2F2019-9-29-First-Express-App%2F</url>
     <content type="text"><![CDATA[Frist Express AppUdemy Web Development: 265 Our First Express App Create folder &amp; fileCreate root folder and app.js mkdir FirstExpressApp cd FirstExpressApp touch app.js Install expressInstall node package: express npm install express terminal output when installing express: 123456789101112jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Udemy_Web_Development/NodeJS_Part/FirstExpressApp  npm install expressnpm WARN saveError ENOENT: no such file or directory, open '/Users/jinwang/Desktop/Udemy_Web_Development/NodeJS_Part/FirstExpressApp/package.json'npm notice created a lockfile as package-lock.json. You should commit this file.npm WARN enoent ENOENT: no such file or directory, open '/Users/jinwang/Desktop/Udemy_Web_Development/NodeJS_Part/FirstExpressApp/package.json'npm WARN FirstExpressApp No descriptionnpm WARN FirstExpressApp No repository field.npm WARN FirstExpressApp No README datanpm WARN FirstExpressApp No license field.+ express@4.17.1added 50 packages from 37 contributors and audited 126 packages in 24.191sfound 0 vulnerabilities Now, there are 3 file/folder in the root folder: app.js node_modules package-lock.json Open node_modules: cd node_modules, ls Here we see: 12345678910accepts destroy iconv-lite negotiator sendarray-flatten ee-first inherits on-finished serve-staticbody-parser encodeurl ipaddr.js parseurl setprototypeofbytes escape-html media-typer path-to-regexp statusescontent-disposition etag merge-descriptors proxy-addr toidentifiercontent-type express methods qs type-iscookie finalhandler mime range-parser unpipecookie-signature forwarded mime-db raw-body utils-mergedebug fresh mime-types safe-buffer varydepd http-errors ms safer-buffer Even though we only install express package, there are so many other folders generated along with the process. Import expressInside app.js 1234var express = require("express"); // Typo warning: require, not requiredvar app = express();app.xxx // xxx stands for its functions Start a serverInside app.js 123456var express = require(&quot;express&quot;);var app = express();app.listen(3000, function()&#123; console.log(&quot;Server has started!!!&quot;);&#125;); This code will start a server at local host port 3000. We can access the server by typing: http://localhost:3000 into our browser. Create GET response1234567891011121314151617181920212223var express = require("express");var app = express();// "/" =&gt; "Hi there!"app.get("/", function(req, res)&#123; res.send("Hi there!"); &#125;);// "/bye" =&gt; "Goodbye!"app.get("/bye", function(req, res)&#123; res.send("Goodbye");&#125;);// "/dog" =&gt; "MEOW!"app.get("/dogs", function(req, res)&#123; console.log("Someone has made a request to /dogs!!!"); res.send("MEOW!");&#125;);// Tell Express to listen for requests (start server)app.listen(3000, function()&#123; console.log("Server has started!!!");&#125;); NOTE: Everytime we change app.js. be sure to restart the server. Press ctrl + c to close the server and type node app.js to start the server again. Now, we can type 3 different url into the browser. localhost:3000/ localhost:3000/bye localhost:3000/dogs]]></content>
       <categories>
-        <category>Web Development</category>
+        <category>WebDevelopment</category>
       </categories>
       <tags>
-        <tag>Web Development</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Python学习-将dict写入txt文件]]></title>
-    <url>%2F2018%2F10%2F28%2F2018-10-28-Python%E5%AD%A6%E4%B9%A0-%E5%B0%86dict%E5%86%99%E5%85%A5txt%E6%96%87%E4%BB%B6%2F</url>
-    <content type="text"><![CDATA[Python学习-将dict写入txt文件1a = ['Jin Wang', 'Jiawei Xu', 'Peiyang Shi', 'Zheqi Zhang'] 12for line in a: print(line) Jin Wang Jiawei Xu Peiyang Shi Zheqi Zhang 1234i = 1for line in a: print(str(i) + ',' + line) i = i + 1 1,Jin Wang 2,Jiawei Xu 3,Peiyang Shi 4,Zheqi Zhang]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
+        <tag>WebDevelopment</tag>
       </tags>
   </entry>
   <entry>
@@ -137,6 +126,17 @@
         <tag>Json</tag>
         <tag>爬虫</tag>
         <tag>API</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Python学习-将dict写入txt文件]]></title>
+    <url>%2F2018%2F10%2F28%2F2018-10-28-Python%E5%AD%A6%E4%B9%A0-%E5%B0%86dict%E5%86%99%E5%85%A5txt%E6%96%87%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[Python学习-将dict写入txt文件1a = ['Jin Wang', 'Jiawei Xu', 'Peiyang Shi', 'Zheqi Zhang'] 12for line in a: print(line) Jin Wang Jiawei Xu Peiyang Shi Zheqi Zhang 1234i = 1for line in a: print(str(i) + ',' + line) i = i + 1 1,Jin Wang 2,Jiawei Xu 3,Peiyang Shi 4,Zheqi Zhang]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -175,17 +175,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Pandas学习-DataFrame()按列索引]]></title>
-    <url>%2F2018%2F10%2F21%2F2018-10-21-Pandas%E5%AD%A6%E4%B9%A0-DataFrame()%E6%8C%89%E5%88%97%E7%B4%A2%E5%BC%95%2F</url>
-    <content type="text"><![CDATA[Pandas学习-DataFrame()按列索引@(python) Talk less, code more 12345678910import pandas as pddata_file = 'matchResult_10.txt'names = 'app_name, app_kind, app_type, ip, nation, gps, size'names = names.split(',')data = pd.read_csv(data_file, header=None, names=names)# 查找' gps'这一列的数据print(data[' gps']) 注意！！！：这里要注意一下空格的问题。因为定义数据头names的时候习惯性的在每个类型前面加了个空格（也就是习惯性的在逗号后面加了个空格），所以真正的索引值是&#39; gps&#39;而不是&#39;gps&#39;所以我们将前面的空格去掉。这也告诉我们，数据文件不要随便添加空格。 输出12345678910110 30.882428#75.8325771 22.9009009009009#84.145957913258022 20.81081081081081#70.702838233915883 26.27027027027027#72.999081137683554 26.7927864#84.53459495 24.4353437#85.8665356 26.4265576#76.66437287 26.7927864#84.53459498 20.46846846846847#75.005776733859929 25.7397946#77.4759334Name: gps, dtype: object 更改后的结果12345678910import pandas as pddata_file = 'matchResult_10.txt'names = 'app_name,app_kind,app_type,ip,nation,gps,size'names = names.split(',')data = pd.read_csv(data_file, header=None, names=names)# 查找' gps'这一列的数据print(data['gps']) 12345678910110 30.882428#75.8325771 22.9009009009009#84.145957913258022 20.81081081081081#70.702838233915883 26.27027027027027#72.999081137683554 26.7927864#84.53459495 24.4353437#85.8665356 26.4265576#76.66437287 26.7927864#84.53459498 20.46846846846847#75.005776733859929 25.7397946#77.4759334Name: gps, dtype: object 那这个data[&#39;gps&#39;]是什么类型的数据呢1234print(type(data['gps']))# 输出&lt;class 'pandas.core.series.Series'&gt;]]></content>
-      <categories>
-        <category>Pandas</category>
-      </categories>
-      <tags>
-        <tag>Pandas</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Pandas学习-pd.read_csv()添加header和names]]></title>
     <url>%2F2018%2F10%2F21%2F2018-10-21-Pandas%E5%AD%A6%E4%B9%A0-pd.read_csv()%E6%B7%BB%E5%8A%A0header%E5%92%8Cnames%2F</url>
     <content type="text"><![CDATA[Pandas学习-pd.read_csv()添加header和names@(python) Talk less, code more 首先，我们构造一个数据文件csv_read_test.txt，数据之间用,分隔开 1234Xiao Wang, 18, boy, ip1Xiao Hong, 17, girl, ip2Liu Chen, 20, boy, ip3Hua hua, 21, girl, ip4 12345678import pandas as pd# 定义file_namefile_name = 'csv_read_test.txt'# 直接读取，除了文件名不添加任何参数data_raw = pd.read_csv(file_name)# 输出我们的数据print(data_raw) 12345# 输出 Xiao Wang 18 boy ip10 Xiao Hong 17 girl ip21 Liu Chen 20 boy ip32 Hua hua 21 girl ip4 可见，默认将数据的第一行作为了数据头 123456789import pandas as pdfile_name = 'csv_read_test.txt'names = 'name, age, gender, ip_address'names = names.split(',')data_raw = pd.read_csv(file_name, header=None, names=names)print(data_raw) header = None的意思是告诉电脑，第一行的数据不是header，否则就会向上面一样，随后我们自己添加一个names参数，指定数据的数据头。我们看看结果 12345 name age gender ip_address0 Xiao Wang 18 boy ip11 Xiao Hong 17 girl ip22 Liu Chen 20 boy ip33 Hua hua 21 girl ip4 我们可以尝试一下D2D的数据集123456789import pandas as pddata_file = 'matchResult_10.txt'names = 'app_name, app_kind, app_type, ip, nation, gps, size'names = names.split(',')data = pd.read_csv(data_file, header=None, names=names)print(data) 输出1234567891011121314151617181920212223 app_name app_kind app_type \0 Samsung Multiroom Lifestyle app 1 FacebookMessenger_v4.0.1.13.1_2024494 News &amp; Magazines app 2 Subway Surf Arcade app 3 Jugnoo Maps &amp; Navigation app 4 hike Social app 5 WhatsApp Communication app 6 My Idea Business app 7 Root Checker Basic Business app 8 Score! Hero Sports app 9 Hindu Calendar Books &amp; Reference app ip nation gps size 0 124.253.207.200 IN 30.882428#75.832577 29.7 MB 1 27.97.73.132 IN 22.9009009009009#84.14595791325802 9.0 MB 2 203.88.23.43 IN 20.81081081081081#70.70283823391588 40.9 MB 3 106.77.209.139 IN 26.27027027027027#72.99908113768355 11.8 MB 4 106.76.154.53 IN 26.7927864#84.5345949 10 MB 5 223.176.23.92 IN 24.4353437#85.866535 2.9 MB 6 106.67.144.166 IN 26.4265576#76.6643728 6.7 MB 7 106.76.154.53 IN 26.7927864#84.5345949 2.4 MB 8 106.77.19.199 IN 20.46846846846847#75.00577673385992 92.0 MB 9 106.221.139.35 IN 25.7397946#77.4759334 7.6 MB]]></content>
@@ -194,6 +183,17 @@
       </categories>
       <tags>
         <tag>Python</tag>
+        <tag>Pandas</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Pandas学习-DataFrame()按列索引]]></title>
+    <url>%2F2018%2F10%2F21%2F2018-10-21-Pandas%E5%AD%A6%E4%B9%A0-DataFrame()%E6%8C%89%E5%88%97%E7%B4%A2%E5%BC%95%2F</url>
+    <content type="text"><![CDATA[Pandas学习-DataFrame()按列索引@(python) Talk less, code more 12345678910import pandas as pddata_file = 'matchResult_10.txt'names = 'app_name, app_kind, app_type, ip, nation, gps, size'names = names.split(',')data = pd.read_csv(data_file, header=None, names=names)# 查找' gps'这一列的数据print(data[' gps']) 注意！！！：这里要注意一下空格的问题。因为定义数据头names的时候习惯性的在每个类型前面加了个空格（也就是习惯性的在逗号后面加了个空格），所以真正的索引值是&#39; gps&#39;而不是&#39;gps&#39;所以我们将前面的空格去掉。这也告诉我们，数据文件不要随便添加空格。 输出12345678910110 30.882428#75.8325771 22.9009009009009#84.145957913258022 20.81081081081081#70.702838233915883 26.27027027027027#72.999081137683554 26.7927864#84.53459495 24.4353437#85.8665356 26.4265576#76.66437287 26.7927864#84.53459498 20.46846846846847#75.005776733859929 25.7397946#77.4759334Name: gps, dtype: object 更改后的结果12345678910import pandas as pddata_file = 'matchResult_10.txt'names = 'app_name,app_kind,app_type,ip,nation,gps,size'names = names.split(',')data = pd.read_csv(data_file, header=None, names=names)# 查找' gps'这一列的数据print(data['gps']) 12345678910110 30.882428#75.8325771 22.9009009009009#84.145957913258022 20.81081081081081#70.702838233915883 26.27027027027027#72.999081137683554 26.7927864#84.53459495 24.4353437#85.8665356 26.4265576#76.66437287 26.7927864#84.53459498 20.46846846846847#75.005776733859929 25.7397946#77.4759334Name: gps, dtype: object 那这个data[&#39;gps&#39;]是什么类型的数据呢1234print(type(data['gps']))# 输出&lt;class 'pandas.core.series.Series'&gt;]]></content>
+      <categories>
+        <category>Pandas</category>
+      </categories>
+      <tags>
         <tag>Pandas</tag>
       </tags>
   </entry>
@@ -255,8 +255,8 @@
         <category>Matlab</category>
       </categories>
       <tags>
-        <tag>Communication System</tag>
         <tag>Matlab</tag>
+        <tag>Communication System</tag>
         <tag>Random Process</tag>
       </tags>
   </entry>
@@ -269,8 +269,8 @@
         <category>Matlab</category>
       </categories>
       <tags>
-        <tag>Matlab</tag>
         <tag>DSP</tag>
+        <tag>Matlab</tag>
       </tags>
   </entry>
   <entry>
