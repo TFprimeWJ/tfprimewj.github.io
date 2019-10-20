@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Leetcode 589 N-ary Tree Preorder Traversal]]></title>
+    <url>%2F2019%2F10%2F17%2F2019-10-17-LC589_N_ary_Tree_Preorder_Traversal%2F</url>
+    <content type="text"><![CDATA[589 N-ary Tree Preorder Traversaleasy Binary Tree ProblemGiven an n-ary tree, return thepreordertraversal of its nodes’ values. For example, given a3-arytree: Return its preorder traversal as:[1,3,5,6,2,4]. Note: Recursive solution is trivial, could you do it iteratively? SolutionRecursive: 123456789101112131415161718192021222324252627282930313233343536373839404142434445import java.util.ArrayList;import java.util.List;/*// Definition for a Node.class Node &#123; public int val; public List&lt;Node&gt; children; public Node() &#123;&#125; public Node(int _val,List&lt;Node&gt; _children) &#123; val = _val; children = _children; &#125;&#125;;*/class NaryTreePreorderTraversal &#123; // N-ary Node Defination class Node &#123; public int val; public List&lt;Node&gt; children; public Node (int _val, List&lt;Node&gt; _children) &#123; val = _val; children = _children; &#125; &#125; private void dfs (Node root, List&lt;Integer&gt; ret) &#123; if (root != null) &#123; ret.add(root.val); for (int i = 0; i &lt; root.children.size(); i++) &#123; dfs(root.children.get(i), ret); &#125; &#125; &#125; public List&lt;Integer&gt; preorder (Node root) &#123; List&lt;Integer&gt; ret = new ArrayList&lt;&gt;(); dfs(root, ret); return ret; &#125;&#125;]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+        <tag>BinaryTree</tag>
+        <tag>Recursion</tag>
+        <tag>Iteration</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Leetcode 94 Binary Tree Inorder Traversal]]></title>
     <url>%2F2019%2F10%2F17%2F2019-10-17-LC94_Binary_Tree_Inorder_Traversal%2F</url>
     <content type="text"><![CDATA[94 Binary Tree Inorder TraversalMedium Binary Tree ProblemGiven a binary tree, return the_inorder_traversal of its nodes’ values. Example: 1234567891011Input: [1,null,2,3] 1 \ 2 / 3Output: [1,3,2] Follow up:Recursive solution is trivial, could you do it iteratively? SolutionRecursive: 1234567891011121314151617181920212223242526272829303132333435import java.util.ArrayList;import java.util.List;/** * Definition for a binary tree node. * public class TreeNode &#123; * int val; * TreeNode left; * TreeNode right; * TreeNode(int x) &#123; val = x; &#125; * &#125; */class BinaryTreeInorderTraversal_Recursive &#123; public class TreeNode &#123; int val; TreeNode left; TreeNode right; TreeNode (int x) &#123; val = x; &#125; &#125; private void dfs (TreeNode root, List&lt;Integer&gt; ret) &#123; if (root != null) &#123; dfs(root.left, ret); ret.add(root.val); dfs(root.right, ret); &#125; &#125; public List&lt;Integer&gt; inorderTraversal (TreeNode root) &#123; List&lt;Integer&gt; ret = new ArrayList&lt;&gt;(); dfs(root, ret); return ret; &#125;&#125; Iterative: 1234567891011121314151617181920212223242526272829303132import java.util.ArrayList;import java.util.List;import java.util.Stack;class BinaryTreeInorderTraversal_Iterative &#123; // TreeNode defination class TreeNode &#123; int val; TreeNode left; TreeNode right; public TreeNode (int _val) &#123; val = _val; &#125; &#125; // Iterative public List&lt;Integer&gt; inorderTraversal (TreeNode root) &#123; List&lt;Integer&gt; ret = new ArrayList&lt;&gt;(); // store result Stack&lt;TreeNode&gt; stack = new Stack&lt;&gt;(); // When implementing iteratively, we need stack TreeNode cur = root; while (!stack.isEmpty() || cur != null) &#123; while (cur != null) &#123; stack.push(cur); cur = cur.left; &#125; cur = stack.pop(); ret.add(cur.val); cur = cur.right; &#125; return ret; &#125;&#125; 读代码过程中的思考：首先，一个节点有两个身份，既是上一个节点的子节点，也是下一个节点的父节点。其次，上面这个方法使用的是迭代（Iterative），在Iterative中，我们要自己使用栈。所以Iterative方法最难的地方就是想清楚节点的入站出站顺序。 解题过程： 什么是Inorder Traversal？本题为中序遍历（Inorder Traversal），即root左侧的节点在遍历后的数组中都要在root的左侧，root右侧的节点都要在root的右侧，这便是Inorder Traversal。这个定义并不难，如果手边有纸其实可以很容易写出一个树的中序遍历结果。 什么是Iterative方法？首先要知道与Iterative对应的方法是Recursive。Recursive是递归，递归和迭代相似性很大但是有区别，这个区别展开来讲可以写一个文章了，所以这里不展开讲，可以自行搜索这个问题，网上有很多解答，并且我也不是那么懂。我只说说我最粗浅的看法：对于中序遍历，我们很容易想到这样一种方法，假设我们有一个函数fun()，这个函数的输入为一个节点，输出为以这个节点为根节点的树的中序遍历结果，那么我们只要不停的对每一个节点和它的子节点都使用这个函数，就像一棵树从上到下不停的往下调用这个函数，那么就可以得到整个树的中序遍历的结果。用代码表示就有点像fun(fun(fun(fun(root))))这种感觉。Iterative则不同，Iterative并不是完全的像上面那样一层一层调用的那种感觉，虽然iterative里也经常出现不停的调用这种方式，但本质上是有区别但。使用Iterative方法我们需要自己定义栈（stack），将所有即诶但但，并且自己定义节点的出入栈顺序，这个顺序也是最难的一点。我现在对这个方法对理解程度仅限于：我能解释清楚为什么这个方法可以达到中序遍历对目的，但是我想不到作者是如何想到这个方法的。但是真想搞明白就要知道作者的思考过程，这里不是说要去问作者它是怎么想的，而是我们自己要研究明白作者的思考过程，或者是一种你自己的思考过程如何引出上面的代码的。]]></content>
@@ -29,9 +43,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Leetcode 589 N-ary Tree Preorder Traversal]]></title>
-    <url>%2F2019%2F10%2F17%2F2019-10-17-LC589_N_ary_Tree_Preorder_Traversal%2F</url>
-    <content type="text"><![CDATA[589 N-ary Tree Preorder Traversaleasy Binary Tree ProblemGiven an n-ary tree, return thepreordertraversal of its nodes’ values. For example, given a3-arytree: Return its preorder traversal as:[1,3,5,6,2,4]. Note: Recursive solution is trivial, could you do it iteratively? SolutionRecursive: 123456789101112131415161718192021222324252627282930313233343536373839404142434445import java.util.ArrayList;import java.util.List;/*// Definition for a Node.class Node &#123; public int val; public List&lt;Node&gt; children; public Node() &#123;&#125; public Node(int _val,List&lt;Node&gt; _children) &#123; val = _val; children = _children; &#125;&#125;;*/class NaryTreePreorderTraversal &#123; // N-ary Node Defination class Node &#123; public int val; public List&lt;Node&gt; children; public Node (int _val, List&lt;Node&gt; _children) &#123; val = _val; children = _children; &#125; &#125; private void dfs (Node root, List&lt;Integer&gt; ret) &#123; if (root != null) &#123; ret.add(root.val); for (int i = 0; i &lt; root.children.size(); i++) &#123; dfs(root.children.get(i), ret); &#125; &#125; &#125; public List&lt;Integer&gt; preorder (Node root) &#123; List&lt;Integer&gt; ret = new ArrayList&lt;&gt;(); dfs(root, ret); return ret; &#125;&#125;]]></content>
+    <title><![CDATA[Leetcode 145 Binary Tree Postorder Traversal]]></title>
+    <url>%2F2019%2F10%2F17%2F2019-10-17-LC145_Binary_Tree_Postrder_Traversal%2F</url>
+    <content type="text"><![CDATA[145 Binary Tree Postorder TraversalProblemGiven a binary tree, return the postorder traversal of its nodes’ values. Example: 123456789101112Input:[1,null,2,3] 1 \ 2 / 3Output:[3,2,1] Follow up:Recursive solution is trivial, could you do it iteratively? SolutionRecursive: 1234567891011121314151617181920212223242526272829import java.util.ArrayList;import java.util.List;class BinaryTreePostorderTraversal_Recursive &#123; // TreeNode difination class TreeNode &#123; int val; TreeNode left; TreeNode right; public TreeNode (int _val) &#123; val = _val; &#125; &#125; // Binary Tree Postorder Traversal: Recursive private void dfs (TreeNode root, List&lt;Integer&gt; ret) &#123; if (root != null) &#123; dfs(root.left, ret); dfs(root.right, ret); ret.add(root.val); &#125; &#125; public List&lt;Integer&gt; postorderTraversal (TreeNode root) &#123; List&lt;Integer&gt; ret = new ArrayList&lt;&gt;(); dfs(root, ret); return ret; &#125;&#125; 递归（Recursive）的思想在前序遍历，中序遍历和后序遍历里都是一样的，我们可以发现只需要修改dfs函数里面三行代码的顺序便可以调整遍历方式，所以Recursive是比较简单的。 Iterative:迭代（Iterative）则会比较困难，主要难点是我们要思考清楚后序遍历的节点的入栈出栈顺序。 12345678910111213141516171819202122232425262728293031323334import java.util.ArrayList;import java.util.LinkedList;import java.util.Stack;class BinaryTreePostorderTraversal_Iterative &#123; class TreeNode &#123; int val; TreeNode left; TreeNode right; public TreeNode (int _val) &#123; val = _val; &#125; &#125; public List&lt;Integer&gt; postorderTraversal (TreeNode root) &#123; LinkedList&lt;Integer&gt; ret = new LinkedList&lt;&gt;(); Stack&lt;TreeNode&gt; stack = new Stack&lt;&gt;(); stack.push(root); if (root == null) return ret; while (!stack.isEmpty()) &#123; TreeNode cur = stack.pop(); ret.addFirst(cur.val); if (cur.left != null) &#123; stack.push(cur.left); &#125; if (cur.right != null) &#123; stack.push(cur.right); &#125; &#125; return ret; &#125;&#125; 我们看上面这个Iterative的方法：同样，我们要建立一个stack用来存放待处理的节点，建立ret来存放结果，但是这个方法妙在它每次只向第一个位置添加元素，也就是 1ret.addFirst(cur.val); 这一行。那么实际上我们整个ret的顺序其实是反着进行的。比如：后序遍历本来我们应该最后添加整个树的root节点，但是如果采取每次都想第一个位置插入元素的话，那么我们便可以在最一开始就添加root节点，这样root节点就永远在最后面了。 那么接下来就是两个字节点入栈顺序问题了，假设一个节点的两个子节点都存在，我们希望在addFirst这一步中是先添加right节点，然后添加left节点，即这样的顺序 1ret: (left node) - (right node) - (root node) 这不也是后序遍历的意思嘛。那么既然知道了希望的得到元素的顺序，即元素出栈的顺序，那么很自然的就能知道元素入栈的顺序，如果我们希望right节点先出来，stack是后入先出，那么就要后放right节点，自然也要先放left节点啦。所以代码写成： 123456if (cur.left != null) &#123; stack.push(cur.left); &#125;if (cur.right != null) &#123; stack.push(cur.right); &#125; 然后我们看一下细节部分。 首先，当root为空的时候，相当于根本就没有树，那么遍历就是个空数组，所以我们直接返回建立的空数组，这里的代码没问题。 然后就是当root不为空的时候，代码是否会发生空指针的情况。 那么我们先要明白在遍历过程中一般什么情况会发生空指针：一般来说，比如一个节点nodeA是最下面的一层节点，它即没有left child也没有right child，那么如果我们在不加判定的情况下贸然使用比如nodeA.left这样的代码，比如ret.addFirst(nodeA.left.val)，那么由于nodeA.left是空的，所以它并不存在val的值，这样使用就会报错。所以我们添加了判断语句if (cur.left != null) {...}。 在上面的代码中，我们首先排除了root为空的情况，然后之后的操作每一步都会判断所添加的节点是否为空，所以整个代码不会向stack中添加空节点，自然也就不会出现空节点.val的情况了。 所以这个代码不会出现空指针的错误。]]></content>
       <categories>
         <category>Leetcode</category>
       </categories>
@@ -51,20 +65,6 @@
       </categories>
       <tags>
         <tag>Binary Search</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Leetcode 145 Binary Tree Postorder Traversal]]></title>
-    <url>%2F2019%2F10%2F17%2F2019-10-17-LC145_Binary_Tree_Postrder_Traversal%2F</url>
-    <content type="text"><![CDATA[145 Binary Tree Postorder TraversalProblemGiven a binary tree, return the postorder traversal of its nodes’ values. Example: 123456789101112Input:[1,null,2,3] 1 \ 2 / 3Output:[3,2,1] Follow up:Recursive solution is trivial, could you do it iteratively? SolutionRecursive: 1234567891011121314151617181920212223242526272829import java.util.ArrayList;import java.util.List;class BinaryTreePostorderTraversal_Recursive &#123; // TreeNode difination class TreeNode &#123; int val; TreeNode left; TreeNode right; public TreeNode (int _val) &#123; val = _val; &#125; &#125; // Binary Tree Postorder Traversal: Recursive private void dfs (TreeNode root, List&lt;Integer&gt; ret) &#123; if (root != null) &#123; dfs(root.left, ret); dfs(root.right, ret); ret.add(root.val); &#125; &#125; public List&lt;Integer&gt; postorderTraversal (TreeNode root) &#123; List&lt;Integer&gt; ret = new ArrayList&lt;&gt;(); dfs(root, ret); return ret; &#125;&#125; 递归（Recursive）的思想在前序遍历，中序遍历和后序遍历里都是一样的，我们可以发现只需要修改dfs函数里面三行代码的顺序便可以调整遍历方式，所以Recursive是比较简单的。 Iterative:迭代（Iterative）则会比较困难，主要难点是我们要思考清楚后序遍历的节点的入栈出栈顺序。 12345678910111213141516171819202122232425262728293031323334import java.util.ArrayList;import java.util.LinkedList;import java.util.Stack;class BinaryTreePostorderTraversal_Iterative &#123; class TreeNode &#123; int val; TreeNode left; TreeNode right; public TreeNode (int _val) &#123; val = _val; &#125; &#125; public List&lt;Integer&gt; postorderTraversal (TreeNode root) &#123; LinkedList&lt;Integer&gt; ret = new LinkedList&lt;&gt;(); Stack&lt;TreeNode&gt; stack = new Stack&lt;&gt;(); stack.push(root); if (root == null) return ret; while (!stack.isEmpty()) &#123; TreeNode cur = stack.pop(); ret.addFirst(cur.val); if (cur.left != null) &#123; stack.push(cur.left); &#125; if (cur.right != null) &#123; stack.push(cur.right); &#125; &#125; return ret; &#125;&#125; 我们看上面这个Iterative的方法：同样，我们要建立一个stack用来存放待处理的节点，建立ret来存放结果，但是这个方法妙在它每次只向第一个位置添加元素，也就是 1ret.addFirst(cur.val); 这一行。那么实际上我们整个ret的顺序其实是反着进行的。比如：后序遍历本来我们应该最后添加整个树的root节点，但是如果采取每次都想第一个位置插入元素的话，那么我们便可以在最一开始就添加root节点，这样root节点就永远在最后面了。 那么接下来就是两个字节点入栈顺序问题了，假设一个节点的两个子节点都存在，我们希望在addFirst这一步中是先添加right节点，然后添加left节点，即这样的顺序 1ret: (left node) - (right node) - (root node) 这不也是后序遍历的意思嘛。那么既然知道了希望的得到元素的顺序，即元素出栈的顺序，那么很自然的就能知道元素入栈的顺序，如果我们希望right节点先出来，stack是后入先出，那么就要后放right节点，自然也要先放left节点啦。所以代码写成： 123456if (cur.left != null) &#123; stack.push(cur.left); &#125;if (cur.right != null) &#123; stack.push(cur.right); &#125; 然后我们看一下细节部分。 首先，当root为空的时候，相当于根本就没有树，那么遍历就是个空数组，所以我们直接返回建立的空数组，这里的代码没问题。 然后就是当root不为空的时候，代码是否会发生空指针的情况。 那么我们先要明白在遍历过程中一般什么情况会发生空指针：一般来说，比如一个节点nodeA是最下面的一层节点，它即没有left child也没有right child，那么如果我们在不加判定的情况下贸然使用比如nodeA.left这样的代码，比如ret.addFirst(nodeA.left.val)，那么由于nodeA.left是空的，所以它并不存在val的值，这样使用就会报错。所以我们添加了判断语句if (cur.left != null) {...}。 在上面的代码中，我们首先排除了root为空的情况，然后之后的操作每一步都会判断所添加的节点是否为空，所以整个代码不会向stack中添加空节点，自然也就不会出现空节点.val的情况了。 所以这个代码不会出现空指针的错误。]]></content>
-      <categories>
-        <category>Leetcode</category>
-      </categories>
-      <tags>
-        <tag>Leetcode</tag>
-        <tag>BinaryTree</tag>
-        <tag>Recursion</tag>
-        <tag>Iteration</tag>
       </tags>
   </entry>
   <entry>
@@ -164,14 +164,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Python学习-将逗号分隔的字符串转化为列表]]></title>
-    <url>%2F2018%2F10%2F21%2F2018-10-21-Python%E5%AD%A6%E4%B9%A0-%E5%B0%86%E9%80%97%E5%8F%B7%E5%88%86%E9%9A%94%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E5%8C%96%E4%B8%BA%E5%88%97%E8%A1%A8%2F</url>
-    <content type="text"><![CDATA[Python学习-将逗号分隔的字符串转化为列表@(python) Talk less, code more 用split()函数可以将用逗号分隔的str转化为list12345678columns = 'app_name, app_kind, app_type, md5, sender, receiver, timestamp, ip, nation, gps, size'print('type = ', type(columns))print(columns)# 使用split尽心分割columns = columns.split(',')print('type = ', type(columns))print(columns) 123456# 输出type = &lt;class 'str'&gt;app_name, app_kind, app_type, md5, sender, receiver, timestamp, ip, nation, gps, size# 转化后输出type = &lt;class 'list'&gt;['app_name', ' app_kind', ' app_type', ' md5', ' sender', ' receiver', ' timestamp', ' ip', ' nation', ' gps', ' size']]]></content>
+    <title><![CDATA[Pandas学习-DataFrame()按列索引]]></title>
+    <url>%2F2018%2F10%2F21%2F2018-10-21-Pandas%E5%AD%A6%E4%B9%A0-DataFrame()%E6%8C%89%E5%88%97%E7%B4%A2%E5%BC%95%2F</url>
+    <content type="text"><![CDATA[Pandas学习-DataFrame()按列索引@(python) Talk less, code more 12345678910import pandas as pddata_file = 'matchResult_10.txt'names = 'app_name, app_kind, app_type, ip, nation, gps, size'names = names.split(',')data = pd.read_csv(data_file, header=None, names=names)# 查找' gps'这一列的数据print(data[' gps']) 注意！！！：这里要注意一下空格的问题。因为定义数据头names的时候习惯性的在每个类型前面加了个空格（也就是习惯性的在逗号后面加了个空格），所以真正的索引值是&#39; gps&#39;而不是&#39;gps&#39;所以我们将前面的空格去掉。这也告诉我们，数据文件不要随便添加空格。 输出12345678910110 30.882428#75.8325771 22.9009009009009#84.145957913258022 20.81081081081081#70.702838233915883 26.27027027027027#72.999081137683554 26.7927864#84.53459495 24.4353437#85.8665356 26.4265576#76.66437287 26.7927864#84.53459498 20.46846846846847#75.005776733859929 25.7397946#77.4759334Name: gps, dtype: object 更改后的结果12345678910import pandas as pddata_file = 'matchResult_10.txt'names = 'app_name,app_kind,app_type,ip,nation,gps,size'names = names.split(',')data = pd.read_csv(data_file, header=None, names=names)# 查找' gps'这一列的数据print(data['gps']) 12345678910110 30.882428#75.8325771 22.9009009009009#84.145957913258022 20.81081081081081#70.702838233915883 26.27027027027027#72.999081137683554 26.7927864#84.53459495 24.4353437#85.8665356 26.4265576#76.66437287 26.7927864#84.53459498 20.46846846846847#75.005776733859929 25.7397946#77.4759334Name: gps, dtype: object 那这个data[&#39;gps&#39;]是什么类型的数据呢1234print(type(data['gps']))# 输出&lt;class 'pandas.core.series.Series'&gt;]]></content>
       <categories>
-        <category>Python</category>
+        <category>Pandas</category>
       </categories>
       <tags>
-        <tag>Python</tag>
+        <tag>Pandas</tag>
       </tags>
   </entry>
   <entry>
@@ -183,14 +183,14 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[Pandas学习-DataFrame()按列索引]]></title>
-    <url>%2F2018%2F10%2F21%2F2018-10-21-Pandas%E5%AD%A6%E4%B9%A0-DataFrame()%E6%8C%89%E5%88%97%E7%B4%A2%E5%BC%95%2F</url>
-    <content type="text"><![CDATA[Pandas学习-DataFrame()按列索引@(python) Talk less, code more 12345678910import pandas as pddata_file = 'matchResult_10.txt'names = 'app_name, app_kind, app_type, ip, nation, gps, size'names = names.split(',')data = pd.read_csv(data_file, header=None, names=names)# 查找' gps'这一列的数据print(data[' gps']) 注意！！！：这里要注意一下空格的问题。因为定义数据头names的时候习惯性的在每个类型前面加了个空格（也就是习惯性的在逗号后面加了个空格），所以真正的索引值是&#39; gps&#39;而不是&#39;gps&#39;所以我们将前面的空格去掉。这也告诉我们，数据文件不要随便添加空格。 输出12345678910110 30.882428#75.8325771 22.9009009009009#84.145957913258022 20.81081081081081#70.702838233915883 26.27027027027027#72.999081137683554 26.7927864#84.53459495 24.4353437#85.8665356 26.4265576#76.66437287 26.7927864#84.53459498 20.46846846846847#75.005776733859929 25.7397946#77.4759334Name: gps, dtype: object 更改后的结果12345678910import pandas as pddata_file = 'matchResult_10.txt'names = 'app_name,app_kind,app_type,ip,nation,gps,size'names = names.split(',')data = pd.read_csv(data_file, header=None, names=names)# 查找' gps'这一列的数据print(data['gps']) 12345678910110 30.882428#75.8325771 22.9009009009009#84.145957913258022 20.81081081081081#70.702838233915883 26.27027027027027#72.999081137683554 26.7927864#84.53459495 24.4353437#85.8665356 26.4265576#76.66437287 26.7927864#84.53459498 20.46846846846847#75.005776733859929 25.7397946#77.4759334Name: gps, dtype: object 那这个data[&#39;gps&#39;]是什么类型的数据呢1234print(type(data['gps']))# 输出&lt;class 'pandas.core.series.Series'&gt;]]></content>
+    <title><![CDATA[Python学习-将逗号分隔的字符串转化为列表]]></title>
+    <url>%2F2018%2F10%2F21%2F2018-10-21-Python%E5%AD%A6%E4%B9%A0-%E5%B0%86%E9%80%97%E5%8F%B7%E5%88%86%E9%9A%94%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E5%8C%96%E4%B8%BA%E5%88%97%E8%A1%A8%2F</url>
+    <content type="text"><![CDATA[Python学习-将逗号分隔的字符串转化为列表@(python) Talk less, code more 用split()函数可以将用逗号分隔的str转化为list12345678columns = 'app_name, app_kind, app_type, md5, sender, receiver, timestamp, ip, nation, gps, size'print('type = ', type(columns))print(columns)# 使用split尽心分割columns = columns.split(',')print('type = ', type(columns))print(columns) 123456# 输出type = &lt;class 'str'&gt;app_name, app_kind, app_type, md5, sender, receiver, timestamp, ip, nation, gps, size# 转化后输出type = &lt;class 'list'&gt;['app_name', ' app_kind', ' app_type', ' md5', ' sender', ' receiver', ' timestamp', ' ip', ' nation', ' gps', ' size']]]></content>
       <categories>
-        <category>Pandas</category>
+        <category>Python</category>
       </categories>
       <tags>
-        <tag>Pandas</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -217,8 +217,8 @@
         <category>Digital Image Processing</category>
       </categories>
       <tags>
-        <tag>Matlab</tag>
         <tag>Digital Image Processing</tag>
+        <tag>Matlab</tag>
       </tags>
   </entry>
   <entry>
@@ -270,17 +270,17 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[Python学习-深浅copy]]></title>
-    <url>%2F2018%2F08%2F19%2F2018-08-19-Python%E5%AD%A6%E4%B9%A0-%E6%B7%B1%E6%B5%85copy%2F</url>
-    <content type="text"><![CDATA[废话不多说，直接上代码 1234567891011121314151617181920212223242526&gt;&gt;&gt; import copy# 创建初始变量&gt;&gt;&gt; origin = [1, 2, [3, 4]]&gt;&gt;&gt; origin[1, 2, [3, 4]]# 浅copy&gt;&gt;&gt; shallow_copy = copy.copy(origin)&gt;&gt;&gt; shallow_copy[1, 2, [3, 4]]# 深copy&gt;&gt;&gt; deep_copy = copy.deepcopy(origin)&gt;&gt;&gt; deep_copy[1, 2, [3, 4]]# 修改原始变量&gt;&gt;&gt; origin[2][1] = 99&gt;&gt;&gt; origin[1, 2, [3, 99]]# 浅copy跟着变了，但深copy没有跟着变&gt;&gt;&gt; shallow_copy[1, 2, [3, 99]]&gt;&gt;&gt; deep_copy[1, 2, [3, 4]] 浅copy跟着变了，但深copy没有跟着变]]></content>
+    <title><![CDATA[Python学习-assert的作用]]></title>
+    <url>%2F2018%2F08%2F19%2F2018-08-19-Python%E5%AD%A6%E4%B9%A0%E2%80%94assert%2F</url>
+    <content type="text"><![CDATA[简单来说，assert就是为程序提供一个判断，如果assert里面的内容成立，为真，那么程序就向下执行，如果发现assert里面的东西是假的，就抛出AssertionError的错误。 下面是几个语句，很清楚的看到了assert的作用12345678910111213141516171819202122# 数值判断&gt;&gt;&gt; a = 3&gt;&gt;&gt; assert(a==3)&gt;&gt;&gt; assert(a &lt; 4)&gt;&gt;&gt; assert(a &gt; 4)Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AssertionError# True/Flase判断&gt;&gt;&gt; assert(True)&gt;&gt;&gt; assert(False)Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AssertionError# 1/0判断&gt;&gt;&gt; assert(1)&gt;&gt;&gt; assert(0)Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AssertionError]]></content>
       <categories>
         <category>Python</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[Python学习-assert的作用]]></title>
-    <url>%2F2018%2F08%2F19%2F2018-08-19-Python%E5%AD%A6%E4%B9%A0%E2%80%94assert%2F</url>
-    <content type="text"><![CDATA[简单来说，assert就是为程序提供一个判断，如果assert里面的内容成立，为真，那么程序就向下执行，如果发现assert里面的东西是假的，就抛出AssertionError的错误。 下面是几个语句，很清楚的看到了assert的作用12345678910111213141516171819202122# 数值判断&gt;&gt;&gt; a = 3&gt;&gt;&gt; assert(a==3)&gt;&gt;&gt; assert(a &lt; 4)&gt;&gt;&gt; assert(a &gt; 4)Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AssertionError# True/Flase判断&gt;&gt;&gt; assert(True)&gt;&gt;&gt; assert(False)Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AssertionError# 1/0判断&gt;&gt;&gt; assert(1)&gt;&gt;&gt; assert(0)Traceback (most recent call last): File "&lt;stdin&gt;", line 1, in &lt;module&gt;AssertionError]]></content>
+    <title><![CDATA[Python学习-深浅copy]]></title>
+    <url>%2F2018%2F08%2F19%2F2018-08-19-Python%E5%AD%A6%E4%B9%A0-%E6%B7%B1%E6%B5%85copy%2F</url>
+    <content type="text"><![CDATA[废话不多说，直接上代码 1234567891011121314151617181920212223242526&gt;&gt;&gt; import copy# 创建初始变量&gt;&gt;&gt; origin = [1, 2, [3, 4]]&gt;&gt;&gt; origin[1, 2, [3, 4]]# 浅copy&gt;&gt;&gt; shallow_copy = copy.copy(origin)&gt;&gt;&gt; shallow_copy[1, 2, [3, 4]]# 深copy&gt;&gt;&gt; deep_copy = copy.deepcopy(origin)&gt;&gt;&gt; deep_copy[1, 2, [3, 4]]# 修改原始变量&gt;&gt;&gt; origin[2][1] = 99&gt;&gt;&gt; origin[1, 2, [3, 99]]# 浅copy跟着变了，但深copy没有跟着变&gt;&gt;&gt; shallow_copy[1, 2, [3, 99]]&gt;&gt;&gt; deep_copy[1, 2, [3, 4]] 浅copy跟着变了，但深copy没有跟着变]]></content>
       <categories>
         <category>Python</category>
       </categories>
