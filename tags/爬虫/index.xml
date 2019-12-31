@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>爬虫 on Jinwang Blog</title>
+    <link>https://tfprimewj.github.io/tags/%E7%88%AC%E8%99%AB/</link>
+    <description>Recent content in 爬虫 on Jinwang Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Oct 2018 11:50:06 +0200</lastBuildDate>
+    
+	<atom:link href="https://tfprimewj.github.io/tags/%E7%88%AC%E8%99%AB/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python学习 - 写json爬虫</title>
+      <link>https://tfprimewj.github.io/2018/10/28/python%E5%AD%A6%E4%B9%A0-%E5%86%99json%E7%88%AC%E8%99%AB/</link>
+      <pubDate>Sun, 28 Oct 2018 11:50:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/10/28/python%E5%AD%A6%E4%B9%A0-%E5%86%99json%E7%88%AC%E8%99%AB/</guid>
+      <description>Python学习 - 写json爬虫 @(python)
+ Talk less, code more
+ 这个程序利用百度地图API发送HTTP Get Request请求，将我们的GPS数据转化成坐标对应的json文件，里面包含了这个gps的行政级别的地区，即“国家”，“省份”，“城市名”等，输出为字典形式。
+下面是浏览器输出的结果。 我们请求首先构造一个url，这是一个json文件的url。但是有一点需要注意，我们程序将json文件转化为dict形式的时候，由于百度地图API会自动在数据周围添加上一个括号，所以我们先要去掉这个括号，用re来完成，具体代码如下。
+# 此函数构造一个HTTP request 请求，请求对象为一个json格式的文件，并将json格式的文件转化为dict形式 import requests import json import re def req_json_to_dict(url): # 输入为一个&amp;quot;xxx/xxx/xxx.json&amp;quot;这样的url地址 # 构造HTTP GET Request，返回的网页内容存储到r中 r = requests.get(url) json_response = r.content.decode() # 删掉原始json数据两边的括号 p1 = re.compile(r&#39;[(](.*?)[)]&#39;, re.S) pure_info = re.findall(p1, json_response)[0] # 将json字符串转换成dic字典对象 dict_json = json.loads(pure_info) return dict_json if __name__ == &amp;quot;__main__&amp;quot;: url = &amp;quot;http://api.map.baidu.com/geocoder/v2/?callback=renderReverse&amp;amp;location=30.882428000000004,75.832577&amp;amp;output=json&amp;amp;pois=1&amp;amp;ak=vtZ2V5pp9VcMfvvpMf55SaDoCzLLYvGA&amp;quot; dict_json = req_json_to_dict(url)  我们运行一下程序，并查看每一步的变量的类型和值。
+# 首先，我们发送一个HTTP GET请求 r = requests.</description>
+    </item>
+    
+  </channel>
+</rss>

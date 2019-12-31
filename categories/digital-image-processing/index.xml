@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Digital Image Processing on Jinwang Blog</title>
+    <link>https://tfprimewj.github.io/categories/digital-image-processing/</link>
+    <description>Recent content in Digital Image Processing on Jinwang Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 27 Sep 2018 11:48:06 +0200</lastBuildDate>
+    
+	<atom:link href="https://tfprimewj.github.io/categories/digital-image-processing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Digital Image Processing - Ch3 Spatial Domain Image Enhancement</title>
+      <link>https://tfprimewj.github.io/2018/09/27/digital-image-processing-ch3-spatial-domain-image-enhancement/</link>
+      <pubDate>Thu, 27 Sep 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/09/27/digital-image-processing-ch3-spatial-domain-image-enhancement/</guid>
+      <description>Image Negative im_input = im2double(imread(&#39;./Pics/Ch03/rose.jpg&#39;)); im_output = 1-im_input; figure, imshow([im_input im_output]), title(&#39;Gray-level Invert&#39;);  Log Transformations（对数变换） im_input = imread(&#39;./Pics/Ch03/spectrum.tif&#39;); im_output = 3*log(double(im_input)+1); figure, imshow(im_input); title(&#39;input image&#39;); figure, imshow(abs(im_output),[]); title(&#39;image Log transform&#39;);  Gamma correction（伽马校正） im_input = im2double(imread(&#39;./Pics/Ch03/MRI.jpg&#39;)); im_output1 = imadjust(im_input,[0;1], [0;1], 1.2); im_output2 = imadjust(im_input,[0;1], [0;1], 0.8); figure, imshow(im_input); title(&#39;input image&#39;); figure, imshow([im_output1 im_output2]); title(&#39;Gamma correction&#39;);  Contrast stretching（对比度拉伸） im_input = im2double(imread(&#39;.\Pics\Ch03\pollen.tif&#39;)); im_output = imadjust(im_input,[min(im_input(:)) max(im_input(:))], [0 1]); figure, imshow(im_input); title(&#39;input image&#39;); figure, imshow(im_output); title(&#39;Contrast stretch&#39;);  Histogram （直方图） im_input = im2double(imread(&#39;.</description>
+    </item>
+    
+    <item>
+      <title>Digital Image Processing - Ch2 Fundamentals</title>
+      <link>https://tfprimewj.github.io/2018/09/26/digital-image-processing-ch2-fundamentals/</link>
+      <pubDate>Wed, 26 Sep 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/09/26/digital-image-processing-ch2-fundamentals/</guid>
+      <description> Ch2 Fundamentals  Human Visual Perception Image sensing and acquisition Image sampling and quantization Basic relationship between pixels
+Code Image interpolation method：
+ Nearest-neighbor interpolation
+ Bilinear interpolation
+ Bicubic interpolation
+im_inut = imread(&#39;./Pics/Ch02/weixins.bmp&#39;); im_1 = imresize(im_inut, 4,&#39;nearest&#39;); im_2 = imresize(im_inut, 4,&#39;Bilinear&#39;); im_3 = imresize(im_inut, 4,&#39;Bicubic&#39;); figure, imshow(im_inut); title(&#39;image negatives method&#39;); figure, imshow(im_1); title(&#39;Nearest-neighbor interpolation&#39;); figure, imshow(im_2); title(&#39;Bilinear interpolation&#39;); figure, imshow(im_3); title(&#39;Bicubic interpolation&#39;); %imwrite(im_1,&#39;weixins_neigh.bmp&#39;); %imwrite(im_2,&#39;weixins_Bilinear.bmp&#39;); %imwrite(im_3,&#39;weixins_Bicubic.bmp&#39;);   Output </description>
+    </item>
+    
+  </channel>
+</rss>

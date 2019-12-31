@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>homebrew on Jinwang Blog</title>
+    <link>https://tfprimewj.github.io/categories/homebrew/</link>
+    <description>Recent content in homebrew on Jinwang Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 30 Dec 2019 11:54:06 +0200</lastBuildDate>
+    
+	<atom:link href="https://tfprimewj.github.io/categories/homebrew/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[转载]记录：更换HomeBrew源</title>
+      <link>https://tfprimewj.github.io/2019/12/30/%E8%BD%AC%E8%BD%BD%E8%AE%B0%E5%BD%95%E6%9B%B4%E6%8D%A2homebrew%E6%BA%90/</link>
+      <pubDate>Mon, 30 Dec 2019 11:54:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2019/12/30/%E8%BD%AC%E8%BD%BD%E8%AE%B0%E5%BD%95%E6%9B%B4%E6%8D%A2homebrew%E6%BA%90/</guid>
+      <description>记录：更换HomeBrew源 由于外网速度过慢，将Homebrew的源更换为Alibaba源
+参考：https://learnku.com/articles/18908
+1. 替换 / 还原 brew.git 仓库地址 # 替换成阿里巴巴的 brew.git 仓库地址: cd &amp;quot;$(brew --repo)&amp;quot; git remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git #======================================================= # 还原为官方提供的 brew.git 仓库地址 cd &amp;quot;$(brew --repo)&amp;quot; git remote set-url origin https://github.com/Homebrew/brew.git  本机终端操作结果：
+jinwang@Jin-Wang-MacBook-Pro ~ cd &amp;quot;$(brew --repo)&amp;quot; jinwang@Jin-Wang-MacBook-Pro  /usr/local/Homebrew   stable  git remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git  2. 替换 / 还原 homebrew-core.git 仓库地址 # 替换成阿里巴巴的 homebrew-core.git 仓库地址: cd &amp;quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&amp;quot; git remote set-url origin https://mirrors.</description>
+    </item>
+    
+  </channel>
+</rss>

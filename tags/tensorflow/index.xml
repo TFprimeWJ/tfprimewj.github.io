@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tensorflow on Jinwang Blog</title>
+    <link>https://tfprimewj.github.io/tags/tensorflow/</link>
+    <description>Recent content in Tensorflow on Jinwang Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 22 Aug 2018 11:48:06 +0200</lastBuildDate>
+    
+	<atom:link href="https://tfprimewj.github.io/tags/tensorflow/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CS20学习笔记（五）</title>
+      <link>https://tfprimewj.github.io/2018/08/22/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%94/</link>
+      <pubDate>Wed, 22 Aug 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/08/22/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%94/</guid>
+      <description>Talk less, code more
+ Lecture 3: birth-life Linear Regression Implementation import os os.environ[&#39;TF_CPP_MIN_LOG_LEVEL&#39;]=&#39;2&#39; import tensorflow as tf import numpy as np import time # Read data function def read_birth_life_data(filename): &amp;quot;&amp;quot;&amp;quot; Read in birth_life_2010.txt and return: data in the form of NumPy array n_samples: number of samples &amp;quot;&amp;quot;&amp;quot; text = open(filename, &#39;r&#39;).readlines()[1:] data = [line[:-1].split(&#39;\t&#39;) for line in text] births = [float(line[1]) for line in data] lifes = [float(line[2]) for line in data] data = list(zip(births, lifes)) n_samples = len(data) data = np.</description>
+    </item>
+    
+    <item>
+      <title>CS20学习笔记（四）</title>
+      <link>https://tfprimewj.github.io/2018/08/21/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%9B%9B/</link>
+      <pubDate>Tue, 21 Aug 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/08/21/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%9B%9B/</guid>
+      <description>Talk less, code more
+ read_birth_life_data函数详解 1. API def read_birth_life_data(filename): &amp;quot;&amp;quot;&amp;quot; Read in birth_life_2010.txt and return: data in the form of NumPy array n_samples: number of samples &amp;quot;&amp;quot;&amp;quot; text = open(filename, &#39;r&#39;).readlines()[1:] data = [line[:-1].split(&#39;\t&#39;) for line in text] births = [float(line[1]) for line in data] lifes = [float(line[2]) for line in data] data = list(zip(births, lifes)) n_samples = len(data) data = np.asarray(data, dtype=np.float32) return data, n_samples  2.</description>
+    </item>
+    
+    <item>
+      <title>CS20学习笔记（三）</title>
+      <link>https://tfprimewj.github.io/2018/08/20/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%89/</link>
+      <pubDate>Mon, 20 Aug 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/08/20/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%89/</guid>
+      <description>CS20学习笔记（三） @(Tensorflow)
+ Talk less, code more
+ Basic Models in Tensoflow 1. 学习资源  CS20 Lecture3 Slides Tensorflow Official Docs Stanford Tensorflow Tutorial github repo  2. Agenda  Review Linear regression on birth/life data Control Flow tf.data Optimizers, gradients Logistic regression on MNIST Loss functions  3. Review 3.1 Computation Graph TensorFlow separates definition of computations from their execution Phase 1: assemble a graph Phase 2: use a session to execute operations in the graph.</description>
+    </item>
+    
+    <item>
+      <title>CS20学习笔记（二）</title>
+      <link>https://tfprimewj.github.io/2018/08/19/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C/</link>
+      <pubDate>Sun, 19 Aug 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/08/19/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C/</guid>
+      <description>Talk less, code more
+ Tensorflow Operations 1. 学习资料  CS 20 Slide2 Tensorflow Operations Tensorflow Official Docs  2. Agenda  Basic Operations Tensor Types Importing Data Lazy loading  3. TensorBoard 3.1 Your first tensorflow program import tensorflow as tf a = tf.constant(2) b = tf.constant(3) c = tf.add(a, b) with tf.Session() as sess: print(sess.run(c))  Output:
+2018-08-20 13:42:00.773870: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA 5  实际上，上面除了5是我们想要的结果，5上面的是一个warning，简单解释一下这个warning。上面的意思是说我的CPU支持AVX2和FMA，但是tensorflow使用不了。AVX2和FMA实际上是CPU内部为了加速矩阵运算所设计出来的东西，说白了就是会让运算变得更快（虽然与GPU相比相去甚远），但是我们的tensorflow默认用不了这些高级玩应儿，所以就会出现这种warning。参考：CSDN 我们通过以下代码可以解决这个问题</description>
+    </item>
+    
+    <item>
+      <title>CS20学习笔记（一）</title>
+      <link>https://tfprimewj.github.io/2018/08/19/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/</link>
+      <pubDate>Sun, 19 Aug 2018 11:38:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/08/19/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/</guid>
+      <description>Talk less, code more
+ 1. 写在前面 &amp;emsp;&amp;emsp;之前看了一些Tensorflow的教学博客，也看了Tensorflow官方Tutorial，也看了Keras的Tutorial，总感觉学了一些Tensorflow但又学的不系统，前几天在网上看到了CS20的课程，虽然没有Video，但是有Slide。所以，就看着slides敲一边代码，作为学习主要方式了。一步一步，踏踏实实，学好Tensorflow，将会是一个新的层次。那么下面就开始吧！
+2. 学习资料  CS20 Lecture 1 Slides Tensorflow Official Docs pycharm  3. Lecture1: Welcome to Tensorflow! 3.1 Agenda  Welcome Overview of Tensorflow Graphs and Sessions  3.2 Create a tensor import tensorflow as tf a = tf.add(3, 5) print(a)  Output:
+Tensor(&amp;quot;Add:0&amp;quot;, shape=(), dtype=int32)  3.3 Create a tensor, than run a Session import tensorflow as tf a = tf.</description>
+    </item>
+    
+    <item>
+      <title>Deep Learning Course3 Week1 Programming Assignment2</title>
+      <link>https://tfprimewj.github.io/2018/08/16/deep-learning-course3-week1-programming-assignment2/</link>
+      <pubDate>Thu, 16 Aug 2018 11:58:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/08/16/deep-learning-course3-week1-programming-assignment2/</guid>
+      <description>Convolutional Neural Networks: Application Welcome to Course 4&amp;rsquo;s second assignment! In this notebook, you will:
+ Implement helper functions that you will use when implementing a TensorFlow model Implement a fully functioning ConvNet using TensorFlow  After this assignment you will be able to:
+ Build and train a ConvNet in TensorFlow for a classification problem  We assume here that you are already familiar with TensorFlow. If you are not, please refer the TensorFlow Tutorial of the third week of Course 2 (&amp;rdquo;Improving deep neural networks&amp;rdquo;).</description>
+    </item>
+    
+  </channel>
+</rss>

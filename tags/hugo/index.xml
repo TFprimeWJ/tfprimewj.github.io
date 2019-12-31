@@ -1,15 +1,42 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>hugo on Icarus</title>
+    <title>hugo on Jinwang Blog</title>
     <link>https://tfprimewj.github.io/tags/hugo/</link>
-    <description>Recent content in hugo on Icarus</description>
+    <description>Recent content in hugo on Jinwang Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 02 Oct 2015 21:49:20 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 30 Dec 2019 11:54:06 +0200</lastBuildDate>
     
 	<atom:link href="https://tfprimewj.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>将Hugo部署到Github上</title>
+      <link>https://tfprimewj.github.io/2019/12/30/%E5%B0%86hugo%E9%83%A8%E7%BD%B2%E5%88%B0github%E4%B8%8A/</link>
+      <pubDate>Mon, 30 Dec 2019 11:54:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2019/12/30/%E5%B0%86hugo%E9%83%A8%E7%BD%B2%E5%88%B0github%E4%B8%8A/</guid>
+      <description> 将Hugo部署到Github上 首先我们按照之前的教程已经完成了hugo网站的创建，以及主题的变换。
+现在将我们的项目部署到github上
+Step 1 生成public文件夹 进入hugo项目的根目录，输入：
+hugo --theme=hugo-icarus-theme --baseURL=&amp;quot;https://YOURNAME.github.io/&amp;quot;  Step 2 将github上的网站克隆到本地 将github上的网站repo clone到本地
+git clone git@github.com:TFprimeWJ/tfprimewj.github.io.git  Step 3 替换文件 将pubilc的所有文件都复制到克隆下来的文件夹中
+Step 4 push项目 git add . git commit -m &amp;quot;Comments&amp;quot; git push -u origin master  </description>
+    </item>
+    
+    <item>
+      <title>Hugo个人博客搭建过程</title>
+      <link>https://tfprimewj.github.io/2019/12/30/hugo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/</link>
+      <pubDate>Mon, 30 Dec 2019 11:43:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2019/12/30/hugo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/</guid>
+      <description>Hugo个人博客搭建过程 本文记录了学习尝试搭建hugo的过程
+Step 1 安装Hugo 参照Hugo中文官网：https://www.gohugo.org/ 或者英文官网：https://gohugo.io/getting-started/installing/
+Mac中使用Homebrew安装:
+brew install hugo  运行结果如下：
+ jinwang@Jin-Wang-MacBook-Pro  ~  brew install hugo Updating Homebrew... ^CWarning: You are using macOS 10.15. We do not provide support for this pre-release version. You will encounter build failures with some formulae. Please create pull requests instead of asking for help on Homebrew&#39;s GitHub, Discourse, Twitter or IRC. You are responsible for resolving any issues you experience, as you are running this pre-release version.</description>
+    </item>
     
     <item>
       <title>How to add pages to the menu</title>

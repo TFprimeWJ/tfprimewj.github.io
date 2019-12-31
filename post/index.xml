@@ -1,15 +1,514 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Icarus</title>
+    <title>Posts on Jinwang Blog</title>
     <link>https://tfprimewj.github.io/post/</link>
-    <description>Recent content in Posts on Icarus</description>
+    <description>Recent content in Posts on Jinwang Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 May 2017 12:10:51 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 30 Dec 2019 23:58:22 +0800</lastBuildDate>
     
 	<atom:link href="https://tfprimewj.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MongoDB M001 - MongoDB Basics</title>
+      <link>https://tfprimewj.github.io/2019/12/30/mongodb-m001-mongodb-basics/</link>
+      <pubDate>Mon, 30 Dec 2019 23:58:22 +0800</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2019/12/30/mongodb-m001-mongodb-basics/</guid>
+      <description>M001 - MongoDB Basics Chapter 1 Introduction Database, Collections, and Documents The figure below shows the relationships among Databse, Collections, and Documents
+   In MongoDB Compass, we can see the details of the data.
+For example, inside the video.movie, we can click documents:
+   When we click Schema:
+   第一章主要讲了MongoDB Compass的用法，顺带介绍了一下Json数据格式。
+本章编程的部分不多，仅仅是在filter里面有一些简单的编程，例如：
+filter: {year: &amp;quot;1895&amp;quot;}
+filter: {year: {&amp;quot;$gte&amp;quot;: 1900, &amp;quot;$lt&amp;quot;: 2010}}
+这种。</description>
+    </item>
+    
+    <item>
+      <title>Java学习之一维数组</title>
+      <link>https://tfprimewj.github.io/2019/12/30/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Mon, 30 Dec 2019 23:57:22 +0800</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2019/12/30/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84/</guid>
+      <description>Java学习之一维数组(Single-Dimentional Arrays) 数组基础 声明数组 声明数组必须有数组元素(element type)的类型和引用变量(reference variable)，通常也就是数组的名字
+elementType[] arrayRefVar;  比如：
+double[] myList;  创建数组 实际上，当我们输入elementType[] arrayRefVar;时，我们仅仅是创建了一个指向数组的引用变量，程序仅仅为这个引用分配了内存，但是并没有给数组分配内存。所以我们必须像下面一样操作才可以为数组分配内存。
+arrayRefVar = new elementType[arraySize];  上面这句话做了两件事：
+ 创建了一个大小为arraySize的elementType类型数组，并为其分配了内存。
+ 创建了一个数组引用arrayRefVar，指向了刚刚创建的数组。
+  例如：
+double[] myList = new double[10];  可以通过下面的方法给数组赋值：
+myList[0] = 2.5;  数组大小和默认值 数组的大小必须在创建数组的时候确定，而且不能更改。
+可以使用myList.length查看数组的大小。
+默认情况下，数组的值为
+数值型：0 字符型：\u0000 布尔变量：false</description>
+    </item>
+    
+    <item>
+      <title>[转载]记录：更换HomeBrew源</title>
+      <link>https://tfprimewj.github.io/2019/12/30/%E8%BD%AC%E8%BD%BD%E8%AE%B0%E5%BD%95%E6%9B%B4%E6%8D%A2homebrew%E6%BA%90/</link>
+      <pubDate>Mon, 30 Dec 2019 11:54:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2019/12/30/%E8%BD%AC%E8%BD%BD%E8%AE%B0%E5%BD%95%E6%9B%B4%E6%8D%A2homebrew%E6%BA%90/</guid>
+      <description>记录：更换HomeBrew源 由于外网速度过慢，将Homebrew的源更换为Alibaba源
+参考：https://learnku.com/articles/18908
+1. 替换 / 还原 brew.git 仓库地址 # 替换成阿里巴巴的 brew.git 仓库地址: cd &amp;quot;$(brew --repo)&amp;quot; git remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git #======================================================= # 还原为官方提供的 brew.git 仓库地址 cd &amp;quot;$(brew --repo)&amp;quot; git remote set-url origin https://github.com/Homebrew/brew.git  本机终端操作结果：
+jinwang@Jin-Wang-MacBook-Pro ~ cd &amp;quot;$(brew --repo)&amp;quot; jinwang@Jin-Wang-MacBook-Pro  /usr/local/Homebrew   stable  git remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git  2. 替换 / 还原 homebrew-core.git 仓库地址 # 替换成阿里巴巴的 homebrew-core.git 仓库地址: cd &amp;quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&amp;quot; git remote set-url origin https://mirrors.</description>
+    </item>
+    
+    <item>
+      <title>将Hugo部署到Github上</title>
+      <link>https://tfprimewj.github.io/2019/12/30/%E5%B0%86hugo%E9%83%A8%E7%BD%B2%E5%88%B0github%E4%B8%8A/</link>
+      <pubDate>Mon, 30 Dec 2019 11:54:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2019/12/30/%E5%B0%86hugo%E9%83%A8%E7%BD%B2%E5%88%B0github%E4%B8%8A/</guid>
+      <description> 将Hugo部署到Github上 首先我们按照之前的教程已经完成了hugo网站的创建，以及主题的变换。
+现在将我们的项目部署到github上
+Step 1 生成public文件夹 进入hugo项目的根目录，输入：
+hugo --theme=hugo-icarus-theme --baseURL=&amp;quot;https://YOURNAME.github.io/&amp;quot;  Step 2 将github上的网站克隆到本地 将github上的网站repo clone到本地
+git clone git@github.com:TFprimeWJ/tfprimewj.github.io.git  Step 3 替换文件 将pubilc的所有文件都复制到克隆下来的文件夹中
+Step 4 push项目 git add . git commit -m &amp;quot;Comments&amp;quot; git push -u origin master  </description>
+    </item>
+    
+    <item>
+      <title>git上传失败解决方法</title>
+      <link>https://tfprimewj.github.io/2019/12/30/git%E4%B8%8A%E4%BC%A0%E5%A4%B1%E8%B4%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Mon, 30 Dec 2019 11:53:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2019/12/30/git%E4%B8%8A%E4%BC%A0%E5%A4%B1%E8%B4%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
+      <description> git上传失败解决方法 问题描述：
+hint: Updates were rejected because the remote contains work that you do hint: not have locally. This is usually caused by another repository pushing hint: to the same ref. You may want to first integrate the remote changes hint: (e.g., &#39;git pull ...&#39;) before pushing again. hint: See the &#39;Note about fast-forwards&#39; in &#39;git push --help&#39; for details.  解决方法：
+git pull origin master git push origin master  </description>
+    </item>
+    
+    <item>
+      <title>Hugo个人博客搭建过程</title>
+      <link>https://tfprimewj.github.io/2019/12/30/hugo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/</link>
+      <pubDate>Mon, 30 Dec 2019 11:43:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2019/12/30/hugo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/</guid>
+      <description>Hugo个人博客搭建过程 本文记录了学习尝试搭建hugo的过程
+Step 1 安装Hugo 参照Hugo中文官网：https://www.gohugo.org/ 或者英文官网：https://gohugo.io/getting-started/installing/
+Mac中使用Homebrew安装:
+brew install hugo  运行结果如下：
+ jinwang@Jin-Wang-MacBook-Pro  ~  brew install hugo Updating Homebrew... ^CWarning: You are using macOS 10.15. We do not provide support for this pre-release version. You will encounter build failures with some formulae. Please create pull requests instead of asking for help on Homebrew&#39;s GitHub, Discourse, Twitter or IRC. You are responsible for resolving any issues you experience, as you are running this pre-release version.</description>
+    </item>
+    
+    <item>
+      <title>LC617 合并二叉树</title>
+      <link>https://tfprimewj.github.io/2019/12/17/lc617-%E5%90%88%E5%B9%B6%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
+      <pubDate>Tue, 17 Dec 2019 11:53:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2019/12/17/lc617-%E5%90%88%E5%B9%B6%E4%BA%8C%E5%8F%89%E6%A0%91/</guid>
+      <description>617 合并二叉树 题目描述 给定两个二叉树，想象当你将它们中的一个覆盖到另一个上时，两个二叉树的一些节点便会重叠。
+你需要将他们合并为一个新的二叉树。合并的规则是如果两个节点重叠，那么将他们的值相加作为节点合并后的新值，否则不为NULL 的节点将直接作为新二叉树的节点。
+示例1:
+输入:
+	Tree 1 Tree 2 1 2 / \ / \ 3 2 1 3 / \ \ 5 4 7  输出:
+合并后的树:
+	3 / \ 4 5 / \ \ 5 4 7  注意:合并必须从两个树的根节点开始。
+解法 public TreeNode mergeTrees (TreeNode t1, TreeNode t2) { if (t1 == null) return t2; if (t2 == null) return t1; t1.val += t2.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 589 N-ary Tree Preorder Traversal</title>
+      <link>https://tfprimewj.github.io/2019/10/17/leetcode-589-n-ary-tree-preorder-traversal/</link>
+      <pubDate>Thu, 17 Oct 2019 11:54:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2019/10/17/leetcode-589-n-ary-tree-preorder-traversal/</guid>
+      <description>589 N-ary Tree Preorder Traversal easy
+ Binary Tree  Problem Given an n-ary tree, return thepreordertraversal of its nodes&amp;rsquo; values.
+For example, given a3-arytree:
+Return its preorder traversal as:[1,3,5,6,2,4].
+Note:
+Recursive solution is trivial, could you do it iteratively?
+Solution Recursive:
+import java.util.ArrayList; import java.util.List; /* // Definition for a Node. class Node { public int val; public List&amp;lt;Node&amp;gt; children; public Node() {} public Node(int _val,List&amp;lt;Node&amp;gt; _children) { val = _val; children = _children; } }; */ class NaryTreePreorderTraversal { // N-ary Node Defination class Node { public int val; public List&amp;lt;Node&amp;gt; children; public Node (int _val, List&amp;lt;Node&amp;gt; _children) { val = _val; children = _children; } } private void dfs (Node root, List&amp;lt;Integer&amp;gt; ret) { if (root !</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 94 Binary Tree Inorder Traversal</title>
+      <link>https://tfprimewj.github.io/2019/10/17/leetcode-94-binary-tree-inorder-traversal/</link>
+      <pubDate>Thu, 17 Oct 2019 11:54:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2019/10/17/leetcode-94-binary-tree-inorder-traversal/</guid>
+      <description>94 Binary Tree Inorder Traversal Medium
+ Binary Tree  Problem Given a binary tree, return the_inorder_traversal of its nodes&amp;rsquo; values.
+Example:
+Input: [1,null,2,3] 1 \ 2 / 3 Output: [1,3,2]  Follow up:Recursive solution is trivial, could you do it iteratively?
+Solution Recursive:
+import java.util.ArrayList; import java.util.List; /** * Definition for a binary tree node. * public class TreeNode { * int val; * TreeNode left; * TreeNode right; * TreeNode(int x) { val = x; } * } */ class BinaryTreeInorderTraversal_Recursive { public class TreeNode { int val; TreeNode left; TreeNode right; TreeNode (int x) { val = x; } } private void dfs (TreeNode root, List&amp;lt;Integer&amp;gt; ret) { if (root !</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 144 Binary Tree Preorder Traversal</title>
+      <link>https://tfprimewj.github.io/2019/10/17/leetcode-144-binary-tree-preorder-traversal/</link>
+      <pubDate>Thu, 17 Oct 2019 11:53:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2019/10/17/leetcode-144-binary-tree-preorder-traversal/</guid>
+      <description>144 Binary Tree Preorder Traversal Problem Given a binary tree, return the_preorder_traversal of its nodes&amp;rsquo; values.
+Example:
+Input: [1,null,2,3] 1 \ 2 / 3 Output: [1,2,3]  Follow up:Recursive solution is trivial, could you do it iteratively?
+Solution Recursive:
+import java.util.ArrayList; import java.util.List; class BinaryTreePreorderTraversal { // Defination of a binary tree node public class TreeNode { int val; TreeNode left; TreeNode right; public TreeNode (int x) { val = x; } } private void dfs (TreeNode root, List&amp;lt;Integer&amp;gt; ret) { if (root !</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 145 Binary Tree Postorder Traversal</title>
+      <link>https://tfprimewj.github.io/2019/10/17/leetcode-145-binary-tree-postorder-traversal/</link>
+      <pubDate>Thu, 17 Oct 2019 11:52:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2019/10/17/leetcode-145-binary-tree-postorder-traversal/</guid>
+      <description>145 Binary Tree Postorder Traversal Problem Given a binary tree, return the postorder traversal of its nodes&amp;rsquo; values.
+Example:
+Input: [1,null,2,3] 1 \ 2 / 3 Output: [3,2,1]  Follow up:Recursive solution is trivial, could you do it iteratively?
+Solution Recursive:
+import java.util.ArrayList; import java.util.List; class BinaryTreePostorderTraversal_Recursive { // TreeNode difination class TreeNode { int val; TreeNode left; TreeNode right; public TreeNode (int _val) { val = _val; } } // Binary Tree Postorder Traversal: Recursive private void dfs (TreeNode root, List&amp;lt;Integer&amp;gt; ret) { if (root !</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 35 Search Insert Position</title>
+      <link>https://tfprimewj.github.io/2019/10/17/leetcode-35-search-insert-position/</link>
+      <pubDate>Thu, 17 Oct 2019 11:52:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2019/10/17/leetcode-35-search-insert-position/</guid>
+      <description>35 Search Insert Position  Binary Search  Problem Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+You may assume no duplicates in the array.
+Example 1:
+Input: [1,3,5,6], 5 Output: 2  Example 2:
+Input: [1,3,5,6], 2 Output: 1  Example 3:
+Input: [1,3,5,6], 7 Output: 4  Example 4:</description>
+    </item>
+    
+    <item>
+      <title>剑指Offer 从上到下打印二叉树</title>
+      <link>https://tfprimewj.github.io/2019/10/17/%E5%89%91%E6%8C%87offer-%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
+      <pubDate>Thu, 17 Oct 2019 11:51:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2019/10/17/%E5%89%91%E6%8C%87offer-%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/</guid>
+      <description>从上到下打印二叉树 题目描述 从上往下打印出二叉树的每个节点，同层节点从左至右打印。
+解法 import java.util.ArrayList; import java.util.Queue; class BinaryTreePrintFromTopToBottom { // TreeNode defination class TreeNode { int val; TreeNode left; TreeNode right; public TreeNode (int _val) { this.val = _val; } } public ArrayList&amp;lt;Integer&amp;gt; PrintFromTopToBottom (TreeNode root) { ArrayList&amp;lt;Integer&amp;gt; ret = new ArrayList&amp;lt;&amp;gt;(); ArrayList&amp;lt;TreeNode&amp;gt; queue = new ArrayList&amp;lt;&amp;gt;(); if (root == null) { return ret; } queue.add(root); while (!queue.isEmpty()) { TreeNode cur = queue.remove(0); // Remove the 1st TreeNode in the list and return it to cur ret.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 53 Maximum Subarray</title>
+      <link>https://tfprimewj.github.io/2019/10/07/leetcode-53-maximum-subarray/</link>
+      <pubDate>Mon, 07 Oct 2019 11:57:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2019/10/07/leetcode-53-maximum-subarray/</guid>
+      <description>53. Maximum Subarray  Dynamic Programming  Problem Given an integer arraynums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
+Example:
+Input: [-2,1,-3,4,-1,2,1,-5,4], Output: 6 Explanation: [4,-1,2,1] has the largest sum = 6.  Follow up:
+If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
+Solution class MaximumSubarray_SimpleJava { public int maxSubArray (int[] A) { int max = Integer.</description>
+    </item>
+    
+    <item>
+      <title>What is Nodejs? - A beginner&#39;s View</title>
+      <link>https://tfprimewj.github.io/2019/10/06/what-is-nodejs-a-beginners-view/</link>
+      <pubDate>Sun, 06 Oct 2019 11:51:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2019/10/06/what-is-nodejs-a-beginners-view/</guid>
+      <description>问题：什么是Node.js? 在学习nodejs的时候，老师直接教我们怎么安装nodejs，然后直接使用node命令便可以执行javascript代码。但是node究竟扮演了一个什么样的角色我一直不是很清楚，下面是我作为一个初学者对node初步的思考。
+我的理解 我们知道我们向服务器请求一个网页，服务器返回给我们一个html文件，然后这个html会渲染，这时就会加载里面的css、js等代码。在这个过程中，js只不过是一个渲染的工具，js完完全全使用在前端，也是用户的客户端，也就是我们的浏览器。
+即，js完全是一个前端渲染工具，后端有后端自己的语言，与js无关。
+但是我们在使用node的过程中发现，我们本身并没有自己去写后端，我们直接用node命令就可以造出一个服务器，在这个服务器上我们可以写自己的GET、POST页面。而且最重要的是，node的代码就是js。
+所以，我们此时发现，我们已经在用js写后端了！
+也就是说，我们现在使用js既可以写前端，也可以写后端了！
+多么神奇！</description>
+    </item>
+    
+    <item>
+      <title>First Express App</title>
+      <link>https://tfprimewj.github.io/2019/09/29/first-express-app/</link>
+      <pubDate>Sun, 29 Sep 2019 11:54:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2019/09/29/first-express-app/</guid>
+      <description>Frist Express App Udemy Web Development: 265 Our First Express App
+Create folder &amp;amp; file Create root folder and app.js
+mkdir FirstExpressApp
+cd FirstExpressApp
+touch app.js
+Install express Install node package: express
+npm install express
+terminal output when installing express:
+jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Udemy_Web_Development/NodeJS_Part/FirstExpressApp  npm install express npm WARN saveError ENOENT: no such file or directory, open &#39;/Users/jinwang/Desktop/Udemy_Web_Development/NodeJS_Part/FirstExpressApp/package.json&#39; npm notice created a lockfile as package-lock.json. You should commit this file.</description>
+    </item>
+    
+    <item>
+      <title>Python学习-将dict写入txt文件</title>
+      <link>https://tfprimewj.github.io/2018/10/28/python%E5%AD%A6%E4%B9%A0-%E5%B0%86dict%E5%86%99%E5%85%A5txt%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Sun, 28 Oct 2018 11:51:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/10/28/python%E5%AD%A6%E4%B9%A0-%E5%B0%86dict%E5%86%99%E5%85%A5txt%E6%96%87%E4%BB%B6/</guid>
+      <description> Python学习-将dict写入txt文件 a = [&#39;Jin Wang&#39;, &#39;Jiawei Xu&#39;, &#39;Peiyang Shi&#39;, &#39;Zheqi Zhang&#39;]  for line in a: print(line)  Jin Wang Jiawei Xu Peiyang Shi Zheqi Zhang  i = 1 for line in a: print(str(i) + &#39;,&#39; + line) i = i + 1  1,Jin Wang 2,Jiawei Xu 3,Peiyang Shi 4,Zheqi Zhang  </description>
+    </item>
+    
+    <item>
+      <title>Python学习 - 写json爬虫</title>
+      <link>https://tfprimewj.github.io/2018/10/28/python%E5%AD%A6%E4%B9%A0-%E5%86%99json%E7%88%AC%E8%99%AB/</link>
+      <pubDate>Sun, 28 Oct 2018 11:50:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/10/28/python%E5%AD%A6%E4%B9%A0-%E5%86%99json%E7%88%AC%E8%99%AB/</guid>
+      <description>Python学习 - 写json爬虫 @(python)
+ Talk less, code more
+ 这个程序利用百度地图API发送HTTP Get Request请求，将我们的GPS数据转化成坐标对应的json文件，里面包含了这个gps的行政级别的地区，即“国家”，“省份”，“城市名”等，输出为字典形式。
+下面是浏览器输出的结果。 我们请求首先构造一个url，这是一个json文件的url。但是有一点需要注意，我们程序将json文件转化为dict形式的时候，由于百度地图API会自动在数据周围添加上一个括号，所以我们先要去掉这个括号，用re来完成，具体代码如下。
+# 此函数构造一个HTTP request 请求，请求对象为一个json格式的文件，并将json格式的文件转化为dict形式 import requests import json import re def req_json_to_dict(url): # 输入为一个&amp;quot;xxx/xxx/xxx.json&amp;quot;这样的url地址 # 构造HTTP GET Request，返回的网页内容存储到r中 r = requests.get(url) json_response = r.content.decode() # 删掉原始json数据两边的括号 p1 = re.compile(r&#39;[(](.*?)[)]&#39;, re.S) pure_info = re.findall(p1, json_response)[0] # 将json字符串转换成dic字典对象 dict_json = json.loads(pure_info) return dict_json if __name__ == &amp;quot;__main__&amp;quot;: url = &amp;quot;http://api.map.baidu.com/geocoder/v2/?callback=renderReverse&amp;amp;location=30.882428000000004,75.832577&amp;amp;output=json&amp;amp;pois=1&amp;amp;ak=vtZ2V5pp9VcMfvvpMf55SaDoCzLLYvGA&amp;quot; dict_json = req_json_to_dict(url)  我们运行一下程序，并查看每一步的变量的类型和值。
+# 首先，我们发送一个HTTP GET请求 r = requests.</description>
+    </item>
+    
+    <item>
+      <title>Python学习-json.dumps和json.loads的用法</title>
+      <link>https://tfprimewj.github.io/2018/10/28/python%E5%AD%A6%E4%B9%A0-json.dumps%E5%92%8Cjson.loads%E7%9A%84%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Sun, 28 Oct 2018 11:49:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/10/28/python%E5%AD%A6%E4%B9%A0-json.dumps%E5%92%8Cjson.loads%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
+      <description> Python学习-json.dumps和json.loads的用法 @(python)
+ Talk less, code more
+ import json  a = {&#39;name&#39;: &#39;wang&#39;, &#39;age&#39;: 29}  print(type(a), &#39;\n&#39;, a)  &amp;lt;class &#39;dict&#39;&amp;gt; {&#39;name&#39;: &#39;wang&#39;, &#39;age&#39;: 29}  json.dumps()将dict转化为str
+b = json.dumps(a)  print(type(b), &#39;\n&#39;, b)  &amp;lt;class &#39;str&#39;&amp;gt; {&amp;quot;name&amp;quot;: &amp;quot;wang&amp;quot;, &amp;quot;age&amp;quot;: 29}  json.loads()将str转化为dict
+c = json.loads(b)  print(type(c), &#39;\n&#39;, c)  &amp;lt;class &#39;dict&#39;&amp;gt; {&#39;name&#39;: &#39;wang&#39;, &#39;age&#39;: 29}  </description>
+    </item>
+    
+    <item>
+      <title>Pandas学习-Series()转成str操作，读取gps</title>
+      <link>https://tfprimewj.github.io/2018/10/21/pandas%E5%AD%A6%E4%B9%A0-series%E8%BD%AC%E6%88%90str%E6%93%8D%E4%BD%9C%E8%AF%BB%E5%8F%96gps/</link>
+      <pubDate>Sun, 21 Oct 2018 11:49:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/10/21/pandas%E5%AD%A6%E4%B9%A0-series%E8%BD%AC%E6%88%90str%E6%93%8D%E4%BD%9C%E8%AF%BB%E5%8F%96gps/</guid>
+      <description> Pandas学习-Series()转成str操作，读取gps @(我的第一个笔记本)
+ Talk less, code more
+ 在DataFrame中取一列转化成Series类型，对Series类型进行字符串分割，便可以得到坐标信息。
+import pandas as pd data_file = &#39;matchResult_10.txt&#39; names = &#39;app_name,app_kind,app_type,ip,nation,gps,size&#39; names = names.split(&#39;,&#39;) data = pd.read_csv(data_file, header=None, names=names) data[&#39;gps_xy&#39;] = data[&#39;gps&#39;].str.split(&#39;#&#39;) print(data[&#39;gps_xy&#39;])  输出
+0 [30.882428, 75.832577] 1 [22.9009009009009, 84.14595791325802] 2 [20.81081081081081, 70.70283823391588] 3 [26.27027027027027, 72.99908113768355] 4 [26.7927864, 84.5345949] 5 [24.4353437, 85.866535] 6 [26.4265576, 76.6643728] 7 [26.7927864, 84.5345949] 8 [20.46846846846847, 75.00577673385992] 9 [25.7397946, 77.4759334] Name: gps_xy, dtype: object  </description>
+    </item>
+    
+    <item>
+      <title>Python学习-将逗号分隔的字符串转化为列表</title>
+      <link>https://tfprimewj.github.io/2018/10/21/python%E5%AD%A6%E4%B9%A0-%E5%B0%86%E9%80%97%E5%8F%B7%E5%88%86%E9%9A%94%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E5%8C%96%E4%B8%BA%E5%88%97%E8%A1%A8/</link>
+      <pubDate>Sun, 21 Oct 2018 11:49:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/10/21/python%E5%AD%A6%E4%B9%A0-%E5%B0%86%E9%80%97%E5%8F%B7%E5%88%86%E9%9A%94%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E5%8C%96%E4%B8%BA%E5%88%97%E8%A1%A8/</guid>
+      <description> Python学习-将逗号分隔的字符串转化为列表 @(python)
+ Talk less, code more
+ 用split()函数可以将用逗号分隔的str转化为list
+columns = &#39;app_name, app_kind, app_type, md5, sender, receiver, timestamp, ip, nation, gps, size&#39; print(&#39;type = &#39;, type(columns)) print(columns) # 使用split尽心分割 columns = columns.split(&#39;,&#39;) print(&#39;type = &#39;, type(columns)) print(columns)  # 输出 type = &amp;lt;class &#39;str&#39;&amp;gt; app_name, app_kind, app_type, md5, sender, receiver, timestamp, ip, nation, gps, size # 转化后输出 type = &amp;lt;class &#39;list&#39;&amp;gt; [&#39;app_name&#39;, &#39; app_kind&#39;, &#39; app_type&#39;, &#39; md5&#39;, &#39; sender&#39;, &#39; receiver&#39;, &#39; timestamp&#39;, &#39; ip&#39;, &#39; nation&#39;, &#39; gps&#39;, &#39; size&#39;]  </description>
+    </item>
+    
+    <item>
+      <title>Pandas学习-DataFrame()按列索引</title>
+      <link>https://tfprimewj.github.io/2018/10/21/pandas%E5%AD%A6%E4%B9%A0-dataframe%E6%8C%89%E5%88%97%E7%B4%A2%E5%BC%95/</link>
+      <pubDate>Sun, 21 Oct 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/10/21/pandas%E5%AD%A6%E4%B9%A0-dataframe%E6%8C%89%E5%88%97%E7%B4%A2%E5%BC%95/</guid>
+      <description>Pandas学习-DataFrame()按列索引 @(python)
+ Talk less, code more
+ import pandas as pd data_file = &#39;matchResult_10.txt&#39; names = &#39;app_name, app_kind, app_type, ip, nation, gps, size&#39; names = names.split(&#39;,&#39;) data = pd.read_csv(data_file, header=None, names=names) # 查找&#39; gps&#39;这一列的数据 print(data[&#39; gps&#39;])  注意！！！：这里要注意一下空格的问题。因为定义数据头names的时候习惯性的在每个类型前面加了个空格（也就是习惯性的在逗号后面加了个空格），所以真正的索引值是&#39; gps&#39;而不是&#39;gps&#39;所以我们将前面的空格去掉。这也告诉我们，数据文件不要随便添加空格。
+输出
+0 30.882428#75.832577 1 22.9009009009009#84.14595791325802 2 20.81081081081081#70.70283823391588 3 26.27027027027027#72.99908113768355 4 26.7927864#84.5345949 5 24.4353437#85.866535 6 26.4265576#76.6643728 7 26.7927864#84.5345949 8 20.46846846846847#75.00577673385992 9 25.7397946#77.4759334 Name: gps, dtype: object  更改后的结果
+import pandas as pd data_file = &#39;matchResult_10.</description>
+    </item>
+    
+    <item>
+      <title>Pandas学习-pd.read_csv()添加header和names</title>
+      <link>https://tfprimewj.github.io/2018/10/21/pandas%E5%AD%A6%E4%B9%A0-pd.read_csv%E6%B7%BB%E5%8A%A0header%E5%92%8Cnames/</link>
+      <pubDate>Sun, 21 Oct 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/10/21/pandas%E5%AD%A6%E4%B9%A0-pd.read_csv%E6%B7%BB%E5%8A%A0header%E5%92%8Cnames/</guid>
+      <description>Pandas学习-pd.read_csv()添加header和names @(python)
+ Talk less, code more
+ 首先，我们构造一个数据文件csv_read_test.txt，数据之间用,分隔开
+Xiao Wang, 18, boy, ip1 Xiao Hong, 17, girl, ip2 Liu Chen, 20, boy, ip3 Hua hua, 21, girl, ip4  import pandas as pd # 定义file_name file_name = &#39;csv_read_test.txt&#39; # 直接读取，除了文件名不添加任何参数 data_raw = pd.read_csv(file_name) # 输出我们的数据 print(data_raw)  # 输出 Xiao Wang 18 boy ip1 0 Xiao Hong 17 girl ip2 1 Liu Chen 20 boy ip3 2 Hua hua 21 girl ip4  可见，默认将数据的第一行作为了数据头</description>
+    </item>
+    
+    <item>
+      <title>Digital Image Processing - Ch3 Spatial Domain Image Enhancement</title>
+      <link>https://tfprimewj.github.io/2018/09/27/digital-image-processing-ch3-spatial-domain-image-enhancement/</link>
+      <pubDate>Thu, 27 Sep 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/09/27/digital-image-processing-ch3-spatial-domain-image-enhancement/</guid>
+      <description>Image Negative im_input = im2double(imread(&#39;./Pics/Ch03/rose.jpg&#39;)); im_output = 1-im_input; figure, imshow([im_input im_output]), title(&#39;Gray-level Invert&#39;);  Log Transformations（对数变换） im_input = imread(&#39;./Pics/Ch03/spectrum.tif&#39;); im_output = 3*log(double(im_input)+1); figure, imshow(im_input); title(&#39;input image&#39;); figure, imshow(abs(im_output),[]); title(&#39;image Log transform&#39;);  Gamma correction（伽马校正） im_input = im2double(imread(&#39;./Pics/Ch03/MRI.jpg&#39;)); im_output1 = imadjust(im_input,[0;1], [0;1], 1.2); im_output2 = imadjust(im_input,[0;1], [0;1], 0.8); figure, imshow(im_input); title(&#39;input image&#39;); figure, imshow([im_output1 im_output2]); title(&#39;Gamma correction&#39;);  Contrast stretching（对比度拉伸） im_input = im2double(imread(&#39;.\Pics\Ch03\pollen.tif&#39;)); im_output = imadjust(im_input,[min(im_input(:)) max(im_input(:))], [0 1]); figure, imshow(im_input); title(&#39;input image&#39;); figure, imshow(im_output); title(&#39;Contrast stretch&#39;);  Histogram （直方图） im_input = im2double(imread(&#39;.</description>
+    </item>
+    
+    <item>
+      <title>Digital Image Processing - Ch2 Fundamentals</title>
+      <link>https://tfprimewj.github.io/2018/09/26/digital-image-processing-ch2-fundamentals/</link>
+      <pubDate>Wed, 26 Sep 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/09/26/digital-image-processing-ch2-fundamentals/</guid>
+      <description> Ch2 Fundamentals  Human Visual Perception Image sensing and acquisition Image sampling and quantization Basic relationship between pixels
+Code Image interpolation method：
+ Nearest-neighbor interpolation
+ Bilinear interpolation
+ Bicubic interpolation
+im_inut = imread(&#39;./Pics/Ch02/weixins.bmp&#39;); im_1 = imresize(im_inut, 4,&#39;nearest&#39;); im_2 = imresize(im_inut, 4,&#39;Bilinear&#39;); im_3 = imresize(im_inut, 4,&#39;Bicubic&#39;); figure, imshow(im_inut); title(&#39;image negatives method&#39;); figure, imshow(im_1); title(&#39;Nearest-neighbor interpolation&#39;); figure, imshow(im_2); title(&#39;Bilinear interpolation&#39;); figure, imshow(im_3); title(&#39;Bicubic interpolation&#39;); %imwrite(im_1,&#39;weixins_neigh.bmp&#39;); %imwrite(im_2,&#39;weixins_Bilinear.bmp&#39;); %imwrite(im_3,&#39;weixins_Bicubic.bmp&#39;);   Output </description>
+    </item>
+    
+    <item>
+      <title>Digital Image Processing - Ch1 Introduction</title>
+      <link>https://tfprimewj.github.io/2018/09/25/digital-image-processing-ch1-introduction/</link>
+      <pubDate>Tue, 25 Sep 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/09/25/digital-image-processing-ch1-introduction/</guid>
+      <description> Ch1 Introduction  History of DIP Applications Fundamental steps in DIP  Code im_input = imread(&#39;./Pics/Ch01/Lena.jpg&#39;); figure, imshow(im_input), title(&#39;original color image&#39;); im_gray = rgb2gray(im_input); figure, imshow(im_gray), title(&#39;original color image&#39;); imwrite(im_gray,&#39;gray.jpg&#39;); imfinfo(&#39;./Pics/Ch01/Lena.jpg&#39;)  Output ans = Filename: &#39;/Users/jinwang/Desktop/Academy/大三上/Digital_Image_Processing/matlab/Pics/Ch01/Lena.jpg&#39; FileModDate: &#39;27-Jun-2013 21:31:06&#39; FileSize: 91814 Format: &#39;jpg&#39; FormatVersion: &#39;&#39; Width: 512 Height: 512 BitDepth: 24 ColorType: &#39;truecolor&#39; FormatSignature: &#39;&#39; NumberOfSamples: 3 CodingMethod: &#39;Huffman&#39; CodingProcess: &#39;Sequential&#39; Comment: {&#39;Handmade Software, Inc. Image Alchemy v1.9↵&#39;}  </description>
+    </item>
+    
+    <item>
+      <title>DTFT Implementation Using Matlab</title>
+      <link>https://tfprimewj.github.io/2018/09/24/dtft-implementation-using-matlab/</link>
+      <pubDate>Mon, 24 Sep 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/09/24/dtft-implementation-using-matlab/</guid>
+      <description>Definition of DTFT DTFT(Discrete Time Fourier Transform) is the Fourier Transform of a sequence x(n). The definition is: $$X(e^{j\omega}) = DTFT[x(n)] = \sum_{n = -\infty}^{\infty} x(n) e^{-j \omega n}$$
+Implementation using matlab function [amplitude, phase, frequency_domain] = dtft(x, n, M) % This function compute the DTFT(Discrete Time Fourier Transform) of an % input signal x(n). frequency_domain = linspace(0, 2*pi, M); X = zeros(1, M); count = 1; j = sqrt(-1); for omega = frequency_domain exponent_term = exp(- j * omega .</description>
+    </item>
+    
+    <item>
+      <title>Communication System Random Process: A cos wave with random phase</title>
+      <link>https://tfprimewj.github.io/2018/09/13/communication-system-random-process-a-cos-wave-with-random-phase/</link>
+      <pubDate>Thu, 13 Sep 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/09/13/communication-system-random-process-a-cos-wave-with-random-phase/</guid>
+      <description>Cos wave with random phase The program below shows a cos wave with a random phase: $$X(t) = Acos(\omega t + \theta)$$
+ A: amplitude of the cos wave $\omega$: radian frequency of the cos wave $\theta$: a random variable of uniform distribution between $[0, 2\pi]$  Then we generate the autocorrelation function.
+Code clear;clc; % This program creates a cos wave with a random phase. % x = A * cos(w * t + theta) % % A: Amplitude of the cos wave % w: frequency % theta: phase, which is a random variable of % uniform distribution between [0, 2*pi] % Configuration fs = 200; % Sample frequency f = 5; % Cos wave frequency A = 1; % Amplitude t = 0: 1/fs: 1; % Sampling time theta_range = 2 * pi; theta = theta_range * rand(1, length(t)); % Create a cos_wave_with_random_phase x = A * cos(2*pi * f * t + theta); mean_value = mean(x); varience_value = var(x); [autocorrelation_value, lags] = xcorr(x); % Theoretical Autocorrelation theory_autocor = power(A, 2) .</description>
+    </item>
+    
+    <item>
+      <title>Digital Signal Processing Using Matlab Problem 2.1 Solutions &amp; Results</title>
+      <link>https://tfprimewj.github.io/2018/09/09/digital-signal-processing-using-matlab-problem-2.1-solutions-results/</link>
+      <pubDate>Sun, 09 Sep 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/09/09/digital-signal-processing-using-matlab-problem-2.1-solutions-results/</guid>
+      <description>Talk less, code more
+ 2.1-1 clear;clc; % Solutions %% 2.1-1 duration_start = -5; duration_end = 15; n = duration_start: duration_end; x = 3 * impseq(-2, duration_start, duration_end) ... + 2 * impseq(0, duration_start,duration_end) ... - impseq(3, duration_start, duration_end) ... + 5 * impseq(7, duration_start, duration_end) % Plot subplot(4,2,1); stem(n, x); title(&#39;Sequence for 2.1-1&#39;); xlabel(&#39;n&#39;); ylabel(&#39;x1(n)&#39;);  2.1-2 %% 2.1-2 duration_start = -10; duration_end = 10; n = duration_start: duration_end; x = zeros(1, length(n)); for k = -5: 5 xk = exp(-abs(k)) * impseq(2 * k, duration_start, duration_end); x = sigadd(x, n, xk, n) end % Plot subplot(4,2,2); stem(n, x); title(&#39;Sequence for 2.</description>
+    </item>
+    
+    <item>
+      <title>CS20学习笔记（五）</title>
+      <link>https://tfprimewj.github.io/2018/08/22/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%94/</link>
+      <pubDate>Wed, 22 Aug 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/08/22/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%94/</guid>
+      <description>Talk less, code more
+ Lecture 3: birth-life Linear Regression Implementation import os os.environ[&#39;TF_CPP_MIN_LOG_LEVEL&#39;]=&#39;2&#39; import tensorflow as tf import numpy as np import time # Read data function def read_birth_life_data(filename): &amp;quot;&amp;quot;&amp;quot; Read in birth_life_2010.txt and return: data in the form of NumPy array n_samples: number of samples &amp;quot;&amp;quot;&amp;quot; text = open(filename, &#39;r&#39;).readlines()[1:] data = [line[:-1].split(&#39;\t&#39;) for line in text] births = [float(line[1]) for line in data] lifes = [float(line[2]) for line in data] data = list(zip(births, lifes)) n_samples = len(data) data = np.</description>
+    </item>
+    
+    <item>
+      <title>CS20学习笔记（四）</title>
+      <link>https://tfprimewj.github.io/2018/08/21/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%9B%9B/</link>
+      <pubDate>Tue, 21 Aug 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/08/21/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%9B%9B/</guid>
+      <description>Talk less, code more
+ read_birth_life_data函数详解 1. API def read_birth_life_data(filename): &amp;quot;&amp;quot;&amp;quot; Read in birth_life_2010.txt and return: data in the form of NumPy array n_samples: number of samples &amp;quot;&amp;quot;&amp;quot; text = open(filename, &#39;r&#39;).readlines()[1:] data = [line[:-1].split(&#39;\t&#39;) for line in text] births = [float(line[1]) for line in data] lifes = [float(line[2]) for line in data] data = list(zip(births, lifes)) n_samples = len(data) data = np.asarray(data, dtype=np.float32) return data, n_samples  2.</description>
+    </item>
+    
+    <item>
+      <title>CS20学习笔记（三）</title>
+      <link>https://tfprimewj.github.io/2018/08/20/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%89/</link>
+      <pubDate>Mon, 20 Aug 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/08/20/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%89/</guid>
+      <description>CS20学习笔记（三） @(Tensorflow)
+ Talk less, code more
+ Basic Models in Tensoflow 1. 学习资源  CS20 Lecture3 Slides Tensorflow Official Docs Stanford Tensorflow Tutorial github repo  2. Agenda  Review Linear regression on birth/life data Control Flow tf.data Optimizers, gradients Logistic regression on MNIST Loss functions  3. Review 3.1 Computation Graph TensorFlow separates definition of computations from their execution Phase 1: assemble a graph Phase 2: use a session to execute operations in the graph.</description>
+    </item>
+    
+    <item>
+      <title>Python学习-assert的作用</title>
+      <link>https://tfprimewj.github.io/2018/08/19/python%E5%AD%A6%E4%B9%A0-assert%E7%9A%84%E4%BD%9C%E7%94%A8/</link>
+      <pubDate>Sun, 19 Aug 2018 11:59:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/08/19/python%E5%AD%A6%E4%B9%A0-assert%E7%9A%84%E4%BD%9C%E7%94%A8/</guid>
+      <description>简单来说，assert就是为程序提供一个判断，如果assert里面的内容成立，为真，那么程序就向下执行，如果发现assert里面的东西是假的，就抛出AssertionError的错误。
+下面是几个语句，很清楚的看到了assert的作用
+# 数值判断 &amp;gt;&amp;gt;&amp;gt; a = 3 &amp;gt;&amp;gt;&amp;gt; assert(a==3) &amp;gt;&amp;gt;&amp;gt; assert(a &amp;lt; 4) &amp;gt;&amp;gt;&amp;gt; assert(a &amp;gt; 4) Traceback (most recent call last): File &amp;quot;&amp;lt;stdin&amp;gt;&amp;quot;, line 1, in &amp;lt;module&amp;gt; AssertionError # True/Flase判断 &amp;gt;&amp;gt;&amp;gt; assert(True) &amp;gt;&amp;gt;&amp;gt; assert(False) Traceback (most recent call last): File &amp;quot;&amp;lt;stdin&amp;gt;&amp;quot;, line 1, in &amp;lt;module&amp;gt; AssertionError # 1/0判断 &amp;gt;&amp;gt;&amp;gt; assert(1) &amp;gt;&amp;gt;&amp;gt; assert(0) Traceback (most recent call last): File &amp;quot;&amp;lt;stdin&amp;gt;&amp;quot;, line 1, in &amp;lt;module&amp;gt; AssertionError  </description>
+    </item>
+    
+    <item>
+      <title>Python学习-深浅copy</title>
+      <link>https://tfprimewj.github.io/2018/08/19/python%E5%AD%A6%E4%B9%A0-%E6%B7%B1%E6%B5%85copy/</link>
+      <pubDate>Sun, 19 Aug 2018 11:58:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/08/19/python%E5%AD%A6%E4%B9%A0-%E6%B7%B1%E6%B5%85copy/</guid>
+      <description>废话不多说，直接上代码
+&amp;gt;&amp;gt;&amp;gt; import copy # 创建初始变量 &amp;gt;&amp;gt;&amp;gt; origin = [1, 2, [3, 4]] &amp;gt;&amp;gt;&amp;gt; origin [1, 2, [3, 4]] # 浅copy &amp;gt;&amp;gt;&amp;gt; shallow_copy = copy.copy(origin) &amp;gt;&amp;gt;&amp;gt; shallow_copy [1, 2, [3, 4]] # 深copy &amp;gt;&amp;gt;&amp;gt; deep_copy = copy.deepcopy(origin) &amp;gt;&amp;gt;&amp;gt; deep_copy [1, 2, [3, 4]] # 修改原始变量 &amp;gt;&amp;gt;&amp;gt; origin[2][1] = 99 &amp;gt;&amp;gt;&amp;gt; origin [1, 2, [3, 99]] # 浅copy跟着变了，但深copy没有跟着变 &amp;gt;&amp;gt;&amp;gt; shallow_copy [1, 2, [3, 99]] &amp;gt;&amp;gt;&amp;gt; deep_copy [1, 2, [3, 4]]  浅copy跟着变了，但深copy没有跟着变</description>
+    </item>
+    
+    <item>
+      <title>CS20学习笔记（二）</title>
+      <link>https://tfprimewj.github.io/2018/08/19/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C/</link>
+      <pubDate>Sun, 19 Aug 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/08/19/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C/</guid>
+      <description>Talk less, code more
+ Tensorflow Operations 1. 学习资料  CS 20 Slide2 Tensorflow Operations Tensorflow Official Docs  2. Agenda  Basic Operations Tensor Types Importing Data Lazy loading  3. TensorBoard 3.1 Your first tensorflow program import tensorflow as tf a = tf.constant(2) b = tf.constant(3) c = tf.add(a, b) with tf.Session() as sess: print(sess.run(c))  Output:
+2018-08-20 13:42:00.773870: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA 5  实际上，上面除了5是我们想要的结果，5上面的是一个warning，简单解释一下这个warning。上面的意思是说我的CPU支持AVX2和FMA，但是tensorflow使用不了。AVX2和FMA实际上是CPU内部为了加速矩阵运算所设计出来的东西，说白了就是会让运算变得更快（虽然与GPU相比相去甚远），但是我们的tensorflow默认用不了这些高级玩应儿，所以就会出现这种warning。参考：CSDN 我们通过以下代码可以解决这个问题</description>
+    </item>
+    
+    <item>
+      <title>CS20学习笔记（一）</title>
+      <link>https://tfprimewj.github.io/2018/08/19/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/</link>
+      <pubDate>Sun, 19 Aug 2018 11:38:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/08/19/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/</guid>
+      <description>Talk less, code more
+ 1. 写在前面 &amp;emsp;&amp;emsp;之前看了一些Tensorflow的教学博客，也看了Tensorflow官方Tutorial，也看了Keras的Tutorial，总感觉学了一些Tensorflow但又学的不系统，前几天在网上看到了CS20的课程，虽然没有Video，但是有Slide。所以，就看着slides敲一边代码，作为学习主要方式了。一步一步，踏踏实实，学好Tensorflow，将会是一个新的层次。那么下面就开始吧！
+2. 学习资料  CS20 Lecture 1 Slides Tensorflow Official Docs pycharm  3. Lecture1: Welcome to Tensorflow! 3.1 Agenda  Welcome Overview of Tensorflow Graphs and Sessions  3.2 Create a tensor import tensorflow as tf a = tf.add(3, 5) print(a)  Output:
+Tensor(&amp;quot;Add:0&amp;quot;, shape=(), dtype=int32)  3.3 Create a tensor, than run a Session import tensorflow as tf a = tf.</description>
+    </item>
+    
+    <item>
+      <title>Keras学习之路（一）</title>
+      <link>https://tfprimewj.github.io/2018/08/18/keras%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B8%80/</link>
+      <pubDate>Sat, 18 Aug 2018 11:58:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/08/18/keras%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B8%80/</guid>
+      <description>参考：Keras教程
+1. Sequential模型 1.1 创建model 这里的Dense我的理解就是一层全连接神经网络（FC），Activation很好理解，就是激活函数层，下面是用类似于list来创建一个model
+from keras.models import Sequential from keras.layers import Dense, Activation model = Sequential([ Dense(32, input_shape=(784,)), Activation(&#39;relu&#39;), Dense(10), Activation(&#39;softmax&#39;), ])  还可以一层一层往里加
+model = Sequential() model.add(Dense(32, input_dim=784)) model.add(Activation(&#39;relu&#39;)) model.add(Dense(10)) model.add(Activation(&#39;softmax&#39;)) # or model = Sequential() model.add(Dense(32, input_shape=(784,)))  除了第一层需要我们指定input size的大小，剩下的Keras会根据我们构造的网络自动计算出每层输入输出的size，这就很方便。
+1.2 编译 我对编译（compile）的理解就是，确定用什么optimize method，用什么cost function，用什么来当作最终模型好坏的指标（下面的例子中全都用的是accuracy，也就是把准确率当作指标）（提问：难道从另一种角度看cost function的值不能当作指标？ 回答：函数的结果只是一个值，不同的model选择不同的cost function得出的cost function值也不一样，但使用accuracy准确率就可以避免这个事，其实，准确率才是判断model好坏的真正标准）
+# For a multi-class classification problem model.compile(optimizer=&#39;rmsprop&#39;, loss=&#39;categorical_crossentropy&#39;, metrics=[&#39;accuracy&#39;]) # For a binary classification problem model.compile(optimizer=&#39;rmsprop&#39;, loss=&#39;binary_crossentropy&#39;, metrics=[&#39;accuracy&#39;]) # For a mean squared error regression problem model.</description>
+    </item>
+    
+    <item>
+      <title>Deep Learning Course3 Week1 Programming Assignment2</title>
+      <link>https://tfprimewj.github.io/2018/08/16/deep-learning-course3-week1-programming-assignment2/</link>
+      <pubDate>Thu, 16 Aug 2018 11:58:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/08/16/deep-learning-course3-week1-programming-assignment2/</guid>
+      <description>Convolutional Neural Networks: Application Welcome to Course 4&amp;rsquo;s second assignment! In this notebook, you will:
+ Implement helper functions that you will use when implementing a TensorFlow model Implement a fully functioning ConvNet using TensorFlow  After this assignment you will be able to:
+ Build and train a ConvNet in TensorFlow for a classification problem  We assume here that you are already familiar with TensorFlow. If you are not, please refer the TensorFlow Tutorial of the third week of Course 2 (&amp;rdquo;Improving deep neural networks&amp;rdquo;).</description>
+    </item>
+    
+    <item>
+      <title>Deep Learning Course3 Week1 Programming Assignment1</title>
+      <link>https://tfprimewj.github.io/2018/08/15/deep-learning-course3-week1-programming-assignment1/</link>
+      <pubDate>Wed, 15 Aug 2018 11:58:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/08/15/deep-learning-course3-week1-programming-assignment1/</guid>
+      <description>Convolutional Neural Networks: Step by Step Welcome to Course 4&amp;rsquo;s first assignment! In this assignment, you will implement convolutional (CONV) and pooling (POOL) layers in numpy, including both forward propagation and (optionally) backward propagation.
+Notation: - Superscript $[l]$ denotes an object of the $l^{th}$ layer. - Example: $a^{[4]}$ is the $4^{th}$ layer activation. $W^{[5]}$ and $b^{[5]}$ are the $5^{th}$ layer parameters.
+ Superscript $(i)$ denotes an object from the $i^{th}$ example.</description>
+    </item>
+    
+    <item>
+      <title>GRE AWA MODEL ESSAYS</title>
+      <link>https://tfprimewj.github.io/2018/08/09/gre-awa-model-essays/</link>
+      <pubDate>Thu, 09 Aug 2018 11:58:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/08/09/gre-awa-model-essays/</guid>
+      <description>Issue 1 &amp;ldquo;We can usually learn much more from people whose views we share than from people whose views contradict our own.&amp;rdquo;; disagreement can cause stress and inhibit learning.&amp;rdquo;
+Essay &amp;emsp;&amp;emsp;Do we learn more from people whose ideas we share in common than from those whose ideas contradict ours? The speaker deems so, for the reason that disagreement can cause stress and inhibit learning. I concede that undue discord can impede learning.</description>
+    </item>
     
     <item>
       <title>Markdown Cheat Sheet</title>

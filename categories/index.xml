@@ -1,15 +1,177 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Icarus</title>
+    <title>Categories on Jinwang Blog</title>
     <link>https://tfprimewj.github.io/categories/</link>
-    <description>Recent content in Categories on Icarus</description>
+    <description>Recent content in Categories on Jinwang Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 02 Oct 2015 21:49:20 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 30 Dec 2019 23:58:22 +0800</lastBuildDate>
     
 	<atom:link href="https://tfprimewj.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MongoDB</title>
+      <link>https://tfprimewj.github.io/categories/mongodb/</link>
+      <pubDate>Mon, 30 Dec 2019 23:58:22 +0800</pubDate>
+      
+      <guid>https://tfprimewj.github.io/categories/mongodb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://tfprimewj.github.io/categories/java/</link>
+      <pubDate>Mon, 30 Dec 2019 23:57:22 +0800</pubDate>
+      
+      <guid>https://tfprimewj.github.io/categories/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>homebrew</title>
+      <link>https://tfprimewj.github.io/categories/homebrew/</link>
+      <pubDate>Mon, 30 Dec 2019 11:54:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/categories/homebrew/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://tfprimewj.github.io/categories/hugo/</link>
+      <pubDate>Mon, 30 Dec 2019 11:54:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/categories/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://tfprimewj.github.io/categories/git/</link>
+      <pubDate>Mon, 30 Dec 2019 11:53:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/categories/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Leetcode</title>
+      <link>https://tfprimewj.github.io/categories/leetcode/</link>
+      <pubDate>Tue, 17 Dec 2019 11:53:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/categories/leetcode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JZOffer</title>
+      <link>https://tfprimewj.github.io/categories/jzoffer/</link>
+      <pubDate>Thu, 17 Oct 2019 11:51:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/categories/jzoffer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NodeJs</title>
+      <link>https://tfprimewj.github.io/categories/nodejs/</link>
+      <pubDate>Sun, 06 Oct 2019 11:51:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/categories/nodejs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web Development</title>
+      <link>https://tfprimewj.github.io/categories/web-development/</link>
+      <pubDate>Sun, 29 Sep 2019 11:54:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/categories/web-development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://tfprimewj.github.io/categories/python/</link>
+      <pubDate>Sun, 28 Oct 2018 11:51:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pandas</title>
+      <link>https://tfprimewj.github.io/categories/pandas/</link>
+      <pubDate>Sun, 21 Oct 2018 11:49:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/categories/pandas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Digital Image Processing</title>
+      <link>https://tfprimewj.github.io/categories/digital-image-processing/</link>
+      <pubDate>Thu, 27 Sep 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/categories/digital-image-processing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Digital Signal Processing</title>
+      <link>https://tfprimewj.github.io/categories/digital-signal-processing/</link>
+      <pubDate>Tue, 25 Sep 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/categories/digital-signal-processing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Communication System</title>
+      <link>https://tfprimewj.github.io/categories/communication-system/</link>
+      <pubDate>Thu, 13 Sep 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/categories/communication-system/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tensorflow</title>
+      <link>https://tfprimewj.github.io/categories/tensorflow/</link>
+      <pubDate>Wed, 22 Aug 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/categories/tensorflow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Keras</title>
+      <link>https://tfprimewj.github.io/categories/keras/</link>
+      <pubDate>Sat, 18 Aug 2018 11:58:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/categories/keras/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>https://tfprimewj.github.io/categories/machine-learning/</link>
+      <pubDate>Thu, 16 Aug 2018 11:58:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/categories/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GRE</title>
+      <link>https://tfprimewj.github.io/categories/gre/</link>
+      <pubDate>Thu, 09 Aug 2018 11:58:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/categories/gre/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>programming</title>

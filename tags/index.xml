@@ -1,15 +1,285 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Icarus</title>
+    <title>Tags on Jinwang Blog</title>
     <link>https://tfprimewj.github.io/tags/</link>
-    <description>Recent content in Tags on Icarus</description>
+    <description>Recent content in Tags on Jinwang Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 May 2017 12:10:51 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 30 Dec 2019 23:58:22 +0800</lastBuildDate>
     
 	<atom:link href="https://tfprimewj.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MongoDB</title>
+      <link>https://tfprimewj.github.io/tags/mongodb/</link>
+      <pubDate>Mon, 30 Dec 2019 23:58:22 +0800</pubDate>
+      
+      <guid>https://tfprimewj.github.io/tags/mongodb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://tfprimewj.github.io/tags/java/</link>
+      <pubDate>Mon, 30 Dec 2019 23:57:22 +0800</pubDate>
+      
+      <guid>https://tfprimewj.github.io/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>homebrew</title>
+      <link>https://tfprimewj.github.io/tags/homebrew/</link>
+      <pubDate>Mon, 30 Dec 2019 11:54:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/tags/homebrew/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://tfprimewj.github.io/tags/hugo/</link>
+      <pubDate>Mon, 30 Dec 2019 11:54:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://tfprimewj.github.io/tags/git/</link>
+      <pubDate>Mon, 30 Dec 2019 11:53:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Binary Tree</title>
+      <link>https://tfprimewj.github.io/tags/binary-tree/</link>
+      <pubDate>Tue, 17 Dec 2019 11:53:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/tags/binary-tree/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Leetcode</title>
+      <link>https://tfprimewj.github.io/tags/leetcode/</link>
+      <pubDate>Tue, 17 Dec 2019 11:53:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/tags/leetcode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Iteration</title>
+      <link>https://tfprimewj.github.io/tags/iteration/</link>
+      <pubDate>Thu, 17 Oct 2019 11:54:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/tags/iteration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recursion</title>
+      <link>https://tfprimewj.github.io/tags/recursion/</link>
+      <pubDate>Thu, 17 Oct 2019 11:54:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/tags/recursion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Binary Search</title>
+      <link>https://tfprimewj.github.io/tags/binary-search/</link>
+      <pubDate>Thu, 17 Oct 2019 11:52:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/tags/binary-search/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JZOffer</title>
+      <link>https://tfprimewj.github.io/tags/jzoffer/</link>
+      <pubDate>Thu, 17 Oct 2019 11:51:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/tags/jzoffer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Queue</title>
+      <link>https://tfprimewj.github.io/tags/queue/</link>
+      <pubDate>Thu, 17 Oct 2019 11:51:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/tags/queue/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dynamic Programming</title>
+      <link>https://tfprimewj.github.io/tags/dynamic-programming/</link>
+      <pubDate>Mon, 07 Oct 2019 11:57:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/tags/dynamic-programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NodeJs</title>
+      <link>https://tfprimewj.github.io/tags/nodejs/</link>
+      <pubDate>Sun, 06 Oct 2019 11:51:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/tags/nodejs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web Development</title>
+      <link>https://tfprimewj.github.io/tags/web-development/</link>
+      <pubDate>Sun, 06 Oct 2019 11:51:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/tags/web-development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://tfprimewj.github.io/tags/python/</link>
+      <pubDate>Sun, 28 Oct 2018 11:51:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Json</title>
+      <link>https://tfprimewj.github.io/tags/json/</link>
+      <pubDate>Sun, 28 Oct 2018 11:50:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/tags/json/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>爬虫</title>
+      <link>https://tfprimewj.github.io/tags/%E7%88%AC%E8%99%AB/</link>
+      <pubDate>Sun, 28 Oct 2018 11:50:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/tags/%E7%88%AC%E8%99%AB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CSV</title>
+      <link>https://tfprimewj.github.io/tags/csv/</link>
+      <pubDate>Sun, 21 Oct 2018 11:49:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/tags/csv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pandas</title>
+      <link>https://tfprimewj.github.io/tags/pandas/</link>
+      <pubDate>Sun, 21 Oct 2018 11:49:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/tags/pandas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Digital Image Processing</title>
+      <link>https://tfprimewj.github.io/tags/digital-image-processing/</link>
+      <pubDate>Thu, 27 Sep 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/tags/digital-image-processing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Digital Signal Processing</title>
+      <link>https://tfprimewj.github.io/tags/digital-signal-processing/</link>
+      <pubDate>Tue, 25 Sep 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/tags/digital-signal-processing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Matlab</title>
+      <link>https://tfprimewj.github.io/tags/matlab/</link>
+      <pubDate>Tue, 25 Sep 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/tags/matlab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Communication System</title>
+      <link>https://tfprimewj.github.io/tags/communication-system/</link>
+      <pubDate>Thu, 13 Sep 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/tags/communication-system/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tensorflow</title>
+      <link>https://tfprimewj.github.io/tags/tensorflow/</link>
+      <pubDate>Wed, 22 Aug 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/tags/tensorflow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Keras</title>
+      <link>https://tfprimewj.github.io/tags/keras/</link>
+      <pubDate>Sat, 18 Aug 2018 11:58:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/tags/keras/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>https://tfprimewj.github.io/tags/machine-learning/</link>
+      <pubDate>Sat, 18 Aug 2018 11:58:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Convolutional Neural Network</title>
+      <link>https://tfprimewj.github.io/tags/convolutional-neural-network/</link>
+      <pubDate>Thu, 16 Aug 2018 11:58:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/tags/convolutional-neural-network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Deep Learning</title>
+      <link>https://tfprimewj.github.io/tags/deep-learning/</link>
+      <pubDate>Thu, 16 Aug 2018 11:58:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/tags/deep-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GRE Issue</title>
+      <link>https://tfprimewj.github.io/tags/gre-issue/</link>
+      <pubDate>Thu, 09 Aug 2018 11:58:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/tags/gre-issue/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>markdown</title>
@@ -26,15 +296,6 @@
       <pubDate>Fri, 02 Oct 2015 21:49:20 +0200</pubDate>
       
       <guid>https://tfprimewj.github.io/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hugo</title>
-      <link>https://tfprimewj.github.io/tags/hugo/</link>
-      <pubDate>Fri, 02 Oct 2015 21:49:20 +0200</pubDate>
-      
-      <guid>https://tfprimewj.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     

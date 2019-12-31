@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Jinwang Blog</title>
+    <link>https://tfprimewj.github.io/categories/python/</link>
+    <description>Recent content in Python on Jinwang Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Oct 2018 11:51:06 +0200</lastBuildDate>
+    
+	<atom:link href="https://tfprimewj.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python学习-将dict写入txt文件</title>
+      <link>https://tfprimewj.github.io/2018/10/28/python%E5%AD%A6%E4%B9%A0-%E5%B0%86dict%E5%86%99%E5%85%A5txt%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Sun, 28 Oct 2018 11:51:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/10/28/python%E5%AD%A6%E4%B9%A0-%E5%B0%86dict%E5%86%99%E5%85%A5txt%E6%96%87%E4%BB%B6/</guid>
+      <description> Python学习-将dict写入txt文件 a = [&#39;Jin Wang&#39;, &#39;Jiawei Xu&#39;, &#39;Peiyang Shi&#39;, &#39;Zheqi Zhang&#39;]  for line in a: print(line)  Jin Wang Jiawei Xu Peiyang Shi Zheqi Zhang  i = 1 for line in a: print(str(i) + &#39;,&#39; + line) i = i + 1  1,Jin Wang 2,Jiawei Xu 3,Peiyang Shi 4,Zheqi Zhang  </description>
+    </item>
+    
+    <item>
+      <title>Python学习 - 写json爬虫</title>
+      <link>https://tfprimewj.github.io/2018/10/28/python%E5%AD%A6%E4%B9%A0-%E5%86%99json%E7%88%AC%E8%99%AB/</link>
+      <pubDate>Sun, 28 Oct 2018 11:50:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/10/28/python%E5%AD%A6%E4%B9%A0-%E5%86%99json%E7%88%AC%E8%99%AB/</guid>
+      <description>Python学习 - 写json爬虫 @(python)
+ Talk less, code more
+ 这个程序利用百度地图API发送HTTP Get Request请求，将我们的GPS数据转化成坐标对应的json文件，里面包含了这个gps的行政级别的地区，即“国家”，“省份”，“城市名”等，输出为字典形式。
+下面是浏览器输出的结果。 我们请求首先构造一个url，这是一个json文件的url。但是有一点需要注意，我们程序将json文件转化为dict形式的时候，由于百度地图API会自动在数据周围添加上一个括号，所以我们先要去掉这个括号，用re来完成，具体代码如下。
+# 此函数构造一个HTTP request 请求，请求对象为一个json格式的文件，并将json格式的文件转化为dict形式 import requests import json import re def req_json_to_dict(url): # 输入为一个&amp;quot;xxx/xxx/xxx.json&amp;quot;这样的url地址 # 构造HTTP GET Request，返回的网页内容存储到r中 r = requests.get(url) json_response = r.content.decode() # 删掉原始json数据两边的括号 p1 = re.compile(r&#39;[(](.*?)[)]&#39;, re.S) pure_info = re.findall(p1, json_response)[0] # 将json字符串转换成dic字典对象 dict_json = json.loads(pure_info) return dict_json if __name__ == &amp;quot;__main__&amp;quot;: url = &amp;quot;http://api.map.baidu.com/geocoder/v2/?callback=renderReverse&amp;amp;location=30.882428000000004,75.832577&amp;amp;output=json&amp;amp;pois=1&amp;amp;ak=vtZ2V5pp9VcMfvvpMf55SaDoCzLLYvGA&amp;quot; dict_json = req_json_to_dict(url)  我们运行一下程序，并查看每一步的变量的类型和值。
+# 首先，我们发送一个HTTP GET请求 r = requests.</description>
+    </item>
+    
+    <item>
+      <title>Python学习-json.dumps和json.loads的用法</title>
+      <link>https://tfprimewj.github.io/2018/10/28/python%E5%AD%A6%E4%B9%A0-json.dumps%E5%92%8Cjson.loads%E7%9A%84%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Sun, 28 Oct 2018 11:49:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/10/28/python%E5%AD%A6%E4%B9%A0-json.dumps%E5%92%8Cjson.loads%E7%9A%84%E7%94%A8%E6%B3%95/</guid>
+      <description> Python学习-json.dumps和json.loads的用法 @(python)
+ Talk less, code more
+ import json  a = {&#39;name&#39;: &#39;wang&#39;, &#39;age&#39;: 29}  print(type(a), &#39;\n&#39;, a)  &amp;lt;class &#39;dict&#39;&amp;gt; {&#39;name&#39;: &#39;wang&#39;, &#39;age&#39;: 29}  json.dumps()将dict转化为str
+b = json.dumps(a)  print(type(b), &#39;\n&#39;, b)  &amp;lt;class &#39;str&#39;&amp;gt; {&amp;quot;name&amp;quot;: &amp;quot;wang&amp;quot;, &amp;quot;age&amp;quot;: 29}  json.loads()将str转化为dict
+c = json.loads(b)  print(type(c), &#39;\n&#39;, c)  &amp;lt;class &#39;dict&#39;&amp;gt; {&#39;name&#39;: &#39;wang&#39;, &#39;age&#39;: 29}  </description>
+    </item>
+    
+    <item>
+      <title>Python学习-将逗号分隔的字符串转化为列表</title>
+      <link>https://tfprimewj.github.io/2018/10/21/python%E5%AD%A6%E4%B9%A0-%E5%B0%86%E9%80%97%E5%8F%B7%E5%88%86%E9%9A%94%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E5%8C%96%E4%B8%BA%E5%88%97%E8%A1%A8/</link>
+      <pubDate>Sun, 21 Oct 2018 11:49:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/10/21/python%E5%AD%A6%E4%B9%A0-%E5%B0%86%E9%80%97%E5%8F%B7%E5%88%86%E9%9A%94%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E5%8C%96%E4%B8%BA%E5%88%97%E8%A1%A8/</guid>
+      <description> Python学习-将逗号分隔的字符串转化为列表 @(python)
+ Talk less, code more
+ 用split()函数可以将用逗号分隔的str转化为list
+columns = &#39;app_name, app_kind, app_type, md5, sender, receiver, timestamp, ip, nation, gps, size&#39; print(&#39;type = &#39;, type(columns)) print(columns) # 使用split尽心分割 columns = columns.split(&#39;,&#39;) print(&#39;type = &#39;, type(columns)) print(columns)  # 输出 type = &amp;lt;class &#39;str&#39;&amp;gt; app_name, app_kind, app_type, md5, sender, receiver, timestamp, ip, nation, gps, size # 转化后输出 type = &amp;lt;class &#39;list&#39;&amp;gt; [&#39;app_name&#39;, &#39; app_kind&#39;, &#39; app_type&#39;, &#39; md5&#39;, &#39; sender&#39;, &#39; receiver&#39;, &#39; timestamp&#39;, &#39; ip&#39;, &#39; nation&#39;, &#39; gps&#39;, &#39; size&#39;]  </description>
+    </item>
+    
+    <item>
+      <title>Python学习-assert的作用</title>
+      <link>https://tfprimewj.github.io/2018/08/19/python%E5%AD%A6%E4%B9%A0-assert%E7%9A%84%E4%BD%9C%E7%94%A8/</link>
+      <pubDate>Sun, 19 Aug 2018 11:59:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/08/19/python%E5%AD%A6%E4%B9%A0-assert%E7%9A%84%E4%BD%9C%E7%94%A8/</guid>
+      <description>简单来说，assert就是为程序提供一个判断，如果assert里面的内容成立，为真，那么程序就向下执行，如果发现assert里面的东西是假的，就抛出AssertionError的错误。
+下面是几个语句，很清楚的看到了assert的作用
+# 数值判断 &amp;gt;&amp;gt;&amp;gt; a = 3 &amp;gt;&amp;gt;&amp;gt; assert(a==3) &amp;gt;&amp;gt;&amp;gt; assert(a &amp;lt; 4) &amp;gt;&amp;gt;&amp;gt; assert(a &amp;gt; 4) Traceback (most recent call last): File &amp;quot;&amp;lt;stdin&amp;gt;&amp;quot;, line 1, in &amp;lt;module&amp;gt; AssertionError # True/Flase判断 &amp;gt;&amp;gt;&amp;gt; assert(True) &amp;gt;&amp;gt;&amp;gt; assert(False) Traceback (most recent call last): File &amp;quot;&amp;lt;stdin&amp;gt;&amp;quot;, line 1, in &amp;lt;module&amp;gt; AssertionError # 1/0判断 &amp;gt;&amp;gt;&amp;gt; assert(1) &amp;gt;&amp;gt;&amp;gt; assert(0) Traceback (most recent call last): File &amp;quot;&amp;lt;stdin&amp;gt;&amp;quot;, line 1, in &amp;lt;module&amp;gt; AssertionError  </description>
+    </item>
+    
+    <item>
+      <title>Python学习-深浅copy</title>
+      <link>https://tfprimewj.github.io/2018/08/19/python%E5%AD%A6%E4%B9%A0-%E6%B7%B1%E6%B5%85copy/</link>
+      <pubDate>Sun, 19 Aug 2018 11:58:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/08/19/python%E5%AD%A6%E4%B9%A0-%E6%B7%B1%E6%B5%85copy/</guid>
+      <description>废话不多说，直接上代码
+&amp;gt;&amp;gt;&amp;gt; import copy # 创建初始变量 &amp;gt;&amp;gt;&amp;gt; origin = [1, 2, [3, 4]] &amp;gt;&amp;gt;&amp;gt; origin [1, 2, [3, 4]] # 浅copy &amp;gt;&amp;gt;&amp;gt; shallow_copy = copy.copy(origin) &amp;gt;&amp;gt;&amp;gt; shallow_copy [1, 2, [3, 4]] # 深copy &amp;gt;&amp;gt;&amp;gt; deep_copy = copy.deepcopy(origin) &amp;gt;&amp;gt;&amp;gt; deep_copy [1, 2, [3, 4]] # 修改原始变量 &amp;gt;&amp;gt;&amp;gt; origin[2][1] = 99 &amp;gt;&amp;gt;&amp;gt; origin [1, 2, [3, 99]] # 浅copy跟着变了，但深copy没有跟着变 &amp;gt;&amp;gt;&amp;gt; shallow_copy [1, 2, [3, 99]] &amp;gt;&amp;gt;&amp;gt; deep_copy [1, 2, [3, 4]]  浅copy跟着变了，但深copy没有跟着变</description>
+    </item>
+    
+  </channel>
+</rss>

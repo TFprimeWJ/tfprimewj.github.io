@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Communication System on Jinwang Blog</title>
+    <link>https://tfprimewj.github.io/categories/communication-system/</link>
+    <description>Recent content in Communication System on Jinwang Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 13 Sep 2018 11:48:06 +0200</lastBuildDate>
+    
+	<atom:link href="https://tfprimewj.github.io/categories/communication-system/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Communication System Random Process: A cos wave with random phase</title>
+      <link>https://tfprimewj.github.io/2018/09/13/communication-system-random-process-a-cos-wave-with-random-phase/</link>
+      <pubDate>Thu, 13 Sep 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/09/13/communication-system-random-process-a-cos-wave-with-random-phase/</guid>
+      <description>Cos wave with random phase The program below shows a cos wave with a random phase: $$X(t) = Acos(\omega t + \theta)$$
+ A: amplitude of the cos wave $\omega$: radian frequency of the cos wave $\theta$: a random variable of uniform distribution between $[0, 2\pi]$  Then we generate the autocorrelation function.
+Code clear;clc; % This program creates a cos wave with a random phase. % x = A * cos(w * t + theta) % % A: Amplitude of the cos wave % w: frequency % theta: phase, which is a random variable of % uniform distribution between [0, 2*pi] % Configuration fs = 200; % Sample frequency f = 5; % Cos wave frequency A = 1; % Amplitude t = 0: 1/fs: 1; % Sampling time theta_range = 2 * pi; theta = theta_range * rand(1, length(t)); % Create a cos_wave_with_random_phase x = A * cos(2*pi * f * t + theta); mean_value = mean(x); varience_value = var(x); [autocorrelation_value, lags] = xcorr(x); % Theoretical Autocorrelation theory_autocor = power(A, 2) .</description>
+    </item>
+    
+  </channel>
+</rss>

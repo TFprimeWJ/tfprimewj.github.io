@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JZOffer on Jinwang Blog</title>
+    <link>https://tfprimewj.github.io/tags/jzoffer/</link>
+    <description>Recent content in JZOffer on Jinwang Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 17 Oct 2019 11:51:06 +0200</lastBuildDate>
+    
+	<atom:link href="https://tfprimewj.github.io/tags/jzoffer/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>剑指Offer 从上到下打印二叉树</title>
+      <link>https://tfprimewj.github.io/2019/10/17/%E5%89%91%E6%8C%87offer-%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
+      <pubDate>Thu, 17 Oct 2019 11:51:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2019/10/17/%E5%89%91%E6%8C%87offer-%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/</guid>
+      <description>从上到下打印二叉树 题目描述 从上往下打印出二叉树的每个节点，同层节点从左至右打印。
+解法 import java.util.ArrayList; import java.util.Queue; class BinaryTreePrintFromTopToBottom { // TreeNode defination class TreeNode { int val; TreeNode left; TreeNode right; public TreeNode (int _val) { this.val = _val; } } public ArrayList&amp;lt;Integer&amp;gt; PrintFromTopToBottom (TreeNode root) { ArrayList&amp;lt;Integer&amp;gt; ret = new ArrayList&amp;lt;&amp;gt;(); ArrayList&amp;lt;TreeNode&amp;gt; queue = new ArrayList&amp;lt;&amp;gt;(); if (root == null) { return ret; } queue.add(root); while (!queue.isEmpty()) { TreeNode cur = queue.remove(0); // Remove the 1st TreeNode in the list and return it to cur ret.</description>
+    </item>
+    
+  </channel>
+</rss>

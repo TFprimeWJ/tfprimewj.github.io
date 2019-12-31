@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Keras on Jinwang Blog</title>
+    <link>https://tfprimewj.github.io/categories/keras/</link>
+    <description>Recent content in Keras on Jinwang Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 18 Aug 2018 11:58:06 +0200</lastBuildDate>
+    
+	<atom:link href="https://tfprimewj.github.io/categories/keras/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Keras学习之路（一）</title>
+      <link>https://tfprimewj.github.io/2018/08/18/keras%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B8%80/</link>
+      <pubDate>Sat, 18 Aug 2018 11:58:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/08/18/keras%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B8%80/</guid>
+      <description>参考：Keras教程
+1. Sequential模型 1.1 创建model 这里的Dense我的理解就是一层全连接神经网络（FC），Activation很好理解，就是激活函数层，下面是用类似于list来创建一个model
+from keras.models import Sequential from keras.layers import Dense, Activation model = Sequential([ Dense(32, input_shape=(784,)), Activation(&#39;relu&#39;), Dense(10), Activation(&#39;softmax&#39;), ])  还可以一层一层往里加
+model = Sequential() model.add(Dense(32, input_dim=784)) model.add(Activation(&#39;relu&#39;)) model.add(Dense(10)) model.add(Activation(&#39;softmax&#39;)) # or model = Sequential() model.add(Dense(32, input_shape=(784,)))  除了第一层需要我们指定input size的大小，剩下的Keras会根据我们构造的网络自动计算出每层输入输出的size，这就很方便。
+1.2 编译 我对编译（compile）的理解就是，确定用什么optimize method，用什么cost function，用什么来当作最终模型好坏的指标（下面的例子中全都用的是accuracy，也就是把准确率当作指标）（提问：难道从另一种角度看cost function的值不能当作指标？ 回答：函数的结果只是一个值，不同的model选择不同的cost function得出的cost function值也不一样，但使用accuracy准确率就可以避免这个事，其实，准确率才是判断model好坏的真正标准）
+# For a multi-class classification problem model.compile(optimizer=&#39;rmsprop&#39;, loss=&#39;categorical_crossentropy&#39;, metrics=[&#39;accuracy&#39;]) # For a binary classification problem model.compile(optimizer=&#39;rmsprop&#39;, loss=&#39;binary_crossentropy&#39;, metrics=[&#39;accuracy&#39;]) # For a mean squared error regression problem model.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Digital Signal Processing on Jinwang Blog</title>
+    <link>https://tfprimewj.github.io/categories/digital-signal-processing/</link>
+    <description>Recent content in Digital Signal Processing on Jinwang Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 25 Sep 2018 11:48:06 +0200</lastBuildDate>
+    
+	<atom:link href="https://tfprimewj.github.io/categories/digital-signal-processing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Digital Image Processing - Ch1 Introduction</title>
+      <link>https://tfprimewj.github.io/2018/09/25/digital-image-processing-ch1-introduction/</link>
+      <pubDate>Tue, 25 Sep 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/09/25/digital-image-processing-ch1-introduction/</guid>
+      <description> Ch1 Introduction  History of DIP Applications Fundamental steps in DIP  Code im_input = imread(&#39;./Pics/Ch01/Lena.jpg&#39;); figure, imshow(im_input), title(&#39;original color image&#39;); im_gray = rgb2gray(im_input); figure, imshow(im_gray), title(&#39;original color image&#39;); imwrite(im_gray,&#39;gray.jpg&#39;); imfinfo(&#39;./Pics/Ch01/Lena.jpg&#39;)  Output ans = Filename: &#39;/Users/jinwang/Desktop/Academy/大三上/Digital_Image_Processing/matlab/Pics/Ch01/Lena.jpg&#39; FileModDate: &#39;27-Jun-2013 21:31:06&#39; FileSize: 91814 Format: &#39;jpg&#39; FormatVersion: &#39;&#39; Width: 512 Height: 512 BitDepth: 24 ColorType: &#39;truecolor&#39; FormatSignature: &#39;&#39; NumberOfSamples: 3 CodingMethod: &#39;Huffman&#39; CodingProcess: &#39;Sequential&#39; Comment: {&#39;Handmade Software, Inc. Image Alchemy v1.9↵&#39;}  </description>
+    </item>
+    
+    <item>
+      <title>DTFT Implementation Using Matlab</title>
+      <link>https://tfprimewj.github.io/2018/09/24/dtft-implementation-using-matlab/</link>
+      <pubDate>Mon, 24 Sep 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/09/24/dtft-implementation-using-matlab/</guid>
+      <description>Definition of DTFT DTFT(Discrete Time Fourier Transform) is the Fourier Transform of a sequence x(n). The definition is: $$X(e^{j\omega}) = DTFT[x(n)] = \sum_{n = -\infty}^{\infty} x(n) e^{-j \omega n}$$
+Implementation using matlab function [amplitude, phase, frequency_domain] = dtft(x, n, M) % This function compute the DTFT(Discrete Time Fourier Transform) of an % input signal x(n). frequency_domain = linspace(0, 2*pi, M); X = zeros(1, M); count = 1; j = sqrt(-1); for omega = frequency_domain exponent_term = exp(- j * omega .</description>
+    </item>
+    
+    <item>
+      <title>Digital Signal Processing Using Matlab Problem 2.1 Solutions &amp; Results</title>
+      <link>https://tfprimewj.github.io/2018/09/09/digital-signal-processing-using-matlab-problem-2.1-solutions-results/</link>
+      <pubDate>Sun, 09 Sep 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/09/09/digital-signal-processing-using-matlab-problem-2.1-solutions-results/</guid>
+      <description>Talk less, code more
+ 2.1-1 clear;clc; % Solutions %% 2.1-1 duration_start = -5; duration_end = 15; n = duration_start: duration_end; x = 3 * impseq(-2, duration_start, duration_end) ... + 2 * impseq(0, duration_start,duration_end) ... - impseq(3, duration_start, duration_end) ... + 5 * impseq(7, duration_start, duration_end) % Plot subplot(4,2,1); stem(n, x); title(&#39;Sequence for 2.1-1&#39;); xlabel(&#39;n&#39;); ylabel(&#39;x1(n)&#39;);  2.1-2 %% 2.1-2 duration_start = -10; duration_end = 10; n = duration_start: duration_end; x = zeros(1, length(n)); for k = -5: 5 xk = exp(-abs(k)) * impseq(2 * k, duration_start, duration_end); x = sigadd(x, n, xk, n) end % Plot subplot(4,2,2); stem(n, x); title(&#39;Sequence for 2.</description>
+    </item>
+    
+  </channel>
+</rss>

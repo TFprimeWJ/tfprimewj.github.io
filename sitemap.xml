@@ -3,26 +3,520 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://tfprimewj.github.io/categories/</loc>
+    <lastmod>2019-12-30T23:58:22+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://tfprimewj.github.io/</loc>
-    <lastmod>2017-05-20T12:10:51+02:00</lastmod>
+    <lastmod>2019-12-30T23:58:22+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/categories/mongodb/</loc>
+    <lastmod>2019-12-30T23:58:22+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/mongodb/</loc>
+    <lastmod>2019-12-30T23:58:22+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2019/12/30/mongodb-m001-mongodb-basics/</loc>
+    <lastmod>2019-12-30T23:58:22+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/post/</loc>
+    <lastmod>2019-12-30T23:58:22+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/</loc>
+    <lastmod>2019-12-30T23:58:22+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/categories/java/</loc>
+    <lastmod>2019-12-30T23:57:22+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/java/</loc>
+    <lastmod>2019-12-30T23:57:22+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2019/12/30/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84/</loc>
+    <lastmod>2019-12-30T23:57:22+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2019/12/30/%E8%BD%AC%E8%BD%BD%E8%AE%B0%E5%BD%95%E6%9B%B4%E6%8D%A2homebrew%E6%BA%90/</loc>
+    <lastmod>2019-12-30T11:54:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/categories/homebrew/</loc>
+    <lastmod>2019-12-30T11:54:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/homebrew/</loc>
+    <lastmod>2019-12-30T11:54:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/categories/hugo/</loc>
+    <lastmod>2019-12-30T11:54:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/hugo/</loc>
+    <lastmod>2019-12-30T11:54:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2019/12/30/%E5%B0%86hugo%E9%83%A8%E7%BD%B2%E5%88%B0github%E4%B8%8A/</loc>
+    <lastmod>2019-12-30T11:54:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/categories/git/</loc>
+    <lastmod>2019-12-30T11:53:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/git/</loc>
+    <lastmod>2019-12-30T11:53:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2019/12/30/git%E4%B8%8A%E4%BC%A0%E5%A4%B1%E8%B4%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</loc>
+    <lastmod>2019-12-30T11:53:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2019/12/30/hugo%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/</loc>
+    <lastmod>2019-12-30T11:43:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/binary-tree/</loc>
+    <lastmod>2019-12-17T11:53:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2019/12/17/lc617-%E5%90%88%E5%B9%B6%E4%BA%8C%E5%8F%89%E6%A0%91/</loc>
+    <lastmod>2019-12-17T11:53:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/categories/leetcode/</loc>
+    <lastmod>2019-12-17T11:53:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/leetcode/</loc>
+    <lastmod>2019-12-17T11:53:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/iteration/</loc>
+    <lastmod>2019-10-17T11:54:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2019/10/17/leetcode-589-n-ary-tree-preorder-traversal/</loc>
+    <lastmod>2019-10-17T11:54:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2019/10/17/leetcode-94-binary-tree-inorder-traversal/</loc>
+    <lastmod>2019-10-17T11:54:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/recursion/</loc>
+    <lastmod>2019-10-17T11:54:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2019/10/17/leetcode-144-binary-tree-preorder-traversal/</loc>
+    <lastmod>2019-10-17T11:53:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/binary-search/</loc>
+    <lastmod>2019-10-17T11:52:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2019/10/17/leetcode-145-binary-tree-postorder-traversal/</loc>
+    <lastmod>2019-10-17T11:52:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2019/10/17/leetcode-35-search-insert-position/</loc>
+    <lastmod>2019-10-17T11:52:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/categories/jzoffer/</loc>
+    <lastmod>2019-10-17T11:51:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/jzoffer/</loc>
+    <lastmod>2019-10-17T11:51:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/queue/</loc>
+    <lastmod>2019-10-17T11:51:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2019/10/17/%E5%89%91%E6%8C%87offer-%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/</loc>
+    <lastmod>2019-10-17T11:51:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/dynamic-programming/</loc>
+    <lastmod>2019-10-07T11:57:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2019/10/07/leetcode-53-maximum-subarray/</loc>
+    <lastmod>2019-10-07T11:57:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/categories/nodejs/</loc>
+    <lastmod>2019-10-06T11:51:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/nodejs/</loc>
+    <lastmod>2019-10-06T11:51:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/web-development/</loc>
+    <lastmod>2019-10-06T11:51:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2019/10/06/what-is-nodejs-a-beginners-view/</loc>
+    <lastmod>2019-10-06T11:51:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2019/09/29/first-express-app/</loc>
+    <lastmod>2019-09-29T11:54:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/categories/web-development/</loc>
+    <lastmod>2019-09-29T11:54:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/categories/python/</loc>
+    <lastmod>2018-10-28T11:51:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/python/</loc>
+    <lastmod>2018-10-28T11:51:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2018/10/28/python%E5%AD%A6%E4%B9%A0-%E5%B0%86dict%E5%86%99%E5%85%A5txt%E6%96%87%E4%BB%B6/</loc>
+    <lastmod>2018-10-28T11:51:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/json/</loc>
+    <lastmod>2018-10-28T11:50:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2018/10/28/python%E5%AD%A6%E4%B9%A0-%E5%86%99json%E7%88%AC%E8%99%AB/</loc>
+    <lastmod>2018-10-28T11:50:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/%E7%88%AC%E8%99%AB/</loc>
+    <lastmod>2018-10-28T11:50:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2018/10/28/python%E5%AD%A6%E4%B9%A0-json.dumps%E5%92%8Cjson.loads%E7%9A%84%E7%94%A8%E6%B3%95/</loc>
+    <lastmod>2018-10-28T11:49:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/csv/</loc>
+    <lastmod>2018-10-21T11:49:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/categories/pandas/</loc>
+    <lastmod>2018-10-21T11:49:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/pandas/</loc>
+    <lastmod>2018-10-21T11:49:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2018/10/21/pandas%E5%AD%A6%E4%B9%A0-series%E8%BD%AC%E6%88%90str%E6%93%8D%E4%BD%9C%E8%AF%BB%E5%8F%96gps/</loc>
+    <lastmod>2018-10-21T11:49:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2018/10/21/python%E5%AD%A6%E4%B9%A0-%E5%B0%86%E9%80%97%E5%8F%B7%E5%88%86%E9%9A%94%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E5%8C%96%E4%B8%BA%E5%88%97%E8%A1%A8/</loc>
+    <lastmod>2018-10-21T11:49:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2018/10/21/pandas%E5%AD%A6%E4%B9%A0-dataframe%E6%8C%89%E5%88%97%E7%B4%A2%E5%BC%95/</loc>
+    <lastmod>2018-10-21T11:48:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2018/10/21/pandas%E5%AD%A6%E4%B9%A0-pd.read_csv%E6%B7%BB%E5%8A%A0header%E5%92%8Cnames/</loc>
+    <lastmod>2018-10-21T11:48:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/categories/digital-image-processing/</loc>
+    <lastmod>2018-09-27T11:48:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/digital-image-processing/</loc>
+    <lastmod>2018-09-27T11:48:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2018/09/27/digital-image-processing-ch3-spatial-domain-image-enhancement/</loc>
+    <lastmod>2018-09-27T11:48:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2018/09/26/digital-image-processing-ch2-fundamentals/</loc>
+    <lastmod>2018-09-26T11:48:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2018/09/25/digital-image-processing-ch1-introduction/</loc>
+    <lastmod>2018-09-25T11:48:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/categories/digital-signal-processing/</loc>
+    <lastmod>2018-09-25T11:48:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/digital-signal-processing/</loc>
+    <lastmod>2018-09-25T11:48:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/matlab/</loc>
+    <lastmod>2018-09-25T11:48:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2018/09/24/dtft-implementation-using-matlab/</loc>
+    <lastmod>2018-09-24T11:48:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/categories/communication-system/</loc>
+    <lastmod>2018-09-13T11:48:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/communication-system/</loc>
+    <lastmod>2018-09-13T11:48:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2018/09/13/communication-system-random-process-a-cos-wave-with-random-phase/</loc>
+    <lastmod>2018-09-13T11:48:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2018/09/09/digital-signal-processing-using-matlab-problem-2.1-solutions-results/</loc>
+    <lastmod>2018-09-09T11:48:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2018/08/22/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%94/</loc>
+    <lastmod>2018-08-22T11:48:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/categories/tensorflow/</loc>
+    <lastmod>2018-08-22T11:48:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/tensorflow/</loc>
+    <lastmod>2018-08-22T11:48:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2018/08/21/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%9B%9B/</loc>
+    <lastmod>2018-08-21T11:48:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2018/08/20/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%89/</loc>
+    <lastmod>2018-08-20T11:48:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2018/08/19/python%E5%AD%A6%E4%B9%A0-assert%E7%9A%84%E4%BD%9C%E7%94%A8/</loc>
+    <lastmod>2018-08-19T11:59:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2018/08/19/python%E5%AD%A6%E4%B9%A0-%E6%B7%B1%E6%B5%85copy/</loc>
+    <lastmod>2018-08-19T11:58:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2018/08/19/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C/</loc>
+    <lastmod>2018-08-19T11:48:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2018/08/19/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/</loc>
+    <lastmod>2018-08-19T11:38:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/categories/keras/</loc>
+    <lastmod>2018-08-18T11:58:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/keras/</loc>
+    <lastmod>2018-08-18T11:58:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2018/08/18/keras%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B8%80/</loc>
+    <lastmod>2018-08-18T11:58:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/machine-learning/</loc>
+    <lastmod>2018-08-18T11:58:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/convolutional-neural-network/</loc>
+    <lastmod>2018-08-16T11:58:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/deep-learning/</loc>
+    <lastmod>2018-08-16T11:58:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2018/08/16/deep-learning-course3-week1-programming-assignment2/</loc>
+    <lastmod>2018-08-16T11:58:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/categories/machine-learning/</loc>
+    <lastmod>2018-08-16T11:58:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2018/08/15/deep-learning-course3-week1-programming-assignment1/</loc>
+    <lastmod>2018-08-15T11:58:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/categories/gre/</loc>
+    <lastmod>2018-08-09T11:58:06+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2018/08/09/gre-awa-model-essays/</loc>
+    <lastmod>2018-08-09T11:58:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/gre-issue/</loc>
+    <lastmod>2018-08-09T11:58:06+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://tfprimewj.github.io/2017/05/20/markdown-cheat-sheet/</loc>
     <lastmod>2017-05-20T12:10:51+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tfprimewj.github.io/post/</loc>
-    <lastmod>2017-05-20T12:10:51+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://tfprimewj.github.io/tags/</loc>
-    <lastmod>2017-05-20T12:10:51+02:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -47,24 +541,12 @@
   </url>
   
   <url>
-    <loc>https://tfprimewj.github.io/categories/</loc>
-    <lastmod>2015-10-02T21:49:20+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://tfprimewj.github.io/2015/10/02/how-to-add-pages-to-the-menu/</loc>
     <lastmod>2015-10-02T21:49:20+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://tfprimewj.github.io/tags/golang/</loc>
-    <lastmod>2015-10-02T21:49:20+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://tfprimewj.github.io/tags/hugo/</loc>
     <lastmod>2015-10-02T21:49:20+02:00</lastmod>
     <priority>0</priority>
   </url>

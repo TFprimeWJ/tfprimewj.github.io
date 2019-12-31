@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pandas on Jinwang Blog</title>
+    <link>https://tfprimewj.github.io/categories/pandas/</link>
+    <description>Recent content in Pandas on Jinwang Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 21 Oct 2018 11:49:06 +0200</lastBuildDate>
+    
+	<atom:link href="https://tfprimewj.github.io/categories/pandas/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Pandas学习-Series()转成str操作，读取gps</title>
+      <link>https://tfprimewj.github.io/2018/10/21/pandas%E5%AD%A6%E4%B9%A0-series%E8%BD%AC%E6%88%90str%E6%93%8D%E4%BD%9C%E8%AF%BB%E5%8F%96gps/</link>
+      <pubDate>Sun, 21 Oct 2018 11:49:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/10/21/pandas%E5%AD%A6%E4%B9%A0-series%E8%BD%AC%E6%88%90str%E6%93%8D%E4%BD%9C%E8%AF%BB%E5%8F%96gps/</guid>
+      <description> Pandas学习-Series()转成str操作，读取gps @(我的第一个笔记本)
+ Talk less, code more
+ 在DataFrame中取一列转化成Series类型，对Series类型进行字符串分割，便可以得到坐标信息。
+import pandas as pd data_file = &#39;matchResult_10.txt&#39; names = &#39;app_name,app_kind,app_type,ip,nation,gps,size&#39; names = names.split(&#39;,&#39;) data = pd.read_csv(data_file, header=None, names=names) data[&#39;gps_xy&#39;] = data[&#39;gps&#39;].str.split(&#39;#&#39;) print(data[&#39;gps_xy&#39;])  输出
+0 [30.882428, 75.832577] 1 [22.9009009009009, 84.14595791325802] 2 [20.81081081081081, 70.70283823391588] 3 [26.27027027027027, 72.99908113768355] 4 [26.7927864, 84.5345949] 5 [24.4353437, 85.866535] 6 [26.4265576, 76.6643728] 7 [26.7927864, 84.5345949] 8 [20.46846846846847, 75.00577673385992] 9 [25.7397946, 77.4759334] Name: gps_xy, dtype: object  </description>
+    </item>
+    
+    <item>
+      <title>Pandas学习-DataFrame()按列索引</title>
+      <link>https://tfprimewj.github.io/2018/10/21/pandas%E5%AD%A6%E4%B9%A0-dataframe%E6%8C%89%E5%88%97%E7%B4%A2%E5%BC%95/</link>
+      <pubDate>Sun, 21 Oct 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/10/21/pandas%E5%AD%A6%E4%B9%A0-dataframe%E6%8C%89%E5%88%97%E7%B4%A2%E5%BC%95/</guid>
+      <description>Pandas学习-DataFrame()按列索引 @(python)
+ Talk less, code more
+ import pandas as pd data_file = &#39;matchResult_10.txt&#39; names = &#39;app_name, app_kind, app_type, ip, nation, gps, size&#39; names = names.split(&#39;,&#39;) data = pd.read_csv(data_file, header=None, names=names) # 查找&#39; gps&#39;这一列的数据 print(data[&#39; gps&#39;])  注意！！！：这里要注意一下空格的问题。因为定义数据头names的时候习惯性的在每个类型前面加了个空格（也就是习惯性的在逗号后面加了个空格），所以真正的索引值是&#39; gps&#39;而不是&#39;gps&#39;所以我们将前面的空格去掉。这也告诉我们，数据文件不要随便添加空格。
+输出
+0 30.882428#75.832577 1 22.9009009009009#84.14595791325802 2 20.81081081081081#70.70283823391588 3 26.27027027027027#72.99908113768355 4 26.7927864#84.5345949 5 24.4353437#85.866535 6 26.4265576#76.6643728 7 26.7927864#84.5345949 8 20.46846846846847#75.00577673385992 9 25.7397946#77.4759334 Name: gps, dtype: object  更改后的结果
+import pandas as pd data_file = &#39;matchResult_10.</description>
+    </item>
+    
+    <item>
+      <title>Pandas学习-pd.read_csv()添加header和names</title>
+      <link>https://tfprimewj.github.io/2018/10/21/pandas%E5%AD%A6%E4%B9%A0-pd.read_csv%E6%B7%BB%E5%8A%A0header%E5%92%8Cnames/</link>
+      <pubDate>Sun, 21 Oct 2018 11:48:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/10/21/pandas%E5%AD%A6%E4%B9%A0-pd.read_csv%E6%B7%BB%E5%8A%A0header%E5%92%8Cnames/</guid>
+      <description>Pandas学习-pd.read_csv()添加header和names @(python)
+ Talk less, code more
+ 首先，我们构造一个数据文件csv_read_test.txt，数据之间用,分隔开
+Xiao Wang, 18, boy, ip1 Xiao Hong, 17, girl, ip2 Liu Chen, 20, boy, ip3 Hua hua, 21, girl, ip4  import pandas as pd # 定义file_name file_name = &#39;csv_read_test.txt&#39; # 直接读取，除了文件名不添加任何参数 data_raw = pd.read_csv(file_name) # 输出我们的数据 print(data_raw)  # 输出 Xiao Wang 18 boy ip1 0 Xiao Hong 17 girl ip2 1 Liu Chen 20 boy ip3 2 Hua hua 21 girl ip4  可见，默认将数据的第一行作为了数据头</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NodeJs on Jinwang Blog</title>
+    <link>https://tfprimewj.github.io/tags/nodejs/</link>
+    <description>Recent content in NodeJs on Jinwang Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 06 Oct 2019 11:51:06 +0200</lastBuildDate>
+    
+	<atom:link href="https://tfprimewj.github.io/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>What is Nodejs? - A beginner&#39;s View</title>
+      <link>https://tfprimewj.github.io/2019/10/06/what-is-nodejs-a-beginners-view/</link>
+      <pubDate>Sun, 06 Oct 2019 11:51:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2019/10/06/what-is-nodejs-a-beginners-view/</guid>
+      <description>问题：什么是Node.js? 在学习nodejs的时候，老师直接教我们怎么安装nodejs，然后直接使用node命令便可以执行javascript代码。但是node究竟扮演了一个什么样的角色我一直不是很清楚，下面是我作为一个初学者对node初步的思考。
+我的理解 我们知道我们向服务器请求一个网页，服务器返回给我们一个html文件，然后这个html会渲染，这时就会加载里面的css、js等代码。在这个过程中，js只不过是一个渲染的工具，js完完全全使用在前端，也是用户的客户端，也就是我们的浏览器。
+即，js完全是一个前端渲染工具，后端有后端自己的语言，与js无关。
+但是我们在使用node的过程中发现，我们本身并没有自己去写后端，我们直接用node命令就可以造出一个服务器，在这个服务器上我们可以写自己的GET、POST页面。而且最重要的是，node的代码就是js。
+所以，我们此时发现，我们已经在用js写后端了！
+也就是说，我们现在使用js既可以写前端，也可以写后端了！
+多么神奇！</description>
+    </item>
+    
+  </channel>
+</rss>

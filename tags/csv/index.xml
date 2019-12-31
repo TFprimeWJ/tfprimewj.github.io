@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CSV on Jinwang Blog</title>
+    <link>https://tfprimewj.github.io/tags/csv/</link>
+    <description>Recent content in CSV on Jinwang Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 21 Oct 2018 11:49:06 +0200</lastBuildDate>
+    
+	<atom:link href="https://tfprimewj.github.io/tags/csv/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Pandas学习-Series()转成str操作，读取gps</title>
+      <link>https://tfprimewj.github.io/2018/10/21/pandas%E5%AD%A6%E4%B9%A0-series%E8%BD%AC%E6%88%90str%E6%93%8D%E4%BD%9C%E8%AF%BB%E5%8F%96gps/</link>
+      <pubDate>Sun, 21 Oct 2018 11:49:06 +0200</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2018/10/21/pandas%E5%AD%A6%E4%B9%A0-series%E8%BD%AC%E6%88%90str%E6%93%8D%E4%BD%9C%E8%AF%BB%E5%8F%96gps/</guid>
+      <description> Pandas学习-Series()转成str操作，读取gps @(我的第一个笔记本)
+ Talk less, code more
+ 在DataFrame中取一列转化成Series类型，对Series类型进行字符串分割，便可以得到坐标信息。
+import pandas as pd data_file = &#39;matchResult_10.txt&#39; names = &#39;app_name,app_kind,app_type,ip,nation,gps,size&#39; names = names.split(&#39;,&#39;) data = pd.read_csv(data_file, header=None, names=names) data[&#39;gps_xy&#39;] = data[&#39;gps&#39;].str.split(&#39;#&#39;) print(data[&#39;gps_xy&#39;])  输出
+0 [30.882428, 75.832577] 1 [22.9009009009009, 84.14595791325802] 2 [20.81081081081081, 70.70283823391588] 3 [26.27027027027027, 72.99908113768355] 4 [26.7927864, 84.5345949] 5 [24.4353437, 85.866535] 6 [26.4265576, 76.6643728] 7 [26.7927864, 84.5345949] 8 [20.46846846846847, 75.00577673385992] 9 [25.7397946, 77.4759334] Name: gps_xy, dtype: object  </description>
+    </item>
+    
+  </channel>
+</rss>
