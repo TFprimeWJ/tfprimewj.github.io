@@ -28,7 +28,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://tfprimewj.github.io/" />
 
-<meta property="og:updated_time" content="2020-02-05T12:05:05+08:00" />
+<meta property="og:updated_time" content="2020-02-05T12:59:41+08:00" />
 
     
     <meta itemprop="name" content="Jinwang Blog">
@@ -163,7 +163,7 @@
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        51
+        52
         <span>Posts</span>
       </div>
       <div class="article-info-block">
@@ -244,6 +244,160 @@
     <section id="main">
     
     
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        </a>
+
+        <header class="article-header">
+    <a href="https://tfprimewj.github.io/2019/10/17/%E5%89%91%E6%8C%87offer-%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/">
+    <h1 class="article-title" itemprop="name">
+        剑指Offer 从上到下打印二叉树
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2019-10-17 11:51:06 &#43;0200 &#43;0200" itemprop="datePublished">2019-10-17</time>
+            &middot;
+            96
+            words
+            &middot;
+            1
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/categories/jzoffer">JZOffer</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/tags/jzoffer">JZOffer</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/tags/binary-tree">Binary Tree</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/tags/queue">Queue</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                从上到下打印二叉树 题目描述 从上往下打印出二叉树的每个节点，同层节点从左至右打印。
+解法 import java.util.ArrayList; import java.util.Queue; class BinaryTreePrintFromTopToBottom { // TreeNode defination class TreeNode { int val; TreeNode left; TreeNode right; public TreeNode (int _val) { this.val = _val; } } public ArrayList&lt;Integer&gt; PrintFromTopToBottom (TreeNode root) { ArrayList&lt;Integer&gt; ret = new ArrayList&lt;&gt;(); ArrayList&lt;TreeNode&gt; queue = new ArrayList&lt;&gt;(); if (root == null) { return ret; } queue.add(root); while (!queue.isEmpty()) { TreeNode cur = queue.remove(0); // Remove the 1st TreeNode in the list and return it to cur ret.
+            </p>
+            <p class="article-more-link">
+                <a href="https://tfprimewj.github.io/2019/10/17/%E5%89%91%E6%8C%87offer-%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="https://tfprimewj.github.io/2019/10/17/%E5%89%91%E6%8C%87offer-%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/" data-id="e79cf854921ba7291fe73f1fa4d2fd32" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="https://tfprimewj.github.io/2019/10/17/%E5%89%91%E6%8C%87offer-%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
 
 <article class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
@@ -1613,154 +1767,6 @@ import pandas as pd data_file = 'matchResult_10.
     </div>
 </article>
 
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="https://tfprimewj.github.io/2018/10/21/pandas%E5%AD%A6%E4%B9%A0-pd.read_csv%E6%B7%BB%E5%8A%A0header%E5%92%8Cnames/">
-    <h1 class="article-title" itemprop="name">
-        Pandas学习-pd.read_csv()添加header和names
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2018-10-21 11:48:06 &#43;0200 &#43;0200" itemprop="datePublished">2018-10-21</time>
-            &middot;
-            271
-            words
-            &middot;
-            2
-            minute read
-        </div>
-        
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-folder"></i>
-                
-                
-                <a class="article-category-link" href="https://tfprimewj.github.io/categories/pandas">Pandas</a>
-                
-                
-            </div>
-            
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="https://tfprimewj.github.io/tags/pandas">Pandas</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                Pandas学习-pd.read_csv()添加header和names @(python)
- Talk less, code more
- 首先，我们构造一个数据文件csv_read_test.txt，数据之间用,分隔开
-Xiao Wang, 18, boy, ip1 Xiao Hong, 17, girl, ip2 Liu Chen, 20, boy, ip3 Hua hua, 21, girl, ip4  import pandas as pd # 定义file_name file_name = 'csv_read_test.txt' # 直接读取，除了文件名不添加任何参数 data_raw = pd.read_csv(file_name) # 输出我们的数据 print(data_raw)  # 输出 Xiao Wang 18 boy ip1 0 Xiao Hong 17 girl ip2 1 Liu Chen 20 boy ip3 2 Hua hua 21 girl ip4  可见，默认将数据的第一行作为了数据头
-            </p>
-            <p class="article-more-link">
-                <a href="https://tfprimewj.github.io/2018/10/21/pandas%E5%AD%A6%E4%B9%A0-pd.read_csv%E6%B7%BB%E5%8A%A0header%E5%92%8Cnames/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="https://tfprimewj.github.io/2018/10/21/pandas%E5%AD%A6%E4%B9%A0-pd.read_csv%E6%B7%BB%E5%8A%A0header%E5%92%8Cnames/" data-id="86d79ed0a669c8f6a3666d9c9c005553" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-    <a href="https://tfprimewj.github.io/2018/10/21/pandas%E5%AD%A6%E4%B9%A0-pd.read_csv%E6%B7%BB%E5%8A%A0header%E5%92%8Cnames/#disqus_thread" class="article-comment-link">
-        Comments
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
 
 <nav id="page-nav">
 
@@ -1845,7 +1851,7 @@ Xiao Wang, 18, boy, ip1 Xiao Hong, 17, girl, ip2 Liu Chen, 20, boy, ip3 Hua hua,
                 <a class="category-list-link" href="https://tfprimewj.github.io/categories/hugo">
                     hugo
                 </a>
-                <span class="category-list-count">3</span>
+                <span class="category-list-count">4</span>
             </li>
             
             <li class="category-list-item">
@@ -2086,7 +2092,7 @@ Xiao Wang, 18, boy, ip1 Xiao Hong, 17, girl, ip2 Liu Chen, 20, boy, ip3 Hua hua,
                 <a class="category-list-link" href="https://tfprimewj.github.io/tags/hugo">
                     hugo
                 </a>
-                <span class="category-list-count">4</span>
+                <span class="category-list-count">5</span>
             </li>
             
             <li class="category-list-item">

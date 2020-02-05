@@ -28,7 +28,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://tfprimewj.github.io/" />
 
-<meta property="og:updated_time" content="2020-02-05T12:05:05+08:00" />
+<meta property="og:updated_time" content="2020-02-05T12:59:41+08:00" />
 
     
     <meta itemprop="name" content="Jinwang Blog">
@@ -163,7 +163,7 @@
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        51
+        52
         <span>Posts</span>
       </div>
       <div class="article-info-block">
@@ -244,6 +244,157 @@
     <section id="main">
     
     
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        </a>
+
+        <header class="article-header">
+    <a href="https://tfprimewj.github.io/2020/02/05/hugo%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0github%E7%95%8C%E9%9D%A2/">
+    <h1 class="article-title" itemprop="name">
+        Hugo如何更新github界面
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2020-02-05 12:59:41 &#43;0800 CST" itemprop="datePublished">2020-02-05</time>
+            &middot;
+            24
+            words
+            &middot;
+            1
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/categories/hugo">hugo</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/tags/hugo">hugo</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                 Hugo如何更新github界面 我发现，当我新建一个post之后，public文件夹里面的内容并没有更新，所以此时将public文件夹里面的内容直接复制到xxx.github.io文件夹中，并不会有新的post出现。
+所以采用下面的解决方法：
+当我们使用hugo new post/test.md新建一个post之后，我们输入
+hugo
+进行预览。此时public文件夹里面的内容会进行更新。
+然后我们将public文件夹里面的东西全部复制到xxx.github.io文件夹中，然后上传github
+上传github步骤 git add . git commit -m &quot;add new post&quot; git push -u origin master  
+            </p>
+            <p class="article-more-link">
+                <a href="https://tfprimewj.github.io/2020/02/05/hugo%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0github%E7%95%8C%E9%9D%A2/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="https://tfprimewj.github.io/2020/02/05/hugo%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0github%E7%95%8C%E9%9D%A2/" data-id="36a7bcf15891a63519f7413a1ecbbb1d" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="https://tfprimewj.github.io/2020/02/05/hugo%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0github%E7%95%8C%E9%9D%A2/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
 
 <article class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
@@ -1615,154 +1766,6 @@ myList[0] = 2.5;  数组大小和默认值 数组的大小必须在创建数组�
     </div>
 </article>
 
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="https://tfprimewj.github.io/2019/12/30/%E8%BD%AC%E8%BD%BD%E8%AE%B0%E5%BD%95%E6%9B%B4%E6%8D%A2homebrew%E6%BA%90/">
-    <h1 class="article-title" itemprop="name">
-        [转载]记录：更换HomeBrew源
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2019-12-30 11:54:06 &#43;0200 &#43;0200" itemprop="datePublished">2019-12-30</time>
-            &middot;
-            183
-            words
-            &middot;
-            1
-            minute read
-        </div>
-        
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-folder"></i>
-                
-                
-                <a class="article-category-link" href="https://tfprimewj.github.io/categories/homebrew">homebrew</a>
-                
-                
-            </div>
-            
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="https://tfprimewj.github.io/tags/homebrew">homebrew</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                记录：更换HomeBrew源 由于外网速度过慢，将Homebrew的源更换为Alibaba源
-参考：https://learnku.com/articles/18908
-1. 替换 / 还原 brew.git 仓库地址 # 替换成阿里巴巴的 brew.git 仓库地址: cd &quot;$(brew --repo)&quot; git remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git #======================================================= # 还原为官方提供的 brew.git 仓库地址 cd &quot;$(brew --repo)&quot; git remote set-url origin https://github.com/Homebrew/brew.git  本机终端操作结果：
-jinwang@Jin-Wang-MacBook-Pro ~ cd &quot;$(brew --repo)&quot; jinwang@Jin-Wang-MacBook-Pro  /usr/local/Homebrew   stable  git remote set-url origin https://mirrors.aliyun.com/homebrew/brew.git  2. 替换 / 还原 homebrew-core.git 仓库地址 # 替换成阿里巴巴的 homebrew-core.git 仓库地址: cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot; git remote set-url origin https://mirrors.
-            </p>
-            <p class="article-more-link">
-                <a href="https://tfprimewj.github.io/2019/12/30/%E8%BD%AC%E8%BD%BD%E8%AE%B0%E5%BD%95%E6%9B%B4%E6%8D%A2homebrew%E6%BA%90/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="https://tfprimewj.github.io/2019/12/30/%E8%BD%AC%E8%BD%BD%E8%AE%B0%E5%BD%95%E6%9B%B4%E6%8D%A2homebrew%E6%BA%90/" data-id="4ef809367ab801723d732bf9cdee7250" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-    <a href="https://tfprimewj.github.io/2019/12/30/%E8%BD%AC%E8%BD%BD%E8%AE%B0%E5%BD%95%E6%9B%B4%E6%8D%A2homebrew%E6%BA%90/#disqus_thread" class="article-comment-link">
-        Comments
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
 
 <nav id="page-nav">
 
@@ -1843,7 +1846,7 @@ jinwang@Jin-Wang-MacBook-Pro ~ cd &quot;$(brew --repo)&quot; jinwang@Jin-Wang-Ma
                 <a class="category-list-link" href="https://tfprimewj.github.io/categories/hugo">
                     hugo
                 </a>
-                <span class="category-list-count">3</span>
+                <span class="category-list-count">4</span>
             </li>
             
             <li class="category-list-item">
@@ -2084,7 +2087,7 @@ jinwang@Jin-Wang-MacBook-Pro ~ cd &quot;$(brew --repo)&quot; jinwang@Jin-Wang-Ma
                 <a class="category-list-link" href="https://tfprimewj.github.io/tags/hugo">
                     hugo
                 </a>
-                <span class="category-list-count">4</span>
+                <span class="category-list-count">5</span>
             </li>
             
             <li class="category-list-item">

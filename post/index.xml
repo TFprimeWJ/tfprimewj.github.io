@@ -6,10 +6,25 @@
     <description>Recent content in Posts on Jinwang Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Feb 2020 12:05:05 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 05 Feb 2020 12:59:41 +0800</lastBuildDate>
     
 	<atom:link href="https://tfprimewj.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hugo如何更新github界面</title>
+      <link>https://tfprimewj.github.io/2020/02/05/hugo%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0github%E7%95%8C%E9%9D%A2/</link>
+      <pubDate>Wed, 05 Feb 2020 12:59:41 +0800</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2020/02/05/hugo%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0github%E7%95%8C%E9%9D%A2/</guid>
+      <description> Hugo如何更新github界面 我发现，当我新建一个post之后，public文件夹里面的内容并没有更新，所以此时将public文件夹里面的内容直接复制到xxx.github.io文件夹中，并不会有新的post出现。
+所以采用下面的解决方法：
+当我们使用hugo new post/test.md新建一个post之后，我们输入
+hugo
+进行预览。此时public文件夹里面的内容会进行更新。
+然后我们将public文件夹里面的东西全部复制到xxx.github.io文件夹中，然后上传github
+上传github步骤 git add . git commit -m &amp;quot;add new post&amp;quot; git push -u origin master  </description>
+    </item>
     
     <item>
       <title>Hugo如何新建一个Post</title>
