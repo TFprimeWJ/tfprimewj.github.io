@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>zsh on Jinwang Blog</title>
+    <link>https://tfprimewj.github.io/categories/zsh/</link>
+    <description>Recent content in zsh on Jinwang Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 30 Dec 2019 23:58:24 +0800</lastBuildDate>
+    
+	<atom:link href="https://tfprimewj.github.io/categories/zsh/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mac zsh command</title>
+      <link>https://tfprimewj.github.io/2019/12/30/mac-zsh-command/</link>
+      <pubDate>Mon, 30 Dec 2019 23:58:24 +0800</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2019/12/30/mac-zsh-command/</guid>
+      <description> Mac zsh command echo $PATH Users/jinwang/anaconda/bin: /usr/local/bin: /usr/bin: /bin:/usr/sbin: /sbin: /Applications/VMware Fusion.app/Contents/Public: /Library/TeX/texbin: /Applications/Wireshark.app/Contents/MacOS: /Users/jinwang/anaconda3/bin: /usr/local/bin: /usr/bin: /bin: /usr/sbin: /sbin: /opt/X11/bin: /Users/jinwang/.rvm/bin: /usr/local/bin/python3.7  </description>
+    </item>
+    
+  </channel>
+</rss>

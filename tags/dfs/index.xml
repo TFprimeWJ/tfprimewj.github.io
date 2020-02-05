@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dfs on Jinwang Blog</title>
+    <link>https://tfprimewj.github.io/tags/dfs/</link>
+    <description>Recent content in dfs on Jinwang Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 07 Jan 2020 20:55:28 +0800</lastBuildDate>
+    
+	<atom:link href="https://tfprimewj.github.io/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Leetcode 968 Binary Tree Cameras</title>
+      <link>https://tfprimewj.github.io/2020/01/07/leetcode-968-binary-tree-cameras/</link>
+      <pubDate>Tue, 07 Jan 2020 20:55:28 +0800</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2020/01/07/leetcode-968-binary-tree-cameras/</guid>
+      <description>Leetcode 968 Binary Tree Cameras I have been thinking about this problem for an hour. However, I failed. Then I was astounding by this answer. 监控二叉树状态查询法
+答案如下：
+/** * Definition for a binary tree node. * public class TreeNode { * int val; * TreeNode left; * TreeNode right; * TreeNode(int x) { val = x; } * } */ class Solution { public int minCameraCover (TreeNode root) { TreeNode r = new TreeNode(0); r.</description>
+    </item>
+    
+  </channel>
+</rss>

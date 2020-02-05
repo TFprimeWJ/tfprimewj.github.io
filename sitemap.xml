@@ -4,55 +4,156 @@
   
   <url>
     <loc>https://tfprimewj.github.io/categories/</loc>
-    <lastmod>2019-12-30T23:58:22+08:00</lastmod>
+    <lastmod>2020-02-05T12:05:05+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2020/02/05/hugo%E5%A6%82%E4%BD%95%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AApost/</loc>
+    <lastmod>2020-02-05T12:05:05+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://tfprimewj.github.io/</loc>
-    <lastmod>2019-12-30T23:58:22+08:00</lastmod>
+    <lastmod>2020-02-05T12:05:05+08:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://tfprimewj.github.io/categories/mongodb/</loc>
-    <lastmod>2019-12-30T23:58:22+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://tfprimewj.github.io/tags/mongodb/</loc>
-    <lastmod>2019-12-30T23:58:22+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://tfprimewj.github.io/2019/12/30/mongodb-m001-mongodb-basics/</loc>
-    <lastmod>2019-12-30T23:58:22+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://tfprimewj.github.io/post/</loc>
-    <lastmod>2019-12-30T23:58:22+08:00</lastmod>
+    <lastmod>2020-02-05T12:05:05+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://tfprimewj.github.io/tags/</loc>
-    <lastmod>2019-12-30T23:58:22+08:00</lastmod>
+    <lastmod>2020-02-05T12:05:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/categories/hugo/</loc>
+    <lastmod>2020-02-05T12:05:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/hugo/</loc>
+    <lastmod>2020-02-05T12:05:05+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/dynamic-programming/</loc>
+    <lastmod>2020-01-08T12:34:02+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/categories/leetcode/</loc>
+    <lastmod>2020-01-08T12:34:02+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/leetcode/</loc>
+    <lastmod>2020-01-08T12:34:02+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2020/01/08/leetcode-968-longest-palindromic-substring/</loc>
+    <lastmod>2020-01-08T12:34:02+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2020/01/07/leetcode-968-binary-tree-cameras/</loc>
+    <lastmod>2020-01-07T20:55:28+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/dfs/</loc>
+    <lastmod>2020-01-07T20:55:28+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://tfprimewj.github.io/categories/java/</loc>
-    <lastmod>2019-12-30T23:57:22+08:00</lastmod>
+    <lastmod>2020-01-05T23:36:14+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://tfprimewj.github.io/tags/java/</loc>
-    <lastmod>2019-12-30T23:57:22+08:00</lastmod>
+    <lastmod>2020-01-05T23:36:14+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/oop/</loc>
+    <lastmod>2020-01-05T23:36:14+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2020/01/05/thinking-in-java-ch2-introduction-to-objects/</loc>
+    <lastmod>2020-01-05T23:36:14+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/categories/machine-learning/</loc>
+    <lastmod>2020-01-04T11:32:20+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/machine-learning/</loc>
+    <lastmod>2020-01-04T11:32:20+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2020/01/04/%E7%BB%8F%E9%AA%8C%E9%A3%8E%E9%99%A9%E6%9C%80%E5%B0%8F%E5%8C%96erm%E5%92%8C%E7%BB%93%E6%9E%84%E9%A3%8E%E9%99%A9%E6%9C%80%E5%B0%8F%E5%8C%96srm/</loc>
+    <lastmod>2020-01-04T11:32:20+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2019/12/30/mac-zsh-command/</loc>
+    <lastmod>2019-12-30T23:58:24+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/categories/zsh/</loc>
+    <lastmod>2019-12-30T23:58:24+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/zsh/</loc>
+    <lastmod>2019-12-30T23:58:24+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/categories/mongodb/</loc>
+    <lastmod>2019-12-30T23:58:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/mongodb/</loc>
+    <lastmod>2019-12-30T23:58:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2019/12/30/mongodb-m001-ch2-the-mongodb-query-language-altas/</loc>
+    <lastmod>2019-12-30T23:58:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2019/12/30/mongodb-m001-mongodb-basics/</loc>
+    <lastmod>2019-12-30T23:58:22+08:00</lastmod>
   </url>
   
   <url>
@@ -73,18 +174,6 @@
   
   <url>
     <loc>https://tfprimewj.github.io/tags/homebrew/</loc>
-    <lastmod>2019-12-30T11:54:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://tfprimewj.github.io/categories/hugo/</loc>
-    <lastmod>2019-12-30T11:54:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://tfprimewj.github.io/tags/hugo/</loc>
     <lastmod>2019-12-30T11:54:06+02:00</lastmod>
     <priority>0</priority>
   </url>
@@ -125,18 +214,6 @@
   <url>
     <loc>https://tfprimewj.github.io/2019/12/17/lc617-%E5%90%88%E5%B9%B6%E4%BA%8C%E5%8F%89%E6%A0%91/</loc>
     <lastmod>2019-12-17T11:53:06+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tfprimewj.github.io/categories/leetcode/</loc>
-    <lastmod>2019-12-17T11:53:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://tfprimewj.github.io/tags/leetcode/</loc>
-    <lastmod>2019-12-17T11:53:06+02:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -203,12 +280,6 @@
   <url>
     <loc>https://tfprimewj.github.io/2019/10/17/%E5%89%91%E6%8C%87offer-%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/</loc>
     <lastmod>2019-10-17T11:51:06+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tfprimewj.github.io/tags/dynamic-programming/</loc>
-    <lastmod>2019-10-07T11:57:06+02:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -464,12 +535,6 @@
   </url>
   
   <url>
-    <loc>https://tfprimewj.github.io/tags/machine-learning/</loc>
-    <lastmod>2018-08-18T11:58:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://tfprimewj.github.io/tags/convolutional-neural-network/</loc>
     <lastmod>2018-08-16T11:58:06+02:00</lastmod>
     <priority>0</priority>
@@ -484,12 +549,6 @@
   <url>
     <loc>https://tfprimewj.github.io/2018/08/16/deep-learning-course3-week1-programming-assignment2/</loc>
     <lastmod>2018-08-16T11:58:06+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://tfprimewj.github.io/categories/machine-learning/</loc>
-    <lastmod>2018-08-16T11:58:06+02:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

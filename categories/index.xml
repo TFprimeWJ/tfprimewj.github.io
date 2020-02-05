@@ -6,26 +6,62 @@
     <description>Recent content in Categories on Jinwang Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 Dec 2019 23:58:22 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 05 Feb 2020 12:05:05 +0800</lastBuildDate>
     
 	<atom:link href="https://tfprimewj.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>MongoDB</title>
-      <link>https://tfprimewj.github.io/categories/mongodb/</link>
-      <pubDate>Mon, 30 Dec 2019 23:58:22 +0800</pubDate>
+      <title>hugo</title>
+      <link>https://tfprimewj.github.io/categories/hugo/</link>
+      <pubDate>Wed, 05 Feb 2020 12:05:05 +0800</pubDate>
       
-      <guid>https://tfprimewj.github.io/categories/mongodb/</guid>
+      <guid>https://tfprimewj.github.io/categories/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Leetcode</title>
+      <link>https://tfprimewj.github.io/categories/leetcode/</link>
+      <pubDate>Wed, 08 Jan 2020 12:34:02 +0800</pubDate>
+      
+      <guid>https://tfprimewj.github.io/categories/leetcode/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Java</title>
       <link>https://tfprimewj.github.io/categories/java/</link>
-      <pubDate>Mon, 30 Dec 2019 23:57:22 +0800</pubDate>
+      <pubDate>Sun, 05 Jan 2020 23:36:14 +0800</pubDate>
       
       <guid>https://tfprimewj.github.io/categories/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>https://tfprimewj.github.io/categories/machine-learning/</link>
+      <pubDate>Sat, 04 Jan 2020 11:32:20 +0800</pubDate>
+      
+      <guid>https://tfprimewj.github.io/categories/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>zsh</title>
+      <link>https://tfprimewj.github.io/categories/zsh/</link>
+      <pubDate>Mon, 30 Dec 2019 23:58:24 +0800</pubDate>
+      
+      <guid>https://tfprimewj.github.io/categories/zsh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MongoDB</title>
+      <link>https://tfprimewj.github.io/categories/mongodb/</link>
+      <pubDate>Mon, 30 Dec 2019 23:58:23 +0800</pubDate>
+      
+      <guid>https://tfprimewj.github.io/categories/mongodb/</guid>
       <description></description>
     </item>
     
@@ -39,29 +75,11 @@
     </item>
     
     <item>
-      <title>hugo</title>
-      <link>https://tfprimewj.github.io/categories/hugo/</link>
-      <pubDate>Mon, 30 Dec 2019 11:54:06 +0200</pubDate>
-      
-      <guid>https://tfprimewj.github.io/categories/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>git</title>
       <link>https://tfprimewj.github.io/categories/git/</link>
       <pubDate>Mon, 30 Dec 2019 11:53:06 +0200</pubDate>
       
       <guid>https://tfprimewj.github.io/categories/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Leetcode</title>
-      <link>https://tfprimewj.github.io/categories/leetcode/</link>
-      <pubDate>Tue, 17 Dec 2019 11:53:06 +0200</pubDate>
-      
-      <guid>https://tfprimewj.github.io/categories/leetcode/</guid>
       <description></description>
     </item>
     
@@ -152,15 +170,6 @@
       <pubDate>Sat, 18 Aug 2018 11:58:06 +0200</pubDate>
       
       <guid>https://tfprimewj.github.io/categories/keras/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Machine Learning</title>
-      <link>https://tfprimewj.github.io/categories/machine-learning/</link>
-      <pubDate>Thu, 16 Aug 2018 11:58:06 +0200</pubDate>
-      
-      <guid>https://tfprimewj.github.io/categories/machine-learning/</guid>
       <description></description>
     </item>
     

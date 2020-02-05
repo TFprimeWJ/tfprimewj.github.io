@@ -6,10 +6,40 @@
     <description>Recent content in Leetcode on Jinwang Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Dec 2019 11:53:06 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jan 2020 12:34:02 +0800</lastBuildDate>
     
 	<atom:link href="https://tfprimewj.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Leetcode 968 Longest Palindromic Substring</title>
+      <link>https://tfprimewj.github.io/2020/01/08/leetcode-968-longest-palindromic-substring/</link>
+      <pubDate>Wed, 08 Jan 2020 12:34:02 +0800</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2020/01/08/leetcode-968-longest-palindromic-substring/</guid>
+      <description>Leetcode 968 Longest Palindromic Substring 中心扩展算法 事实上，只需使用恒定的空间，我们就可以在$O(n^{2})$的时间内解决这个问题。
+我们观察到回文中心的两侧互为镜像。因此，回文可以从它的中心展开，并且只有$2n-1$个这样的中心。
+你可能会问，为什么会是$2n-1$个，而不是$2n$个中心？原因在于所含字母数为偶数的回文的中心可以处于两字母之间（例如“abba”的中心在两个‘b’ 之间）。
+ 作者：LeetCode
+链接：https://leetcode-cn.com/problems/longest-palindromic-substring/solution/zui-chang-hui-wen-zi-chuan-by-leetcode/
+来源：力扣（LeetCode）
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+ 我的注释：
+start和end始终记录目前保持的最长的回文字串的位置，一旦有一个新的回文字串长度len大于现有的回文字串长度(end - start)那么就用新的代替旧的
+代码中的len &amp;gt; end - start + 1写成len &amp;gt; end - start也可以
+class Solution { public String longestPalindrome (String s) { if (s == null || s.length() &amp;lt; 1) return &amp;quot;&amp;quot;; int start = 0, end = 0; for (int i = 0; i &amp;lt; s.length(); i++) { int len1 = expandAroundCenter(s, i, i); int len2 = expandAroundCenter(s, i, i + 1); int len = Math.</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 968 Binary Tree Cameras</title>
+      <link>https://tfprimewj.github.io/2020/01/07/leetcode-968-binary-tree-cameras/</link>
+      <pubDate>Tue, 07 Jan 2020 20:55:28 +0800</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2020/01/07/leetcode-968-binary-tree-cameras/</guid>
+      <description>Leetcode 968 Binary Tree Cameras I have been thinking about this problem for an hour. However, I failed. Then I was astounding by this answer. 监控二叉树状态查询法
+答案如下：
+/** * Definition for a binary tree node. * public class TreeNode { * int val; * TreeNode left; * TreeNode right; * TreeNode(int x) { val = x; } * } */ class Solution { public int minCameraCover (TreeNode root) { TreeNode r = new TreeNode(0); r.</description>
+    </item>
     
     <item>
       <title>LC617 合并二叉树</title>

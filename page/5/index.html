@@ -28,7 +28,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://tfprimewj.github.io/" />
 
-<meta property="og:updated_time" content="2019-12-30T23:58:22+08:00" />
+<meta property="og:updated_time" content="2020-02-05T12:05:05+08:00" />
 
     
     <meta itemprop="name" content="Jinwang Blog">
@@ -54,7 +54,7 @@
 	<header id="header">
   <div id="header-main" class="header-inner">
     <div class="outer">
-      <a href="https://tfprimewj.github.io/" id="logo">
+      <a href="https://tfprimewj.github.io" id="logo">
           
           <i class="logo" style="background-image: url('https://tfprimewj.github.io/css/images/logo.png')"></i>
           
@@ -97,7 +97,7 @@
               <input type="search" name="q" class="search-form-input" placeholder="搜索">
               <button type="submit" class="search-form-submit">
               </button>
-              <input type="hidden" name="sitesearch" value="https://tfprimewj.github.io/" />
+              <input type="hidden" name="sitesearch" value="https://tfprimewj.github.io" />
          </form>
         </div>
     </div>
@@ -134,7 +134,7 @@
           <td>
           <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
           <input type="search" name="q" class="search-form-input" placeholder="Search">
-          <input type="hidden" name="sitesearch" value="https://tfprimewj.github.io/" />
+          <input type="hidden" name="sitesearch" value="https://tfprimewj.github.io" />
           </form>
         </td>
       </tr>
@@ -163,12 +163,12 @@
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        44
+        51
         <span>Posts</span>
       </div>
       <div class="article-info-block">
         
-          34
+          37
         
         <span>
             Tags
@@ -244,6 +244,1057 @@
     <section id="main">
     
     
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        </a>
+
+        <header class="article-header">
+    <a href="https://tfprimewj.github.io/2018/08/19/python%E5%AD%A6%E4%B9%A0-%E6%B7%B1%E6%B5%85copy/">
+    <h1 class="article-title" itemprop="name">
+        Python学习-深浅copy
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2018-08-19 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2018-08-19</time>
+            &middot;
+            70
+            words
+            &middot;
+            1
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/categories/python">Python</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/tags/python">Python</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                废话不多说，直接上代码
+&gt;&gt;&gt; import copy # 创建初始变量 &gt;&gt;&gt; origin = [1, 2, [3, 4]] &gt;&gt;&gt; origin [1, 2, [3, 4]] # 浅copy &gt;&gt;&gt; shallow_copy = copy.copy(origin) &gt;&gt;&gt; shallow_copy [1, 2, [3, 4]] # 深copy &gt;&gt;&gt; deep_copy = copy.deepcopy(origin) &gt;&gt;&gt; deep_copy [1, 2, [3, 4]] # 修改原始变量 &gt;&gt;&gt; origin[2][1] = 99 &gt;&gt;&gt; origin [1, 2, [3, 99]] # 浅copy跟着变了，但深copy没有跟着变 &gt;&gt;&gt; shallow_copy [1, 2, [3, 99]] &gt;&gt;&gt; deep_copy [1, 2, [3, 4]]  浅copy跟着变了，但深copy没有跟着变
+            </p>
+            <p class="article-more-link">
+                <a href="https://tfprimewj.github.io/2018/08/19/python%E5%AD%A6%E4%B9%A0-%E6%B7%B1%E6%B5%85copy/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="https://tfprimewj.github.io/2018/08/19/python%E5%AD%A6%E4%B9%A0-%E6%B7%B1%E6%B5%85copy/" data-id="b8a5a770dfd17f005ebfa6ec95895ebf" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="https://tfprimewj.github.io/2018/08/19/python%E5%AD%A6%E4%B9%A0-%E6%B7%B1%E6%B5%85copy/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        </a>
+
+        <header class="article-header">
+    <a href="https://tfprimewj.github.io/2018/08/19/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C/">
+    <h1 class="article-title" itemprop="name">
+        CS20学习笔记（二）
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2018-08-19 11:48:06 &#43;0200 &#43;0200" itemprop="datePublished">2018-08-19</time>
+            &middot;
+            1402
+            words
+            &middot;
+            7
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/categories/tensorflow">Tensorflow</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/tags/tensorflow">Tensorflow</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                Talk less, code more
+ Tensorflow Operations 1. 学习资料  CS 20 Slide2 Tensorflow Operations Tensorflow Official Docs  2. Agenda  Basic Operations Tensor Types Importing Data Lazy loading  3. TensorBoard 3.1 Your first tensorflow program import tensorflow as tf a = tf.constant(2) b = tf.constant(3) c = tf.add(a, b) with tf.Session() as sess: print(sess.run(c))  Output:
+2018-08-20 13:42:00.773870: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA 5  实际上，上面除了5是我们想要的结果，5上面的是一个warning，简单解释一下这个warning。上面的意思是说我的CPU支持AVX2和FMA，但是tensorflow使用不了。AVX2和FMA实际上是CPU内部为了加速矩阵运算所设计出来的东西，说白了就是会让运算变得更快（虽然与GPU相比相去甚远），但是我们的tensorflow默认用不了这些高级玩应儿，所以就会出现这种warning。参考：CSDN 我们通过以下代码可以解决这个问题
+            </p>
+            <p class="article-more-link">
+                <a href="https://tfprimewj.github.io/2018/08/19/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="https://tfprimewj.github.io/2018/08/19/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C/" data-id="d168ffa668ac5944594c10a9624a1d1a" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="https://tfprimewj.github.io/2018/08/19/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%8C/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        </a>
+
+        <header class="article-header">
+    <a href="https://tfprimewj.github.io/2018/08/19/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/">
+    <h1 class="article-title" itemprop="name">
+        CS20学习笔记（一）
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2018-08-19 11:38:06 &#43;0200 &#43;0200" itemprop="datePublished">2018-08-19</time>
+            &middot;
+            455
+            words
+            &middot;
+            3
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/categories/tensorflow">Tensorflow</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/tags/tensorflow">Tensorflow</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                Talk less, code more
+ 1. 写在前面 &emsp;&emsp;之前看了一些Tensorflow的教学博客，也看了Tensorflow官方Tutorial，也看了Keras的Tutorial，总感觉学了一些Tensorflow但又学的不系统，前几天在网上看到了CS20的课程，虽然没有Video，但是有Slide。所以，就看着slides敲一边代码，作为学习主要方式了。一步一步，踏踏实实，学好Tensorflow，将会是一个新的层次。那么下面就开始吧！
+2. 学习资料  CS20 Lecture 1 Slides Tensorflow Official Docs pycharm  3. Lecture1: Welcome to Tensorflow! 3.1 Agenda  Welcome Overview of Tensorflow Graphs and Sessions  3.2 Create a tensor import tensorflow as tf a = tf.add(3, 5) print(a)  Output:
+Tensor(&quot;Add:0&quot;, shape=(), dtype=int32)  3.3 Create a tensor, than run a Session import tensorflow as tf a = tf.
+            </p>
+            <p class="article-more-link">
+                <a href="https://tfprimewj.github.io/2018/08/19/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="https://tfprimewj.github.io/2018/08/19/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/" data-id="33bf61b24cabacdf1db7271267c08065" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="https://tfprimewj.github.io/2018/08/19/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%80/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        </a>
+
+        <header class="article-header">
+    <a href="https://tfprimewj.github.io/2018/08/18/keras%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B8%80/">
+    <h1 class="article-title" itemprop="name">
+        Keras学习之路（一）
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2018-08-18 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2018-08-18</time>
+            &middot;
+            722
+            words
+            &middot;
+            4
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/categories/keras">Keras</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/tags/machine-learning">Machine Learning</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/tags/keras">Keras</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                参考：Keras教程
+1. Sequential模型 1.1 创建model 这里的Dense我的理解就是一层全连接神经网络（FC），Activation很好理解，就是激活函数层，下面是用类似于list来创建一个model
+from keras.models import Sequential from keras.layers import Dense, Activation model = Sequential([ Dense(32, input_shape=(784,)), Activation('relu'), Dense(10), Activation('softmax'), ])  还可以一层一层往里加
+model = Sequential() model.add(Dense(32, input_dim=784)) model.add(Activation('relu')) model.add(Dense(10)) model.add(Activation('softmax')) # or model = Sequential() model.add(Dense(32, input_shape=(784,)))  除了第一层需要我们指定input size的大小，剩下的Keras会根据我们构造的网络自动计算出每层输入输出的size，这就很方便。
+1.2 编译 我对编译（compile）的理解就是，确定用什么optimize method，用什么cost function，用什么来当作最终模型好坏的指标（下面的例子中全都用的是accuracy，也就是把准确率当作指标）（提问：难道从另一种角度看cost function的值不能当作指标？ 回答：函数的结果只是一个值，不同的model选择不同的cost function得出的cost function值也不一样，但使用accuracy准确率就可以避免这个事，其实，准确率才是判断model好坏的真正标准）
+# For a multi-class classification problem model.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=['accuracy']) # For a binary classification problem model.compile(optimizer='rmsprop', loss='binary_crossentropy', metrics=['accuracy']) # For a mean squared error regression problem model.
+            </p>
+            <p class="article-more-link">
+                <a href="https://tfprimewj.github.io/2018/08/18/keras%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B8%80/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="https://tfprimewj.github.io/2018/08/18/keras%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B8%80/" data-id="6aa0f9810404fb41c4c27929492dbdbc" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="https://tfprimewj.github.io/2018/08/18/keras%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF%E4%B8%80/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        </a>
+
+        <header class="article-header">
+    <a href="https://tfprimewj.github.io/2018/08/16/deep-learning-course3-week1-programming-assignment2/">
+    <h1 class="article-title" itemprop="name">
+        Deep Learning Course3 Week1 Programming Assignment2
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2018-08-16 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2018-08-16</time>
+            &middot;
+            2721
+            words
+            &middot;
+            13
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/categories/machine-learning">Machine Learning</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/tags/machine-learning">Machine Learning</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/tags/deep-learning">Deep Learning</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/tags/tensorflow">Tensorflow</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/tags/convolutional-neural-network">Convolutional Neural Network</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                Convolutional Neural Networks: Application Welcome to Course 4&rsquo;s second assignment! In this notebook, you will:
+ Implement helper functions that you will use when implementing a TensorFlow model Implement a fully functioning ConvNet using TensorFlow  After this assignment you will be able to:
+ Build and train a ConvNet in TensorFlow for a classification problem  We assume here that you are already familiar with TensorFlow. If you are not, please refer the TensorFlow Tutorial of the third week of Course 2 (&rdquo;Improving deep neural networks&rdquo;).
+            </p>
+            <p class="article-more-link">
+                <a href="https://tfprimewj.github.io/2018/08/16/deep-learning-course3-week1-programming-assignment2/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="https://tfprimewj.github.io/2018/08/16/deep-learning-course3-week1-programming-assignment2/" data-id="528b5ac357079de92807640156af1350" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="https://tfprimewj.github.io/2018/08/16/deep-learning-course3-week1-programming-assignment2/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        </a>
+
+        <header class="article-header">
+    <a href="https://tfprimewj.github.io/2018/08/15/deep-learning-course3-week1-programming-assignment1/">
+    <h1 class="article-title" itemprop="name">
+        Deep Learning Course3 Week1 Programming Assignment1
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2018-08-15 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2018-08-15</time>
+            &middot;
+            5022
+            words
+            &middot;
+            24
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/categories/machine-learning">Machine Learning</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/tags/machine-learning">Machine Learning</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/tags/deep-learning">Deep Learning</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                Convolutional Neural Networks: Step by Step Welcome to Course 4&rsquo;s first assignment! In this assignment, you will implement convolutional (CONV) and pooling (POOL) layers in numpy, including both forward propagation and (optionally) backward propagation.
+Notation: - Superscript $[l]$ denotes an object of the $l^{th}$ layer. - Example: $a^{[4]}$ is the $4^{th}$ layer activation. $W^{[5]}$ and $b^{[5]}$ are the $5^{th}$ layer parameters.
+ Superscript $(i)$ denotes an object from the $i^{th}$ example.
+            </p>
+            <p class="article-more-link">
+                <a href="https://tfprimewj.github.io/2018/08/15/deep-learning-course3-week1-programming-assignment1/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="https://tfprimewj.github.io/2018/08/15/deep-learning-course3-week1-programming-assignment1/" data-id="5f57d789f1b390288cda78a7ea8b78b4" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="https://tfprimewj.github.io/2018/08/15/deep-learning-course3-week1-programming-assignment1/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        </a>
+
+        <header class="article-header">
+    <a href="https://tfprimewj.github.io/2018/08/09/gre-awa-model-essays/">
+    <h1 class="article-title" itemprop="name">
+        GRE AWA MODEL ESSAYS
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2018-08-09 11:58:06 &#43;0200 &#43;0200" itemprop="datePublished">2018-08-09</time>
+            &middot;
+            1607
+            words
+            &middot;
+            8
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/categories/gre">GRE</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/tags/gre-issue">GRE Issue</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                Issue 1 &ldquo;We can usually learn much more from people whose views we share than from people whose views contradict our own.&rdquo;; disagreement can cause stress and inhibit learning.&rdquo;
+Essay &emsp;&emsp;Do we learn more from people whose ideas we share in common than from those whose ideas contradict ours? The speaker deems so, for the reason that disagreement can cause stress and inhibit learning. I concede that undue discord can impede learning.
+            </p>
+            <p class="article-more-link">
+                <a href="https://tfprimewj.github.io/2018/08/09/gre-awa-model-essays/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="https://tfprimewj.github.io/2018/08/09/gre-awa-model-essays/" data-id="c8e911c0267c5684e7b1880093590fb1" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="https://tfprimewj.github.io/2018/08/09/gre-awa-model-essays/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
 
 <article class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
@@ -637,167 +1688,6 @@
     </div>
 </article>
 
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        <a href="https://tfprimewj.github.io/2015/10/02/how-to-add-pages-to-the-menu/" itemprop="url">
-            <img src="https://tfprimewj.github.io/banners/placeholder.png" class="article-banner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="https://tfprimewj.github.io/2015/10/02/how-to-add-pages-to-the-menu/">
-    <h1 class="article-title" itemprop="name">
-        How to add pages to the menu
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2015-10-02 21:49:20 &#43;0200 &#43;0200" itemprop="datePublished">2015-10-02</time>
-            &middot;
-            23
-            words
-            &middot;
-            1
-            minute read
-        </div>
-        
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-folder"></i>
-                
-                
-                <a class="article-category-link" href="https://tfprimewj.github.io/categories/programming">programming</a>
-                
-                
-            </div>
-            
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="https://tfprimewj.github.io/tags/golang">golang</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="https://tfprimewj.github.io/tags/programming">programming</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="https://tfprimewj.github.io/tags/theme">theme</a>
-                &middot;
-                
-                
-                <a class="article-category-link" href="https://tfprimewj.github.io/tags/hugo">hugo</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                I&rsquo;m a linked post in the menu. You can add other posts by adding the following line to the frontmatter:
-menu = &quot;main&quot;  
-            </p>
-            <p class="article-more-link">
-                <a href="https://tfprimewj.github.io/2015/10/02/how-to-add-pages-to-the-menu/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="https://tfprimewj.github.io/2015/10/02/how-to-add-pages-to-the-menu/" data-id="7b5009c52e7a9a5159b64169e0ddd8bd" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-    <a href="https://tfprimewj.github.io/2015/10/02/how-to-add-pages-to-the-menu/#disqus_thread" class="article-comment-link">
-        Comments
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
 
 <nav id="page-nav">
 
@@ -806,6 +1696,10 @@ menu = &quot;main&quot;
             « Prev
         </a>
     
+    
+        <a class="extend next" rel="next" href="https://tfprimewj.github.io/page/6/">
+            Next »
+        </a>
     
 
 </nav>
@@ -878,7 +1772,7 @@ menu = &quot;main&quot;
                 <a class="category-list-link" href="https://tfprimewj.github.io/categories/hugo">
                     hugo
                 </a>
-                <span class="category-list-count">2</span>
+                <span class="category-list-count">3</span>
             </li>
             
             <li class="category-list-item">
@@ -886,7 +1780,7 @@ menu = &quot;main&quot;
                 <a class="category-list-link" href="https://tfprimewj.github.io/categories/java">
                     java
                 </a>
-                <span class="category-list-count">1</span>
+                <span class="category-list-count">2</span>
             </li>
             
             <li class="category-list-item">
@@ -910,7 +1804,7 @@ menu = &quot;main&quot;
                 <a class="category-list-link" href="https://tfprimewj.github.io/categories/leetcode">
                     leetcode
                 </a>
-                <span class="category-list-count">7</span>
+                <span class="category-list-count">9</span>
             </li>
             
             <li class="category-list-item">
@@ -918,7 +1812,7 @@ menu = &quot;main&quot;
                 <a class="category-list-link" href="https://tfprimewj.github.io/categories/machine-learning">
                     machine-learning
                 </a>
-                <span class="category-list-count">2</span>
+                <span class="category-list-count">3</span>
             </li>
             
             <li class="category-list-item">
@@ -926,7 +1820,7 @@ menu = &quot;main&quot;
                 <a class="category-list-link" href="https://tfprimewj.github.io/categories/mongodb">
                     mongodb
                 </a>
-                <span class="category-list-count">1</span>
+                <span class="category-list-count">2</span>
             </li>
             
             <li class="category-list-item">
@@ -973,6 +1867,14 @@ menu = &quot;main&quot;
                 
                 <a class="category-list-link" href="https://tfprimewj.github.io/categories/web-development">
                     web-development
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/zsh">
+                    zsh
                 </a>
                 <span class="category-list-count">1</span>
             </li>
@@ -1044,6 +1946,14 @@ menu = &quot;main&quot;
             
             <li class="category-list-item">
                 
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/dfs">
+                    dfs
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
                 <a class="category-list-link" href="https://tfprimewj.github.io/tags/digital-image-processing">
                     digital-image-processing
                 </a>
@@ -1063,7 +1973,7 @@ menu = &quot;main&quot;
                 <a class="category-list-link" href="https://tfprimewj.github.io/tags/dynamic-programming">
                     dynamic-programming
                 </a>
-                <span class="category-list-count">1</span>
+                <span class="category-list-count">2</span>
             </li>
             
             <li class="category-list-item">
@@ -1103,7 +2013,7 @@ menu = &quot;main&quot;
                 <a class="category-list-link" href="https://tfprimewj.github.io/tags/hugo">
                     hugo
                 </a>
-                <span class="category-list-count">3</span>
+                <span class="category-list-count">4</span>
             </li>
             
             <li class="category-list-item">
@@ -1119,7 +2029,7 @@ menu = &quot;main&quot;
                 <a class="category-list-link" href="https://tfprimewj.github.io/tags/java">
                     java
                 </a>
-                <span class="category-list-count">1</span>
+                <span class="category-list-count">2</span>
             </li>
             
             <li class="category-list-item">
@@ -1151,7 +2061,7 @@ menu = &quot;main&quot;
                 <a class="category-list-link" href="https://tfprimewj.github.io/tags/leetcode">
                     leetcode
                 </a>
-                <span class="category-list-count">7</span>
+                <span class="category-list-count">9</span>
             </li>
             
             <li class="category-list-item">
@@ -1159,7 +2069,7 @@ menu = &quot;main&quot;
                 <a class="category-list-link" href="https://tfprimewj.github.io/tags/machine-learning">
                     machine-learning
                 </a>
-                <span class="category-list-count">3</span>
+                <span class="category-list-count">4</span>
             </li>
             
             <li class="category-list-item">
@@ -1183,13 +2093,21 @@ menu = &quot;main&quot;
                 <a class="category-list-link" href="https://tfprimewj.github.io/tags/mongodb">
                     mongodb
                 </a>
-                <span class="category-list-count">1</span>
+                <span class="category-list-count">2</span>
             </li>
             
             <li class="category-list-item">
                 
                 <a class="category-list-link" href="https://tfprimewj.github.io/tags/nodejs">
                     nodejs
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/oop">
+                    oop
                 </a>
                 <span class="category-list-count">1</span>
             </li>
@@ -1260,6 +2178,14 @@ menu = &quot;main&quot;
             
             <li class="category-list-item">
                 
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/zsh">
+                    zsh
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
                 <a class="category-list-link" href="https://tfprimewj.github.io/tags/%E7%88%AC%E8%99%AB">
                     爬虫
                 </a>
@@ -1299,6 +2225,9 @@ menu = &quot;main&quot;
         
         
         <a href="https://tfprimewj.github.io/tags/deep-learning" style="font-size: 12px;">deep-learning</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/dfs" style="font-size: 12px;">dfs</a>
         
         
         <a href="https://tfprimewj.github.io/tags/digital-image-processing" style="font-size: 12px;">digital-image-processing</a>
@@ -1358,6 +2287,9 @@ menu = &quot;main&quot;
         <a href="https://tfprimewj.github.io/tags/nodejs" style="font-size: 12px;">nodejs</a>
         
         
+        <a href="https://tfprimewj.github.io/tags/oop" style="font-size: 12px;">oop</a>
+        
+        
         <a href="https://tfprimewj.github.io/tags/pandas" style="font-size: 12px;">pandas</a>
         
         
@@ -1382,6 +2314,9 @@ menu = &quot;main&quot;
         <a href="https://tfprimewj.github.io/tags/web-development" style="font-size: 12px;">web-development</a>
         
         
+        <a href="https://tfprimewj.github.io/tags/zsh" style="font-size: 12px;">zsh</a>
+        
+        
         <a href="https://tfprimewj.github.io/tags/%E7%88%AC%E8%99%AB" style="font-size: 12px;">爬虫</a>
         
     </div>
@@ -1401,7 +2336,7 @@ menu = &quot;main&quot;
 <footer id="footer">
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2019
+      &copy; 2020
       Powered by <a href="//gohugo.io">Hugo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.
     </div>
   </div>

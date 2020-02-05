@@ -6,10 +6,25 @@
     <description>Recent content in hugo on Jinwang Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 Dec 2019 11:54:06 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 05 Feb 2020 12:05:05 +0800</lastBuildDate>
     
 	<atom:link href="https://tfprimewj.github.io/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hugo如何新建一个Post</title>
+      <link>https://tfprimewj.github.io/2020/02/05/hugo%E5%A6%82%E4%BD%95%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AApost/</link>
+      <pubDate>Wed, 05 Feb 2020 12:05:05 +0800</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2020/02/05/hugo%E5%A6%82%E4%BD%95%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AApost/</guid>
+      <description> Hugo如何新建一个Post 打开命令行
+进入根文件夹
+输入
+hugo new post/test.md
+jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Hugo/hugoJinwang  hugo new post/test.md /Users/jinwang/Desktop/Lets_coding/Hugo/hugoJinwang/content/post/test.md created  发现可以在content/post/文件夹下看到新创建的test.md
+内容为
+--- title: &amp;quot;Test&amp;quot; date: 2020-02-05T12:10:11+08:00 draft: true ---  </description>
+    </item>
     
     <item>
       <title>将Hugo部署到Github上</title>

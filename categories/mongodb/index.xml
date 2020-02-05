@@ -6,10 +6,27 @@
     <description>Recent content in MongoDB on Jinwang Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 Dec 2019 23:58:22 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 30 Dec 2019 23:58:23 +0800</lastBuildDate>
     
 	<atom:link href="https://tfprimewj.github.io/categories/mongodb/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MongoDB M001 - Ch2 The MongoDB Query Language &#43; Altas</title>
+      <link>https://tfprimewj.github.io/2019/12/30/mongodb-m001-ch2-the-mongodb-query-language-altas/</link>
+      <pubDate>Mon, 30 Dec 2019 23:58:23 +0800</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2019/12/30/mongodb-m001-ch2-the-mongodb-query-language-altas/</guid>
+      <description>MongoDB M001 - Ch2 The MongoDB Query Language + Altas 1. CRUD  C: Craete R: Read U: Update D: Delete  MongoDB Shell
+MongoDB Shell is a MongoDB text-based client.
+2. Installing the MongoDB Shell (OSX/Linux) Download link: https://www.mongodb.com/download-center/enterprise
+在终端输入echo $PATH可以看到目前所有的路径，这些路径就是计算机寻找可执行程序的时候逐一访问的路径。
+下面我们把MongoDB添加到这个路径中。
+打开.zshrc，在最下面添加一行
+export PATH=&amp;quot;~/mongodb-macos-x86_64-enterprise-4.2.2/bin:$PATH&amp;quot;  冒号:：表示如果前面的路径没有我们想要的程序，那么就在冒号后面的路径继续搜索。而在上面的操作中我们也看到，$PATH正是现在所有的路径。所以这部操作其实就是把以前所有的路径添加到MongoDB路径的后面。
+其实就是Concatenating。
+3. Connecting to Our Class Atlas Cluster from the mongo Shell (Part 1) mongo &amp;quot;mongodb://cluster0-shard-00-00-jxeqq.mongodb.net:27017,cluster0-shard-00-01-jxeqq.mongodb.net:27017,cluster0-shard-00-02-jxeqq.mongodb.net:27017/test?replicaSet=Cluster0-shard-0&amp;quot; --authenticationDatabase admin --ssl --username m001-student --password m001-mongodb-basics  jinwang@Jin-Wang-MacBook-Pro  ~  mongo &amp;quot;mongodb://cluster0-shard-00-00-jxeqq.</description>
+    </item>
     
     <item>
       <title>MongoDB M001 - MongoDB Basics</title>
