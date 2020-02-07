@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>Socket编程client和server实例 &middot; Jinwang Blog</title>
+    <meta name="generator" content="Hugo 0.56.3" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Jin Wang">
+    
+      <meta name="description" content="">
+    
+    
+    <link rel="canonical" href="https://tfprimewj.github.io/2020/02/07/socket%E7%BC%96%E7%A8%8Bclient%E5%92%8Cserver%E5%AE%9E%E4%BE%8B/"/>
+    <link rel="icon" href="https://tfprimewj.github.io/favicon.ico">
+    <link rel="apple-touch-icon" href="https://tfprimewj.github.io/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="https://tfprimewj.github.io/css/style.css">
+    <link rel="stylesheet" href="https://tfprimewj.github.io/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://tfprimewj.github.io/css/monokai.css">
+    <link rel="stylesheet" href="https://tfprimewj.github.io/fancybox/jquery.fancybox.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="Socket编程client和server实例" />
+<meta property="og:description" content="Socket编程client和server实例 来源：《Computer Network A Top Down Approach》
+UDPClient.py
+# UDPClient.py from socket import * serverName = &#39;127.0.0.1&#39; serverPort = 12000 clientSocket = socket(AF_INET, SOCK_DGRAM) message = input(&#39;Input lowercase sentence:&#39;) clientSocket.sendto(message.encode(), (serverName, serverPort)) # Receive modifiedMessage, serverAddress = clientSocket.recvfrom(2048) print(modifiedMessage.decode()) clientSocket.close()  UDPServer.py
+# UDPServer.py from socket import * serverPort = 12000 serverSocket = socket(AF_INET, SOCK_DGRAM) serverSocket.bind((&#39;&#39;, serverPort)) print(&quot;The server is ready to receive ...&quot;) while True: message, clientAddress = serverSocket." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tfprimewj.github.io/2020/02/07/socket%E7%BC%96%E7%A8%8Bclient%E5%92%8Cserver%E5%AE%9E%E4%BE%8B/" />
+<meta property="article:published_time" content="2020-02-07T23:10:50+08:00" />
+<meta property="article:modified_time" content="2020-02-07T23:10:50+08:00" />
+
+    
+    <meta itemprop="name" content="Socket编程client和server实例">
+<meta itemprop="description" content="Socket编程client和server实例 来源：《Computer Network A Top Down Approach》
+UDPClient.py
+# UDPClient.py from socket import * serverName = &#39;127.0.0.1&#39; serverPort = 12000 clientSocket = socket(AF_INET, SOCK_DGRAM) message = input(&#39;Input lowercase sentence:&#39;) clientSocket.sendto(message.encode(), (serverName, serverPort)) # Receive modifiedMessage, serverAddress = clientSocket.recvfrom(2048) print(modifiedMessage.decode()) clientSocket.close()  UDPServer.py
+# UDPServer.py from socket import * serverPort = 12000 serverSocket = socket(AF_INET, SOCK_DGRAM) serverSocket.bind((&#39;&#39;, serverPort)) print(&quot;The server is ready to receive ...&quot;) while True: message, clientAddress = serverSocket.">
+
+
+<meta itemprop="datePublished" content="2020-02-07T23:10:50&#43;08:00" />
+<meta itemprop="dateModified" content="2020-02-07T23:10:50&#43;08:00" />
+<meta itemprop="wordCount" content="130">
+
+
+
+<meta itemprop="keywords" content="python,network," />
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Socket编程client和server实例"/>
+<meta name="twitter:description" content="Socket编程client和server实例 来源：《Computer Network A Top Down Approach》
+UDPClient.py
+# UDPClient.py from socket import * serverName = &#39;127.0.0.1&#39; serverPort = 12000 clientSocket = socket(AF_INET, SOCK_DGRAM) message = input(&#39;Input lowercase sentence:&#39;) clientSocket.sendto(message.encode(), (serverName, serverPort)) # Receive modifiedMessage, serverAddress = clientSocket.recvfrom(2048) print(modifiedMessage.decode()) clientSocket.close()  UDPServer.py
+# UDPServer.py from socket import * serverPort = 12000 serverSocket = socket(AF_INET, SOCK_DGRAM) serverSocket.bind((&#39;&#39;, serverPort)) print(&quot;The server is ready to receive ...&quot;) while True: message, clientAddress = serverSocket."/>
+
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="https://tfprimewj.github.io" id="logo">
+          
+          <i class="logo" style="background-image: url('https://tfprimewj.github.io/css/images/logo.png')"></i>
+          
+          <span class="site-title">Jinwang Blog</span>
+      </a>
+      <nav id="main-nav">
+          
+          
+          <a class="main-nav-link" href="https://tfprimewj.github.io/">Home</a>
+          
+          
+          
+          
+          
+          
+
+          
+          <a class="main-nav-link" href="/about/">About</a>
+          
+
+          
+          
+          
+          
+          <a class="main-nav-link" href="https://tfprimewj.github.io/tags/">Tags</a>
+          
+          
+          
+          <a class="main-nav-link" href="https://tfprimewj.github.io/categories/">Categories</a>
+          
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://tfprimewj.github.io/css/images/myavatar.png"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" class="search-form-input" placeholder="搜索">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="sitesearch" value="https://tfprimewj.github.io" />
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+          
+          <td><a class="main-nav-link" href="https://tfprimewj.github.io/">Home</a></td>
+          
+          
+          
+          
+          
+          
+
+          
+          <td><a class="main-nav-link" href="/about/">About</a></td>
+          
+
+          
+          
+          
+          
+          <td><a class="main-nav-link" href="https://tfprimewj.github.io/tags/">Tags</a></td>
+          
+          
+          
+          <td><a class="main-nav-link" href="https://tfprimewj.github.io/categories/">Categories</a></td>
+          
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="sitesearch" value="https://tfprimewj.github.io" />
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+   	
+    	<aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      
+      <img id="avatar" src="https://tfprimewj.github.io/css/images/myavatar.png">
+      
+      <h2 id="name">Jin Wang</h2>
+      <h3 id="title">Blogger - Programmer - Gopher</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>Earth</span>
+      
+          <a id="follow" href="https://github.com/tfprimewj">
+              Follow
+          </a>
+      
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        55
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        
+          41
+        
+        <span>
+            Tags
+        </span>
+      </div>
+    </div>
+    <div class="profile-block social-links">
+      <table>
+        <tr>
+          
+<td><a href="//github.com/TFprimeWJ" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <td><a href="https://tfprimewj.github.io/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+
+    
+
+    <section id="main">
+    
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+
+        <header class="article-header">
+    <a href="https://tfprimewj.github.io/2020/02/07/socket%E7%BC%96%E7%A8%8Bclient%E5%92%8Cserver%E5%AE%9E%E4%BE%8B/">
+    <h1 class="article-title" itemprop="name">
+        Socket编程client和server实例
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2020-02-07 23:10:50 &#43;0800 CST" itemprop="datePublished">2020-02-07</time>
+            &middot;
+            130
+            words
+            &middot;
+            1
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/categories/network">network</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/tags/python">python</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/tags/network">network</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+<h1 id="socket编程client和server实例">Socket编程client和server实例</h1>
+
+<p>来源：《Computer Network A Top Down Approach》</p>
+
+<p><code>UDPClient.py</code></p>
+
+<pre><code class="language-python"># UDPClient.py
+from socket import *
+serverName = '127.0.0.1'
+serverPort = 12000
+clientSocket = socket(AF_INET, SOCK_DGRAM)
+message = input('Input lowercase sentence:')
+clientSocket.sendto(message.encode(), (serverName, serverPort))
+
+# Receive
+modifiedMessage, serverAddress = clientSocket.recvfrom(2048)
+print(modifiedMessage.decode())
+clientSocket.close()
+</code></pre>
+
+<p><code>UDPServer.py</code></p>
+
+<pre><code class="language-python"># UDPServer.py
+from socket import *
+serverPort = 12000
+serverSocket = socket(AF_INET, SOCK_DGRAM)
+serverSocket.bind(('', serverPort))
+print(&quot;The server is ready to receive ...&quot;)
+while True:
+    message, clientAddress = serverSocket.recvfrom(2048)
+    print(&quot;Received message&quot;)
+    print(&quot;IP: &quot; + clientAddress[0])
+    print(&quot;Port: &quot; + str(clientAddress[1]))
+    print(&quot;message: &quot; + message.decode())
+    modifiedMessage = message.decode().upper()
+    serverSocket.sendto(modifiedMessage.encode(), clientAddress)
+</code></pre>
+
+<h2 id="test">Test</h2>
+
+<p>Client:</p>
+
+<pre><code class="language-bash"> ✘ jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider/Computer_Network_A_Top_Down_Approach/socket_project  python UDPClient.py
+Input lowercase sentence:This is wangjin
+THIS IS WANGJIN
+</code></pre>
+
+<p>Server:</p>
+
+<pre><code class="language-bash"> ✘ jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider/Computer_Network_A_Top_Down_Approach/socket_project  python UDPServer.py
+The server is ready to receive ...
+Received message
+IP: 127.0.0.1
+Port: 58074
+message: This is wangjin
+</code></pre>
+
+        </div>
+        <footer class="article-footer">
+    <a data-url="https://tfprimewj.github.io/2020/02/07/socket%E7%BC%96%E7%A8%8Bclient%E5%92%8Cserver%E5%AE%9E%E4%BE%8B/" data-id="fe004eee64e9f266864c72fe8f96b35a" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="https://tfprimewj.github.io/2020/02/07/socket%E7%BC%96%E7%A8%8Bclient%E5%92%8Cserver%E5%AE%9E%E4%BE%8B/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+
+    
+<nav id="article-nav">
+    
+    <a href="https://tfprimewj.github.io/2020/02/05/vpn/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">VPN</div>
+    </a>
+    
+
+    
+</nav>
+
+
+</article>
+
+
+<section id="comments">
+    <div id="disqus_thread">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "Jinwang" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</section>
+
+
+    </section>
+
+   	
+    	<aside id="sidebar">
+    
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/communication-system">
+                    communication-system
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/digital-image-processing">
+                    digital-image-processing
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/digital-signal-processing">
+                    digital-signal-processing
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/git">
+                    git
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/gre">
+                    gre
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/homebrew">
+                    homebrew
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/hugo">
+                    hugo
+                </a>
+                <span class="category-list-count">4</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/java">
+                    java
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/jzoffer">
+                    jzoffer
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/keras">
+                    keras
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/leetcode">
+                    leetcode
+                </a>
+                <span class="category-list-count">9</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/machine-learning">
+                    machine-learning
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/mongodb">
+                    mongodb
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/network">
+                    network
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/nodejs">
+                    nodejs
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/pandas">
+                    pandas
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/programming">
+                    programming
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/python">
+                    python
+                </a>
+                <span class="category-list-count">6</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/spider">
+                    spider
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/tensorflow">
+                    tensorflow
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/virtualvenv">
+                    virtualvenv
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/vpn">
+                    vpn
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/web-development">
+                    web-development
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/zsh">
+                    zsh
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tags
+    </h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/binary-search">
+                    binary-search
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/binary-tree">
+                    binary-tree
+                </a>
+                <span class="category-list-count">6</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/communication-system">
+                    communication-system
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/convolutional-neural-network">
+                    convolutional-neural-network
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/csv">
+                    csv
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/deep-learning">
+                    deep-learning
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/dfs">
+                    dfs
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/digital-image-processing">
+                    digital-image-processing
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/digital-signal-processing">
+                    digital-signal-processing
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/dynamic-programming">
+                    dynamic-programming
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/git">
+                    git
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/golang">
+                    golang
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/gre-issue">
+                    gre-issue
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/homebrew">
+                    homebrew
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/hugo">
+                    hugo
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/iteration">
+                    iteration
+                </a>
+                <span class="category-list-count">4</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/java">
+                    java
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/json">
+                    json
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/jzoffer">
+                    jzoffer
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/keras">
+                    keras
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/leetcode">
+                    leetcode
+                </a>
+                <span class="category-list-count">9</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/machine-learning">
+                    machine-learning
+                </a>
+                <span class="category-list-count">4</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/markdown">
+                    markdown
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/matlab">
+                    matlab
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/mongodb">
+                    mongodb
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/network">
+                    network
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/nodejs">
+                    nodejs
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/oop">
+                    oop
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/pandas">
+                    pandas
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/programming">
+                    programming
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/python">
+                    python
+                </a>
+                <span class="category-list-count">7</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/queue">
+                    queue
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/recursion">
+                    recursion
+                </a>
+                <span class="category-list-count">4</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/spider">
+                    spider
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/tensorflow">
+                    tensorflow
+                </a>
+                <span class="category-list-count">6</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/theme">
+                    theme
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/virtualvenv">
+                    virtualvenv
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/vpn">
+                    vpn
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/web-development">
+                    web-development
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/zsh">
+                    zsh
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/%E7%88%AC%E8%99%AB">
+                    爬虫
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tag cloud
+    </h3>
+    <div class="widget tagcloud">
+        
+        
+        <a href="https://tfprimewj.github.io/tags/binary-search" style="font-size: 12px;">binary-search</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/binary-tree" style="font-size: 12px;">binary-tree</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/communication-system" style="font-size: 12px;">communication-system</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/convolutional-neural-network" style="font-size: 12px;">convolutional-neural-network</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/csv" style="font-size: 12px;">csv</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/deep-learning" style="font-size: 12px;">deep-learning</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/dfs" style="font-size: 12px;">dfs</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/digital-image-processing" style="font-size: 12px;">digital-image-processing</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/digital-signal-processing" style="font-size: 12px;">digital-signal-processing</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/dynamic-programming" style="font-size: 12px;">dynamic-programming</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/git" style="font-size: 12px;">git</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/golang" style="font-size: 12px;">golang</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/gre-issue" style="font-size: 12px;">gre-issue</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/homebrew" style="font-size: 12px;">homebrew</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/hugo" style="font-size: 12px;">hugo</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/iteration" style="font-size: 12px;">iteration</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/java" style="font-size: 12px;">java</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/json" style="font-size: 12px;">json</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/jzoffer" style="font-size: 12px;">jzoffer</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/keras" style="font-size: 12px;">keras</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/leetcode" style="font-size: 12px;">leetcode</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/machine-learning" style="font-size: 12px;">machine-learning</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/markdown" style="font-size: 12px;">markdown</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/matlab" style="font-size: 12px;">matlab</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/mongodb" style="font-size: 12px;">mongodb</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/network" style="font-size: 12px;">network</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/nodejs" style="font-size: 12px;">nodejs</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/oop" style="font-size: 12px;">oop</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/pandas" style="font-size: 12px;">pandas</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/programming" style="font-size: 12px;">programming</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/python" style="font-size: 12px;">python</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/queue" style="font-size: 12px;">queue</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/recursion" style="font-size: 12px;">recursion</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/spider" style="font-size: 12px;">spider</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/tensorflow" style="font-size: 12px;">tensorflow</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/theme" style="font-size: 12px;">theme</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/virtualvenv" style="font-size: 12px;">virtualvenv</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/vpn" style="font-size: 12px;">vpn</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/web-development" style="font-size: 12px;">web-development</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/zsh" style="font-size: 12px;">zsh</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/%E7%88%AC%E8%99%AB" style="font-size: 12px;">爬虫</a>
+        
+    </div>
+</div>
+
+
+
+
+
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+    
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020
+      Powered by <a href="//gohugo.io">Hugo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://tfprimewj.github.io/fancybox/jquery.fancybox.pack.js"></script>
+<script src="https://tfprimewj.github.io/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+</body>
+</html>

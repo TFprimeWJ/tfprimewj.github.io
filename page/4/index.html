@@ -28,7 +28,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://tfprimewj.github.io/" />
 
-<meta property="og:updated_time" content="2020-02-05T12:59:41+08:00" />
+<meta property="og:updated_time" content="2020-02-07T23:10:50+08:00" />
 
     
     <meta itemprop="name" content="Jinwang Blog">
@@ -163,12 +163,12 @@
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        52
+        55
         <span>Posts</span>
       </div>
       <div class="article-info-block">
         
-          37
+          41
         
         <span>
             Tags
@@ -244,6 +244,457 @@
     <section id="main">
     
     
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        </a>
+
+        <header class="article-header">
+    <a href="https://tfprimewj.github.io/2018/10/21/pandas%E5%AD%A6%E4%B9%A0-series%E8%BD%AC%E6%88%90str%E6%93%8D%E4%BD%9C%E8%AF%BB%E5%8F%96gps/">
+    <h1 class="article-title" itemprop="name">
+        Pandas学习-Series()转成str操作，读取gps
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2018-10-21 11:49:06 &#43;0200 &#43;0200" itemprop="datePublished">2018-10-21</time>
+            &middot;
+            64
+            words
+            &middot;
+            1
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/categories/pandas">Pandas</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/tags/pandas">Pandas</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/tags/csv">CSV</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                 Pandas学习-Series()转成str操作，读取gps @(我的第一个笔记本)
+ Talk less, code more
+ 在DataFrame中取一列转化成Series类型，对Series类型进行字符串分割，便可以得到坐标信息。
+import pandas as pd data_file = 'matchResult_10.txt' names = 'app_name,app_kind,app_type,ip,nation,gps,size' names = names.split(',') data = pd.read_csv(data_file, header=None, names=names) data['gps_xy'] = data['gps'].str.split('#') print(data['gps_xy'])  输出
+0 [30.882428, 75.832577] 1 [22.9009009009009, 84.14595791325802] 2 [20.81081081081081, 70.70283823391588] 3 [26.27027027027027, 72.99908113768355] 4 [26.7927864, 84.5345949] 5 [24.4353437, 85.866535] 6 [26.4265576, 76.6643728] 7 [26.7927864, 84.5345949] 8 [20.46846846846847, 75.00577673385992] 9 [25.7397946, 77.4759334] Name: gps_xy, dtype: object  
+            </p>
+            <p class="article-more-link">
+                <a href="https://tfprimewj.github.io/2018/10/21/pandas%E5%AD%A6%E4%B9%A0-series%E8%BD%AC%E6%88%90str%E6%93%8D%E4%BD%9C%E8%AF%BB%E5%8F%96gps/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="https://tfprimewj.github.io/2018/10/21/pandas%E5%AD%A6%E4%B9%A0-series%E8%BD%AC%E6%88%90str%E6%93%8D%E4%BD%9C%E8%AF%BB%E5%8F%96gps/" data-id="912ddc4e62c63ba1021d52bfd7237aae" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="https://tfprimewj.github.io/2018/10/21/pandas%E5%AD%A6%E4%B9%A0-series%E8%BD%AC%E6%88%90str%E6%93%8D%E4%BD%9C%E8%AF%BB%E5%8F%96gps/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        </a>
+
+        <header class="article-header">
+    <a href="https://tfprimewj.github.io/2018/10/21/python%E5%AD%A6%E4%B9%A0-%E5%B0%86%E9%80%97%E5%8F%B7%E5%88%86%E9%9A%94%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E5%8C%96%E4%B8%BA%E5%88%97%E8%A1%A8/">
+    <h1 class="article-title" itemprop="name">
+        Python学习-将逗号分隔的字符串转化为列表
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2018-10-21 11:49:06 &#43;0200 &#43;0200" itemprop="datePublished">2018-10-21</time>
+            &middot;
+            79
+            words
+            &middot;
+            1
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/categories/python">Python</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/tags/python">Python</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                 Python学习-将逗号分隔的字符串转化为列表 @(python)
+ Talk less, code more
+ 用split()函数可以将用逗号分隔的str转化为list
+columns = 'app_name, app_kind, app_type, md5, sender, receiver, timestamp, ip, nation, gps, size' print('type = ', type(columns)) print(columns) # 使用split尽心分割 columns = columns.split(',') print('type = ', type(columns)) print(columns)  # 输出 type = &lt;class 'str'&gt; app_name, app_kind, app_type, md5, sender, receiver, timestamp, ip, nation, gps, size # 转化后输出 type = &lt;class 'list'&gt; ['app_name', ' app_kind', ' app_type', ' md5', ' sender', ' receiver', ' timestamp', ' ip', ' nation', ' gps', ' size']  
+            </p>
+            <p class="article-more-link">
+                <a href="https://tfprimewj.github.io/2018/10/21/python%E5%AD%A6%E4%B9%A0-%E5%B0%86%E9%80%97%E5%8F%B7%E5%88%86%E9%9A%94%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E5%8C%96%E4%B8%BA%E5%88%97%E8%A1%A8/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="https://tfprimewj.github.io/2018/10/21/python%E5%AD%A6%E4%B9%A0-%E5%B0%86%E9%80%97%E5%8F%B7%E5%88%86%E9%9A%94%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E5%8C%96%E4%B8%BA%E5%88%97%E8%A1%A8/" data-id="1d621e27add39169d0133c88380324f4" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="https://tfprimewj.github.io/2018/10/21/python%E5%AD%A6%E4%B9%A0-%E5%B0%86%E9%80%97%E5%8F%B7%E5%88%86%E9%9A%94%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E5%8C%96%E4%B8%BA%E5%88%97%E8%A1%A8/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        </a>
+
+        <header class="article-header">
+    <a href="https://tfprimewj.github.io/2018/10/21/pandas%E5%AD%A6%E4%B9%A0-dataframe%E6%8C%89%E5%88%97%E7%B4%A2%E5%BC%95/">
+    <h1 class="article-title" itemprop="name">
+        Pandas学习-DataFrame()按列索引
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2018-10-21 11:48:06 &#43;0200 &#43;0200" itemprop="datePublished">2018-10-21</time>
+            &middot;
+            115
+            words
+            &middot;
+            1
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/categories/pandas">Pandas</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/tags/pandas">Pandas</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                Pandas学习-DataFrame()按列索引 @(python)
+ Talk less, code more
+ import pandas as pd data_file = 'matchResult_10.txt' names = 'app_name, app_kind, app_type, ip, nation, gps, size' names = names.split(',') data = pd.read_csv(data_file, header=None, names=names) # 查找' gps'这一列的数据 print(data[' gps'])  注意！！！：这里要注意一下空格的问题。因为定义数据头names的时候习惯性的在每个类型前面加了个空格（也就是习惯性的在逗号后面加了个空格），所以真正的索引值是' gps'而不是'gps'所以我们将前面的空格去掉。这也告诉我们，数据文件不要随便添加空格。
+输出
+0 30.882428#75.832577 1 22.9009009009009#84.14595791325802 2 20.81081081081081#70.70283823391588 3 26.27027027027027#72.99908113768355 4 26.7927864#84.5345949 5 24.4353437#85.866535 6 26.4265576#76.6643728 7 26.7927864#84.5345949 8 20.46846846846847#75.00577673385992 9 25.7397946#77.4759334 Name: gps, dtype: object  更改后的结果
+import pandas as pd data_file = 'matchResult_10.
+            </p>
+            <p class="article-more-link">
+                <a href="https://tfprimewj.github.io/2018/10/21/pandas%E5%AD%A6%E4%B9%A0-dataframe%E6%8C%89%E5%88%97%E7%B4%A2%E5%BC%95/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="https://tfprimewj.github.io/2018/10/21/pandas%E5%AD%A6%E4%B9%A0-dataframe%E6%8C%89%E5%88%97%E7%B4%A2%E5%BC%95/" data-id="9aadae6511f38157c82ef3d0e9c3794b" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="https://tfprimewj.github.io/2018/10/21/pandas%E5%AD%A6%E4%B9%A0-dataframe%E6%8C%89%E5%88%97%E7%B4%A2%E5%BC%95/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
 
 <article class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
@@ -1276,445 +1727,6 @@ Code clear;clc; % This program creates a cos wave with a random phase. % x = A *
     </div>
 </article>
 
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="https://tfprimewj.github.io/2018/08/22/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%94/">
-    <h1 class="article-title" itemprop="name">
-        CS20学习笔记（五）
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2018-08-22 11:48:06 &#43;0200 &#43;0200" itemprop="datePublished">2018-08-22</time>
-            &middot;
-            236
-            words
-            &middot;
-            2
-            minute read
-        </div>
-        
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-folder"></i>
-                
-                
-                <a class="article-category-link" href="https://tfprimewj.github.io/categories/tensorflow">Tensorflow</a>
-                
-                
-            </div>
-            
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="https://tfprimewj.github.io/tags/tensorflow">Tensorflow</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                Talk less, code more
- Lecture 3: birth-life Linear Regression Implementation import os os.environ['TF_CPP_MIN_LOG_LEVEL']='2' import tensorflow as tf import numpy as np import time # Read data function def read_birth_life_data(filename): &quot;&quot;&quot; Read in birth_life_2010.txt and return: data in the form of NumPy array n_samples: number of samples &quot;&quot;&quot; text = open(filename, 'r').readlines()[1:] data = [line[:-1].split('\t') for line in text] births = [float(line[1]) for line in data] lifes = [float(line[2]) for line in data] data = list(zip(births, lifes)) n_samples = len(data) data = np.
-            </p>
-            <p class="article-more-link">
-                <a href="https://tfprimewj.github.io/2018/08/22/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%94/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="https://tfprimewj.github.io/2018/08/22/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%94/" data-id="1e9c6a1358b87273c4fd8267288352b5" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-    <a href="https://tfprimewj.github.io/2018/08/22/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%BA%94/#disqus_thread" class="article-comment-link">
-        Comments
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="https://tfprimewj.github.io/2018/08/21/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%9B%9B/">
-    <h1 class="article-title" itemprop="name">
-        CS20学习笔记（四）
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2018-08-21 11:48:06 &#43;0200 &#43;0200" itemprop="datePublished">2018-08-21</time>
-            &middot;
-            286
-            words
-            &middot;
-            2
-            minute read
-        </div>
-        
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-folder"></i>
-                
-                
-                <a class="article-category-link" href="https://tfprimewj.github.io/categories/tensorflow">Tensorflow</a>
-                
-                
-            </div>
-            
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="https://tfprimewj.github.io/tags/tensorflow">Tensorflow</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                Talk less, code more
- read_birth_life_data函数详解 1. API def read_birth_life_data(filename): &quot;&quot;&quot; Read in birth_life_2010.txt and return: data in the form of NumPy array n_samples: number of samples &quot;&quot;&quot; text = open(filename, 'r').readlines()[1:] data = [line[:-1].split('\t') for line in text] births = [float(line[1]) for line in data] lifes = [float(line[2]) for line in data] data = list(zip(births, lifes)) n_samples = len(data) data = np.asarray(data, dtype=np.float32) return data, n_samples  2.
-            </p>
-            <p class="article-more-link">
-                <a href="https://tfprimewj.github.io/2018/08/21/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%9B%9B/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="https://tfprimewj.github.io/2018/08/21/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%9B%9B/" data-id="dc34d9163ed1ad7b1eb3ab3a464afdfb" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-    <a href="https://tfprimewj.github.io/2018/08/21/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E5%9B%9B/#disqus_thread" class="article-comment-link">
-        Comments
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="https://tfprimewj.github.io/2018/08/20/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%89/">
-    <h1 class="article-title" itemprop="name">
-        CS20学习笔记（三）
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2018-08-20 11:48:06 &#43;0200 &#43;0200" itemprop="datePublished">2018-08-20</time>
-            &middot;
-            225
-            words
-            &middot;
-            2
-            minute read
-        </div>
-        
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-folder"></i>
-                
-                
-                <a class="article-category-link" href="https://tfprimewj.github.io/categories/tensorflow">Tensorflow</a>
-                
-                
-            </div>
-            
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="https://tfprimewj.github.io/tags/tensorflow">Tensorflow</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                CS20学习笔记（三） @(Tensorflow)
- Talk less, code more
- Basic Models in Tensoflow 1. 学习资源  CS20 Lecture3 Slides Tensorflow Official Docs Stanford Tensorflow Tutorial github repo  2. Agenda  Review Linear regression on birth/life data Control Flow tf.data Optimizers, gradients Logistic regression on MNIST Loss functions  3. Review 3.1 Computation Graph TensorFlow separates definition of computations from their execution Phase 1: assemble a graph Phase 2: use a session to execute operations in the graph.
-            </p>
-            <p class="article-more-link">
-                <a href="https://tfprimewj.github.io/2018/08/20/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%89/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="https://tfprimewj.github.io/2018/08/20/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%89/" data-id="2afb53d6a2c8ea6b563670c5323d9a7f" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-    <a href="https://tfprimewj.github.io/2018/08/20/cs20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E4%B8%89/#disqus_thread" class="article-comment-link">
-        Comments
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
 
 <nav id="page-nav">
 
@@ -1852,6 +1864,14 @@ Code clear;clc; % This program creates a cos wave with a random phase. % x = A *
             
             <li class="category-list-item">
                 
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/network">
+                    network
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
                 <a class="category-list-link" href="https://tfprimewj.github.io/categories/nodejs">
                     nodejs
                 </a>
@@ -1884,10 +1904,34 @@ Code clear;clc; % This program creates a cos wave with a random phase. % x = A *
             
             <li class="category-list-item">
                 
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/spider">
+                    spider
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
                 <a class="category-list-link" href="https://tfprimewj.github.io/categories/tensorflow">
                     tensorflow
                 </a>
                 <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/virtualvenv">
+                    virtualvenv
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/vpn">
+                    vpn
+                </a>
+                <span class="category-list-count">1</span>
             </li>
             
             <li class="category-list-item">
@@ -2125,6 +2169,14 @@ Code clear;clc; % This program creates a cos wave with a random phase. % x = A *
             
             <li class="category-list-item">
                 
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/network">
+                    network
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
                 <a class="category-list-link" href="https://tfprimewj.github.io/tags/nodejs">
                     nodejs
                 </a>
@@ -2160,7 +2212,7 @@ Code clear;clc; % This program creates a cos wave with a random phase. % x = A *
                 <a class="category-list-link" href="https://tfprimewj.github.io/tags/python">
                     python
                 </a>
-                <span class="category-list-count">6</span>
+                <span class="category-list-count">7</span>
             </li>
             
             <li class="category-list-item">
@@ -2181,6 +2233,14 @@ Code clear;clc; % This program creates a cos wave with a random phase. % x = A *
             
             <li class="category-list-item">
                 
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/spider">
+                    spider
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
                 <a class="category-list-link" href="https://tfprimewj.github.io/tags/tensorflow">
                     tensorflow
                 </a>
@@ -2191,6 +2251,22 @@ Code clear;clc; % This program creates a cos wave with a random phase. % x = A *
                 
                 <a class="category-list-link" href="https://tfprimewj.github.io/tags/theme">
                     theme
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/virtualvenv">
+                    virtualvenv
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/vpn">
+                    vpn
                 </a>
                 <span class="category-list-count">1</span>
             </li>
@@ -2311,6 +2387,9 @@ Code clear;clc; % This program creates a cos wave with a random phase. % x = A *
         <a href="https://tfprimewj.github.io/tags/mongodb" style="font-size: 12px;">mongodb</a>
         
         
+        <a href="https://tfprimewj.github.io/tags/network" style="font-size: 12px;">network</a>
+        
+        
         <a href="https://tfprimewj.github.io/tags/nodejs" style="font-size: 12px;">nodejs</a>
         
         
@@ -2332,10 +2411,19 @@ Code clear;clc; % This program creates a cos wave with a random phase. % x = A *
         <a href="https://tfprimewj.github.io/tags/recursion" style="font-size: 12px;">recursion</a>
         
         
+        <a href="https://tfprimewj.github.io/tags/spider" style="font-size: 12px;">spider</a>
+        
+        
         <a href="https://tfprimewj.github.io/tags/tensorflow" style="font-size: 12px;">tensorflow</a>
         
         
         <a href="https://tfprimewj.github.io/tags/theme" style="font-size: 12px;">theme</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/virtualvenv" style="font-size: 12px;">virtualvenv</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/vpn" style="font-size: 12px;">vpn</a>
         
         
         <a href="https://tfprimewj.github.io/tags/web-development" style="font-size: 12px;">web-development</a>

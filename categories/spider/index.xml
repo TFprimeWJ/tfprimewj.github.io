@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>spider on Jinwang Blog</title>
+    <link>https://tfprimewj.github.io/categories/spider/</link>
+    <description>Recent content in spider on Jinwang Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 05 Feb 2020 13:15:24 +0800</lastBuildDate>
+    
+	<atom:link href="https://tfprimewj.github.io/categories/spider/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用virtualvenv创建spider虚拟环境记录</title>
+      <link>https://tfprimewj.github.io/2020/02/05/%E4%BD%BF%E7%94%A8virtualvenv%E5%88%9B%E5%BB%BAspider%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Wed, 05 Feb 2020 13:15:24 +0800</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2020/02/05/%E4%BD%BF%E7%94%A8virtualvenv%E5%88%9B%E5%BB%BAspider%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E8%AE%B0%E5%BD%95/</guid>
+      <description>使用virtualvenv创建spider虚拟环境记录 创建虚拟环境 virtualvenv --no-site-packages venvSpider
+jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider  virtualenv --no-site-packages venvSpider Using base prefix &#39;/Users/jinwang/anaconda3&#39; New python executable in /Users/jinwang/Desktop/Lets_coding/Spider/venvSpider/bin/python Installing setuptools, pip, wheel...done.  激活虚拟环境 source venvSpider/bin/activate
+jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider  source venvSpider/bin/activate (venvSpider) jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider   看到前面的(venvSpider)表示我们已经进入到了虚拟环境中
+安装包 查看当前包信息
+pip list
+(venvSpider) ✘ jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider  pip list Package Version ---------- ------- pip 20.0.2 setuptools 45.1.0 wheel 0.34.2  安装jupyter notebook (venvSpider) jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider  pip install jupyter Looking in indexes: http://pypi.</description>
+    </item>
+    
+  </channel>
+</rss>

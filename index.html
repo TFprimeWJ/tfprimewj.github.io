@@ -28,7 +28,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://tfprimewj.github.io/" />
 
-<meta property="og:updated_time" content="2020-02-05T12:59:41+08:00" />
+<meta property="og:updated_time" content="2020-02-07T23:10:50+08:00" />
 
     
     <meta itemprop="name" content="Jinwang Blog">
@@ -163,12 +163,12 @@
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        52
+        55
         <span>Posts</span>
       </div>
       <div class="article-info-block">
         
-          37
+          41
         
         <span>
             Tags
@@ -251,6 +251,461 @@
         </a>
 
         <header class="article-header">
+    <a href="https://tfprimewj.github.io/2020/02/07/socket%E7%BC%96%E7%A8%8Bclient%E5%92%8Cserver%E5%AE%9E%E4%BE%8B/">
+    <h1 class="article-title" itemprop="name">
+        Socket编程client和server实例
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2020-02-07 23:10:50 &#43;0800 CST" itemprop="datePublished">2020-02-07</time>
+            &middot;
+            130
+            words
+            &middot;
+            1
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/categories/network">network</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/tags/python">python</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/tags/network">network</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                Socket编程client和server实例 来源：《Computer Network A Top Down Approach》
+UDPClient.py
+# UDPClient.py from socket import * serverName = '127.0.0.1' serverPort = 12000 clientSocket = socket(AF_INET, SOCK_DGRAM) message = input('Input lowercase sentence:') clientSocket.sendto(message.encode(), (serverName, serverPort)) # Receive modifiedMessage, serverAddress = clientSocket.recvfrom(2048) print(modifiedMessage.decode()) clientSocket.close()  UDPServer.py
+# UDPServer.py from socket import * serverPort = 12000 serverSocket = socket(AF_INET, SOCK_DGRAM) serverSocket.bind(('', serverPort)) print(&quot;The server is ready to receive ...&quot;) while True: message, clientAddress = serverSocket.
+            </p>
+            <p class="article-more-link">
+                <a href="https://tfprimewj.github.io/2020/02/07/socket%E7%BC%96%E7%A8%8Bclient%E5%92%8Cserver%E5%AE%9E%E4%BE%8B/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="https://tfprimewj.github.io/2020/02/07/socket%E7%BC%96%E7%A8%8Bclient%E5%92%8Cserver%E5%AE%9E%E4%BE%8B/" data-id="fe004eee64e9f266864c72fe8f96b35a" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="https://tfprimewj.github.io/2020/02/07/socket%E7%BC%96%E7%A8%8Bclient%E5%92%8Cserver%E5%AE%9E%E4%BE%8B/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        </a>
+
+        <header class="article-header">
+    <a href="https://tfprimewj.github.io/2020/02/05/vpn/">
+    <h1 class="article-title" itemprop="name">
+        VPN
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2020-02-05 15:55:07 &#43;0800 CST" itemprop="datePublished">2020-02-05</time>
+            &middot;
+            183
+            words
+            &middot;
+            1
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/categories/vpn">vpn</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/tags/vpn">vpn</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                ✘ jinwang@Jin-Wang-MacBook-Pro  ~/Desktop  ssh root@45.76.70.110 The authenticity of host '45.76.70.110 (45.76.70.110)' can't be established. ECDSA key fingerprint is SHA256:i3m5ktbz8Fd0YztAQbGR4G08HzGlBU4fhUVotLMZE3c. Are you sure you want to continue connecting (yes/no)? yes Warning: Permanently added '45.76.70.110' (ECDSA) to the list of known hosts. root@45.76.70.110's password: Activate the web console with: systemctl enable --now cockpit.socket Last failed login: Wed Feb 5 07:45:08 UTC 2020 on tty1 There were 2 failed login attempts since the last successful login.
+            </p>
+            <p class="article-more-link">
+                <a href="https://tfprimewj.github.io/2020/02/05/vpn/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="https://tfprimewj.github.io/2020/02/05/vpn/" data-id="f7633bb5de69d9d4fe6099905a9e9eaa" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="https://tfprimewj.github.io/2020/02/05/vpn/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        </a>
+
+        <header class="article-header">
+    <a href="https://tfprimewj.github.io/2020/02/05/%E4%BD%BF%E7%94%A8virtualvenv%E5%88%9B%E5%BB%BAspider%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E8%AE%B0%E5%BD%95/">
+    <h1 class="article-title" itemprop="name">
+        使用virtualvenv创建spider虚拟环境记录
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2020-02-05 13:15:24 &#43;0800 CST" itemprop="datePublished">2020-02-05</time>
+            &middot;
+            1101
+            words
+            &middot;
+            6
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/categories/virtualvenv">virtualvenv</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/categories/spider">spider</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/tags/virtualvenv">virtualvenv</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/tags/spider">spider</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                使用virtualvenv创建spider虚拟环境记录 创建虚拟环境 virtualvenv --no-site-packages venvSpider
+jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider  virtualenv --no-site-packages venvSpider Using base prefix '/Users/jinwang/anaconda3' New python executable in /Users/jinwang/Desktop/Lets_coding/Spider/venvSpider/bin/python Installing setuptools, pip, wheel...done.  激活虚拟环境 source venvSpider/bin/activate
+jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider  source venvSpider/bin/activate (venvSpider) jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider   看到前面的(venvSpider)表示我们已经进入到了虚拟环境中
+安装包 查看当前包信息
+pip list
+(venvSpider) ✘ jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider  pip list Package Version ---------- ------- pip 20.0.2 setuptools 45.1.0 wheel 0.34.2  安装jupyter notebook (venvSpider) jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider  pip install jupyter Looking in indexes: http://pypi.
+            </p>
+            <p class="article-more-link">
+                <a href="https://tfprimewj.github.io/2020/02/05/%E4%BD%BF%E7%94%A8virtualvenv%E5%88%9B%E5%BB%BAspider%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E8%AE%B0%E5%BD%95/">
+                    Read more
+                </a>
+            </p>
+        </div>
+        <footer class="article-footer">
+    <a data-url="https://tfprimewj.github.io/2020/02/05/%E4%BD%BF%E7%94%A8virtualvenv%E5%88%9B%E5%BB%BAspider%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E8%AE%B0%E5%BD%95/" data-id="47c86feb55adcf15ac462c6158f012a3" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="https://tfprimewj.github.io/2020/02/05/%E4%BD%BF%E7%94%A8virtualvenv%E5%88%9B%E5%BB%BAspider%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E8%AE%B0%E5%BD%95/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+</article>
+
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        </a>
+
+        <header class="article-header">
     <a href="https://tfprimewj.github.io/2020/02/05/hugo%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0github%E7%95%8C%E9%9D%A2/">
     <h1 class="article-title" itemprop="name">
         Hugo如何更新github界面
@@ -263,7 +718,7 @@
             <i class="fa fa-calendar"></i>
             <time datetime="2020-02-05 12:59:41 &#43;0800 CST" itemprop="datePublished">2020-02-05</time>
             &middot;
-            24
+            137
             words
             &middot;
             1
@@ -302,13 +757,11 @@
 
         <div class="article-entry" itemprop="articleBody">
             <p>
-                 Hugo如何更新github界面 我发现，当我新建一个post之后，public文件夹里面的内容并没有更新，所以此时将public文件夹里面的内容直接复制到xxx.github.io文件夹中，并不会有新的post出现。
+                Hugo如何更新github界面 我发现，当我新建一个post之后，public文件夹里面的内容并没有更新，所以此时将public文件夹里面的内容直接复制到xxx.github.io文件夹中，并不会有新的post出现。
 所以采用下面的解决方法：
-当我们使用hugo new post/test.md新建一个post之后，我们输入
+当我们使用hugo new post/test.md新建一个post之后，我们在根目录输入
 hugo
-进行预览。此时public文件夹里面的内容会进行更新。
-然后我们将public文件夹里面的东西全部复制到xxx.github.io文件夹中，然后上传github
-上传github步骤 git add . git commit -m &quot;add new post&quot; git push -u origin master  
+jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Hugo/hugoJinwang  hugo Building sites … WARN 2020/02/05 13:08:16 Page's .Hugo is deprecated and will be removed in a future release. Use the global hugo function. WARN 2020/02/05 13:08:16 Page's .RSSLink is deprecated and will be removed in a future release. Use the Output Format's link, e.g. something like: {{ with .OutputFormats.Get &quot;RSS&quot; }}{{ .RelPermalink }}{{ end }}. WARN 2020/02/05 13:08:16 Page's .
             </p>
             <p class="article-more-link">
                 <a href="https://tfprimewj.github.io/2020/02/05/hugo%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0github%E7%95%8C%E9%9D%A2/">
@@ -1298,474 +1751,6 @@ class Solution { public String longestPalindrome (String s) { if (s == null || s
     </div>
 </article>
 
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        <a href="https://tfprimewj.github.io/2019/12/30/mongodb-m001-ch2-the-mongodb-query-language-altas/" itemprop="url">
-            <img src="https://tfprimewj.github.io/banners/UniversityOfMongoDB/MongoDB-Ch2-Logo.jpg" class="article-banner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="https://tfprimewj.github.io/2019/12/30/mongodb-m001-ch2-the-mongodb-query-language-altas/">
-    <h1 class="article-title" itemprop="name">
-        MongoDB M001 - Ch2 The MongoDB Query Language &#43; Altas
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2019-12-30 23:58:23 &#43;0800 CST" itemprop="datePublished">2019-12-30</time>
-            &middot;
-            315
-            words
-            &middot;
-            2
-            minute read
-        </div>
-        
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-folder"></i>
-                
-                
-                <a class="article-category-link" href="https://tfprimewj.github.io/categories/mongodb">MongoDB</a>
-                
-                
-            </div>
-            
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="https://tfprimewj.github.io/tags/mongodb">MongoDB</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                MongoDB M001 - Ch2 The MongoDB Query Language + Altas 1. CRUD  C: Craete R: Read U: Update D: Delete  MongoDB Shell
-MongoDB Shell is a MongoDB text-based client.
-2. Installing the MongoDB Shell (OSX/Linux) Download link: https://www.mongodb.com/download-center/enterprise
-在终端输入echo $PATH可以看到目前所有的路径，这些路径就是计算机寻找可执行程序的时候逐一访问的路径。
-下面我们把MongoDB添加到这个路径中。
-打开.zshrc，在最下面添加一行
-export PATH=&quot;~/mongodb-macos-x86_64-enterprise-4.2.2/bin:$PATH&quot;  冒号:：表示如果前面的路径没有我们想要的程序，那么就在冒号后面的路径继续搜索。而在上面的操作中我们也看到，$PATH正是现在所有的路径。所以这部操作其实就是把以前所有的路径添加到MongoDB路径的后面。
-其实就是Concatenating。
-3. Connecting to Our Class Atlas Cluster from the mongo Shell (Part 1) mongo &quot;mongodb://cluster0-shard-00-00-jxeqq.mongodb.net:27017,cluster0-shard-00-01-jxeqq.mongodb.net:27017,cluster0-shard-00-02-jxeqq.mongodb.net:27017/test?replicaSet=Cluster0-shard-0&quot; --authenticationDatabase admin --ssl --username m001-student --password m001-mongodb-basics  jinwang@Jin-Wang-MacBook-Pro  ~  mongo &quot;mongodb://cluster0-shard-00-00-jxeqq.
-            </p>
-            <p class="article-more-link">
-                <a href="https://tfprimewj.github.io/2019/12/30/mongodb-m001-ch2-the-mongodb-query-language-altas/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="https://tfprimewj.github.io/2019/12/30/mongodb-m001-ch2-the-mongodb-query-language-altas/" data-id="a9bfd5c02d49930e0bc526ca9cec2035" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-    <a href="https://tfprimewj.github.io/2019/12/30/mongodb-m001-ch2-the-mongodb-query-language-altas/#disqus_thread" class="article-comment-link">
-        Comments
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        <a href="https://tfprimewj.github.io/2019/12/30/mongodb-m001-mongodb-basics/" itemprop="url">
-            <img src="https://tfprimewj.github.io/banners/UniversityOfMongoDB/MongoDB-Ch1-Logo.jpg" class="article-banner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="https://tfprimewj.github.io/2019/12/30/mongodb-m001-mongodb-basics/">
-    <h1 class="article-title" itemprop="name">
-        MongoDB M001 - MongoDB Basics
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2019-12-30 23:58:22 &#43;0800 CST" itemprop="datePublished">2019-12-30</time>
-            &middot;
-            59
-            words
-            &middot;
-            1
-            minute read
-        </div>
-        
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-folder"></i>
-                
-                
-                <a class="article-category-link" href="https://tfprimewj.github.io/categories/mongodb">MongoDB</a>
-                
-                
-            </div>
-            
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="https://tfprimewj.github.io/tags/mongodb">MongoDB</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                M001 - MongoDB Basics Chapter 1 Introduction Database, Collections, and Documents The figure below shows the relationships among Databse, Collections, and Documents
-   In MongoDB Compass, we can see the details of the data.
-For example, inside the video.movie, we can click documents:
-   When we click Schema:
-   第一章主要讲了MongoDB Compass的用法，顺带介绍了一下Json数据格式。
-本章编程的部分不多，仅仅是在filter里面有一些简单的编程，例如：
-filter: {year: &quot;1895&quot;}
-filter: {year: {&quot;$gte&quot;: 1900, &quot;$lt&quot;: 2010}}
-这种。
-            </p>
-            <p class="article-more-link">
-                <a href="https://tfprimewj.github.io/2019/12/30/mongodb-m001-mongodb-basics/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="https://tfprimewj.github.io/2019/12/30/mongodb-m001-mongodb-basics/" data-id="7e9e21c49e7f34e4580a1499fb291517" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-    <a href="https://tfprimewj.github.io/2019/12/30/mongodb-m001-mongodb-basics/#disqus_thread" class="article-comment-link">
-        Comments
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
-    <div class="article-inner">
-        
-        </a>
-
-        <header class="article-header">
-    <a href="https://tfprimewj.github.io/2019/12/30/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84/">
-    <h1 class="article-title" itemprop="name">
-        Java学习之一维数组
-    </h1>
-    </a>
-    <div class="article-meta">
-
-        
-        <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="2019-12-30 23:57:22 &#43;0800 CST" itemprop="datePublished">2019-12-30</time>
-            &middot;
-            39
-            words
-            &middot;
-            1
-            minute read
-        </div>
-        
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-folder"></i>
-                
-                
-                <a class="article-category-link" href="https://tfprimewj.github.io/categories/java">Java</a>
-                
-                
-            </div>
-            
-        
-
-        
-            
-            
-            <div class="article-category">
-                <i class="fa fa-tags"></i>
-                
-                
-                <a class="article-category-link" href="https://tfprimewj.github.io/tags/java">Java</a>
-                
-                
-            </div>
-            
-        
-    </div>
-</header>
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                Java学习之一维数组(Single-Dimentional Arrays) 数组基础 声明数组 声明数组必须有数组元素(element type)的类型和引用变量(reference variable)，通常也就是数组的名字
-elementType[] arrayRefVar;  比如：
-double[] myList;  创建数组 实际上，当我们输入elementType[] arrayRefVar;时，我们仅仅是创建了一个指向数组的引用变量，程序仅仅为这个引用分配了内存，但是并没有给数组分配内存。所以我们必须像下面一样操作才可以为数组分配内存。
-arrayRefVar = new elementType[arraySize];  上面这句话做了两件事：
- 创建了一个大小为arraySize的elementType类型数组，并为其分配了内存。
- 创建了一个数组引用arrayRefVar，指向了刚刚创建的数组。
-  例如：
-double[] myList = new double[10];  可以通过下面的方法给数组赋值：
-myList[0] = 2.5;  数组大小和默认值 数组的大小必须在创建数组的时候确定，而且不能更改。
-可以使用myList.length查看数组的大小。
-默认情况下，数组的值为
-数值型：0 字符型：\u0000 布尔变量：false
-            </p>
-            <p class="article-more-link">
-                <a href="https://tfprimewj.github.io/2019/12/30/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84/">
-                    Read more
-                </a>
-            </p>
-        </div>
-        <footer class="article-footer">
-    <a data-url="https://tfprimewj.github.io/2019/12/30/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84/" data-id="d0d48925c1a415b3a99b8bfdef197c31" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
-    </a>
-    
-    <a href="https://tfprimewj.github.io/2019/12/30/java%E5%AD%A6%E4%B9%A0%E4%B9%8B%E4%B8%80%E7%BB%B4%E6%95%B0%E7%BB%84/#disqus_thread" class="article-comment-link">
-        Comments
-    </a>
-    
-
-    <script>
-    (function ($) {
-        
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-    </script>
-</footer>
-
-    </div>
-</article>
-
 
 <nav id="page-nav">
 
@@ -1899,6 +1884,14 @@ myList[0] = 2.5;  数组大小和默认值 数组的大小必须在创建数组�
             
             <li class="category-list-item">
                 
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/network">
+                    network
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
                 <a class="category-list-link" href="https://tfprimewj.github.io/categories/nodejs">
                     nodejs
                 </a>
@@ -1931,10 +1924,34 @@ myList[0] = 2.5;  数组大小和默认值 数组的大小必须在创建数组�
             
             <li class="category-list-item">
                 
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/spider">
+                    spider
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
                 <a class="category-list-link" href="https://tfprimewj.github.io/categories/tensorflow">
                     tensorflow
                 </a>
                 <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/virtualvenv">
+                    virtualvenv
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/vpn">
+                    vpn
+                </a>
+                <span class="category-list-count">1</span>
             </li>
             
             <li class="category-list-item">
@@ -2172,6 +2189,14 @@ myList[0] = 2.5;  数组大小和默认值 数组的大小必须在创建数组�
             
             <li class="category-list-item">
                 
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/network">
+                    network
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
                 <a class="category-list-link" href="https://tfprimewj.github.io/tags/nodejs">
                     nodejs
                 </a>
@@ -2207,7 +2232,7 @@ myList[0] = 2.5;  数组大小和默认值 数组的大小必须在创建数组�
                 <a class="category-list-link" href="https://tfprimewj.github.io/tags/python">
                     python
                 </a>
-                <span class="category-list-count">6</span>
+                <span class="category-list-count">7</span>
             </li>
             
             <li class="category-list-item">
@@ -2228,6 +2253,14 @@ myList[0] = 2.5;  数组大小和默认值 数组的大小必须在创建数组�
             
             <li class="category-list-item">
                 
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/spider">
+                    spider
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
                 <a class="category-list-link" href="https://tfprimewj.github.io/tags/tensorflow">
                     tensorflow
                 </a>
@@ -2238,6 +2271,22 @@ myList[0] = 2.5;  数组大小和默认值 数组的大小必须在创建数组�
                 
                 <a class="category-list-link" href="https://tfprimewj.github.io/tags/theme">
                     theme
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/virtualvenv">
+                    virtualvenv
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/vpn">
+                    vpn
                 </a>
                 <span class="category-list-count">1</span>
             </li>
@@ -2358,6 +2407,9 @@ myList[0] = 2.5;  数组大小和默认值 数组的大小必须在创建数组�
         <a href="https://tfprimewj.github.io/tags/mongodb" style="font-size: 12px;">mongodb</a>
         
         
+        <a href="https://tfprimewj.github.io/tags/network" style="font-size: 12px;">network</a>
+        
+        
         <a href="https://tfprimewj.github.io/tags/nodejs" style="font-size: 12px;">nodejs</a>
         
         
@@ -2379,10 +2431,19 @@ myList[0] = 2.5;  数组大小和默认值 数组的大小必须在创建数组�
         <a href="https://tfprimewj.github.io/tags/recursion" style="font-size: 12px;">recursion</a>
         
         
+        <a href="https://tfprimewj.github.io/tags/spider" style="font-size: 12px;">spider</a>
+        
+        
         <a href="https://tfprimewj.github.io/tags/tensorflow" style="font-size: 12px;">tensorflow</a>
         
         
         <a href="https://tfprimewj.github.io/tags/theme" style="font-size: 12px;">theme</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/virtualvenv" style="font-size: 12px;">virtualvenv</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/vpn" style="font-size: 12px;">vpn</a>
         
         
         <a href="https://tfprimewj.github.io/tags/web-development" style="font-size: 12px;">web-development</a>

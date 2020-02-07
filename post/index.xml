@@ -6,10 +6,45 @@
     <description>Recent content in Posts on Jinwang Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Feb 2020 12:59:41 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 07 Feb 2020 23:10:50 +0800</lastBuildDate>
     
 	<atom:link href="https://tfprimewj.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Socket编程client和server实例</title>
+      <link>https://tfprimewj.github.io/2020/02/07/socket%E7%BC%96%E7%A8%8Bclient%E5%92%8Cserver%E5%AE%9E%E4%BE%8B/</link>
+      <pubDate>Fri, 07 Feb 2020 23:10:50 +0800</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2020/02/07/socket%E7%BC%96%E7%A8%8Bclient%E5%92%8Cserver%E5%AE%9E%E4%BE%8B/</guid>
+      <description>Socket编程client和server实例 来源：《Computer Network A Top Down Approach》
+UDPClient.py
+# UDPClient.py from socket import * serverName = &#39;127.0.0.1&#39; serverPort = 12000 clientSocket = socket(AF_INET, SOCK_DGRAM) message = input(&#39;Input lowercase sentence:&#39;) clientSocket.sendto(message.encode(), (serverName, serverPort)) # Receive modifiedMessage, serverAddress = clientSocket.recvfrom(2048) print(modifiedMessage.decode()) clientSocket.close()  UDPServer.py
+# UDPServer.py from socket import * serverPort = 12000 serverSocket = socket(AF_INET, SOCK_DGRAM) serverSocket.bind((&#39;&#39;, serverPort)) print(&amp;quot;The server is ready to receive ...&amp;quot;) while True: message, clientAddress = serverSocket.</description>
+    </item>
+    
+    <item>
+      <title>VPN</title>
+      <link>https://tfprimewj.github.io/2020/02/05/vpn/</link>
+      <pubDate>Wed, 05 Feb 2020 15:55:07 +0800</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2020/02/05/vpn/</guid>
+      <description>✘ jinwang@Jin-Wang-MacBook-Pro  ~/Desktop  ssh root@45.76.70.110 The authenticity of host &#39;45.76.70.110 (45.76.70.110)&#39; can&#39;t be established. ECDSA key fingerprint is SHA256:i3m5ktbz8Fd0YztAQbGR4G08HzGlBU4fhUVotLMZE3c. Are you sure you want to continue connecting (yes/no)? yes Warning: Permanently added &#39;45.76.70.110&#39; (ECDSA) to the list of known hosts. root@45.76.70.110&#39;s password: Activate the web console with: systemctl enable --now cockpit.socket Last failed login: Wed Feb 5 07:45:08 UTC 2020 on tty1 There were 2 failed login attempts since the last successful login.</description>
+    </item>
+    
+    <item>
+      <title>使用virtualvenv创建spider虚拟环境记录</title>
+      <link>https://tfprimewj.github.io/2020/02/05/%E4%BD%BF%E7%94%A8virtualvenv%E5%88%9B%E5%BB%BAspider%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Wed, 05 Feb 2020 13:15:24 +0800</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2020/02/05/%E4%BD%BF%E7%94%A8virtualvenv%E5%88%9B%E5%BB%BAspider%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E8%AE%B0%E5%BD%95/</guid>
+      <description>使用virtualvenv创建spider虚拟环境记录 创建虚拟环境 virtualvenv --no-site-packages venvSpider
+jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider  virtualenv --no-site-packages venvSpider Using base prefix &#39;/Users/jinwang/anaconda3&#39; New python executable in /Users/jinwang/Desktop/Lets_coding/Spider/venvSpider/bin/python Installing setuptools, pip, wheel...done.  激活虚拟环境 source venvSpider/bin/activate
+jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider  source venvSpider/bin/activate (venvSpider) jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider   看到前面的(venvSpider)表示我们已经进入到了虚拟环境中
+安装包 查看当前包信息
+pip list
+(venvSpider) ✘ jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider  pip list Package Version ---------- ------- pip 20.0.2 setuptools 45.1.0 wheel 0.34.2  安装jupyter notebook (venvSpider) jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider  pip install jupyter Looking in indexes: http://pypi.</description>
+    </item>
     
     <item>
       <title>Hugo如何更新github界面</title>
@@ -17,13 +52,11 @@
       <pubDate>Wed, 05 Feb 2020 12:59:41 +0800</pubDate>
       
       <guid>https://tfprimewj.github.io/2020/02/05/hugo%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0github%E7%95%8C%E9%9D%A2/</guid>
-      <description> Hugo如何更新github界面 我发现，当我新建一个post之后，public文件夹里面的内容并没有更新，所以此时将public文件夹里面的内容直接复制到xxx.github.io文件夹中，并不会有新的post出现。
+      <description>Hugo如何更新github界面 我发现，当我新建一个post之后，public文件夹里面的内容并没有更新，所以此时将public文件夹里面的内容直接复制到xxx.github.io文件夹中，并不会有新的post出现。
 所以采用下面的解决方法：
-当我们使用hugo new post/test.md新建一个post之后，我们输入
+当我们使用hugo new post/test.md新建一个post之后，我们在根目录输入
 hugo
-进行预览。此时public文件夹里面的内容会进行更新。
-然后我们将public文件夹里面的东西全部复制到xxx.github.io文件夹中，然后上传github
-上传github步骤 git add . git commit -m &amp;quot;add new post&amp;quot; git push -u origin master  </description>
+jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Hugo/hugoJinwang  hugo Building sites … WARN 2020/02/05 13:08:16 Page&#39;s .Hugo is deprecated and will be removed in a future release. Use the global hugo function. WARN 2020/02/05 13:08:16 Page&#39;s .RSSLink is deprecated and will be removed in a future release. Use the Output Format&#39;s link, e.g. something like: {{ with .OutputFormats.Get &amp;quot;RSS&amp;quot; }}{{ .RelPermalink }}{{ end }}. WARN 2020/02/05 13:08:16 Page&#39;s .</description>
     </item>
     
     <item>

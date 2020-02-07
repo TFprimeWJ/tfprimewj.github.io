@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>network on Jinwang Blog</title>
+    <link>https://tfprimewj.github.io/tags/network/</link>
+    <description>Recent content in network on Jinwang Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 07 Feb 2020 23:10:50 +0800</lastBuildDate>
+    
+	<atom:link href="https://tfprimewj.github.io/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Socket编程client和server实例</title>
+      <link>https://tfprimewj.github.io/2020/02/07/socket%E7%BC%96%E7%A8%8Bclient%E5%92%8Cserver%E5%AE%9E%E4%BE%8B/</link>
+      <pubDate>Fri, 07 Feb 2020 23:10:50 +0800</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2020/02/07/socket%E7%BC%96%E7%A8%8Bclient%E5%92%8Cserver%E5%AE%9E%E4%BE%8B/</guid>
+      <description>Socket编程client和server实例 来源：《Computer Network A Top Down Approach》
+UDPClient.py
+# UDPClient.py from socket import * serverName = &#39;127.0.0.1&#39; serverPort = 12000 clientSocket = socket(AF_INET, SOCK_DGRAM) message = input(&#39;Input lowercase sentence:&#39;) clientSocket.sendto(message.encode(), (serverName, serverPort)) # Receive modifiedMessage, serverAddress = clientSocket.recvfrom(2048) print(modifiedMessage.decode()) clientSocket.close()  UDPServer.py
+# UDPServer.py from socket import * serverPort = 12000 serverSocket = socket(AF_INET, SOCK_DGRAM) serverSocket.bind((&#39;&#39;, serverPort)) print(&amp;quot;The server is ready to receive ...&amp;quot;) while True: message, clientAddress = serverSocket.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>使用virtualvenv创建spider虚拟环境记录 &middot; Jinwang Blog</title>
+    <meta name="generator" content="Hugo 0.56.3" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Jin Wang">
+    
+      <meta name="description" content="">
+    
+    
+    <link rel="canonical" href="https://tfprimewj.github.io/2020/02/05/%E4%BD%BF%E7%94%A8virtualvenv%E5%88%9B%E5%BB%BAspider%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E8%AE%B0%E5%BD%95/"/>
+    <link rel="icon" href="https://tfprimewj.github.io/favicon.ico">
+    <link rel="apple-touch-icon" href="https://tfprimewj.github.io/apple-touch-icon.png"/>
+    <link rel="stylesheet" href="https://tfprimewj.github.io/css/style.css">
+    <link rel="stylesheet" href="https://tfprimewj.github.io/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://tfprimewj.github.io/css/monokai.css">
+    <link rel="stylesheet" href="https://tfprimewj.github.io/fancybox/jquery.fancybox.css">
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+    <meta property="og:title" content="使用virtualvenv创建spider虚拟环境记录" />
+<meta property="og:description" content="使用virtualvenv创建spider虚拟环境记录 创建虚拟环境 virtualvenv --no-site-packages venvSpider
+jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider  virtualenv --no-site-packages venvSpider Using base prefix &#39;/Users/jinwang/anaconda3&#39; New python executable in /Users/jinwang/Desktop/Lets_coding/Spider/venvSpider/bin/python Installing setuptools, pip, wheel...done.  激活虚拟环境 source venvSpider/bin/activate
+jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider  source venvSpider/bin/activate (venvSpider) jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider   看到前面的(venvSpider)表示我们已经进入到了虚拟环境中
+安装包 查看当前包信息
+pip list
+(venvSpider) ✘ jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider  pip list Package Version ---------- ------- pip 20.0.2 setuptools 45.1.0 wheel 0.34.2  安装jupyter notebook (venvSpider) jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider  pip install jupyter Looking in indexes: http://pypi." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tfprimewj.github.io/2020/02/05/%E4%BD%BF%E7%94%A8virtualvenv%E5%88%9B%E5%BB%BAspider%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E8%AE%B0%E5%BD%95/" />
+<meta property="article:published_time" content="2020-02-05T13:15:24+08:00" />
+<meta property="article:modified_time" content="2020-02-05T13:15:24+08:00" />
+
+    
+    <meta itemprop="name" content="使用virtualvenv创建spider虚拟环境记录">
+<meta itemprop="description" content="使用virtualvenv创建spider虚拟环境记录 创建虚拟环境 virtualvenv --no-site-packages venvSpider
+jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider  virtualenv --no-site-packages venvSpider Using base prefix &#39;/Users/jinwang/anaconda3&#39; New python executable in /Users/jinwang/Desktop/Lets_coding/Spider/venvSpider/bin/python Installing setuptools, pip, wheel...done.  激活虚拟环境 source venvSpider/bin/activate
+jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider  source venvSpider/bin/activate (venvSpider) jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider   看到前面的(venvSpider)表示我们已经进入到了虚拟环境中
+安装包 查看当前包信息
+pip list
+(venvSpider) ✘ jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider  pip list Package Version ---------- ------- pip 20.0.2 setuptools 45.1.0 wheel 0.34.2  安装jupyter notebook (venvSpider) jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider  pip install jupyter Looking in indexes: http://pypi.">
+
+
+<meta itemprop="datePublished" content="2020-02-05T13:15:24&#43;08:00" />
+<meta itemprop="dateModified" content="2020-02-05T13:15:24&#43;08:00" />
+<meta itemprop="wordCount" content="1101">
+
+
+
+<meta itemprop="keywords" content="virtualvenv,spider," />
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用virtualvenv创建spider虚拟环境记录"/>
+<meta name="twitter:description" content="使用virtualvenv创建spider虚拟环境记录 创建虚拟环境 virtualvenv --no-site-packages venvSpider
+jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider  virtualenv --no-site-packages venvSpider Using base prefix &#39;/Users/jinwang/anaconda3&#39; New python executable in /Users/jinwang/Desktop/Lets_coding/Spider/venvSpider/bin/python Installing setuptools, pip, wheel...done.  激活虚拟环境 source venvSpider/bin/activate
+jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider  source venvSpider/bin/activate (venvSpider) jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider   看到前面的(venvSpider)表示我们已经进入到了虚拟环境中
+安装包 查看当前包信息
+pip list
+(venvSpider) ✘ jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider  pip list Package Version ---------- ------- pip 20.0.2 setuptools 45.1.0 wheel 0.34.2  安装jupyter notebook (venvSpider) jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider  pip install jupyter Looking in indexes: http://pypi."/>
+
+    
+
+    
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+
+<div id="container">
+	<header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="https://tfprimewj.github.io" id="logo">
+          
+          <i class="logo" style="background-image: url('https://tfprimewj.github.io/css/images/logo.png')"></i>
+          
+          <span class="site-title">Jinwang Blog</span>
+      </a>
+      <nav id="main-nav">
+          
+          
+          <a class="main-nav-link" href="https://tfprimewj.github.io/">Home</a>
+          
+          
+          
+          
+          
+          
+
+          
+          <a class="main-nav-link" href="/about/">About</a>
+          
+
+          
+          
+          
+          
+          <a class="main-nav-link" href="https://tfprimewj.github.io/tags/">Tags</a>
+          
+          
+          
+          <a class="main-nav-link" href="https://tfprimewj.github.io/categories/">Categories</a>
+          
+          
+      </nav>
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="https://tfprimewj.github.io/css/images/myavatar.png"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+        <div id="search-form-wrap">
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+              <input type="search" name="q" class="search-form-input" placeholder="搜索">
+              <button type="submit" class="search-form-submit">
+              </button>
+              <input type="hidden" name="sitesearch" value="https://tfprimewj.github.io" />
+         </form>
+        </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tbody>
+          <tr>
+          
+          
+          <td><a class="main-nav-link" href="https://tfprimewj.github.io/">Home</a></td>
+          
+          
+          
+          
+          
+          
+
+          
+          <td><a class="main-nav-link" href="/about/">About</a></td>
+          
+
+          
+          
+          
+          
+          <td><a class="main-nav-link" href="https://tfprimewj.github.io/tags/">Tags</a></td>
+          
+          
+          
+          <td><a class="main-nav-link" href="https://tfprimewj.github.io/categories/">Categories</a></td>
+          
+          
+          <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <input type="search" name="q" class="search-form-input" placeholder="Search">
+          <input type="hidden" name="sitesearch" value="https://tfprimewj.github.io" />
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</header>
+
+   	
+   	<div class="outer">
+   	
+    	<aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      
+      <img id="avatar" src="https://tfprimewj.github.io/css/images/myavatar.png">
+      
+      <h2 id="name">Jin Wang</h2>
+      <h3 id="title">Blogger - Programmer - Gopher</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>Earth</span>
+      
+          <a id="follow" href="https://github.com/tfprimewj">
+              Follow
+          </a>
+      
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        55
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        
+          41
+        
+        <span>
+            Tags
+        </span>
+      </div>
+    </div>
+    <div class="profile-block social-links">
+      <table>
+        <tr>
+          
+<td><a href="//github.com/TFprimeWJ" target="_blank" title="GitHub"><i class="fa fa-github"></i></a></td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <td><a href="https://tfprimewj.github.io/index.xml" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</aside>
+
+    
+
+    <section id="main">
+    
+    <article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+
+        <header class="article-header">
+    <a href="https://tfprimewj.github.io/2020/02/05/%E4%BD%BF%E7%94%A8virtualvenv%E5%88%9B%E5%BB%BAspider%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E8%AE%B0%E5%BD%95/">
+    <h1 class="article-title" itemprop="name">
+        使用virtualvenv创建spider虚拟环境记录
+    </h1>
+    </a>
+    <div class="article-meta">
+
+        
+        <div class="article-date">
+            <i class="fa fa-calendar"></i>
+            <time datetime="2020-02-05 13:15:24 &#43;0800 CST" itemprop="datePublished">2020-02-05</time>
+            &middot;
+            1101
+            words
+            &middot;
+            6
+            minute read
+        </div>
+        
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-folder"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/categories/virtualvenv">virtualvenv</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/categories/spider">spider</a>
+                
+                
+            </div>
+            
+        
+
+        
+            
+            
+            <div class="article-category">
+                <i class="fa fa-tags"></i>
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/tags/virtualvenv">virtualvenv</a>
+                &middot;
+                
+                
+                <a class="article-category-link" href="https://tfprimewj.github.io/tags/spider">spider</a>
+                
+                
+            </div>
+            
+        
+    </div>
+</header>
+
+        <div class="article-entry" itemprop="articleBody">
+            
+
+<h1 id="使用virtualvenv创建spider虚拟环境记录">使用virtualvenv创建spider虚拟环境记录</h1>
+
+<h2 id="创建虚拟环境">创建虚拟环境</h2>
+
+<p><code>virtualvenv --no-site-packages venvSpider</code></p>
+
+<pre><code class="language-bash"> jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider  virtualenv --no-site-packages venvSpider
+Using base prefix '/Users/jinwang/anaconda3'
+New python executable in /Users/jinwang/Desktop/Lets_coding/Spider/venvSpider/bin/python
+Installing setuptools, pip, wheel...done.
+</code></pre>
+
+<h2 id="激活虚拟环境">激活虚拟环境</h2>
+
+<p><code>source venvSpider/bin/activate</code></p>
+
+<pre><code class="language-bash"> jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider  source venvSpider/bin/activate
+(venvSpider)  jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider 
+</code></pre>
+
+<p>看到前面的<code>(venvSpider)</code>表示我们已经进入到了虚拟环境中</p>
+
+<h2 id="安装包">安装包</h2>
+
+<p>查看当前包信息</p>
+
+<p><code>pip list</code></p>
+
+<pre><code class="language-bash">(venvSpider)  ✘ jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider  pip list
+Package    Version
+---------- -------
+pip        20.0.2
+setuptools 45.1.0
+wheel      0.34.2
+</code></pre>
+
+<h3 id="安装jupyter-notebook">安装jupyter notebook</h3>
+
+<pre><code class="language-bash">(venvSpider)  jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider  pip install jupyter
+Looking in indexes: http://pypi.douban.com/simple
+Collecting jupyter
+  Downloading http://pypi.doubanio.com/packages/83/df/0f5dd132200728a86190397e1ea87cd76244e42d39ec5e88efd25b2abd7e/jupyter-1.0.0-py2.py3-none-any.whl (2.7 kB)
+Collecting ipykernel
+  Downloading http://pypi.doubanio.com/packages/d7/62/d1a5d654b7a21bd3eb99be1b59a608cc18a7a08ed88495457a87c40a0495/ipykernel-5.1.4-py3-none-any.whl (116 kB)
+     |████████████████████████████████| 116 kB 1.9 MB/s
+Collecting ipywidgets
+  Downloading http://pypi.doubanio.com/packages/56/a0/dbcf5881bb2f51e8db678211907f16ea0a182b232c591a6d6f276985ca95/ipywidgets-7.5.1-py2.py3-none-any.whl (121 kB)
+     |████████████████████████████████| 121 kB 1.2 MB/s
+Collecting qtconsole
+  Downloading http://pypi.doubanio.com/packages/7c/57/3528b84ffa753e2089908bbf74bb5ae60653eb7a63797b6234e88b847d67/qtconsole-4.6.0-py2.py3-none-any.whl (121 kB)
+     |████████████████████████████████| 121 kB 2.2 MB/s
+Collecting nbconvert
+  Downloading http://pypi.doubanio.com/packages/79/6c/05a569e9f703d18aacb89b7ad6075b404e8a4afde2c26b73ca77bb644b14/nbconvert-5.6.1-py2.py3-none-any.whl (455 kB)
+     |████████████████████████████████| 455 kB 3.3 MB/s
+Collecting notebook
+  Downloading http://pypi.doubanio.com/packages/b1/f1/0a67f09ef53a342403ffa66646ee39273e0ac79ffa5de5dbe2f3e28b5bdf/notebook-6.0.3-py3-none-any.whl (9.7 MB)
+     |████████████████████████████████| 9.7 MB 5.3 MB/s
+Collecting jupyter-console
+  Downloading http://pypi.doubanio.com/packages/0a/89/742fa5a80b552ffcb6a8922712697c6e6828aee7b91ee4ae2b79f00f8401/jupyter_console-6.1.0-py2.py3-none-any.whl (21 kB)
+Collecting jupyter-client
+  Downloading http://pypi.doubanio.com/packages/13/81/fe0eee1bcf949851a120254b1f530ae1e01bdde2d3ab9710c6ff81525061/jupyter_client-5.3.4-py2.py3-none-any.whl (92 kB)
+     |████████████████████████████████| 92 kB 4.9 MB/s
+Collecting traitlets&gt;=4.1.0
+  Downloading http://pypi.doubanio.com/packages/ca/ab/872a23e29cec3cf2594af7e857f18b687ad21039c1f9b922fac5b9b142d5/traitlets-4.3.3-py2.py3-none-any.whl (75 kB)
+     |████████████████████████████████| 75 kB 9.2 MB/s
+Collecting tornado&gt;=4.2
+  Downloading http://pypi.doubanio.com/packages/30/78/2d2823598496127b21423baffaa186b668f73cd91887fcef78b6eade136b/tornado-6.0.3.tar.gz (482 kB)
+     |████████████████████████████████| 482 kB 5.5 MB/s
+Collecting ipython&gt;=5.0.0
+  Downloading http://pypi.doubanio.com/packages/b8/6d/1e3e335e767fc15a2047a008e27df31aa8bcf11c6f3805d03abefc69aa88/ipython-7.12.0-py3-none-any.whl (777 kB)
+     |████████████████████████████████| 777 kB 5.8 MB/s
+Collecting appnope; platform_system == &quot;Darwin&quot;
+  Downloading http://pypi.doubanio.com/packages/87/a9/7985e6a53402f294c8f0e8eff3151a83f1fb901fa92909bb3ff29b4d22af/appnope-0.1.0-py2.py3-none-any.whl (4.0 kB)
+Collecting widgetsnbextension~=3.5.0
+  Downloading http://pypi.doubanio.com/packages/6c/7b/7ac231c20d2d33c445eaacf8a433f4e22c60677eb9776c7c5262d7ddee2d/widgetsnbextension-3.5.1-py2.py3-none-any.whl (2.2 MB)
+     |████████████████████████████████| 2.2 MB 7.7 MB/s
+Collecting nbformat&gt;=4.2.0
+  Downloading http://pypi.doubanio.com/packages/ac/eb/de575b7a64e7ab8d8c95e4c180ccc36deda3f1379186c4ee7adf6c2f1586/nbformat-5.0.4-py3-none-any.whl (169 kB)
+     |████████████████████████████████| 169 kB 2.7 MB/s
+Collecting jupyter-core
+  Downloading http://pypi.doubanio.com/packages/fb/82/86437f661875e30682e99d04c13ba6c216f86f5f6ca6ef212d3ee8b6ca11/jupyter_core-4.6.1-py2.py3-none-any.whl (82 kB)
+     |████████████████████████████████| 82 kB 3.2 MB/s
+Collecting pygments
+  Downloading http://pypi.doubanio.com/packages/be/39/32da3184734730c0e4d3fa3b2b5872104668ad6dc1b5a73d8e477e5fe967/Pygments-2.5.2-py2.py3-none-any.whl (896 kB)
+     |████████████████████████████████| 896 kB 2.6 MB/s
+Collecting ipython-genutils
+  Downloading http://pypi.doubanio.com/packages/fa/bc/9bd3b5c2b4774d5f33b2d544f1460be9df7df2fe42f352135381c347c69a/ipython_genutils-0.2.0-py2.py3-none-any.whl (26 kB)
+Collecting defusedxml
+  Downloading http://pypi.doubanio.com/packages/06/74/9b387472866358ebc08732de3da6dc48e44b0aacd2ddaa5cb85ab7e986a2/defusedxml-0.6.0-py2.py3-none-any.whl (23 kB)
+Collecting jinja2&gt;=2.4
+  Downloading http://pypi.doubanio.com/packages/27/24/4f35961e5c669e96f6559760042a55b9bcfcdb82b9bdb3c8753dbe042e35/Jinja2-2.11.1-py2.py3-none-any.whl (126 kB)
+     |████████████████████████████████| 126 kB 3.7 MB/s
+Collecting entrypoints&gt;=0.2.2
+  Downloading http://pypi.doubanio.com/packages/ac/c6/44694103f8c221443ee6b0041f69e2740d89a25641e62fb4f2ee568f2f9c/entrypoints-0.3-py2.py3-none-any.whl (11 kB)
+Collecting testpath
+  Downloading http://pypi.doubanio.com/packages/1b/9e/1a170feaa54f22aeb5a5d16c9015e82234275a3c8ab630b552493f9cb8a9/testpath-0.4.4-py2.py3-none-any.whl (163 kB)
+     |████████████████████████████████| 163 kB 9.2 MB/s
+Collecting mistune&lt;2,&gt;=0.8.1
+  Downloading http://pypi.doubanio.com/packages/09/ec/4b43dae793655b7d8a25f76119624350b4d65eb663459eb9603d7f1f0345/mistune-0.8.4-py2.py3-none-any.whl (16 kB)
+Collecting pandocfilters&gt;=1.4.1
+  Downloading http://pypi.doubanio.com/packages/4c/ea/236e2584af67bb6df960832731a6e5325fd4441de001767da328c33368ce/pandocfilters-1.4.2.tar.gz (14 kB)
+Collecting bleach
+  Downloading http://pypi.doubanio.com/packages/ab/05/27e1466475e816d3001efb6e0a85a819be17411420494a1e602c36f8299d/bleach-3.1.0-py2.py3-none-any.whl (157 kB)
+     |████████████████████████████████| 157 kB 5.7 MB/s
+Collecting Send2Trash
+  Downloading http://pypi.doubanio.com/packages/49/46/c3dc27481d1cc57b9385aff41c474ceb7714f7935b1247194adae45db714/Send2Trash-1.5.0-py3-none-any.whl (12 kB)
+Collecting pyzmq&gt;=17
+  Downloading http://pypi.doubanio.com/packages/18/39/e87911d58bfe63a0ec0a37fc529548d8278dc7ba094045ae4c095267a602/pyzmq-18.1.1-cp36-cp36m-macosx_10_6_intel.whl (1.4 MB)
+     |████████████████████████████████| 1.4 MB 1.1 MB/s
+Collecting terminado&gt;=0.8.1
+  Downloading http://pypi.doubanio.com/packages/ff/96/1d9a2c23990aea8f8e0b5c3b6627d03196a73771a17a2d9860bbe9823ab6/terminado-0.8.3-py2.py3-none-any.whl (33 kB)
+Collecting prometheus-client
+  Downloading http://pypi.doubanio.com/packages/b3/23/41a5a24b502d35a4ad50a5bb7202a5e1d9a0364d0c12f56db3dbf7aca76d/prometheus_client-0.7.1.tar.gz (38 kB)
+Collecting prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0
+  Downloading http://pypi.doubanio.com/packages/f5/22/f00412fafc68169054cc623a35c32773f22b403ddbe516c8adfdecf25341/prompt_toolkit-3.0.3-py3-none-any.whl (348 kB)
+     |████████████████████████████████| 348 kB 7.3 MB/s
+Collecting python-dateutil&gt;=2.1
+  Downloading http://pypi.doubanio.com/packages/d4/70/d60450c3dd48ef87586924207ae8907090de0b306af2bce5d134d78615cb/python_dateutil-2.8.1-py2.py3-none-any.whl (227 kB)
+     |████████████████████████████████| 227 kB 5.2 MB/s
+Collecting decorator
+  Downloading http://pypi.doubanio.com/packages/8f/b7/f329cfdc75f3d28d12c65980e4469e2fa373f1953f5df6e370e84ea2e875/decorator-4.4.1-py2.py3-none-any.whl (9.2 kB)
+Collecting six
+  Downloading http://pypi.doubanio.com/packages/65/eb/1f97cb97bfc2390a276969c6fae16075da282f5058082d4cb10c6c5c1dba/six-1.14.0-py2.py3-none-any.whl (10 kB)
+Collecting backcall
+  Downloading http://pypi.doubanio.com/packages/1b/b3/0708228132a772de8802967af71d00c6b1f2f407e6f8efcc7055ac5900fe/backcall-0.1.0.zip (11 kB)
+Requirement already satisfied: setuptools&gt;=18.5 in ./venvSpider/lib/python3.6/site-packages (from ipython&gt;=5.0.0-&gt;ipykernel-&gt;jupyter) (45.1.0)
+Collecting pickleshare
+  Downloading http://pypi.doubanio.com/packages/9a/41/220f49aaea88bc6fa6cba8d05ecf24676326156c23b991e80b3f2fc24c77/pickleshare-0.7.5-py2.py3-none-any.whl (6.9 kB)
+Collecting jedi&gt;=0.10
+  Downloading http://pypi.doubanio.com/packages/01/67/333e2196b70840f411fd819407b4e98aa3150c2bd24c52154a451f912ef2/jedi-0.16.0-py2.py3-none-any.whl (1.1 MB)
+     |████████████████████████████████| 1.1 MB 8.7 MB/s
+Collecting pexpect; sys_platform != &quot;win32&quot;
+  Downloading http://pypi.doubanio.com/packages/39/7b/88dbb785881c28a102619d46423cb853b46dbccc70d3ac362d99773a78ce/pexpect-4.8.0-py2.py3-none-any.whl (59 kB)
+     |████████████████████████████████| 59 kB 9.0 MB/s
+Collecting jsonschema!=2.5.0,&gt;=2.4
+  Downloading http://pypi.doubanio.com/packages/c5/8f/51e89ce52a085483359217bc72cdbf6e75ee595d5b1d4b5ade40c7e018b8/jsonschema-3.2.0-py2.py3-none-any.whl (56 kB)
+     |████████████████████████████████| 56 kB 9.0 MB/s
+Collecting MarkupSafe&gt;=0.23
+  Downloading http://pypi.doubanio.com/packages/f0/00/a6aea33f5598b080b86d6b6d1214b51afe3ffa6100b902d5aa465080083f/MarkupSafe-1.1.1-cp36-cp36m-macosx_10_6_intel.whl (18 kB)
+Collecting webencodings
+  Downloading http://pypi.doubanio.com/packages/f4/24/2a3e3df732393fed8b3ebf2ec078f05546de641fe1b667ee316ec1dcf3b7/webencodings-0.5.1-py2.py3-none-any.whl (11 kB)
+Collecting ptyprocess; os_name != &quot;nt&quot;
+  Downloading http://pypi.doubanio.com/packages/d1/29/605c2cc68a9992d18dada28206eeada56ea4bd07a239669da41674648b6f/ptyprocess-0.6.0-py2.py3-none-any.whl (39 kB)
+Collecting wcwidth
+  Downloading http://pypi.doubanio.com/packages/58/b4/4850a0ccc6f567cc0ebe7060d20ffd4258b8210efadc259da62dc6ed9c65/wcwidth-0.1.8-py2.py3-none-any.whl (17 kB)
+Collecting parso&gt;=0.5.2
+  Downloading http://pypi.doubanio.com/packages/ec/bb/3b6c9f604ac40e2a7833bc767bd084035f12febcbd2b62204c5bc30edf97/parso-0.6.1-py2.py3-none-any.whl (97 kB)
+     |████████████████████████████████| 97 kB 1.8 MB/s
+Collecting attrs&gt;=17.4.0
+  Downloading http://pypi.doubanio.com/packages/a2/db/4313ab3be961f7a763066401fb77f7748373b6094076ae2bda2806988af6/attrs-19.3.0-py2.py3-none-any.whl (39 kB)
+Collecting pyrsistent&gt;=0.14.0
+  Downloading http://pypi.doubanio.com/packages/90/aa/cdcf7ef88cc0f831b6f14c8c57318824c9de9913fe8de38e46a98c069a35/pyrsistent-0.15.7.tar.gz (107 kB)
+     |████████████████████████████████| 107 kB 5.3 MB/s
+Collecting importlib-metadata; python_version &lt; &quot;3.8&quot;
+  Downloading http://pypi.doubanio.com/packages/8b/03/a00d504808808912751e64ccf414be53c29cad620e3de2421135fcae3025/importlib_metadata-1.5.0-py2.py3-none-any.whl (30 kB)
+Collecting zipp&gt;=0.5
+  Downloading zipp-2.1.0-py3-none-any.whl (4.6 kB)
+Building wheels for collected packages: tornado, pandocfilters, prometheus-client, backcall, pyrsistent
+  Building wheel for tornado (setup.py) ... done
+  Created wheel for tornado: filename=tornado-6.0.3-cp36-cp36m-macosx_10_7_x86_64.whl size=412939 sha256=9d52dc65950b5d3738e6433d7801c91be165908a0e72f1cf4e9e6496cb685a63
+  Stored in directory: /Users/jinwang/Library/Caches/pip/wheels/98/15/94/2637e9743d007224284f10db66929b89cd51c9cbe0c811aecb
+  Building wheel for pandocfilters (setup.py) ... done
+  Created wheel for pandocfilters: filename=pandocfilters-1.4.2-py3-none-any.whl size=7856 sha256=8cf3a144c44f3647382c6570bbaf5184246658954511706a892b2bdc18f356df
+  Stored in directory: /Users/jinwang/Library/Caches/pip/wheels/bc/99/91/64702439e3e84bc2d4a694fdd6c7244a49b4ca4957a9973394
+  Building wheel for prometheus-client (setup.py) ... done
+  Created wheel for prometheus-client: filename=prometheus_client-0.7.1-py3-none-any.whl size=41404 sha256=7497bd71675395ce6a605c3dfec6046406ba40066550f5fd585a623ad8e4b49a
+  Stored in directory: /Users/jinwang/Library/Caches/pip/wheels/45/06/f4/b9b8a4dfb060acdf75462c1239a61156a14c4c14a6b632585a
+  Building wheel for backcall (setup.py) ... done
+  Created wheel for backcall: filename=backcall-0.1.0-py3-none-any.whl size=10413 sha256=591219365f39b567bdc2d0b8bec189965a12b0bbb79f658186038e63be6df64b
+  Stored in directory: /Users/jinwang/Library/Caches/pip/wheels/c5/c3/77/84fa56042fb5f136bdbcd92b9def090d5862e8b9930dff5f91
+  Building wheel for pyrsistent (setup.py) ... done
+  Created wheel for pyrsistent: filename=pyrsistent-0.15.7-cp36-cp36m-macosx_10_7_x86_64.whl size=69424 sha256=62b4e66e9037fa4dd4c4ca9e41d985e459b2368141e42ccf210b110060e619a3
+  Stored in directory: /Users/jinwang/Library/Caches/pip/wheels/c2/49/5e/1314a945ad9ebfb1fb30e0ec06d4b5a152e528c4d8af07515d
+Successfully built tornado pandocfilters prometheus-client backcall pyrsistent
+Installing collected packages: six, python-dateutil, decorator, ipython-genutils, traitlets, jupyter-core, pyzmq, tornado, jupyter-client, backcall, wcwidth, prompt-toolkit, pickleshare, parso, jedi, appnope, pygments, ptyprocess, pexpect, ipython, ipykernel, defusedxml, MarkupSafe, jinja2, entrypoints, testpath, mistune, pandocfilters, webencodings, bleach, attrs, pyrsistent, zipp, importlib-metadata, jsonschema, nbformat, nbconvert, Send2Trash, terminado, prometheus-client, notebook, widgetsnbextension, ipywidgets, qtconsole, jupyter-console, jupyter
+Successfully installed MarkupSafe-1.1.1 Send2Trash-1.5.0 appnope-0.1.0 attrs-19.3.0 backcall-0.1.0 bleach-3.1.0 decorator-4.4.1 defusedxml-0.6.0 entrypoints-0.3 importlib-metadata-1.5.0 ipykernel-5.1.4 ipython-7.12.0 ipython-genutils-0.2.0 ipywidgets-7.5.1 jedi-0.16.0 jinja2-2.11.1 jsonschema-3.2.0 jupyter-1.0.0 jupyter-client-5.3.4 jupyter-console-6.1.0 jupyter-core-4.6.1 mistune-0.8.4 nbconvert-5.6.1 nbformat-5.0.4 notebook-6.0.3 pandocfilters-1.4.2 parso-0.6.1 pexpect-4.8.0 pickleshare-0.7.5 prometheus-client-0.7.1 prompt-toolkit-3.0.3 ptyprocess-0.6.0 pygments-2.5.2 pyrsistent-0.15.7 python-dateutil-2.8.1 pyzmq-18.1.1 qtconsole-4.6.0 six-1.14.0 terminado-0.8.3 testpath-0.4.4 tornado-6.0.3 traitlets-4.3.3 wcwidth-0.1.8 webencodings-0.5.1 widgetsnbextension-3.5.1 zipp-2.1.0
+</code></pre>
+
+<p>再次查看包信息</p>
+
+<pre><code class="language-bash">(venvSpider)  jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider  pip list
+Package            Version
+------------------ -------
+appnope            0.1.0
+attrs              19.3.0
+backcall           0.1.0
+bleach             3.1.0
+decorator          4.4.1
+defusedxml         0.6.0
+entrypoints        0.3
+importlib-metadata 1.5.0
+ipykernel          5.1.4
+ipython            7.12.0
+ipython-genutils   0.2.0
+ipywidgets         7.5.1
+jedi               0.16.0
+Jinja2             2.11.1
+jsonschema         3.2.0
+jupyter            1.0.0
+jupyter-client     5.3.4
+jupyter-console    6.1.0
+jupyter-core       4.6.1
+MarkupSafe         1.1.1
+mistune            0.8.4
+nbconvert          5.6.1
+nbformat           5.0.4
+notebook           6.0.3
+pandocfilters      1.4.2
+parso              0.6.1
+pexpect            4.8.0
+pickleshare        0.7.5
+pip                20.0.2
+prometheus-client  0.7.1
+prompt-toolkit     3.0.3
+ptyprocess         0.6.0
+Pygments           2.5.2
+pyrsistent         0.15.7
+python-dateutil    2.8.1
+pyzmq              18.1.1
+qtconsole          4.6.0
+Send2Trash         1.5.0
+setuptools         45.1.0
+six                1.14.0
+terminado          0.8.3
+testpath           0.4.4
+tornado            6.0.3
+traitlets          4.3.3
+wcwidth            0.1.8
+webencodings       0.5.1
+wheel              0.34.2
+widgetsnbextension 3.5.1
+zipp               2.1.0
+</code></pre>
+
+<p>打开jupyter notebook</p>
+
+<p>直接输入<code>jupyter notebook</code></p>
+
+<pre><code class="language-bash">(venvSpider)  jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider  jupyter notebook
+[I 13:30:37.254 NotebookApp] JupyterLab alpha preview extension loaded from /Users/jinwang/anaconda3/lib/python3.6/site-packages/jupyterlab
+JupyterLab v0.27.0
+Known labextensions:
+[I 13:30:37.259 NotebookApp] Running the core application with no additional extensions or settings
+[I 13:30:37.264 NotebookApp] Serving notebooks from local directory: /Users/jinwang/Desktop/Lets_coding/Spider
+[I 13:30:37.264 NotebookApp] 0 active kernels
+[I 13:30:37.264 NotebookApp] The Jupyter Notebook is running at: http://localhost:8888/?token=516bd2427e96e698ba177c3664221b04be350378604356e4
+[I 13:30:37.264 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 13:30:37.264 NotebookApp]
+
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://localhost:8888/?token=516bd2427e96e698ba177c3664221b04be350378604356e4
+[I 13:30:37.611 NotebookApp] Accepting one-time-token-authenticated connection from ::1
+^C[I 13:30:50.644 NotebookApp] interrupted
+Serving notebooks from local directory: /Users/jinwang/Desktop/Lets_coding/Spider
+0 active kernels
+The Jupyter Notebook is running at: http://localhost:8888/?token=516bd2427e96e698ba177c3664221b04be350378604356e4
+^C[I 13:31:09.540 NotebookApp] interrupted
+Serving notebooks from local directory: /Users/jinwang/Desktop/Lets_coding/Spider
+0 active kernels
+The Jupyter Notebook is running at: http://localhost:8888/?token=516bd2427e96e698ba177c3664221b04be350378604356e4
+Shutdown this notebook server (y/[n])? ^C[C 13:31:09.702 NotebookApp] received signal 2, stopping
+[I 13:31:09.704 NotebookApp] Shutting down kernels
+</code></pre>
+
+<h3 id="安装requests">安装requests</h3>
+
+<pre><code class="language-bash">(venvSpider)  jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider  pip install requests
+Looking in indexes: http://pypi.douban.com/simple
+Collecting requests
+  Downloading http://pypi.doubanio.com/packages/51/bd/23c926cd341ea6b7dd0b2a00aba99ae0f828be89d72b2190f27c11d4b7fb/requests-2.22.0-py2.py3-none-any.whl (57 kB)
+     |████████████████████████████████| 57 kB 1.0 MB/s
+Collecting urllib3!=1.25.0,!=1.25.1,&lt;1.26,&gt;=1.21.1
+  Downloading http://pypi.doubanio.com/packages/e8/74/6e4f91745020f967d09332bb2b8b9b10090957334692eb88ea4afe91b77f/urllib3-1.25.8-py2.py3-none-any.whl (125 kB)
+     |████████████████████████████████| 125 kB 1.2 MB/s
+Collecting idna&lt;2.9,&gt;=2.5
+  Downloading http://pypi.doubanio.com/packages/14/2c/cd551d81dbe15200be1cf41cd03869a46fe7226e7450af7a6545bfc474c9/idna-2.8-py2.py3-none-any.whl (58 kB)
+     |████████████████████████████████| 58 kB 2.1 MB/s
+Collecting chardet&lt;3.1.0,&gt;=3.0.2
+  Downloading http://pypi.doubanio.com/packages/bc/a9/01ffebfb562e4274b6487b4bb1ddec7ca55ec7510b22e4c51f14098443b8/chardet-3.0.4-py2.py3-none-any.whl (133 kB)
+     |████████████████████████████████| 133 kB 1.5 MB/s
+Collecting certifi&gt;=2017.4.17
+  Downloading http://pypi.doubanio.com/packages/b9/63/df50cac98ea0d5b006c55a399c3bf1db9da7b5a24de7890bc9cfd5dd9e99/certifi-2019.11.28-py2.py3-none-any.whl (156 kB)
+     |████████████████████████████████| 156 kB 738 kB/s
+Installing collected packages: urllib3, idna, chardet, certifi, requests
+Successfully installed certifi-2019.11.28 chardet-3.0.4 idna-2.8 requests-2.22.0 urllib3-1.25.8
+</code></pre>
+
+<h3 id="安装beautifulsoup4">安装beautifulsoup4</h3>
+
+<p><code>pip install beautifulsoup4</code></p>
+
+<pre><code class="language-bash">(venvSpider)  jinwang@Jin-Wang-MacBook-Pro  ~/Desktop/Lets_coding/Spider  pip install beautifulsoup4
+Looking in indexes: http://pypi.douban.com/simple
+Collecting beautifulsoup4
+  Downloading http://pypi.doubanio.com/packages/cb/a1/c698cf319e9cfed6b17376281bd0efc6bfc8465698f54170ef60a485ab5d/beautifulsoup4-4.8.2-py3-none-any.whl (106 kB)
+     |████████████████████████████████| 106 kB 58 kB/s
+Collecting soupsieve&gt;=1.2
+  Downloading http://pypi.doubanio.com/packages/81/94/03c0f04471fc245d08d0a99f7946ac228ca98da4fa75796c507f61e688c2/soupsieve-1.9.5-py2.py3-none-any.whl (33 kB)
+Installing collected packages: soupsieve, beautifulsoup4
+Successfully installed beautifulsoup4-4.8.2 soupsieve-1.9.5
+</code></pre>
+
+        </div>
+        <footer class="article-footer">
+    <a data-url="https://tfprimewj.github.io/2020/02/05/%E4%BD%BF%E7%94%A8virtualvenv%E5%88%9B%E5%BB%BAspider%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E8%AE%B0%E5%BD%95/" data-id="47c86feb55adcf15ac462c6158f012a3" class="article-share-link">
+        <i class="fa fa-share"></i>
+        Share
+    </a>
+    
+    <a href="https://tfprimewj.github.io/2020/02/05/%E4%BD%BF%E7%94%A8virtualvenv%E5%88%9B%E5%BB%BAspider%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E8%AE%B0%E5%BD%95/#disqus_thread" class="article-comment-link">
+        Comments
+    </a>
+    
+
+    <script>
+    (function ($) {
+        
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+    </script>
+</footer>
+
+    </div>
+
+    
+<nav id="article-nav">
+    
+    <a href="https://tfprimewj.github.io/2020/02/05/hugo%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0github%E7%95%8C%E9%9D%A2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Older
+      </strong>
+      <div class="article-nav-title">Hugo如何更新github界面</div>
+    </a>
+    
+
+    
+    <a href="https://tfprimewj.github.io/2020/02/05/vpn/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">
+          Newer
+      </strong>
+      <div class="article-nav-title">VPN</div>
+    </a>
+    
+</nav>
+
+
+</article>
+
+
+<section id="comments">
+    <div id="disqus_thread">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "Jinwang" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+</section>
+
+
+    </section>
+
+   	
+    	<aside id="sidebar">
+    
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/communication-system">
+                    communication-system
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/digital-image-processing">
+                    digital-image-processing
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/digital-signal-processing">
+                    digital-signal-processing
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/git">
+                    git
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/gre">
+                    gre
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/homebrew">
+                    homebrew
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/hugo">
+                    hugo
+                </a>
+                <span class="category-list-count">4</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/java">
+                    java
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/jzoffer">
+                    jzoffer
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/keras">
+                    keras
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/leetcode">
+                    leetcode
+                </a>
+                <span class="category-list-count">9</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/machine-learning">
+                    machine-learning
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/mongodb">
+                    mongodb
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/network">
+                    network
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/nodejs">
+                    nodejs
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/pandas">
+                    pandas
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/programming">
+                    programming
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/python">
+                    python
+                </a>
+                <span class="category-list-count">6</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/spider">
+                    spider
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/tensorflow">
+                    tensorflow
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/virtualvenv">
+                    virtualvenv
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/vpn">
+                    vpn
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/web-development">
+                    web-development
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/categories/zsh">
+                    zsh
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tags
+    </h3>
+    <div class="widget">
+        <ul class="category-list">
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/binary-search">
+                    binary-search
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/binary-tree">
+                    binary-tree
+                </a>
+                <span class="category-list-count">6</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/communication-system">
+                    communication-system
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/convolutional-neural-network">
+                    convolutional-neural-network
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/csv">
+                    csv
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/deep-learning">
+                    deep-learning
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/dfs">
+                    dfs
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/digital-image-processing">
+                    digital-image-processing
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/digital-signal-processing">
+                    digital-signal-processing
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/dynamic-programming">
+                    dynamic-programming
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/git">
+                    git
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/golang">
+                    golang
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/gre-issue">
+                    gre-issue
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/homebrew">
+                    homebrew
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/hugo">
+                    hugo
+                </a>
+                <span class="category-list-count">5</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/iteration">
+                    iteration
+                </a>
+                <span class="category-list-count">4</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/java">
+                    java
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/json">
+                    json
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/jzoffer">
+                    jzoffer
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/keras">
+                    keras
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/leetcode">
+                    leetcode
+                </a>
+                <span class="category-list-count">9</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/machine-learning">
+                    machine-learning
+                </a>
+                <span class="category-list-count">4</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/markdown">
+                    markdown
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/matlab">
+                    matlab
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/mongodb">
+                    mongodb
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/network">
+                    network
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/nodejs">
+                    nodejs
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/oop">
+                    oop
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/pandas">
+                    pandas
+                </a>
+                <span class="category-list-count">3</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/programming">
+                    programming
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/python">
+                    python
+                </a>
+                <span class="category-list-count">7</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/queue">
+                    queue
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/recursion">
+                    recursion
+                </a>
+                <span class="category-list-count">4</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/spider">
+                    spider
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/tensorflow">
+                    tensorflow
+                </a>
+                <span class="category-list-count">6</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/theme">
+                    theme
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/virtualvenv">
+                    virtualvenv
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/vpn">
+                    vpn
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/web-development">
+                    web-development
+                </a>
+                <span class="category-list-count">2</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/zsh">
+                    zsh
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+            <li class="category-list-item">
+                
+                <a class="category-list-link" href="https://tfprimewj.github.io/tags/%E7%88%AC%E8%99%AB">
+                    爬虫
+                </a>
+                <span class="category-list-count">1</span>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+
+
+    
+
+
+<div class="widget-wrap">
+    <h3 class="widget-title">
+        Tag cloud
+    </h3>
+    <div class="widget tagcloud">
+        
+        
+        <a href="https://tfprimewj.github.io/tags/binary-search" style="font-size: 12px;">binary-search</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/binary-tree" style="font-size: 12px;">binary-tree</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/communication-system" style="font-size: 12px;">communication-system</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/convolutional-neural-network" style="font-size: 12px;">convolutional-neural-network</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/csv" style="font-size: 12px;">csv</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/deep-learning" style="font-size: 12px;">deep-learning</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/dfs" style="font-size: 12px;">dfs</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/digital-image-processing" style="font-size: 12px;">digital-image-processing</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/digital-signal-processing" style="font-size: 12px;">digital-signal-processing</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/dynamic-programming" style="font-size: 12px;">dynamic-programming</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/git" style="font-size: 12px;">git</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/golang" style="font-size: 12px;">golang</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/gre-issue" style="font-size: 12px;">gre-issue</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/homebrew" style="font-size: 12px;">homebrew</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/hugo" style="font-size: 12px;">hugo</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/iteration" style="font-size: 12px;">iteration</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/java" style="font-size: 12px;">java</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/json" style="font-size: 12px;">json</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/jzoffer" style="font-size: 12px;">jzoffer</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/keras" style="font-size: 12px;">keras</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/leetcode" style="font-size: 12px;">leetcode</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/machine-learning" style="font-size: 12px;">machine-learning</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/markdown" style="font-size: 12px;">markdown</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/matlab" style="font-size: 12px;">matlab</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/mongodb" style="font-size: 12px;">mongodb</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/network" style="font-size: 12px;">network</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/nodejs" style="font-size: 12px;">nodejs</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/oop" style="font-size: 12px;">oop</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/pandas" style="font-size: 12px;">pandas</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/programming" style="font-size: 12px;">programming</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/python" style="font-size: 12px;">python</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/queue" style="font-size: 12px;">queue</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/recursion" style="font-size: 12px;">recursion</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/spider" style="font-size: 12px;">spider</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/tensorflow" style="font-size: 12px;">tensorflow</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/theme" style="font-size: 12px;">theme</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/virtualvenv" style="font-size: 12px;">virtualvenv</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/vpn" style="font-size: 12px;">vpn</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/web-development" style="font-size: 12px;">web-development</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/zsh" style="font-size: 12px;">zsh</a>
+        
+        
+        <a href="https://tfprimewj.github.io/tags/%E7%88%AC%E8%99%AB" style="font-size: 12px;">爬虫</a>
+        
+    </div>
+</div>
+
+
+
+
+
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+    
+	</div>
+</div>
+
+<footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020
+      Powered by <a href="//gohugo.io">Hugo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>.
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://tfprimewj.github.io/fancybox/jquery.fancybox.pack.js"></script>
+<script src="https://tfprimewj.github.io/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+</body>
+</html>

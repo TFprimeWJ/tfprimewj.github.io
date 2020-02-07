@@ -4,31 +4,100 @@
   
   <url>
     <loc>https://tfprimewj.github.io/categories/</loc>
-    <lastmod>2020-02-05T12:59:41+08:00</lastmod>
+    <lastmod>2020-02-07T23:10:50+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://tfprimewj.github.io/2020/02/05/hugo%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0github%E7%95%8C%E9%9D%A2/</loc>
-    <lastmod>2020-02-05T12:59:41+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://tfprimewj.github.io/</loc>
-    <lastmod>2020-02-05T12:59:41+08:00</lastmod>
+    <lastmod>2020-02-07T23:10:50+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://tfprimewj.github.io/post/</loc>
-    <lastmod>2020-02-05T12:59:41+08:00</lastmod>
+    <lastmod>2020-02-07T23:10:50+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://tfprimewj.github.io/tags/</loc>
-    <lastmod>2020-02-05T12:59:41+08:00</lastmod>
+    <loc>https://tfprimewj.github.io/tags/python/</loc>
+    <lastmod>2020-02-07T23:10:50+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2020/02/07/socket%E7%BC%96%E7%A8%8Bclient%E5%92%8Cserver%E5%AE%9E%E4%BE%8B/</loc>
+    <lastmod>2020-02-07T23:10:50+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/</loc>
+    <lastmod>2020-02-07T23:10:50+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/categories/network/</loc>
+    <lastmod>2020-02-07T23:10:50+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/network/</loc>
+    <lastmod>2020-02-07T23:10:50+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2020/02/05/vpn/</loc>
+    <lastmod>2020-02-05T15:55:07+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/categories/vpn/</loc>
+    <lastmod>2020-02-05T15:55:07+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/vpn/</loc>
+    <lastmod>2020-02-05T15:55:07+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/categories/spider/</loc>
+    <lastmod>2020-02-05T13:15:24+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/spider/</loc>
+    <lastmod>2020-02-05T13:15:24+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/categories/virtualvenv/</loc>
+    <lastmod>2020-02-05T13:15:24+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/tags/virtualvenv/</loc>
+    <lastmod>2020-02-05T13:15:24+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2020/02/05/%E4%BD%BF%E7%94%A8virtualvenv%E5%88%9B%E5%BB%BAspider%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2020-02-05T13:15:24+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tfprimewj.github.io/2020/02/05/hugo%E5%A6%82%E4%BD%95%E6%9B%B4%E6%96%B0github%E7%95%8C%E9%9D%A2/</loc>
+    <lastmod>2020-02-05T12:59:41+08:00</lastmod>
   </url>
   
   <url>
@@ -328,12 +397,6 @@
   
   <url>
     <loc>https://tfprimewj.github.io/categories/python/</loc>
-    <lastmod>2018-10-28T11:51:06+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://tfprimewj.github.io/tags/python/</loc>
     <lastmod>2018-10-28T11:51:06+02:00</lastmod>
     <priority>0</priority>
   </url>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vpn on Jinwang Blog</title>
+    <link>https://tfprimewj.github.io/tags/vpn/</link>
+    <description>Recent content in vpn on Jinwang Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 05 Feb 2020 15:55:07 +0800</lastBuildDate>
+    
+	<atom:link href="https://tfprimewj.github.io/tags/vpn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>VPN</title>
+      <link>https://tfprimewj.github.io/2020/02/05/vpn/</link>
+      <pubDate>Wed, 05 Feb 2020 15:55:07 +0800</pubDate>
+      
+      <guid>https://tfprimewj.github.io/2020/02/05/vpn/</guid>
+      <description>✘ jinwang@Jin-Wang-MacBook-Pro  ~/Desktop  ssh root@45.76.70.110 The authenticity of host &#39;45.76.70.110 (45.76.70.110)&#39; can&#39;t be established. ECDSA key fingerprint is SHA256:i3m5ktbz8Fd0YztAQbGR4G08HzGlBU4fhUVotLMZE3c. Are you sure you want to continue connecting (yes/no)? yes Warning: Permanently added &#39;45.76.70.110&#39; (ECDSA) to the list of known hosts. root@45.76.70.110&#39;s password: Activate the web console with: systemctl enable --now cockpit.socket Last failed login: Wed Feb 5 07:45:08 UTC 2020 on tty1 There were 2 failed login attempts since the last successful login.</description>
+    </item>
+    
+  </channel>
+</rss>
